@@ -33,7 +33,7 @@ export default function CatalogueSection() {
     },
   ];
   return (
-    <div className='grid gap-8 lg:grid-cols-4 lg:gap-0 divide-gray-300 lg:divide-x'>
+    <div className='grid gap-8 lg:grid-cols-4 md:grid-cols-2 lg:gap-0 divide-gray-300 lg:divide-x'>
       {items.map((items) => (
         <div key={items.id} className='relative overflow-hidden group'>
           <div>
@@ -56,9 +56,10 @@ export default function CatalogueSection() {
             <a className='inline-flex items-center font-medium ' href=''>see details
              <TbArrowNarrowRight className='ml-2'/></a>
           </div>
-          <div>
-            <p>{items.catagory}</p>
-            <span></span>
+          <div className='inset-0 bg-tertiary flex-col items-center justify-end md:flex md:absolute gap-32 pb-16 text-xl transition
+          duration-300 ease-in-out border-b-2 group-hover:translate-y-full md:border-b-0 hidden'>
+            <p className='tracking-wider -rotate-90'>{items.catagory}</p>
+            <span>{items.id}</span>
           </div>
         </div>
       ))}
