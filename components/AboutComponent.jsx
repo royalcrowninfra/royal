@@ -22,7 +22,7 @@ const AboutComponent = () => {
                         whileInView={"onscreen"}
                         variants={titleVariants}
                         className="px-12 py-4 text-3xl font-extrabold leading-tight lg:text-5xl">
-                        We are awards Winning Compnay
+                        We are awards Winning Company
                     </motion.h2>
                     <motion.p
                         initial="offscreen"

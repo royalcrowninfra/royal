@@ -22,7 +22,7 @@ const HeroSection = () => {
                     whileInView={"onscreen"}
                     variants={desVariants}
                     className='h1'>
-                    Make your home
+                    Royal Crown Infra
                 </motion.h1>
                 <motion.p
                     initial="offscreen"
