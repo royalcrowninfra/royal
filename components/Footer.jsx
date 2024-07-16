@@ -27,7 +27,7 @@ export default function Footer() {
             whileInView={"onscreen"}
             variants={desVariants}
           >
-            <h2 className="pb-4 text-xl font-semibold uppercase">Develpment</h2>
+            <h2 className="pb-4 text-xl font-semibold uppercase">Development</h2>
             <div className="flex flex-col">
               <Link href='/gallery' className="py-1 hover:underline">Documentation</Link>
               <Link href='/about' className="py-1 hover:underline">Reference</Link>
