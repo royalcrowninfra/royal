@@ -16,10 +16,10 @@ export default function Footer() {
           >
             <h2 className="pb-4 text-xl font-semibold uppercase">Company</h2>
             <div className="flex flex-col">
-              <Link href='/' className="py-1 hover:underline">About Us</Link>
+              <Link href='/about' className="py-1 hover:underline">About Us</Link>
               <Link href='/' className="py-1 hover:underline">Press</Link>
               <Link href='/' className="py-1 hover:underline">Careers</Link>
-              <Link href='/' className="py-1 hover:underline">Contact</Link>
+              <Link href='/contact' className="py-1 hover:underline">Contact</Link>
             </div>
           </motion.div>
           <motion.div
@@ -29,10 +29,10 @@ export default function Footer() {
           >
             <h2 className="pb-4 text-xl font-semibold uppercase">Develpment</h2>
             <div className="flex flex-col">
-              <Link href='/' className="py-1 hover:underline">Documentation</Link>
-              <Link href='/' className="py-1 hover:underline">Reference</Link>
+              <Link href='/gallery' className="py-1 hover:underline">Documentation</Link>
+              <Link href='/about' className="py-1 hover:underline">Reference</Link>
               <Link href='/' className="py-1 hover:underline">Changelog</Link>
-              <Link href='/' className="py-1 hover:underline">Status</Link>
+              <Link href='/projects' className="py-1 hover:underline">Status</Link>
             </div>
           </motion.div>
           <motion.div
@@ -50,9 +50,9 @@ export default function Footer() {
           </motion.div>
         </div>
         <motion.div
-         initial="offscreen"
-         whileInView={"onscreen"}
-         variants={titleVariants}
+          initial="offscreen"
+          whileInView={"onscreen"}
+          variants={titleVariants}
         >
           <p className="pb-4 text-xl font-semibold">Stay Updated</p>
           <div className="relative lg:max-w-sm">
@@ -68,13 +68,13 @@ export default function Footer() {
       </div>
       {/* Copyright */}
       <motion.div
-       initial="offscreen"
-       whileInView={"onscreen"}
-       variants={desVariants }
-       className="py-10 bg-black dark:bg-primary">
+        initial="offscreen"
+        whileInView={"onscreen"}
+        variants={desVariants}
+        className="py-10 bg-black dark:bg-primary">
         <div className="container text-white text-center lg:justify-between lg:flex">
           <div className="pb-4 lg:pb-0">
-            <p>&copy;2024 Royal Crown Infra .All Rights Reserved</p>
+            <p>&copy;2024 Royal Crown Infra .All Rights Reserved <br /> <span className="text-muted-foreground">Designed By Akshay Kalamkar</span></p>
           </div>
           <div>
             <Link className="p-4 hover:underline" href='/'>Privacy</Link>

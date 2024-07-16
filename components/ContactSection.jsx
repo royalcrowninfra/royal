@@ -9,12 +9,12 @@ const posts = [
         id: 1,
         title: 'boost your conversion rate',
         href: '#',
-        description: 'it is a fantastic theme with tons of design and layout options,and the customer service is simply outstanding. they respond immideately and solve any inconvenience no matter how small.',
+        description: "I am thrilled with my new flat from Royal Crown Infra! The attention to detail is impeccable, and the layout perfectly suits my family's needs. The entire process, from viewing to possession, was smooth and professional. Highly recommend!",
         date: 'March 16 , 2024',
         datetime: '2024-03-16',
         category: { title: '4.7', href: '#' },
         author: {
-            name: 'Natasha',
+            name: 'harsh',
             role: 'Co-founder / CTO',
             href: '#',
             imageUrl: '/images/img.jpg'
@@ -25,7 +25,7 @@ const posts = [
         id: 2,
         title: 'boost your conversion rate',
         href: '#',
-        description: 'it is a fantastic theme with tons of design and layout options,and the customer service is simply outstanding. they respond immideately and solve any inconvenience no matter how small.',
+        description: "Royal Crown Infra exceeded my expectations. The quality of construction and the amenities provided in our flat are top-notch. The team was responsive to our queries and ensured all our concerns were addressed promptly. A truly satisfying home-buying experience!",
         date: 'March 16 , 2024',
         datetime: '2024-03-16',
         category: { title: '4.7', href: '#' },
@@ -41,12 +41,12 @@ const posts = [
         id: 3,
         title: 'boost your conversion rate',
         href: '#',
-        description: 'it is a fantastic theme with tons of design and layout options,and the customer service is simply outstanding. they respond immideately and solve any inconvenience no matter how small.',
+        description: "Choosing Royal Crown Infra was the best decision we made for our new home. The craftsmanship is evident in every corner, and the community atmosphere they've created is wonderful. We feel like we're part of something special here. Thank you for making our dream home a reality!",
         date: 'March 16 , 2024',
         datetime: '2024-03-16',
         category: { title: '4.9', href: '#' },
         author: {
-            name: 'jos',
+            name: 'sara',
             role: 'Co-founder / CEO',
             href: '#',
             imageUrl: '/images/img.jpg'
@@ -59,25 +59,25 @@ export default function ContactSection() {
         <div className="pt-12">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <motion.h2
-                 initial="offscreen"
-                 whileInView={"onscreen"}
-                 variants={titleVariants}
-                 className="text-3xl font-bold tracking-tighy sm:text-4xl">
+                    initial="offscreen"
+                    whileInView={"onscreen"}
+                    variants={titleVariants}
+                    className="text-3xl font-bold tracking-tighy sm:text-4xl">
                     Customer Reviews
                 </motion.h2>
                 <motion.p
-                  initial="offscreen"
-                  whileInView={"onscreen"}
-                  variants={desVariants}
-                 className="mt-2 text-lg leading-8 text-muted-foreground">
+                    initial="offscreen"
+                    whileInView={"onscreen"}
+                    variants={desVariants}
+                    className="mt-2 text-lg leading-8 text-muted-foreground">
                     Learn how to grow your business with our expert advice
                 </motion.p>
 
                 <motion.div
-                  initial="offscreen"
-                  whileInView={"onscreen"}
-                  variants={tagVariants}
-                 className="mx-auto mt-10 grid lg:grid-cols-3 grid-cols-1 gap-x-8 lg:max-w-none
+                    initial="offscreen"
+                    whileInView={"onscreen"}
+                    variants={tagVariants}
+                    className="mx-auto mt-10 grid lg:grid-cols-3 grid-cols-1 gap-x-8 lg:max-w-none
                  lg:mx-0 sm:py-16 sm:mt-16 py-10 border-b border-gray-200 border-t gap-y-16">
                     {
                         posts.map((post) => (

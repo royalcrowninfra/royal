@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { titleVariants, desVariants, tagVariants } from '@/utils/animation'
 import { motion } from "framer-motion"
+import Link from 'next/link';
 
 const HeroSection = () => {
     return (
@@ -29,18 +30,16 @@ const HeroSection = () => {
                     whileInView={"onscreen"}
                     variants={tagVariants}
                     className='pb-6 text-muted-foreground xl:pb-10'>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae mollitia ex dicta ipsum, autem numquam! Deleniti dolor aliquid similique dignissimos quis deserunt dicta iste incidunt, enim eos minus, mollitia earum.
-                    Iste ullam, necessitatibus a soluta esse dolore incidunt tenetur? Nobis laudantium itaque repellat consequuntur voluptate ipsa assumenda animi esse error fuga aperiam omnis culpa, qui perspiciatis deserunt quos molestias excepturi.
-                    Voluptatem sapiente placeat voluptatum eos vel earum molestiae soluta ex qui quam eum rerum culpa, asperiores enim! Aut temporibus enim deserunt consequuntur, ea natus harum veritatis! Ratione tenetur praesentium officia!
+                    Royal Crown Infra stands at the forefront of real estate excellence, specializing in crafting exceptional flats that redefine modern living. Our commitment to quality, innovation, and customer satisfaction sets us apart as a trusted builder in the industry. Discover meticulously designed flats that blend luxury with practicality, ensuring every home reflects our dedication to superior craftsmanship and attention to detail. Whether you seek a cozy studio or a spacious family residence, Royal Crown Infra promises a living experience that exceeds expectations.
                 </motion.p>
                 <motion.div
                     initial="offscreen"
                     whileInView={"onscreen"}
                     variants={tagVariants}
                 >
-                    <Button className='inline-flex items-center px-8 py-3 text-white rounded-full shadow-lg hover:bg-gray-800 hover:ring-2 hover:ring-gray-950 ring-offset-2'>
+                    <Link href='/contact'>  <Button className='inline-flex items-center px-8 py-3 text-white rounded-full shadow-lg hover:bg-gray-800 hover:ring-2 hover:ring-gray-950 ring-offset-2'>
                         Book now <TbArrowUpRight className='w-5 h-5 ml-2' />
-                    </Button>
+                    </Button></Link>
                 </motion.div>
 
             </div>

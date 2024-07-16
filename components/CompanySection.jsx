@@ -20,7 +20,7 @@ const CompanySection = () => {
                         <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                             <Badge
                                 endCountNum={44}
-                                endCountText='million'
+                                endCountText=' million'
                             />
                         </dd>
                     </motion.div>
@@ -32,12 +32,12 @@ const CompanySection = () => {
                         variants={tagVariants}
                         className="mx-auto flex max-w-xs flex-col gap-y-4">
                         <dt className="text-white leading-7">
-                            Assets Ubder Running
+                            Assets Under Running
                         </dt>
                         <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                             <Badge
                                 endCountNum={199}
-                                endCountText='trillion'
+                                endCountText=' trillion'
                             />
                         </dd>
                     </motion.div>
