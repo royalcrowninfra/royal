@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -32,7 +32,7 @@ module.exports = {
           foreground: "hsl(var(--secondary-foreground))",
         },
         tertiary: {
-          DEFAULT: "hsl(var(--tertiary))"
+          DEFAULT: "hsl(var(--tertiary))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -60,6 +60,12 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
       keyframes: {
         marquee: {
           from: { transform: "translateX(0)" },
@@ -77,14 +83,8 @@ module.exports = {
             to: { height: "0" },
           },
         },
-        animation: {
-          marquee: "marquee var(--duration) linear infinite",
-          "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
-          "accordion-down": "accordion-down 0.2s ease-out",
-          "accordion-up": "accordion-up 0.2s ease-out",
-        },
       },
     },
     plugins: [require("tailwindcss-animate")],
-  }
-}
+  },
+};
