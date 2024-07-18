@@ -50,7 +50,7 @@ const ReviewCard = ({img}) => {
   return (
     <figure
     className={cn(
-      "relative w-64 h-48 cursor-pointer overflow-hidden rounded-xl border p-4",
+      "relative w-70 h-48 cursor-pointer overflow-hidden rounded-xl",
       // light styles
       "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
       // dark styles
@@ -65,6 +65,7 @@ const ReviewCard = ({img}) => {
 export default function BankingPartner() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+       <h1 className="text-4xl md:text-6xl text-center mb-8 cursor-pointer transition-all duration-300 ease-in-out hover:text-green font-bold">Banking Partners</h1>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.img} {...review} />

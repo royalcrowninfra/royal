@@ -1,87 +1,86 @@
-'use client';
+'use client'
+import { useState, useEffect } from 'react';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { Button } from './ui/button';
 import Link from 'next/link';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
 import 'swiper/css';
-import { Autoplay } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
-export default function CatalogSwiperSection() {
+export default function FeaturedProjects() {
   return (
-    <div className='py-8 lg:"py-28 '>
-      <div className='container grid pb-8 lg:grid-cols-1'>
-        <div className='text-left'>
-          <motion.h1
-            initial="offscreen"
-            whileInView={"onscreen"}
-            variants={titleVariants}
-            className='py-4 text-4xl font-medium lg:text-6xl lg:py-0'>
-            Morden Classic
-          </motion.h1>
-          <motion.h2
-            initial="offscreen"
-            whileInView={"onscreen"}
-            variants={desVariants}
-            className='pb-6 text-xl font-bold tracking-wider my-5'>
-            luxury Decor To create comfort In our Home
-          </motion.h2>
-        </div>
-        <motion.div
+    <div className='py-8 lg:pt-2'>
+      <div className='container'>
+        <motion.h1
           initial="offscreen"
           whileInView={"onscreen"}
-          variants={tagVariants}
-          className='grid grid-cols-2 text-gray-500 gap-x-8'>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aut, excepturi, sunt itaque iste architecto aperiam odit, minima incidunt nemo iusto facilis eveniet! Iure ut quasi ipsam architecto aliquam officia.
-            Illo, repellat ratione, consequuntur maiores animi perspiciatis totam expedita nihil labore est earum ex sapiente nulla eius. Vero sit id porro at. Error sequi tempore perferendis, iusto dolorum sapiente iste?
-            Dicta quos eveniet laborum fugit! Vel architecto nobis quam illo, delectus, maxime ducimus adipisci reiciendis magnam esse fugit quo, incidunt modi officia fugiat quas optio accusamus quisquam perferendis tenetur. Quidem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aut, excepturi, sunt itaque iste architecto aperiam odit, minima incidunt nemo iusto facilis eveniet! Iure ut quasi ipsam architecto aliquam officia.
-            Illo, repellat ratione, consequuntur maiores animi perspiciatis totam expedita nihil labore est earum ex sapiente nulla eius. Vero sit id porro at. Error sequi tempore perferendis, iusto dolorum sapiente iste?
-            Dicta quos eveniet laborum fugit! Vel architecto nobis quam illo, delectus, maxime ducimus adipisci reiciendis magnam esse fugit quo, incidunt modi officia fugiat quas optio accusamus quisquam perferendis tenetur. Quidem.
-          </p>
-        </motion.div>
-        <Link href="/gallery">
-          <Button className='inline-flex items-center px-8 py-3 mt-4 text-white rounded-full
-        shadow-lg hover:bg-gray-800 hover:ring-2 hover:ring-gray-950 ring-offset-2 '>View Gallery <TbArrowUpRight className='w-5 h-5 ml-2' /> </Button>
-        </Link>
+          variants={titleVariants}
+          className='py-4 text-4xl font-medium text-center lg:text-6xl lg:py-0 '
+        >
+          Featured Projects
+        </motion.h1>
+
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          modules={[Navigation]}
+          className="mt-12"
+        >
+          <SwiperSlide className="swiper-slide">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
+              <Image src='/images/projects/featuredProject1.jpg' width={400} height={300} alt='Space World' className='w-full h-60 object-cover' />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold">Space World</h3>
+                <p className="text-sm text-gray-600">MAHARERA: P52000011751</p>
+                <p className="text-sm"><i className="fas fa-map-marker-alt"></i> Neral</p>
+                <p className="text-lg font-bold mt-2">11.5 LAKH ONWARDS*</p>
+                <Button className='mt-4'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="swiper-slide">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
+              <Image src='/images/projects/featuredProject2.jpg' width={400} height={300} alt='Sarvam' className='w-full h-60 object-cover' />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold">Sarvam</h3>
+                <p className="text-sm text-gray-600">MAHARERA: P52000023662</p>
+                <p className="text-sm"><i className="fas fa-map-marker-alt"></i> Taloja, Navi Mumbai</p>
+                <p className="text-lg font-bold mt-2">30 LAKH ONWARDS*</p>
+                <Button className='mt-4'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="swiper-slide">
+            <div className="bg-white rounded-lg overflow-hidden shadow-md h-full">
+              <Image src='/images/projects/featuredProject2.jpg' width={400} height={300} alt='Prakriti Sparsh' className='w-full h-60 object-cover' />
+              <div className="p-4">
+                <h3 className="text-xl font-semibold">Prakriti Sparsh</h3>
+                <p className="text-sm text-gray-600">MAHARERA: P52000007309</p>
+                <p className="text-sm"><i className="fas fa-map-marker-alt"></i> Panvel</p>
+                <p className="text-lg font-bold mt-2">24.3 LAKH ONWARDS*</p>
+                <Button className='mt-4'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+        <div className="swiper-button-prev"></div>
+        <div className="swiper-button-next"></div>
       </div>
-      {/* SWiper Section */}
-      <Swiper sliderPerView={1} breakpoints={{
-        640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 50,
-        },
-      }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-        modules={[Autoplay]}
-      >
-        <SwiperSlide>
-          <Image src='/images/img.jpg' width={520} height={220} className='w-full' alt='Swiper' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/images/img.jpg' width={520} height={220} className='w-full' alt='Swiper' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/images/img.jpg' width={520} height={220} className='w-full' alt='Swiper' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/images/img.jpg' width={520} height={220} className='w-full' alt='Swiper' />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src='/images/img.jpg' width={520} height={220} className='w-full' alt='Swiper' />
-        </SwiperSlide>
-      </Swiper>
     </div>
   );
 }

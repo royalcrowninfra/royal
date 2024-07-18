@@ -5,7 +5,7 @@ import { desVariants, tagVariants, titleVariants } from '@/utils/animation'
 
 const CompanySection = () => {
     return (
-        <div className="bg-gradient-to-r from-yellow-100 to-yellow-100 dark:bg-tertiary py-24 sm:py-32">
+        <div className="bg-gradient-to-r from-blue-300 to-purple-800 dark:bg-tertiary py-24 sm:py-14">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                     {/* Badge 1 */}
