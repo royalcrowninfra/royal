@@ -9,7 +9,7 @@ const links = [
     path: '/about', 
     name: 'about',
     dropdown: [
-      { path: '/about/team', name: 'Our Team' },
+      { path: '/about', name: 'about' },
       { path: '/about/history', name: 'Our History' },
     ]
   },
