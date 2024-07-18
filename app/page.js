@@ -1,4 +1,5 @@
 import AboutComponent from "@/components/AboutComponent";
+import BankingPartner from "@/components/BankingPartner";
 import CatalogSwiperSection from "@/components/CatalogSwiperSection";
 import CatalogueSection from "@/components/CatalogueSection";
 import CompanySection from "@/components/CompanySection";
@@ -15,6 +16,8 @@ export default function Home() {
       <CatalogueSection/>
       <CatalogSwiperSection/>
       <ContactSection/>
+      <BankingPartner/>
     </>
   );
 }
+

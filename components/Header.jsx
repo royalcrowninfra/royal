@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={`${header
-        ? 'py-4 bg-gradient-to-r from-yellow-400 to-purple-600 shadow-lg dark:bg-accent'
+        ? 'py-4 bg-gradient-to-r from-yellow-100 to-yellow-200 shadow-lg dark:bg-accent'
         : 'py-6 dark:bg-transparent'}
      sticky top-0 z-30 transition-all ${pathname === '/' && 'bg-[#fff]'}`}
     >
