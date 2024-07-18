@@ -1,13 +1,13 @@
-import Link from 'next/link';
-import logo from '../public/logo.png';
-import Image from 'next/image';
+import Link from "next/link";
+import logo from "../public/logo.png";
+import Image from "next/image";
 
-const Logo = () => {
+const Logo = ({ height }) => {
   return (
     <Link href='/'>
-      <Image src={logo} width={160} height={55} alt='logo' />
+      <Image src={logo} className='h-16 object-contain' alt='logo' />
     </Link>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

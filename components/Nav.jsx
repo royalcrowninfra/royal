@@ -1,128 +1,207 @@
-import { useState, useEffect } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+"use client";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import Logo from "./Logo";
+import ThemeToggler from "./ThemeToggler";
 
 const links = [
-  { path: '/', name: 'home' },
-  { 
-    path: '/about', 
-    name: 'about',
+  { path: "/", name: "home" },
+  {
+    path: "/about",
+    name: "about",
     dropdown: [
-      { path: '/about', name: 'about' },
-      { path: '/about/history', name: 'Our History' },
-    ]
+      { path: "/about", name: "about" },
+      { path: "/about/history", name: "Our History" },
+    ],
   },
-  { 
-    path: '/projects', 
-    name: 'projects',
+  {
+    path: "/projects",
+    name: "projects",
     dropdown: [
-      { path: '/projects/residential', name: 'Residential' },
-      { path: '/projects/commercial', name: 'Commercial' },
-    ]
+      { path: "/projects/residential", name: "Residential" },
+      { path: "/projects/commercial", name: "Commercial" },
+    ],
   },
-  { 
-    path: '/buyersGuide', 
-    name: 'buyersGuide',
+  {
+    path: "/buyersGuide",
+    name: "buyersGuide",
     dropdown: [
-      { path: '/buyersGuide/process', name: 'Buying Process' },
-      { path: '/buyersGuide/financing', name: 'Financing Options' },
-    ]
+      { path: "/buyersGuide/process", name: "Buying Process" },
+      { path: "/buyersGuide/financing", name: "Financing Options" },
+    ],
   },
-  { path: '/gallery', name: 'gallery' },
-  { path: '/career', name: 'career' },
-  { path: '/contact', name: 'contact' },
+  { path: "/gallery", name: "gallery" },
+  { path: "/career", name: "career" },
+  { path: "/contact", name: "contact" },
 ];
 
-const Nav = ({ containerStyles, linkStyles, underlineStyles }) => {
-  const path = usePathname();
+const NavLink = ({ href, children, isActive }) => (
+  <Link
+    href={href}
+    className={`text-sm font-medium transition-colors hover:text-primary ${
+      isActive ? "text-primary" : "text-muted-foreground"
+    }`}
+  >
+    {children}
+  </Link>
+);
+
+const NavItem = ({ item, isActive }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const handleRouteChange = () => {
+      setIsOpen(false);
     };
 
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    // router.events.on("routeChangeStart", handleRouteChange);
+    handleRouteChange();
+    return () => {
+      // router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
 
-  const handleDropdown = (linkName) => {
-    setOpenDropdown(openDropdown === linkName ? null : linkName);
-  };
-
-  const handleMouseEnter = (linkName) => {
-    if (!isMobile) {
-      setOpenDropdown(linkName);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setOpenDropdown(null);
-    }
-  };
-
-  const handleDropdownItemClick = () => {
-    setOpenDropdown(null);
-  };
+  if (item.dropdown) {
+    return (
+      <div
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
+        <Button
+          variant='ghost'
+          className={`text-sm font-medium transition-colors hover:text-primary ${
+            isActive ? "text-primary" : "text-muted-foreground"
+          }`}
+        >
+          {item.name}
+        </Button>
+        {isOpen && (
+          <div className='absolute py-2 w-48 bg-background rounded-md shadow-xl z-20'>
+            {item.dropdown.map((dropdownItem) => (
+              <Link
+                key={dropdownItem.path}
+                href={dropdownItem.path}
+                className='block px-4 py-2 text-sm text-foreground hover:bg-accent'
+              >
+                {dropdownItem.name}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
-    <nav className={`${containerStyles}`}>
-      {links.map((link, index) => {
-        return (
-          <div key={index} className={`relative ${isMobile ? 'w-full' : 'group'}`}>
-            <div
-              className={`flex items-center justify-between ${linkStyles}`}
-              onClick={() => isMobile && link.dropdown && handleDropdown(link.name)}
-              onMouseEnter={() => handleMouseEnter(link.name)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <Link href={link.path}>
-                {link.name}
-              </Link>
-              {link.dropdown && isMobile && (
-                <span className="ml-1">{openDropdown === link.name ? '▲' : '▼'}</span>
-              )}
-            </div>
-            {link.path === path && (
-              <motion.span
-                initial={{ y: '-100%' }}
-                animate={{ y: 0 }}
-                transition={{ type: 'tween' }}
-                layoutId="underline"
-                className={`${underlineStyles}`}
-              />
-            )}
-            {link.dropdown && (openDropdown === link.name || (!isMobile && path.startsWith(link.path))) && (
-              <div 
-                className={`${isMobile ? 'w-full' : 'absolute left-0'} mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5`}
-                onMouseEnter={() => handleMouseEnter(link.name)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                  {link.dropdown.map((dropdownItem, dropdownIndex) => (
-                    <Link
-                      key={dropdownIndex}
-                      href={dropdownItem.path}
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                      role="menuitem"
-                      onClick={handleDropdownItemClick}
-                    >
-                      {dropdownItem.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      })}
-    </nav>
+    <NavLink href={item.path} isActive={isActive}>
+      {item.name}
+    </NavLink>
   );
 };
 
-export default Nav;
+const MobileNavItem = ({ item, onClose }) => {
+  if (item.dropdown) {
+    return (
+      <div className='space-y-1'>
+        <Button variant='ghost' className='w-full justify-start font-bold'>
+          {item.name}
+        </Button>
+        {item.dropdown.map((dropdownItem) => (
+          <Link
+            key={dropdownItem.path}
+            href={dropdownItem.path}
+            className='block pl-4 py-2 text-sm'
+            onClick={onClose}
+          >
+            {dropdownItem.name}
+          </Link>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={item.path}
+      className='block py-2 text-sm font-medium'
+      onClick={onClose}
+    >
+      {item.name}
+    </Link>
+  );
+};
+
+const Navbar = () => {
+  const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <header className='sticky h-14  top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+      <div className='flex items-center w-full'>
+        <div className='items-center w-full justify-between hidden md:flex'>
+          <Link href='/' className='flex items-center space-x-2'>
+            <span className='hidden font-bold sm:inline-block'>
+              <Logo />
+            </span>
+          </Link>
+          <nav className='flex flex-1 items-center space-x-6 text-sm font-medium'>
+            {links.map((item) => (
+              <NavItem
+                key={item.path}
+                item={item}
+                isActive={
+                  pathname === item.path || pathname.startsWith(item.path + "/")
+                }
+              />
+            ))}
+          </nav>
+          <ThemeToggler />
+        </div>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant='ghost'
+              className='mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden'
+            >
+              <Menu className='h-5 w-5' />
+              <span className='sr-only'>Toggle Menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side='left' className='pr-0'>
+            <SheetHeader>
+              <SheetTitle>Navigation</SheetTitle>
+            </SheetHeader>
+            <nav className='flex flex-col space-y-3'>
+              {links.map((item) => (
+                <MobileNavItem
+                  key={item.path}
+                  item={item}
+                  onClose={() => setIsOpen(false)}
+                />
+              ))}
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;
