@@ -17,31 +17,31 @@ const PanvelDevelopment = () => {
     {
       title: 'Upcoming Mumbai Trans Harbour Link (MTNL)',
       description:
-        'No job is too big or too small for our plumbing professionals. Each our plumber at our family-owned company has been professionally trained and background checked to ensure your safety. You can expect our technician to come to your door neatly dressed with a courteous smile. Customer service is our top priority!',
+        'Asia’s longest and the world’s second largest sea link allowing you convenient access to Mumbai. ',
       imagePath: '/images/buyersGuide/panveldevelopment/local.jpg',
     },
     {
       title: 'Multimodal Corridor',
       description:
-        'No job is too big or too small for our plumbing professionals. Each our plumber at our family-owned company has been professionally trained and background checked to ensure your safety. You can expect our technician to come to your door neatly dressed with a courteous smile. Customer service is our top priority!',
+        'The 126 km long Alibag–Virar corridor enables connectivity to the Airport and other nodes of MMR and Navi Mumbai.',
       imagePath: '/images/buyersGuide/panveldevelopment/highway.jpg',
     },
     {
       title: 'Panvel–Karjat Railway Line',
       description:
-        'No job is too big or too small for our plumbing professionals. Each our plumber at our family-owned company has been professionally trained and background checked to ensure your safety. You can expect our technician to come to your door neatly dressed with a courteous smile. Customer service is our top priority!',
+        'Allows connectivity to the central suburbs.',
       imagePath: '/images/buyersGuide/panveldevelopment/karjatpanvel.jpg',
     },
     {
       title: 'CST–Panvel Fast Railway Corridor',
       description:
-        'No job is too big or too small for our plumbing professionals. Each our plumber at our family-owned company has been professionally trained and background checked to ensure your safety. You can expect our technician to come to your door neatly dressed with a courteous smile. Customer service is our top priority!',
+        'Allows speedier access to Mumbai. ',
       imagePath: '/images/buyersGuide/panveldevelopment/panvelcst.jpg',
     },
     {
       title: 'NAINA (NAVI MUMBAI AIRPORT INFLUENCE NOTIFIED AREA)',
       description:
-        'No job is too big or too small for our plumbing professionals. Each our plumber at our family-owned company has been professionally trained and background checked to ensure your safety. You can expect our technician to come to your door neatly dressed with a courteous smile. Customer service is our top priority!',
+        'The smart city spread across 600 square kilometres planned around the International Airport will be a residential, commercial, retail, entertainment and financial hub of the future. It will offer residents, a lifestyle rivalling that of Mumbai with a clear advantage of Space, Nature, Aesthetics and speed of Accessibility currently absent in the maximum city. It goes without saying that for these reasons alone, Qualcon Dreams properties will command the high appreciation levels guaranteeing the best value on their investment.      ',
       imagePath: '/images/buyersGuide/panveldevelopment/naina.jpg',
     },
     // ... other content blocks
@@ -69,7 +69,7 @@ const PanvelDevelopment = () => {
                 <motion.p
                   initial="offscreen"
                   whileInView={"onscreen"}
-                  variants={desVariants}
+                  variants={tagVariants}
                   className="text-gray-700 mb-6">{block.description}</motion.p>
                 {/* <Button className="bg-blue-500 text-white hover:bg-blue-600">
                   Learn More
