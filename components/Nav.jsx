@@ -24,26 +24,35 @@ const links = [
   { path: "/", name: "home" },
   {
     path: "/about",
-    name: "about",
+    name: "about ",
     dropdown: [
-      { path: "/about", name: "about" },
-      { path: "/about/history", name: "Our History" },
+      { path: "/about", name: "Ourteam" },
+      { path: "/about/aboutTheGroup", name: "About The Group" },
+      { path: "/about/visionAndMission", name: "Vision And Mission" },
+      { path: "/about/philosophy", name: "Philosophy" },
+      { path: "/about/values", name: "Values" },
     ],
   },
   {
     path: "/projects",
     name: "projects",
     dropdown: [
-      { path: "/projects/residential", name: "Residential" },
-      { path: "/projects/commercial", name: "Commercial" },
+      { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
+      { path: "/projects/completedProjects", name: "Completed Projects" },
     ],
   },
   {
     path: "/buyersGuide",
     name: "buyersGuide",
     dropdown: [
-      { path: "/buyersGuide/process", name: "Buying Process" },
-      { path: "/buyersGuide/financing", name: "Financing Options" },
+      { path: "/panvelDevelopment", name: "Panvel Development" },
+      { path: "/homeLoans", name: "Home Loans" },
+      { path: "/gst", name: "GST" },
+      { path: "/stampDuty&Reg", name: "Stamp Duty & Reg" },
+      { path: "/legal&TaxBenefits", name: "Legal & Tax Benefits" },
+      { path: "/nriGuide", name: "NRI Guide" },
+      { path: "/pmay", name: "PMAY" },
+      { path: "/emiCalculator", name: "EMI Calculator" },
     ],
   },
   { path: "/gallery", name: "gallery" },
@@ -54,9 +63,8 @@ const links = [
 const NavLink = ({ href, children, isActive }) => (
   <Link
     href={href}
-    className={`text-sm font-medium transition-colors hover:text-primary ${
-      isActive ? "text-primary" : "text-muted-foreground"
-    }`}
+    className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"
+      }`}
   >
     {children}
   </Link>
@@ -86,9 +94,8 @@ const NavItem = ({ item, isActive }) => {
       >
         <Button
           variant='ghost'
-          className={`text-sm font-medium transition-colors hover:text-primary ${
-            isActive ? "text-primary" : "text-muted-foreground"
-          }`}
+          className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"
+            }`}
         >
           {item.name}
         </Button>
