@@ -2,14 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   Sheet,
   SheetContent,
@@ -21,12 +15,12 @@ import Logo from "./Logo";
 import ThemeToggler from "./ThemeToggler";
 
 const links = [
-  { path: "/", name: "home" },
+  { path: "/", name: "Home" },
   {
     path: "/about",
-    name: "about ",
+    name: "About",
     dropdown: [
-      { path: "/about", name: "Ourteam" },
+      { path: "/about", name: "Our Team" },
       { path: "/about/aboutTheGroup", name: "About The Group" },
       { path: "/about/visionAndMission", name: "Vision And Mission" },
       { path: "/about/philosophy", name: "Philosophy" },
@@ -35,7 +29,7 @@ const links = [
   },
   {
     path: "/projects",
-    name: "projects",
+    name: "Projects",
     dropdown: [
       { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
       { path: "/projects/completedProjects", name: "Completed Projects" },
@@ -43,7 +37,7 @@ const links = [
   },
   {
     path: "/buyersGuide",
-    name: "buyersGuide",
+    name: "Buyers Guide",
     dropdown: [
       { path: "/buyersGuide/panvelDevelopment", name: "Panvel Development" },
       { path: "/buyersGuide/homeLoans", name: "Home Loans" },
@@ -55,16 +49,17 @@ const links = [
       { path: "/buyersGuide/emiCalculator", name: "EMI Calculator" },
     ],
   },
-  { path: "/gallery", name: "gallery" },
-  { path: "/career", name: "career" },
-  { path: "/contact", name: "contact" },
+  { path: "/gallery", name: "Gallery" },
+  { path: "/career", name: "Career" },
+  { path: "/contact", name: "Contact" },
 ];
 
 const NavLink = ({ href, children, isActive }) => (
   <Link
     href={href}
-    className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"
-      }`}
+    className={`text-sm font-medium transition-colors hover:text-primary ${
+      isActive ? "text-primary" : "text-muted-foreground"
+    }`}
   >
     {children}
   </Link>
@@ -72,40 +67,29 @@ const NavLink = ({ href, children, isActive }) => (
 
 const NavItem = ({ item, isActive }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      setIsOpen(false);
-    };
-
-    // router.events.on("routeChangeStart", handleRouteChange);
-    handleRouteChange();
-    return () => {
-      // router.events.off("routeChangeStart", handleRouteChange);
-    };
-  }, [router]);
 
   if (item.dropdown) {
     return (
       <div
+        className="relative"
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
         <Button
-          variant='ghost'
-          className={`text-sm font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-muted-foreground"
-            }`}
+          variant="ghost"
+          className={`text-sm font-medium transition-colors hover:text-primary ${
+            isActive ? "text-primary" : "text-muted-foreground"
+          }`}
         >
-          {item.name}
+          {item.name} <ChevronDown className="ml-1 h-4 w-4" />
         </Button>
         {isOpen && (
-          <div className='absolute py-2 w-48 bg-background rounded-md shadow-xl z-20'>
+          <div className="absolute left-0 mt-2 w-48 bg-background rounded-md shadow-xl z-20">
             {item.dropdown.map((dropdownItem) => (
               <Link
                 key={dropdownItem.path}
                 href={dropdownItem.path}
-                className='block px-4 py-2 text-sm text-foreground hover:bg-accent'
+                className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
               >
                 {dropdownItem.name}
               </Link>
@@ -124,22 +108,33 @@ const NavItem = ({ item, isActive }) => {
 };
 
 const MobileNavItem = ({ item, onClose }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   if (item.dropdown) {
     return (
-      <div className='space-y-1'>
-        <Button variant='ghost' className='w-full justify-start font-bold'>
+      <div className="space-y-1">
+        <Button
+          variant="ghost"
+          className="w-full justify-between font-bold"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {item.name}
+          <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
         </Button>
-        {item.dropdown.map((dropdownItem) => (
-          <Link
-            key={dropdownItem.path}
-            href={dropdownItem.path}
-            className='block pl-4 py-2 text-sm'
-            onClick={onClose}
-          >
-            {dropdownItem.name}
-          </Link>
-        ))}
+        {isOpen && (
+          <div className="pl-4 space-y-1">
+            {item.dropdown.map((dropdownItem) => (
+              <Link
+                key={dropdownItem.path}
+                href={dropdownItem.path}
+                className="block py-2 text-sm"
+                onClick={onClose}
+              >
+                {dropdownItem.name}
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
@@ -147,7 +142,7 @@ const MobileNavItem = ({ item, onClose }) => {
   return (
     <Link
       href={item.path}
-      className='block py-2 text-sm font-medium'
+      className="block py-2 text-sm font-medium"
       onClick={onClose}
     >
       {item.name}
@@ -160,15 +155,17 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className='sticky h-14  top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-      <div className='flex items-center w-full'>
-        <div className='items-center w-full justify-between hidden md:flex'>
-          <Link href='/' className='flex items-center space-x-2'>
-            <span className='hidden font-bold sm:inline-block'>
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="font-bold">
               <Logo />
             </span>
           </Link>
-          <nav className='flex flex-1 items-center space-x-6 text-sm font-medium'>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex space-x-4">
             {links.map((item) => (
               <NavItem
                 key={item.path}
@@ -179,33 +176,37 @@ const Navbar = () => {
               />
             ))}
           </nav>
-          <ThemeToggler />
+
+          <div className="flex items-center space-x-4">
+            <ThemeToggler />
+            {/* Mobile Menu Button */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="md:hidden"
+                  aria-label="Toggle Menu"
+                >
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetHeader>
+                  <SheetTitle>Menu</SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col space-y-4 mt-4">
+                  {links.map((item) => (
+                    <MobileNavItem
+                      key={item.path}
+                      item={item}
+                      onClose={() => setIsOpen(false)}
+                    />
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant='ghost'
-              className='mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden'
-            >
-              <Menu className='h-5 w-5' />
-              <span className='sr-only'>Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side='left' className='pr-0'>
-            <SheetHeader>
-              <SheetTitle>Navigation</SheetTitle>
-            </SheetHeader>
-            <nav className='flex flex-col space-y-3'>
-              {links.map((item) => (
-                <MobileNavItem
-                  key={item.path}
-                  item={item}
-                  onClose={() => setIsOpen(false)}
-                />
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
       </div>
     </header>
   );

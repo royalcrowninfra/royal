@@ -11,7 +11,7 @@ const posts = [
         href: '#',
         description: "I am thrilled with my new flat from Royal Crown Infra! The attention to detail is impeccable, and the layout perfectly suits my family's needs. The entire process, from viewing to possession, was smooth and professional. Highly recommend!",
         date: 'March 16 , 2024',
-        datetime: '2024-03-16',
+        dateTime: '2024-03-16',
         category: { title: '4.7', href: '#' },
         author: {
             name: 'harsh',
@@ -27,7 +27,7 @@ const posts = [
         href: '#',
         description: "Royal Crown Infra exceeded my expectations. The quality of construction and the amenities provided in our flat are top-notch. The team was responsive to our queries and ensured all our concerns were addressed promptly. A truly satisfying home-buying experience!",
         date: 'March 16 , 2024',
-        datetime: '2024-03-16',
+        dateTime: '2024-03-16',
         category: { title: '4.7', href: '#' },
         author: {
             name: 'sam',
@@ -43,7 +43,7 @@ const posts = [
         href: '#',
         description: "Choosing Royal Crown Infra was the best decision we made for our new home. The craftsmanship is evident in every corner, and the community atmosphere they've created is wonderful. We feel like we're part of something special here. Thank you for making our dream home a reality!",
         date: 'March 16 , 2024',
-        datetime: '2024-03-16',
+        dateTime: '2024-03-16',
         category: { title: '4.9', href: '#' },
         author: {
             name: 'sara',
@@ -86,7 +86,7 @@ export default function ContactSection() {
                                 className="flex max-w-cl flex-col items-start justify-between"
                             >
                                 <div className="flex items-center gap-x-4 text-xs">
-                                    <time datetime={post.datetime}>
+                                    <time dateTime={post.dateTime}>
                                         <Image src='/stars.jpg' width={80} height={5} />
                                     </time>
                                     <Link
