@@ -165,7 +165,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-4">
+          <nav className="hidden md:flex items-center space-x-4">
             {links.map((item) => (
               <NavItem
                 key={item.path}

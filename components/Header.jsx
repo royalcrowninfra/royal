@@ -63,10 +63,12 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const [header, setHeader] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setHeader(window.scrollY > 50);
     };
@@ -77,6 +79,8 @@ const Header = () => {
     // Clean up the event listener
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (isMounted === false) return null;
 
   return (
     <header
