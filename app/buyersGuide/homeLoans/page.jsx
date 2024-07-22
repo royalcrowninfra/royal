@@ -34,7 +34,7 @@ const HomeLoans = () => {
         <h1 className="text-3xl font-bold text-center text-gray-900 mb-12">
           Loan Application Document Requirements
         </h1>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           {sections.map((section, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -57,12 +57,14 @@ const HomeLoans = () => {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 mb-4">For more information, please contact us:</p>
-           href='/contact'><button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-            Contact Us
-          </button></Link>
+          <Link href="/contact">
+            <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+              Contact Us
+            </button>
+          </Link>
         </div>
       </div>
-      <BankingPartner/>
+      <BankingPartner />
     </div>
   );
 };

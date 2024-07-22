@@ -23,12 +23,12 @@ const reviews = [
   {
     img:'/images/banks/idbi.jpg' ,
   },
-  {
-    img:'/images/banks/indian.jpg' ,
-  },
-  {
-    img:'/images/banks/induslandBank.jpg' ,
-  },
+  // {
+  //   img:'/images/banks/indian.jpg' ,
+  // },
+  // {
+  //   img:'/images/banks/induslandBank.jpg' ,
+  // },
   {
     img:'/images/banks/Kotak.jpg' ,
   },
