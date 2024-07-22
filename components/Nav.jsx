@@ -54,7 +54,7 @@ const links = [
   { path: "/contact", name: "Contact" },
 ];
 
-const NavLink = ({ href, children, isactive }) => (
+const NavLink = ({ href, children, isactive }) => ( 
   <Link
     href={href}
     className={`text-sm font-medium transition-colors hover:text-primary ${
