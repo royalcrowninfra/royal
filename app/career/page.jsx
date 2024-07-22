@@ -88,14 +88,6 @@ const CareerPage = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-indigo-600 text-white py-3 px-8 rounded-full font-semibold text-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300 mx-auto block"
-          >
-            View All Opportunities
-          </motion.button> */}
         </motion.div>
       </div>
       <motion.div
