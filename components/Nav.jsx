@@ -54,18 +54,18 @@ const links = [
   { path: "/contact", name: "Contact" },
 ];
 
-const NavLink = ({ href, children, isActive }) => (
+const NavLink = ({ href, children, isactive }) => (
   <Link
     href={href}
     className={`text-sm font-medium transition-colors hover:text-primary ${
-      isActive ? "text-primary" : "text-muted-foreground"
+      isactive ? "text-primary" : "text-muted-foreground"
     }`}
   >
     {children}
   </Link>
 );
 
-const NavItem = ({ item, isActive }) => {
+const NavItem = ({ item, isactive }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   if (item.dropdown) {
@@ -78,7 +78,7 @@ const NavItem = ({ item, isActive }) => {
         <Button
           variant="ghost"
           className={`text-sm font-medium transition-colors hover:text-primary ${
-            isActive ? "text-primary" : "text-muted-foreground"
+            isactive ? "text-primary" : "text-muted-foreground"
           }`}
         >
           {item.name} <ChevronDown className="ml-1 h-4 w-4" />
@@ -101,7 +101,7 @@ const NavItem = ({ item, isActive }) => {
   }
 
   return (
-    <NavLink href={item.path} isActive={isActive}>
+    <NavLink href={item.path} isactive={isactive}>
       {item.name}
     </NavLink>
   );
@@ -170,7 +170,7 @@ const Navbar = () => {
               <NavItem
                 key={item.path}
                 item={item}
-                isActive={
+                isactive={
                   pathname === item.path || pathname.startsWith(item.path + "/")
                 }
               />
