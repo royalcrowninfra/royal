@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 // Hooks
-import useScrollProgress from '@/hooks/useScrollProgress'
+import useScrollProgress from '../hooks/useScrollProgress'
 
 // variants
 

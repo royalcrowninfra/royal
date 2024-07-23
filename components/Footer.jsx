@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Input } from "./ui/input";
 import { motion } from "framer-motion";
-import { desVariants, tagVariants, titleVariants } from "@/utils/animation";
+import { desVariants, tagVariants, titleVariants } from "../utils/animation";
 
 export default function Footer() {
   return (
