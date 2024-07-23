@@ -1,4 +1,4 @@
-import { Sen } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
 // components
@@ -8,8 +8,8 @@ import Footer from "../components/Footer";
 // theme provider
 import { ThemeProvider } from "../components/ThemeProvider";
 
-const Josef = Sen({ subsets: ["latin"],
-  weight:["400","500","600","700"], 
+const Josef = Roboto({ weight:'400', subsets: ["latin"],
+  weight:["400","500","700","900"], 
   display:"swap"
 });
 
