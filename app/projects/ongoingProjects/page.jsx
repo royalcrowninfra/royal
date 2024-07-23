@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { titleVariants } from "@/utils/animation";
-import { projects } from "@/data/projects";
+import { titleVariants } from "../../../utils/animation";
+import { projects } from "../../../data/projects";
 import Link from "next/link";
 import Image from "next/image";
 

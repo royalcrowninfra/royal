@@ -1,7 +1,7 @@
 'use client'
 import Badge from "./Badge"
 import { motion } from 'framer-motion'
-import { desVariants, tagVariants, titleVariants } from '@/utils/animation'
+import { desVariants, tagVariants, titleVariants } from '../utils/animation'
 
 const CompanySection = () => {
     return (

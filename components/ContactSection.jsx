@@ -2,7 +2,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { desVariants, tagVariants, titleVariants } from "@/utils/animation"
+import { desVariants, tagVariants, titleVariants } from "../utils/animation"
 
 const posts = [
     {

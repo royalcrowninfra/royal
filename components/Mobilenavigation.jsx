@@ -1,4 +1,4 @@
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '../components/ui/sheet'
 import Nav from './Nav'
 import Logo from './Logo'
 import { AlignJustify } from 'lucide-react'

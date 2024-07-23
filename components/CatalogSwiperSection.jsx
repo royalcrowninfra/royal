@@ -8,7 +8,7 @@ import 'swiper/css';
 import { Navigation } from 'swiper/modules';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
+import { desVariants, tagVariants, titleVariants } from '../utils/animation';
 
 export default function FeaturedProjects() {
   return (
