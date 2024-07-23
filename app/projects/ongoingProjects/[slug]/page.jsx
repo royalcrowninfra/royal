@@ -1,8 +1,8 @@
-import { getProjectBySlug } from "@/data/projects";
+import { getProjectBySlug } from "../../../../data/projects";
 import Image from "next/image";
 
 export async function generateStaticParams() {
-  const projects = await import("@/data/projects").then(
+  const projects = await import("../../../../data/projects").then(
     (module) => module.projects
   );
   return projects.map((project) => ({
