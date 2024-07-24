@@ -2,6 +2,8 @@ import IFrameComponent from "@/components/IFrameComponent";
 import Calculator from "../../../../components/Calculator";
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { titleVariants } from "../../../utils/animation";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -21,6 +23,16 @@ export default function ProjectPage({ params }) {
   return (
     <div className='bg-gray-100'>
       <div className='container mx-auto px-4 py-8'>
+      <div className="bg-[url('/images/projects/projectBackground.jpeg')] bg-center bg-cover">
+        <motion.h1
+          initial='offscreen'
+          whileInView={"onscreen"}
+          variants={titleVariants}
+          className='container py-32 text-6xl font-semibold text-white tracking-widest text-center lg:py-32'
+        >
+          Completed Projects
+        </motion.h1>
+      </div>
         <section className='mb-12'>
           <div className='flex flex-col lg:flex-row items-start bg-white rounded-lg shadow-md overflow-hidden'>
             <div className='lg:w-1/2 p-6'>

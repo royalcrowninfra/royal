@@ -90,7 +90,7 @@ export default function ProjectPage({ params }) {
           )}
           {project.map && (
             <section className='mb-12 bg-white rounded-lg shadow-md p-6'>
-              <h2 className='text-xl md:text-2xl font-bold mb-4'>Location</h2>
+              <h2 className='text-xl md:text-2xl font-bold mb-4'>Project Location</h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
                 <IFrameComponent iframeSrc={project.map.iframeSrc} />
               </div>
