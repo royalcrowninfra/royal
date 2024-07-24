@@ -15,12 +15,12 @@ const CompanySection = () => {
                         variants={titleVariants}
                         className="mx-auto flex max-w-xs flex-col gap-y-4">
                         <dt className="text-white leading-7">
-                            Transaction every 24 hours
+                            Years Of Expertise
                         </dt>
                         <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                             <Badge
-                                endCountNum={44}
-                                endCountText=' million'
+                                endCountNum={20}
+                                endCountText='+'
                             />
                         </dd>
                     </motion.div>
@@ -32,12 +32,12 @@ const CompanySection = () => {
                         variants={tagVariants}
                         className="mx-auto flex max-w-xs flex-col gap-y-4">
                         <dt className="text-white leading-7">
-                            Assets Under Running
+                            Sucessful Projects
                         </dt>
                         <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                             <Badge
-                                endCountNum={199}
-                                endCountText=' trillion'
+                                endCountNum={5}
+                                endCountText=' projects'
                             />
                         </dd>
                     </motion.div>
@@ -49,11 +49,11 @@ const CompanySection = () => {
                         variants={tagVariants}
                         className="mx-auto flex max-w-xs flex-col gap-y-4">
                         <dt className="text-white leading-7">
-                            New Users Annually
+                            Happy Families
                         </dt>
                         <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
                             <Badge
-                                endCountNum={199}
+                                endCountNum={500}
                                 endCountText='+'
                             />
                         </dd>
