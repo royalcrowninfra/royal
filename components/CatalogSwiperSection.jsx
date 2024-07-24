@@ -12,7 +12,7 @@ import { desVariants, tagVariants, titleVariants } from '../utils/animation';
 
 export default function FeaturedProjects() {
   return (
-    <div className='py-8 lg:pt-2'>
+    <div className='py-8 lg:pt-2 bg-gray-100 shadow-md'> {/* Added bg-gray-100 and shadow-md */}
       <div className='container'>
         <motion.h1
           initial="offscreen"

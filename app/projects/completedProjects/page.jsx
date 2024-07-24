@@ -16,7 +16,7 @@ const CompletedProjects = () => {
           variants={titleVariants}
           className='container py-32 text-6xl font-semibold text-white tracking-widest text-center lg:py-32'
         >
-          Ongoing Projects
+          Completed Projects
         </motion.h1>
       </div>
 
@@ -29,7 +29,7 @@ const CompletedProjects = () => {
               variants={titleVariants}
               className='text-4xl font-bold tracking-wider text-center uppercase'
             >
-              Team
+              {/* Team */}
             </motion.h1>
           </div>
 
