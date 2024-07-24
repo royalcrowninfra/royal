@@ -28,7 +28,7 @@ const Header = () => {
 
   return (
     <header
-      className={`py-2 sticky top-0 z-30 transition-all ${
+      className={`p-6 sticky top-0 z-30 transition-all  ${
         header
           ? "bg-gradient-to-r from-white-100 to-white-200 shadow-lg dark:bg-accent"
           : "dark:bg-transparent"
