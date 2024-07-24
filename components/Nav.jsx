@@ -1,16 +1,8 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { Menu, ChevronDown } from "lucide-react";
-import { Button } from "../components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "../components/ui/sheet";
+import { usePathname } from "next/navigation";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import ThemeToggler from "./ThemeToggler";
 
@@ -54,160 +46,175 @@ const links = [
   { path: "/contact", name: "Contact" },
 ];
 
-const NavLink = ({ href, children, isactive }) => ( 
-  <Link
-    href={href}
-    className={`text-sm font-medium transition-colors hover:text-primary ${
-      isactive ? "text-primary" : "text-muted-foreground"
-    }`}
-  >
-    {children}
+const NavLink = ({ href, children, isActive, hasDropdown, onClick, isMobile }) => (
+  <Link href={href} onClick={onClick}>
+    <motion.span
+      className={`text-sm font-medium transition-colors hover:text-primary ${
+        isActive ? "text-primary" : "text-muted-foreground"
+      } ${hasDropdown ? "flex items-center justify-between" : ""} ${
+        isMobile ? "py-2 px-4 w-full" : ""
+      }`}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {children}
+      {hasDropdown && (isMobile ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="ml-1 h-4 w-4" />)}
+    </motion.span>
   </Link>
 );
 
-const NavItem = ({ item, isactive }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  if (item.dropdown) {
-    return (
-      <div
-        className="relative"
-        onMouseEnter={() => setIsOpen(true)}
-        onMouseLeave={() => setIsOpen(false)}
+const DropdownMenu = ({ items, isOpen, onClose, isMobile }) => (
+  <AnimatePresence>
+    {isOpen && (
+      <motion.div
+        initial={{ opacity: 0, y: isMobile ? 0 : -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: isMobile ? 0 : -10 }}
+        transition={{ duration: 0.2 }}
+        className={`${
+          isMobile ? "w-full" : "absolute left-0 mt-2 w-48"
+        } bg-background rounded-md shadow-xl z-20`}
       >
-        <Button
-          variant="ghost"
-          className={`text-sm font-medium transition-colors hover:text-primary ${
-            isactive ? "text-primary" : "text-muted-foreground"
-          }`}
-        >
-          {item.name} <ChevronDown className="ml-1 h-4 w-4" />
-        </Button>
-        {isOpen && (
-          <div className="absolute left-0 mt-2 w-48 bg-background rounded-md shadow-xl z-20">
-            {item.dropdown.map((dropdownItem) => (
-              <Link
-                key={dropdownItem.path}
-                href={dropdownItem.path}
-                className="block px-4 py-2 text-sm text-foreground hover:bg-accent"
-              >
-                {dropdownItem.name}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
+        {items.map((item) => (
+          <Link
+            key={item.path}
+            href={item.path}
+            className={`block px-4 py-2 text-sm text-foreground hover:bg-accent ${
+              isMobile ? "border-b border-gray-200 last:border-b-0" : ""
+            }`}
+            onClick={onClose}
+          >
+            {item.name}
+          </Link>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
 
-  return (
-    <NavLink href={item.path} isactive={isactive}>
-      {item.name}
-    </NavLink>
-  );
-};
-
-const MobileNavItem = ({ item, onClose }) => {
+const NavItem = ({ item, isActive, isMobile, onClose }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  if (item.dropdown) {
-    return (
-      <div className="space-y-1">
-        <Button
-          variant="ghost"
-          className="w-full justify-between font-bold"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {item.name}
-          <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-        </Button>
-        {isOpen && (
-          <div className="pl-4 space-y-1">
-            {item.dropdown.map((dropdownItem) => (
-              <Link
-                key={dropdownItem.path}
-                href={dropdownItem.path}
-                className="block py-2 text-sm"
-                onClick={onClose}
-              >
-                {dropdownItem.name}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
-    );
-  }
+  const handleMouseEnter = () => !isMobile && setIsOpen(true);
+  const handleMouseLeave = () => !isMobile && setIsOpen(false);
+  const handleClick = () => {
+    if (isMobile) {
+      setIsOpen(!isOpen);
+    } else if (!item.dropdown) {
+      onClose();
+    }
+  };
 
   return (
-    <Link
-      href={item.path}
-      className="block py-2 text-sm font-medium"
-      onClick={onClose}
+    <div
+      className={`relative ${isMobile ? "w-full" : ""}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      {item.name}
-    </Link>
+      <NavLink
+        href={item.path}
+        isActive={isActive}
+        hasDropdown={!!item.dropdown}
+        onClick={handleClick}
+        isMobile={isMobile}
+      >
+        {item.name}
+      </NavLink>
+      {item.dropdown && (
+        <DropdownMenu
+          items={item.dropdown}
+          isOpen={isOpen}
+          onClose={() => {
+            setIsOpen(false);
+            onClose();
+          }}
+          isMobile={isMobile}
+        />
+      )}
+    </div>
   );
 };
+
+const MobileMenu = ({ isOpen, links, pathname, onClose }) => (
+  <AnimatePresence>
+    {isOpen && (
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden fixed inset-x-0 top-16 bg-background shadow-lg"
+      >
+        <div className="px-4 py-2 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
+          {links.map((item) => (
+            <NavItem
+              key={item.path}
+              item={item}
+              isActive={pathname.startsWith(item.path)}
+              isMobile={true}
+              onClose={onClose}
+            />
+          ))}
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => setIsOpen(false);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4">
+      <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="font-bold">
-              <Logo />
-            </span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Logo className="h-10 w-auto" />
+            </motion.div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-6">
             {links.map((item) => (
               <NavItem
                 key={item.path}
                 item={item}
-                isactive={
-                  pathname === item.path || pathname.startsWith(item.path + "/")
-                }
+                isActive={pathname.startsWith(item.path)}
+                onClose={() => {}}
               />
             ))}
-          </nav>
+          </div>
 
           <div className="flex items-center space-x-4">
             <ThemeToggler />
-            {/* Mobile Menu Button */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="md:hidden"
-                  aria-label="Toggle Menu"
-                >
-                  <Menu className="h-6 w-6" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle>Menu</SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col space-y-4 mt-4">
-                  {links.map((item) => (
-                    <MobileNavItem
-                      key={item.path}
-                      item={item}
-                      onClose={() => setIsOpen(false)}
-                    />
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
+            <button
+              className="md:hidden"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
-      </div>
+      </nav>
+
+      <MobileMenu
+        isOpen={isOpen}
+        links={links}
+        pathname={pathname}
+        onClose={() => setIsOpen(false)}
+      />
     </header>
   );
 };
