@@ -20,7 +20,7 @@ const links = [
     ],
   },
   {
-    path: "/projects",
+    path: "/",
     name: "Projects",
     dropdown: [
       { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
@@ -28,7 +28,7 @@ const links = [
     ],
   },
   {
-    path: "/buyersGuide",
+    path: "/",
     name: "Buyers Guide",
     dropdown: [
       { path: "/buyersGuide/panvelDevelopment", name: "Panvel Development" },
