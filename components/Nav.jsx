@@ -11,6 +11,7 @@ const links = [
   {
     path: "/about",
     name: "About",
+    navigate: false,
     dropdown: [
       { path: "/about", name: "Our Team" },
       { path: "/about/aboutTheGroup", name: "About The Group" },
@@ -22,6 +23,7 @@ const links = [
   {
     path: "/",
     name: "Projects",
+    navigate: false,
     dropdown: [
       { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
       { path: "/projects/completedProjects", name: "Completed Projects" },
@@ -30,6 +32,7 @@ const links = [
   {
     path: "/",
     name: "Buyers Guide",
+    navigate: false,
     dropdown: [
       { path: "/buyersGuide/panvelDevelopment", name: "Panvel Development" },
       { path: "/buyersGuide/homeLoans", name: "Home Loans" },
@@ -41,15 +44,43 @@ const links = [
       { path: "/buyersGuide/emiCalculator", name: "EMI Calculator" },
     ],
   },
-  { path: "/gallery", name: "Gallery" },
-  { path: "/career", name: "Career" },
-  { path: "/contact", name: "Contact" },
+  { path: "/gallery", navigate: true, name: "Gallery" },
+  { path: "/career", navigate: true, name: "Career" },
+  { path: "/contact", navigate: true, name: "Contact" },
 ];
 
-const NavLink = ({ href, children, isActive, hasDropdown, onClick, isMobile }) => (
-  <Link href={href} onClick={onClick}>
+const NavLink = ({
+  href,
+  children,
+  isActive,
+  hasDropdown,
+  onClick,
+  isMobile,
+  navigate,
+}) =>
+  navigate ? (
+    <Link href={href} onClick={onClick}>
+      <motion.span
+        className={`text-sm font-medium transition-colors hover:text-primary ${
+          isActive ? "text-primary" : "text-muted-foreground"
+        } ${hasDropdown ? "flex items-center justify-between" : ""} ${
+          isMobile ? "py-2 px-4 w-full" : ""
+        }`}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        {children}
+        {hasDropdown &&
+          (isMobile ? (
+            <ChevronRight className='h-4 w-4' />
+          ) : (
+            <ChevronDown className='ml-1 h-4 w-4' />
+          ))}
+      </motion.span>
+    </Link>
+  ) : (
     <motion.span
-      className={`text-sm font-medium transition-colors hover:text-primary ${
+      className={`cursor-pointer text-sm font-medium transition-colors hover:text-primary ${
         isActive ? "text-primary" : "text-muted-foreground"
       } ${hasDropdown ? "flex items-center justify-between" : ""} ${
         isMobile ? "py-2 px-4 w-full" : ""
@@ -58,10 +89,14 @@ const NavLink = ({ href, children, isActive, hasDropdown, onClick, isMobile }) =
       whileTap={{ scale: 0.95 }}
     >
       {children}
-      {hasDropdown && (isMobile ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="ml-1 h-4 w-4" />)}
+      {hasDropdown &&
+        (isMobile ? (
+          <ChevronRight className='h-4 w-4' />
+        ) : (
+          <ChevronDown className='ml-1 h-4 w-4' />
+        ))}
     </motion.span>
-  </Link>
-);
+  );
 
 const DropdownMenu = ({ items, isOpen, onClose, isMobile }) => (
   <AnimatePresence>
@@ -117,6 +152,7 @@ const NavItem = ({ item, isActive, isMobile, onClose }) => {
         hasDropdown={!!item.dropdown}
         onClick={handleClick}
         isMobile={isMobile}
+        navigate={item.navigate}
       >
         {item.name}
       </NavLink>
@@ -143,9 +179,9 @@ const MobileMenu = ({ isOpen, links, pathname, onClose }) => (
         animate={{ opacity: 1, height: "auto" }}
         exit={{ opacity: 0, height: 0 }}
         transition={{ duration: 0.3 }}
-        className="md:hidden fixed inset-x-0 top-16 bg-background shadow-lg"
+        className='md:hidden fixed inset-x-0 top-16 bg-background shadow-lg'
       >
-        <div className="px-4 py-2 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className='px-4 py-2 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto'>
           {links.map((item) => (
             <NavItem
               key={item.path}
@@ -172,20 +208,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Logo className="h-10 w-auto" />
-            </motion.div>
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-6">
+    <header className='sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+      <nav className='container mx-auto px-4'>
+        <div className='flex items-center justify-between h-16'>
+          <div className='hidden md:flex items-center space-x-6'>
             {links.map((item) => (
               <NavItem
                 key={item.path}
@@ -196,15 +222,19 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="flex items-center space-x-4">
-            <ThemeToggler />
+          <div className='flex items-center space-x-4'>
             <button
-              className="md:hidden"
+              className='md:hidden'
               onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle Menu"
+              aria-label='Toggle Menu'
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className='h-6 w-6' />
+              ) : (
+                <Menu className='h-6 w-6' />
+              )}
             </button>
+            <ThemeToggler />
           </div>
         </div>
       </nav>
