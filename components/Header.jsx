@@ -36,22 +36,11 @@ const Header = () => {
     >
       <div className='container mx-auto h-16 flex items-center justify-center'>
         <div className='flex items-center justify-between w-full max-w-screen-xl px-6'>
-          {/* Logo Section */}
-          {/* <div className='flex-shrink-0'>
-            <Logo />
-          </div> */}
-
-          {/* Navigation Section */}
           <Nav
             containerStyles='hidden xl:flex gap-x-8 items-center flex-grow justify-center'
             linkStyles='relative hover:text-primary transition-all'
             underlineStyles='absolute left-0 top-full h-[2px] bg-primary w-full'
           />
-
-          {/* Mobile Navigation */}
-          {/* <div className='xl:hidden'>
-            <Mobilenavigation />
-          </div> */}
         </div>
       </div>
     </header>
