@@ -1,11 +1,8 @@
-"use client";
-import React, { useState, useEffect } from "react";
+'use client'
+import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import Logo from "./Logo";
-import ThemeToggler from "./ThemeToggler";
+import Image from "next/image";
+import { ChevronDown, Phone, Mail, Twitter, Facebook, Instagram, Youtube, Menu, X } from "lucide-react";
 
 const links = [
   { path: "/", name: "Home" },
@@ -20,14 +17,17 @@ const links = [
       { path: "/about/values", name: "Values" },
     ],
   },
+  { path: "/our-team", name: "Our Team" },
   {
-    path: "/",
+    path: "/projects",
     name: "Projects",
     dropdown: [
-      { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
-      { path: "/projects/completedProjects", name: "Completed Projects" },
+      { path: "/projects/ongoing-projects", name: "Ongoing Projects" },
+      { path: "/projects/completed-projects", name: "Completed Projects" },
     ],
   },
+  { path: "/gallery", name: "Gallery" },
+  { path: "/book-site-visit", name: "Book a Site Visit" },
   {
     path: "/",
     name: "Buyers Guide",
@@ -42,206 +42,139 @@ const links = [
       { path: "/buyersGuide/emiCalculator", name: "EMI Calculator" },
     ],
   },
-  { path: "/gallery", name: "Gallery" },
-  { path: "/career", name: "Career" },
-  { path: "/contact", name: "Contact" },
+  { path: "/contact-us", name: "Contact Us" },
 ];
 
-const NavLink = ({ href, children, isActive, hasDropdown, onClick, isMobile }) => (
-  <Link href={href} onClick={onClick}>
-    <motion.span
-      className={`text-sm font-medium transition-colors hover:text-primary ${
-        isActive ? "text-primary" : "text-muted-foreground"
-      } ${hasDropdown ? "flex items-center justify-between" : ""} ${
-        isMobile ? "py-2 px-4 w-full" : ""
-      }`}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      {children}
-      {hasDropdown && (isMobile ? <ChevronRight className="h-4 w-4" /> : <ChevronDown className="ml-1 h-4 w-4" />)}
-    </motion.span>
-  </Link>
-);
+const Navbar = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-const DropdownMenu = ({ items, isOpen, onClose, isMobile }) => (
-  <AnimatePresence>
-    {isOpen && (
-      <motion.div
-        initial={{ opacity: 0, y: isMobile ? 0 : -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: isMobile ? 0 : -10 }}
-        transition={{ duration: 0.2 }}
-        className={`${
-          isMobile ? "w-full" : "absolute left-0 mt-2 w-48"
-        } bg-background rounded-md shadow-xl z-20`}
-      >
-        {items.map((item) => (
-          <Link
-            key={item.path}
-            href={item.path}
-            className={`block px-4 py-2 text-sm text-foreground hover:bg-accent ${
-              isMobile ? "border-b border-gray-200 last:border-b-0" : ""
-            }`}
-            onClick={onClose}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
 
-const NavItem = ({ item, isActive, isMobile, onClose }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleMouseEnter = () => !isMobile && setIsOpen(true);
-  const handleMouseLeave = () => !isMobile && setIsOpen(false);
-  const handleClick = () => {
-    if (isMobile) {
-      setIsOpen(!isOpen);
-    } else if (!item.dropdown) {
-      onClose();
-    }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
-    <div
-      className={`relative ${isMobile ? "w-full" : ""}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <NavLink
-        href={item.path}
-        isActive={isActive}
-        hasDropdown={!!item.dropdown}
-        onClick={handleClick}
-        isMobile={isMobile}
-      >
-        {item.name}
-      </NavLink>
-      {item.dropdown && (
-        <DropdownMenu
-          items={item.dropdown}
-          isOpen={isOpen}
-          onClose={() => {
-            setIsOpen(false);
-            onClose();
-          }}
-          isMobile={isMobile}
-        />
-      )}
-    </div>
-  );
-};
-
-const MobileMenu = ({ isOpen, links, pathname, onClose }) => (
-  <AnimatePresence>
-    {isOpen && (
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: 1, height: "auto" }}
-        exit={{ opacity: 0, height: 0 }}
-        transition={{ duration: 0.3 }}
-        className="xl:hidden fixed inset-x-0 top-24 bg-background shadow-lg"
-      >
-        <div className="px-4 py-2 space-y-2 max-h-[calc(100vh-6rem)] overflow-y-auto">
-          {links.map((item) => (
-            <NavItem
-              key={item.path}
-              item={item}
-              isActive={pathname.startsWith(item.path)}
-              isMobile={true}
-              onClose={onClose}
-            />
-          ))}
+    <header className="w-full">
+      {/* Top bar */}
+      <div className="bg-gradient-to-r from-teal-400 via-blue-500 to-blue-600 py-2">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 mb-2 md:mb-0">
+            <span className="text-white text-sm flex items-center">
+              <Phone size={16} className="mr-2" />
+              (+1) 212-946-2707
+            </span>
+            <span className="text-white text-sm flex items-center">
+              <Mail size={16} className="mr-2" />
+              info@royalcrown.com
+            </span>
+          </div>
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+            <span className="bg-orange-500 text-white text-sm px-3 py-1 rounded-full">RERA ID: A52000011720</span>
+            <div className="flex items-center space-x-3">
+              <Link href="#" aria-label="Twitter">
+                <Twitter size={18} className="text-white" />
+              </Link>
+              <Link href="#" aria-label="Facebook">
+                <Facebook size={18} className="text-white" />
+              </Link>
+              <Link href="#" aria-label="Instagram">
+                <Instagram size={18} className="text-white" />
+              </Link>
+              <Link href="#" aria-label="YouTube">
+                <Youtube size={18} className="text-white" />
+              </Link>
+            </div>
+          </div>
         </div>
-      </motion.div>
-    )}
-  </AnimatePresence>
-);
+      </div>
 
-const Header = () => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [header, setHeader] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+      {/* Main navigation */}
+      <nav className="bg-white shadow-md">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-4">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0">
+              <Image src="/logo.png" width={150} height={60} alt="Royal Crown Realty" className="h-12 w-auto" />
+            </Link>
 
-  useEffect(() => {
-    setIsMounted(true);
-    const handleScroll = () => {
-      setHeader(window.scrollY > 50);
-    };
-    const handleResize = () => setIsOpen(false);
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-600">
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
 
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  if (isMounted === false) return null;
-
-  return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all ${
-        header
-          ? "bg-gradient-to-r from-white-100 to-white-200 shadow-lg dark:bg-accent"
-          : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-white"
-      } ${pathname === "/" && "bg-white"}`}
-    >
-      <nav className="container mx-auto px-6 bg-white">
-        <div className="flex items-center justify-between h-24">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-2">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <Logo className="h-16 w-full" />
-            </motion.div>
-          </Link>
-
-          {/* Navigation Links - Hidden on mobile, visible on larger screens */}
-          <div className="hidden xl:flex items-center space-x-8 flex-grow justify-center">
-            {links.map((item) => (
-              <NavItem
-                key={item.path}
-                item={item}
-                isActive={pathname.startsWith(item.path)}
-                onClose={() => {}}
-              />
-            ))}
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center space-x-6">
+              {links.map((item, index) => (
+                <div key={item.path} className="relative group">
+                  <Link
+                    href={item.path}
+                    className="text-gray-700 hover:text-teal-500 text-sm font-medium flex items-center"
+                    onMouseEnter={() => item.dropdown && toggleDropdown(index)}
+                  >
+                    {item.name}
+                    {item.dropdown && <ChevronDown size={16} className="ml-1" />}
+                  </Link>
+                  {item.dropdown && (
+                    <div
+                      className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg ${
+                        openDropdown === index ? 'block' : 'hidden'
+                      } transition-all duration-300 z-50`}
+                      onMouseLeave={() => toggleDropdown(null)}
+                    >
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.path}
+                          href={subItem.path}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Theme Toggler and Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
-            <ThemeToggler />
-            <button
-              className="xl:hidden"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle Menu"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+          {/* Mobile Navigation Links */}
+          <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+            {links.map((item, index) => (
+              <div key={item.path} className="py-2">
+                <Link
+                  href={item.path}
+                  className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
+                  onClick={() => item.dropdown && toggleDropdown(index)}
+                >
+                  {item.name}
+                  {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
+                </Link>
+                {item.dropdown && openDropdown === index && (
+                  <div className="ml-4 mt-2 space-y-2">
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.path}
+                        href={subItem.path}
+                        className="block text-gray-600 hover:text-teal-500 text-sm"
+                      >
+                        {subItem.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </nav>
-
-      {/* Mobile Menu */}
-      <MobileMenu
-        isOpen={isOpen}
-        links={links}
-        pathname={pathname}
-        onClose={() => setIsOpen(false)}
-      />
     </header>
   );
 };
 
-export default Header;
+export default Navbar;

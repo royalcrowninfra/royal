@@ -37,7 +37,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[800px] overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -51,7 +51,7 @@ const HeroSection = () => {
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             layout="fill"
-            objectFit="cover"
+            objectFit="fill"
             objectPosition="center"
             quality={100}
             priority
