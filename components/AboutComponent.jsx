@@ -37,7 +37,7 @@ const AboutComponent = () => {
           <h2 className="text-5xl font-extrabold mb-6">Welcome To <br/>
           Royal Crown Realty</h2>
           <p className="text-gray-600 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.lroem*1
           </p>
           <p className="text-gray-600 mb-6">
             Incidunt, soluta, exercitationem recusandae reprehenderit cum totam consequatur quae dignissimos eos laboriosam illum tenetur voluptate veritatis excepturi enim iure distinctio.
