@@ -20,7 +20,7 @@ export default function FeaturedProjects() {
           variants={titleVariants}
           className='py-4 text-4xl font-medium text-center lg:text-6xl lg:py-0 '
         >
-          ongoing Projects
+          Ongoing Projects
         </motion.h1>
 
         <Swiper

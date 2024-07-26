@@ -1,67 +1,38 @@
 'use client'
-import Badge from "./Badge"
-import { motion } from 'framer-motion'
-import { desVariants, tagVariants, titleVariants } from '../utils/animation'
+import React from 'react';
+import Badge from "./Badge";
+import { motion } from 'framer-motion';
+import { desVariants, tagVariants, titleVariants } from '../utils/animation';
 
 const CompanySection = () => {
     return (
-        <div className="bg-gradient-to-r from-blue-200 to-purple-400 dark:bg-tertiary py-24 sm:py-14">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-                    {/* Badge 1 */}
-                    <motion.div
-                        initial="offscreen"
-                        whileInView={"onscreen"}
-                        variants={titleVariants}
-                        className="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt className="text-white leading-7">
-                            Years Of Expertise
-                        </dt>
-                        <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                            <Badge
-                                endCountNum={20}
-                                endCountText='+'
-                            />
-                        </dd>
-                    </motion.div>
-
-                    {/* Badge 2 */}
-                    <motion.div
-                        initial="offscreen"
-                        whileInView={"onscreen"}
-                        variants={tagVariants}
-                        className="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt className="text-white leading-7">
-                            Sucessful Projects
-                        </dt>
-                        <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                            <Badge
-                                endCountNum={5}
-                                endCountText=' projects'
-                            />
-                        </dd>
-                    </motion.div>
-
-                    {/* Badge 3 */}
-                    <motion.div
-                        initial="offscreen"
-                        whileInView={"onscreen"}
-                        variants={tagVariants}
-                        className="mx-auto flex max-w-xs flex-col gap-y-4">
-                        <dt className="text-white leading-7">
-                            Happy Families
-                        </dt>
-                        <dd className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                            <Badge
-                                endCountNum={500}
-                                endCountText='+'
-                            />
-                        </dd>
-                    </motion.div>
-                </dl>
+        <div className="relative">
+            <img src="/images/projectBackground.jpg" alt="City skyline" className="w-full h-96 object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-70"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-white text-center">
+                    {[
+                        { icon: "🏠", value: "300+", label: "Completed Projects" },
+                        { icon: "👥", value: "400+", label: "Happy Customers" },
+                        { icon: "🏢", value: "250+", label: "Property Sold" },
+                        { icon: "👤", value: "150+", label: "Agents" }
+                    ].map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            variants={tagVariants}
+                            className="bg-white bg-opacity-20 p-6 rounded-lg"
+                        >
+                            <div className="text-4xl mb-2">{item.icon}</div>
+                            <div className="text-3xl font-bold mb-1">{item.value}</div>
+                            <div className="text-sm">{item.label}</div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default CompanySection
+export default CompanySection;
