@@ -13,7 +13,6 @@ export default function Home() {
       <HeroSection />
       <AboutComponent/>
       <CompanySection />
-      
       <CatalogSwiperSection/>
       {/* <CatalogueSection/> */}
       <ContactSection/>
