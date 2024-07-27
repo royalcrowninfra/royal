@@ -65,7 +65,8 @@ const ReviewCard = ({img}) => {
 export default function BankingPartner() {
   return (
     <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
-       <h1 className="text-4xl md:text-6xl text-center mb-8 cursor-pointer transition-all duration-300 ease-in-out hover:text-green font-bold">Banking Partners</h1>
+       <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-2">Banking Partner</h2>
+       <div className="w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-8"></div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {firstRow.map((review) => (
           <ReviewCard key={review.img} {...review} />
