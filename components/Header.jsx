@@ -27,7 +27,7 @@ const links = [
     ],
   },
   { path: "/gallery", name: "Gallery" },
-  { path: "/book-site-visit", name: "Book a Site Visit" },
+  // { path: "/book-site-visit", name: "Book a Site Visit" },
   {
     path: "/",
     name: "Buyers Guide",
