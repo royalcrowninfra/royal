@@ -18,7 +18,7 @@ const page = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [.6, 1])
   return (
     <div>
-      <div className="bg-[url('/images/whoweare.jpg')] bg-center bg-cover">
+      <div className="bg-[url('/images/header/whoweare.jpg')] bg-center bg-cover">
         <motion.h1
           initial="offscreen"
           whileInView={"onscreen"}

@@ -19,7 +19,7 @@ const links = [
   },
   // { path: "/our-team", name: "Our Team" },
   {
-    path: "/projects",
+    path: "/",
     name: "Projects",
     dropdown: [
       { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
