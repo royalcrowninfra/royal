@@ -29,42 +29,59 @@ const HomeLoans = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold text-center text-gray-900 mb-12">
-          Loan Application Document Requirements
-        </h1>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {sections.map((section, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-blue-600 p-4">
-                <h2 className="text-xl font-semibold text-white">{section.title}</h2>
-              </div>
-              <ul className="p-6 space-y-4">
-                {section.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start">
-                    <svg className="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">For more information, please contact us:</p>
-          <Link href="/contact">
-            <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-              Contact Us
-            </button>
-          </Link>
+    <div className="min-h-screen bg-navy-900 text-white">
+      {/* Header Section with Background Image */}
+      <div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/header/whoweare.jpg')" }}
+      >
+        <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-wider sm:tracking-widest text-center">
+            Home Loans
+          </h1>
         </div>
       </div>
-      <BankingPartner />
+
+      <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Loan Application Document Requirements
+          </h1>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {sections.map((section, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div className="bg-blue-600 p-4">
+                  <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+                </div>
+                <ul className="p-6 space-y-4">
+                  {section.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start">
+                      <svg className="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-gray-600 mb-4">For more information, please contact us:</p>
+            <Link href="/contact">
+              <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+        </div>
+        <BankingPartner />
+      </div>
     </div>
   );
 };
