@@ -89,6 +89,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
 
 const projects = [
   {
@@ -100,7 +101,8 @@ const projects = [
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
-    ]
+    ],
+    href: '/projects/ongoingProjects/project-1'
   },
   {
     id: 2,
@@ -111,7 +113,8 @@ const projects = [
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
-    ]
+    ],
+    href: '/projects/ongoingProjects/project-2'
   },
   {
     id: 3,
@@ -122,7 +125,8 @@ const projects = [
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
-    ]
+    ],
+    href: '/projects/ongoingProjects/project-3'
   },
 ];
 
@@ -158,9 +162,11 @@ const ProjectCard = ({ project, index }) => {
             <li key={idx} className="text-sm text-gray-600">{detail}</li>
           ))}
         </ul>
-        <button className="w-full py-2 px-4 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300">
-          Read More
-        </button>
+        <Link href={project.href}>
+          <button className="w-full py-2 px-4 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300">
+            Read More
+          </button>
+        </Link>
       </div>
     </motion.div>
   );
@@ -175,6 +181,13 @@ const OngoingProjects = () => {
         {projects.map((project, index) => (
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
+      </div>
+      <div className="text-center mt-8">
+        <Link href="/projects">
+          <button className="py-2 px-6 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300">
+            {/* View All Projects */}
+          </button>
+        </Link>
       </div>
     </div>
   );
