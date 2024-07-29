@@ -56,7 +56,14 @@ const posts = [
 ]
 export default function ContactSection() {
     return (
-        <div className="pt-12">
+        <div className="relative py-16">
+            <div
+                className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20"
+                style={{
+                    backgroundImage: "url('/images/header/reviewsBackground.jpg')",
+                    zIndex: 0
+                }}
+            />
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <motion.h2
                     initial="offscreen"
