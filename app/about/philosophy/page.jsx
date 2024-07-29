@@ -25,7 +25,7 @@ export default function AboutOurCompany() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/header/whoweare.jpg')" }}
+        style={{ backgroundImage: "url('/images/header/philosophy.jpg')" }}
       >
         <div className="container mx-auto py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64">
           Who are we?
@@ -56,7 +56,7 @@ export default function AboutOurCompany() {
           </div>
           <div className="w-full lg:w-1/2">
             <img
-              src="/images/img.jpg"
+              src="/images/header/building.png"
               alt="Team collaboration"
               className="w-full h-auto object-cover rounded-lg"
             />
