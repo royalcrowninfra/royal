@@ -10,7 +10,7 @@ const links = [
     path: "/",
     name: "About",
     dropdown: [
-      { path: "/about", name: "Our Team" },
+      { path: "/about/ourteam", name: "Our Team" },
       { path: "/about/aboutTheGroup", name: "About The Group" },
       { path: "/about/visionAndMission", name: "Vision And Mission" },
       { path: "/about/philosophy", name: "Philosophy" },
@@ -62,11 +62,11 @@ const Navbar = () => {
       {/* Logo */}
       <div className="absolute left-0 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10 bg-white">
         <Link href="/">
-          <Image 
-            src="/logo.png" 
-            width={150} 
-            height={60} 
-            alt="Royal Crown Realty" 
+          <Image
+            src="/images/header/logo.png"
+            width={150}
+            height={60}
+            alt="Royal Crown Realty"
             className="h-16 w-auto sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
           />
         </Link>

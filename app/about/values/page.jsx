@@ -20,10 +20,10 @@ export default function OurValues() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/header/whoweare.jpg')" }}
+        style={{ backgroundImage: "url('/images/header/values.jpg')" }}
       >
         <div className="container mx-auto py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64">
-          Who are we?
+       
         </div>
       </motion.div>
 

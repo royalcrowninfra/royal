@@ -17,7 +17,7 @@ const posts = [
             name: 'harsh',
             role: 'Co-founder / CTO',
             href: '#',
-            imageUrl: '/images/img.jpg'
+            imageUrl: '/images/header/img.jpg'
         }
 
     },
@@ -33,7 +33,7 @@ const posts = [
             name: 'sam',
             role: 'Co-founder / CEO',
             href: '#',
-            imageUrl: '/images/img.jpg'
+            imageUrl: '/images/header/img.jpg'
         }
 
     },
@@ -49,7 +49,7 @@ const posts = [
             name: 'sara',
             role: 'Co-founder / CEO',
             href: '#',
-            imageUrl: '/images/img.jpg'
+            imageUrl: '/images/header/img.jpg'
         }
 
     },
@@ -87,7 +87,7 @@ export default function ContactSection() {
                             >
                                 <div className="flex items-center gap-x-4 text-xs">
                                     <time dateTime={post.dateTime}>
-                                        <Image src='/stars.jpg' width={80} height={5} />
+                                        <Image src='/header/stars.jpg' width={80} height={5} />
                                     </time>
                                     <Link
                                         href="{post.category.href}"
