@@ -21,7 +21,7 @@ const CompanySection = () => {
                             key={index}
                             initial="offscreen"
                             whileInView="onscreen"
-                            variants={tagVariants}
+                            variants={desVariants}
                             className="bg-white bg-opacity-20 p-6 rounded-lg"
                         >
                             <div className="text-4xl mb-2">{item.icon}</div>
