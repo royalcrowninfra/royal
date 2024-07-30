@@ -83,7 +83,7 @@ export default function ContactSection() {
                 <motion.div
                     initial="offscreen"
                     whileInView={"onscreen"}
-                    variants={tagVariants}
+                    variants={titleVariants}
                     className="mx-auto mt-10 grid lg:grid-cols-3 grid-cols-1 gap-x-8 lg:max-w-none
                  lg:mx-0 sm:py-16 sm:mt-16 py-10 border-b border-gray-200 border-t gap-y-16">
                     {
