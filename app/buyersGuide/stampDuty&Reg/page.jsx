@@ -110,11 +110,7 @@ const PanvelPropertyRegistration = () => {
             </ul>
           </div>
 
-          <div className="mt-8 text-center">
-            <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-6 rounded-full hover:from-blue-600 hover:to-purple-700 transition duration-300 shadow-lg">
-              Start Registration Process
-            </button>
-          </div>
+         
         </div>
       </div>
     </div>

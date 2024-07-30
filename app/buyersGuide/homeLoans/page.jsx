@@ -79,12 +79,8 @@ const HomeLoans = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">For more information, please contact us:</p>
-            <Link href="/contact">
-              <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-                Contact Us
-              </button>
-            </Link>
+      
+            
           </div>
         </div>
         <BankingPartner />
