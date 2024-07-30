@@ -1,7 +1,10 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import BankingPartner from '@/components/BankingPartner';
+import { motion } from 'framer-motion';
+import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
 const HomeLoans = () => {
   const sections = [
@@ -31,19 +34,23 @@ const HomeLoans = () => {
   return (
     <div className="min-h-screen bg-navy-900 text-white">
       {/* Header Section with Background Image */}
-      <div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="bg-cover bg-no-repeat bg-center"
         style={{ backgroundImage: "url('/images/buyersGuide/homeLoans.jpg')" }}
       >
-        <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
+        <motion.div
+          initial="offscreen"
+          whileInView={"onscreen"}
+          variants={titleVariants}
+          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-red-400 tracking-wider sm:tracking-widest text-center">
             Home Loans
           </h1>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
