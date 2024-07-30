@@ -40,18 +40,17 @@ const CompanySection = () => {
     }, []);
 
     return (
-        <div className="relative">
-            <img src="/images/header/building.png" alt="City skyline" className="w-full h-96 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 opacity-70"></div>
+        <div className="relative bg-[url('/images/header/reviewsBuilding.jpg')] bg-cover bg-center bg-no-repeat h-96">
+            <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-white text-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
                     {statistics.map((item, index) => (
                         <motion.div
                             key={index}
                             initial="offscreen"
                             whileInView="onscreen"
-                            variants={desVariants}
-                            className="bg-white bg-opacity-20 p-6 rounded-lg"
+                            variants={titleVariants}
+                            className="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-lg"
                         >
                             <div className="text-4xl mb-2">{item.icon}</div>
                             <div className="text-3xl font-bold mb-1">
