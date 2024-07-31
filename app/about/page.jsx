@@ -18,7 +18,7 @@ const page = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [.6, 1])
   return (
     <div>
-      <div className="bg-[url('/images/header/whoweare.jpg')] bg-center bg-cover">
+      <div className="bg-[url('/images/header/whoweare.jpg')] bg-center bg-cover alt-whoarewe">
         <motion.h1
           initial="offscreen"
           whileInView={"onscreen"}
@@ -53,7 +53,7 @@ const page = () => {
             style={{ scale }}
             ref={ref}
             className='w-full'>
-            <Image src='/images/img.jpg' width={700} height={700} />
+            <Image src='/images/img.jpg' width={700} height={700} alt='leftImage'/>
           </motion.div>
 
           {/* Right Content Section */}
@@ -61,6 +61,7 @@ const page = () => {
             initial="offscreen"
             whileInView={"onscreen"}
             variants={tagVariants}
+            alt='rightImage'
             className='pb-8 tracking-wide mt-6'>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, quibusdam itaque! Ad aut maiores unde commodi voluptatum itaque totam, assumenda explicabo quo. Nihil tenetur sit iure saepe quaerat rerum similique.
               Fuga rerum perferendis ipsa a nesciunt unde iure iusto magni assumenda, quod dolor ullam ad iste, quas explicabo? Iure error harum quae sapiente molestiae sint recusandae velit! Dicta, nemo totam.
@@ -92,7 +93,7 @@ const page = () => {
               variants={titleVariants}
               className='border-2 border-primary'>
               <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/img.jpg" width={200} height={200} className='mx-auto rounded-full' />
+                <Image src="/images/img.jpg" width={200} height={200} className='mx-auto rounded-full' alt=''/>
                 <h2 className='py-4 text-2xl font-semibold uppercase'>Building Surveys</h2>
                 <p className='text-sm'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
