@@ -96,13 +96,13 @@ const OngoingProjects = () => {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-        <div className="text-center mt-8">
+        {/* <div className="text-center mt-8">
           <Link href="/projects">   
             <button className="py-2 px-6 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300">
               View All Projects
             </button>
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
   );
