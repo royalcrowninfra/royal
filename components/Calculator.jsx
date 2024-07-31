@@ -1,7 +1,10 @@
-"use client";
+'use client'
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import { Input } from "@/components/ui/input";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
 const formatter = new Intl.NumberFormat("en-IN", {
   style: "currency",
@@ -15,9 +18,9 @@ const Calculator = () => {
     setIsMounted(true);
   }, []);
 
-  const [loanAmount, setLoanAmount] = useState(2755000);
+  const [loanAmount, setLoanAmount] = useState(10000000);
   const [interestRate, setInterestRate] = useState(7);
-  const [tenure, setTenure] = useState(158);
+  const [tenure, setTenure] = useState(180);
   const [emi, setEmi] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
@@ -40,131 +43,140 @@ const Calculator = () => {
     { name: "Total Interest", value: totalInterest },
   ];
 
+  const handleInputChange = (setValue, max) => (e) => {
+    const value = parseFloat(e.target.value);
+    if (!isNaN(value) && value >= 0 && value <= max) {
+      setValue(value);
+    }
+  };
+
   if (!isMounted) return null;
 
   return (
-    <div className='max-w-3xl mx-auto p-6 rounded-lg shadow-lg'>
-      <h1 className='text-2xl font-bold text-center text-red-600 mb-6'>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-6xl mx-auto p-6 space-y-8"
+    >
+      <motion.h1
+        initial={{ scale: 0.9 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="text-4xl font-bold text-center text-indigo-600 mb-8"
+      >
         EMI Calculator
-      </h1>
+      </motion.h1>
 
-      <div className='space-y-6'>
-        <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
-            Loan Amount
-          </label>
-          <Slider
-            value={[loanAmount]}
-            onValueChange={(value) => setLoanAmount(value[0])}
-            max={6000000}
-            step={10000}
-            className='w-full'
-          />
-          <div className='flex justify-between text-xs mt-1'>
-            <span>0</span>
-            <span>15L</span>
-            <span>30L</span>
-            <span>45L</span>
-            <span>60L</span>
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-2xl font-semibold text-indigo-700">Input Details</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            {[
+              { label: "Loan Amount", value: loanAmount, setValue: setLoanAmount, max: 20000000, step: 100000, format: formatter.format },
+              { label: "Interest Rate %", value: interestRate, setValue: setInterestRate, max: 30, step: 0.1, format: (v) => v.toFixed(1) + '%' },
+              { label: "Tenure (Months)", value: tenure, setValue: setTenure, max: 360, step: 1, format: (v) => v },
+            ].map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  {item.label}
+                </label>
+                <div className="flex items-center space-x-4">
+                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex-grow">
+                    <Slider
+                      value={[item.value]}
+                      onValueChange={(value) => item.setValue(value[0])}
+                      max={item.max}
+                      step={item.step}
+                      className="w-full"
+                    />
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-1/3">
+                    <Input
+                      type="number"
+                      value={item.value}
+                      onChange={handleInputChange(item.setValue, item.max)}
+                      className="w-full text-right"
+                      step={item.step}
+                    />
+                  </motion.div>
+                </div>
+                <div className="flex justify-between text-xs mt-1 text-gray-500">
+                  <span>{item.format(0)}</span>
+                  <span>{item.format(item.max / 2)}</span>
+                  <span>{item.format(item.max)}</span>
+                </div>
+              </motion.div>
+            ))}
+          </CardContent>
+        </Card>
 
-        <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
-            Interest Rate %
-          </label>
-          <Slider
-            value={[interestRate]}
-            onValueChange={(value) => setInterestRate(value[0])}
-            max={20}
-            step={0.1}
-            className='w-full'
-          />
-          <div className='flex justify-between text-xs mt-1'>
-            <span>0%</span>
-            <span>5%</span>
-            <span>10%</span>
-            <span>15%</span>
-            <span>20%</span>
-          </div>
-        </div>
-
-        <div>
-          <label className='block text-sm font-medium text-gray-700 mb-1'>
-            Tenure (Months)
-          </label>
-          <Slider
-            value={[tenure]}
-            onValueChange={(value) => setTenure(value[0])}
-            max={360}
-            step={1}
-            className='w-full'
-          />
-          <div className='flex justify-between text-xs mt-1'>
-            <span>0</span>
-            <span>90</span>
-            <span>180</span>
-            <span>270</span>
-            <span>360</span>
-          </div>
-        </div>
-      </div>
-
-      <div className='mt-8 flex flex-col md:flex-row'>
-        <div className='w-full md:w-1/2 bg-green-700 text-white p-4 rounded-lg'>
-          <table className='w-full'>
-            <tbody>
-              <tr>
-                <td className='py-2'>Loan Amount</td>
-                <td className='text-right'>{formatter.format(loanAmount)}</td>
-              </tr>
-              <tr>
-                <td className='py-2'>Interest %</td>
-                <td className='text-right'>{interestRate.toFixed(1)}%</td>
-              </tr>
-              <tr>
-                <td className='py-2'>Tenure (Months)</td>
-                <td className='text-right'>{tenure}</td>
-              </tr>
-              <tr>
-                <td className='py-2'>EMI (Monthly)</td>
-                <td className='text-right'>{formatter.format(emi)}</td>
-              </tr>
-              <tr>
-                <td className='py-2'>Total Interest</td>
-                <td className='text-right'>
-                  {formatter.format(totalInterest)}
-                </td>
-              </tr>
-              <tr>
-                <td className='py-2'>Total Payment</td>
-                <td className='text-right'>{formatter.format(totalPayment)}</td>
-              </tr>
-              <tr>
-                <td className='py-2'>(Loan Amount + Interest)</td>
-                <td className='text-right'></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div className='w-full md:w-1/2 flex justify-center items-center mt-4 md:mt-0'>
-          <PieChart width={200} height={200}>
-            <Pie
-              data={pieChartData}
-              cx={100}
-              cy={100}
-              innerRadius={60}
-              outerRadius={80}
-              fill='#8884d8'
-              dataKey='value'
+        <Card className="bg-gradient-to-br from-purple-50 to-pink-100 shadow-lg">
+          <CardHeader>
+            <CardTitle className="text-2xl font-semibold text-purple-700">Results</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="grid grid-cols-1 md:grid-cols-2 gap-4"
             >
-              <Cell fill='#0000FF' />
-              <Cell fill='#FF0000' />
-            </Pie>
-          </PieChart>
-        </div>
+              {[
+                { label: "EMI (Monthly)", value: formatter.format(emi) },
+                { label: "Total Interest", value: formatter.format(totalInterest) },
+                { label: "Total Payment", value: formatter.format(totalPayment) },
+                { label: "Interest to Principal", value: ((totalInterest / loanAmount) * 100).toFixed(2) + '%' },
+              ].map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 + index * 0.1 }}
+                  className="bg-white p-4 rounded-lg shadow"
+                >
+                  <p className="text-sm text-gray-600">{item.label}</p>
+                  <p className="text-lg font-semibold text-indigo-600">{item.value}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="mt-6"
+            >
+              <ResponsiveContainer width="100%" height={200}>
+                <PieChart>
+                  <Pie
+                    data={pieChartData}
+                    cx="50%"
+                    cy="50%"
+                    innerRadius={60}
+                    outerRadius={80}
+                    fill="#8884d8"
+                    dataKey="value"
+                    startAngle={90}
+                    endAngle={-270}
+                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                  >
+                    <Cell fill="#4F46E5" />
+                    <Cell fill="#7C3AED" />
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </motion.div>
+          </CardContent>
+        </Card>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

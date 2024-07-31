@@ -37,7 +37,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-[800px] overflow-hidden">
+    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -51,7 +51,7 @@ const HeroSection = () => {
             src={images[currentIndex]}
             alt={`Slide ${currentIndex + 1}`}
             layout="fill"
-            objectFit="fill"
+            objectFit="cover"
             objectPosition="center"
             quality={100}
             priority
@@ -64,14 +64,14 @@ const HeroSection = () => {
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base"
             aria-label="Previous image"
           >
             &lt;
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base"
             aria-label="Next image"
           >
             &gt;
