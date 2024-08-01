@@ -20,7 +20,7 @@ const projects = [
   {
     id: 2,
     name: 'Project One, Thane',
-    image: '/images/projects/featuredProject1.jpg',
+    image: '/images/projects/featuredProject2.jpg',
     details: [
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 3,
     name: 'Project Two, Kalyan',
-    image: '/images/projects/featuredProject1.jpg',
+    image: '/images/projects/featuredProject3.jpg',
     details: [
       'Lorem ipsum dolor sit amet',
       'Lorem ipsum dolor sit amet',
