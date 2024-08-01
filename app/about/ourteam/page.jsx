@@ -53,7 +53,7 @@ const page = () => {
             style={{ scale }}
             ref={ref}
             className='w-full'>
-            <Image src='/images/img.jpg' width={700} height={700} />
+            <Image src='/images/header/logo.png' width={700} height={700} />
           </motion.div>
 
           {/* Right Content Section */}
@@ -69,7 +69,7 @@ const page = () => {
             <span className='text-xl font-extrabold tracking-tight'>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad labore, saepe in voluptate nostrum aperiam. Consectetur delectus nemo voluptates! Aliquam ullam ducimus quia minima in iste et nobis itaque quod?
             </span>
-            <Button className='inline-flex items-center px-8 py-3 shadow-lg hover:bg-gray-800 hover:ring-gray-950 rinf-pffset-2'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button>
+            {/* <Button className='inline-flex items-center px-8 py-3 shadow-lg hover:bg-gray-800 hover:ring-gray-950 rinf-pffset-2'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button> */}
           </motion.div>
         </div>
         {/* Team Section */}
@@ -92,8 +92,8 @@ const page = () => {
               variants={titleVariants}
               className='border-2 border-primary'>
               <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/img.jpg" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Building Surveys</h2>
+                <Image src="/images/header/men.png" width={200} height={200} className='mx-auto rounded-full' />
+                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
                 <p className='text-sm'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
                 </p>
@@ -106,8 +106,8 @@ const page = () => {
               variants={titleVariants}
               className='border-2 border-primary'>
               <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/img.jpg" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Building Surveys</h2>
+                <Image src="/images/header/women.png" width={200} height={200} className='mx-auto rounded-full' />
+                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
                 <p className='text-sm'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
                 </p>
@@ -120,8 +120,8 @@ const page = () => {
               variants={desVariants}
               className='border-2 border-primary'>
               <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/img.jpg" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Building Surveys</h2>
+                <Image src="/images/header/men.png" width={200} height={200} className='mx-auto rounded-full' />
+                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
                 <p className='text-sm'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
                 </p>
