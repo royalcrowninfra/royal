@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index }) => {
       }}
       className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg"
     >
-      <img src={project.image} alt={project.name} className="w-full h-48 object-cover" />
+      <img src={project.image} alt={project.name} className="w-full h-64 object-cover" /> {/* Increased height to h-64 */}
       <div className="p-4">
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
         <ul className="list-disc pl-5 mb-4">
@@ -99,13 +99,6 @@ const OngoingProjects = () => {
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
-        {/* <div className="text-center mt-8">
-          <Link href="/projects">   
-            <button className="py-2 px-6 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300">
-              View All Projects
-            </button>
-          </Link>
-        </div> */}
       </div>
     </div>
   );
