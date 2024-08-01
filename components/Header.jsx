@@ -116,7 +116,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden sm:flex items-center space-x-6 lg:space-x-12">
+            <div className="hidden sm:flex items-center space-x-6 lg:space-x-16">
               {links.map((item, index) => (
                 <div key={item.path} className="relative group">
                   <Link
