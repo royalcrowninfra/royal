@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
-  '/images/homepage/foto1.jpg',
-  '/images/homepage/foto2.jpg',
-  '/images/homepage/foto3.jpg',
-  // Add more image paths as needed
+  { src: '/images/homepage/foto1.jpg', text: 'Unlocking Doors, Finding Homes' },
+  { src: '/images/homepage/foto2.jpg', text: 'Your Dream Home Awaits' },
+  { src: '/images/homepage/foto3.jpg', text: 'Building Futures, One Home at a Time' },
+  // Add more image objects with their respective texts
 ];
 
 const HeroSection = () => {
@@ -19,7 +19,7 @@ const HeroSection = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Changed to 5 seconds for a slightly slower transition
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -37,7 +37,9 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] overflow-hidden">
+    <div 
+      className="relative w-full h-[300px] sm:h-[400px] md:h-[600px] lg:h-[800px] overflow-hidden"
+    >
       <AnimatePresence initial={false}>
         <motion.div
           key={currentIndex}
@@ -48,7 +50,7 @@ const HeroSection = () => {
           className="absolute inset-0"
         >
           <Image
-            src={images[currentIndex]}
+            src={images[currentIndex].src}
             alt={`Slide ${currentIndex + 1}`}
             layout="fill"
             objectFit="cover"
@@ -57,6 +59,18 @@ const HeroSection = () => {
             priority
             onLoadingComplete={() => setIsLoading(false)}
           />
+          {!isLoading && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40"
+            >
+              <h2 className="text-white text-3xl md:text-5xl font-bold text-center px-4">
+                {images[currentIndex].text}
+              </h2>
+            </motion.div>
+          )}
         </motion.div>
       </AnimatePresence>
 
@@ -64,14 +78,14 @@ const HeroSection = () => {
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base z-10"
             aria-label="Previous image"
           >
             &lt;
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-1 sm:p-2 rounded-full hover:bg-opacity-75 transition-all text-sm sm:text-base z-10"
             aria-label="Next image"
           >
             &gt;
