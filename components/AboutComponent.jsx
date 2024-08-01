@@ -14,14 +14,6 @@ const ServiceCard = ({ icon: Icon, title }) => (
 )
 
 const AboutComponent = () => {
-  const services = [
-    { icon: FaBuilding, title: "Search & Shortlisting" },
-    { icon: FaCar, title: "Site Visit" },
-    { icon: FaHandHoldingUsd, title: "Home Loan Assistance" },
-    { icon: FaBalanceScale, title: "Legal Advise" },
-    { icon: FaHome, title: "Unit Booking" },
-  ]
-
   return (
     <div className="container mx-auto py-16 px-4 relative">
       <div className="absolute inset-0 bg-contain bg-no-repeat bg-left-top opacity-10" 
