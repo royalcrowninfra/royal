@@ -88,7 +88,7 @@ const ProjectCard = ({ project, index }) => {
 const OngoingProjects = () => {
   return (
     <div
-     className="bg-[url('/images/header/reviewsBackground.jpg')] bg-cover bg-center bg-fixed"
+     className="bg-[url('/images/header/reviewsBackground.jpg')] bg-cover bg-center bg-fixed relative"
      alt='ongoingProjects'
      >
       <div className="container mx-auto px-4 py-16 bg-opacity-50">
