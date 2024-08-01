@@ -18,6 +18,8 @@ export default function ProjectPage({ params }) {
 
   console.log(project.map);
 
+  
+
   return (
     <div className="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat" style={{
       backgroundImage: `url(${project.backgroundImage || '/images/header/reviewsBackground.jpg'})`,
@@ -26,7 +28,7 @@ export default function ProjectPage({ params }) {
         <div className='container mx-auto px-4 py-8'>
           <section className='mb-12'>
             <div className='flex flex-col lg:flex-row items-start bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md overflow-hidden'>
-              <div className='lg:w-1/2 p-6'>
+              <div className='lg:w-1/3 p-6'>
                 <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black'>
                   {project.title}
                 </h1>
@@ -37,8 +39,8 @@ export default function ProjectPage({ params }) {
                   Maha Rera Registration No : {project.reraNumber || "N/A"}
                 </p>
               </div>
-              <div className='lg:w-1/2'>
-                <Image
+              <div className='lg:w-2/3'>
+                <Image 
                   src={project.image}
                   alt={project.title}
                   width={600}
