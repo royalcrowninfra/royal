@@ -63,6 +63,7 @@ export default function ContactSection() {
                     backgroundImage: "url('/images/header/reviewsBackground.jpg')",
                     zIndex: 0
                 }}
+                alt='contactSection'
             />
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <motion.h2
