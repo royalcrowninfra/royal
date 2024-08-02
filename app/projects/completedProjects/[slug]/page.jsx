@@ -23,16 +23,16 @@ export default function ProjectPage({ params }) {
   return (
     <div className='bg-gray-100'>
       <div className='container mx-auto px-4 py-8'>
-      <div className="bg-[url('/images/projects/projectBackground.jpeg')] bg-center bg-cover">
-        <motion.h1
-          initial='offscreen'
-          whileInView={"onscreen"}
-          variants={titleVariants}
-          className='container py-32 text-6xl font-semibold text-white tracking-widest text-center lg:py-32'
-        >
-          Completed Projects
-        </motion.h1>
-      </div>
+        <div className="bg-[url('/images/projects/projectBackground.jpeg')] bg-center bg-cover">
+          <motion.h1
+            initial='offscreen'
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className='container py-32 text-6xl font-semibold text-white tracking-widest text-center lg:py-32'
+          >
+            Completed Projects
+          </motion.h1>
+        </div>
         <section className='mb-12'>
           <div className='flex flex-col lg:flex-row items-start bg-white rounded-lg shadow-md overflow-hidden'>
             <div className='lg:w-1/2 p-6'>
@@ -56,6 +56,14 @@ export default function ProjectPage({ params }) {
               />
             </div>
           </div>
+          <Link href="/pdf/dummy.pdf" target="_blank" rel="noopener noreferrer">
+            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
+              Download Brochure
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </Link>
         </section>
 
         {project.amenities && (
