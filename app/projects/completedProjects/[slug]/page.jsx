@@ -95,6 +95,54 @@ export default function ProjectPage({ params }) {
           </section>
         )}
 
+        <div className="bg-gray-100 p-4">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
+
+            <div className="overflow-x-auto mb-12">
+              <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <thead>
+                  <tr className="bg-navy-700 text-white">
+                    <th className="py-3 px-4 text-left">Configuration</th>
+                    <th className="py-3 px-4 text-left">SBA / Carpet (sq.ft.)</th>
+                    <th className="py-3 px-4 text-left">Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="py-3 px-4 border-b">1 BHK</td>
+                    <td className="py-3 px-4 border-b">396-425 sq.ft</td>
+                    <td className="py-3 px-4 border-b">
+                      <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded">
+                        Get Quote
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 className="text-3xl font-bold text-center mb-8">Floor Plans</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {project.floorplans.map((plan, index) => (
+                <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={plan.src}
+                      alt={plan.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <p className="text-center font-semibold mt-4">{plan.title}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {project.connectivity && (
             <section className='mb-12 bg-white rounded-lg shadow-md p-6'>
