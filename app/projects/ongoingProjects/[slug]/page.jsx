@@ -50,16 +50,16 @@ export default function ProjectPage({ params }) {
                 />
               </div>
             </div>
-            <Link href="/pdf/dummy.pdf" target="_blank" rel="noopener noreferrer">
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
-                Download Brochure
+            <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
+              <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto mt-4">
+                View Brochure
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                 </svg>
               </button>
             </Link>
           </section>
-
           {project.amenities && (
             <section className='mb-12 bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md p-6'>
               <h2 className='text-xl md:text-2xl font-bold mb-4 text-black'>Amenities</h2>

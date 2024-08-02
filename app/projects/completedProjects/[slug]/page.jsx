@@ -1,9 +1,10 @@
 import IFrameComponent from "@/components/IFrameComponent";
 import Calculator from "../../../../components/Calculator";
-import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
+import { projects, getProjectBySlug } from "../../../../data/completedProjects";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { titleVariants } from "../../../utils/animation";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -34,19 +35,19 @@ export default function ProjectPage({ params }) {
           </motion.h1>
         </div>
         <section className='mb-12'>
-          <div className='flex flex-col lg:flex-row items-start bg-white rounded-lg shadow-md overflow-hidden'>
-            <div className='lg:w-1/2 p-6'>
-              <h1 className='text-2xl md:text-3xl font-bold mb-4'>
+          <div className='flex flex-col lg:flex-row items-start bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md overflow-hidden'>
+            <div className='lg:w-1/3 p-6'>
+              <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black'>
                 {project.title}
               </h1>
-              <p className='mb-4 text-sm md:text-base'>
+              <p className='mb-4 text-sm md:text-base text-black'>
                 {project.fullDescription}
               </p>
-              <p className='mb-4 text-sm md:text-base font-semibold'>
+              <p className='mb-4 text-sm md:text-base font-semibold text-black'>
                 Maha Rera Registration No : {project.reraNumber || "N/A"}
               </p>
             </div>
-            <div className='lg:w-1/2'>
+            <div className='lg:w-2/3'>
               <Image
                 src={project.image}
                 alt={project.title}
@@ -56,11 +57,12 @@ export default function ProjectPage({ params }) {
               />
             </div>
           </div>
-          <Link href="/pdf/dummy.pdf" target="_blank" rel="noopener noreferrer">
-            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
-              Download Brochure
+          <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
+            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto mt-4">
+              View Brochure
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
               </svg>
             </button>
           </Link>
