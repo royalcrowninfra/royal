@@ -10,11 +10,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutComponent/>
+      <AboutComponent />
       <CompanySection />
-      <CatalogSwiperSection/>
-      <ContactSection/>
-      <BankingPartner/>
+      <CatalogSwiperSection />
+      <ContactSection />
+      <BankingPartner />
     </>
   );
 }
