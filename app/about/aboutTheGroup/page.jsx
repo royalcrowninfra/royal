@@ -51,7 +51,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/images/header/aboutgroup.jpg')" }}
       >
         <div className="container mx-auto py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64">
-          Who are we?
+          {/* Who are we? */}
         </div>
       </motion.div>
       
