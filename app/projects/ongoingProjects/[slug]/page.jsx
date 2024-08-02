@@ -51,15 +51,15 @@ export default function ProjectPage({ params }) {
               </div>
             </div>
             <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
-              <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto mt-4">
-                View Brochure
+              <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
+                Download Brochure
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                  <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
             </Link>
           </section>
+
           {project.amenities && (
             <section className='mb-12 bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md p-6'>
               <h2 className='text-xl md:text-2xl font-bold mb-4 text-black'>Amenities</h2>
@@ -86,6 +86,53 @@ export default function ProjectPage({ params }) {
               </div>
             </section>
           )}
+          <div className="bg-gray-100 p-4">
+            <div className="max-w-6xl mx-auto">
+              <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
+
+              <div className="overflow-x-auto mb-12">
+                <table className="w-full bg-white shadow-md rounded-lg overflow-hidden">
+                  <thead>
+                    <tr className="bg-navy-700 text-white">
+                      <th className="py-3 px-4 text-left">Configuration</th>
+                      <th className="py-3 px-4 text-left">SBA / Carpet (sq.ft.)</th>
+                      <th className="py-3 px-4 text-left">Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="py-3 px-4 border-b">1 BHK</td>
+                      <td className="py-3 px-4 border-b">396-425 sq.ft</td>
+                      <td className="py-3 px-4 border-b">
+                        <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded">
+                          Get Quote
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h2 className="text-3xl font-bold text-center mb-8">Floor Plans</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {project.floorplans.map((plan, index) => (
+                  <div key={index} className="bg-white p-4 rounded-lg shadow-md">
+                    <div className="relative w-full h-64">
+                      <Image
+                        src={plan.src}
+                        alt={plan.title}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <p className="text-center font-semibold mt-4">{plan.title}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
             {project.connectivity && (

@@ -17,6 +17,12 @@ export const projects = [
       { name: "Gym", image: "/images/amenities/gym.jpg" },
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
+    floorplans: [
+      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
+      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
+    ]
+    ,
     connectivity: [
       "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
       "It is well-connected by major highways like the Mumbai-Pune Expressway (NH 48) and Sion-Panvel Expressway (NH 4B), facilitating smooth road transport to Mumbai, Pune, and other cities in Maharashtra.",
@@ -54,6 +60,11 @@ export const projects = [
       { name: "Gym", image: "/images/amenities/gym.jpg" },
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
+    floorplans: [
+      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-2/img-1.jpg' },
+      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-2/img-2.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-2/img-3.jpg' },
+    ],
     connectivity: [
       "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
       "It is well-connected by major highways like the Mumbai-Pune Expressway (NH 48) and Sion-Panvel Expressway (NH 4B), facilitating smooth road transport to Mumbai, Pune, and other cities in Maharashtra.",
@@ -90,6 +101,11 @@ export const projects = [
       { name: "Garden", image: "/images/amenities/garden.jpg" },
       { name: "Gym", image: "/images/amenities/gym.jpg" },
       { name: "Lift", image: "/images/amenities/lift.jpg" },
+    ],
+    floorplans: [
+      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
+      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
       "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
