@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { titleVariants } from "../../../utils/animation";
-import { projects } from "../../../data/completedProjects";
+import { projects } from "../../../data/ongoingProjects";
 import Link from "next/link";
 import Image from "next/image";
 
