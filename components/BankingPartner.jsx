@@ -24,12 +24,6 @@ const reviews = [
   {
     img:'/images/banks/idbi.jpg' ,
   },
-  // {
-  //   img:'/images/banks/indian.jpg' ,
-  // },
-  // {
-  //   img:'/images/banks/induslandBank.jpg' ,
-  // },
   {
     img:'/images/banks/Kotak.jpg' ,
   },
@@ -45,7 +39,7 @@ const reviews = [
 ];
 
 const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
+// const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({img}) => {
   return (
@@ -73,11 +67,11 @@ export default function BankingPartner() {
           <ReviewCard key={review.img} {...review} />
         ))}
       </Marquee>
-      <Marquee reverse pauseOnHover className="[--duration:20s]">
+      {/* <Marquee reverse pauseOnHover className="[--duration:20s]">
         {secondRow.map((review) => (
           <ReviewCard key={review.img} {...review} />
         ))}
-      </Marquee>
+      </Marquee> */}
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
       <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
     </div>

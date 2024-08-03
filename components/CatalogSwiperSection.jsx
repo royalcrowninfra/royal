@@ -97,7 +97,7 @@ const ProjectCard = ({ project }) => {
 const OngoingProjects = () => {
   return (
     <div
-      className="bg-gray-200 bg-center bg-fixed relative py-12 sm:py-16 md:py-20"
+      className="bg-gray-100 bg-center bg-fixed relative py-12 sm:py-16 md:py-20"
       alt='ongoingProjects'
     >
       <div className="container mx-auto px-4">
