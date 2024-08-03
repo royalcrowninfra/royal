@@ -161,9 +161,9 @@ export default function ProjectPage({ params }) {
             )}
           </div>
 
-          <section className='bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md p-6'>
+          {/* <section className='bg-white bg-opacity-50 backdrop-blur-md rounded-lg shadow-md p-6'>
             <Calculator />
-          </section>
+          </section> */}
         </div>
       </div>
     </div>
