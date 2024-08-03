@@ -12,9 +12,9 @@ const links = [
     dropdown: [
       { path: "/about/ourteam", name: "Our Team" },
       { path: "/about/aboutTheGroup", name: "About The Group" },
-      { path: "/about/visionAndMission", name: "Vision And Mission" },
-      { path: "/about/philosophy", name: "Philosophy" },
-      { path: "/about/values", name: "Values" },
+      // { path: "/about/visionAndMission", name: "Vision And Mission" },
+      // { path: "/about/philosophy", name: "Philosophy" },
+      // { path: "/about/values", name: "Values" },
     ],
   },
   // { path: "/our-team", name: "Our Team" },
@@ -27,7 +27,7 @@ const links = [
     ],
   },
   { path: "/gallery", name: "Gallery" },
-  // { path: "/book-site-visit", name: "Book a Site Visit" },
+  { path: "/book-site-visit", name: "Book a Site Visit" },
   {
     path: "/",
     name: "Buyers Guide",
@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Logo */}
-      <div className="absolute left-0 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10 bg-white">
+      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10 bg-white">
         <Link href="/">
           <Image
             src="/images/header/logo.png"
