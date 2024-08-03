@@ -107,7 +107,7 @@ const AboutComponent = () => {
       </motion.div>
 
       <motion.div 
-        className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6"
+        className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
