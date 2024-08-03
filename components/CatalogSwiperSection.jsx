@@ -3,6 +3,12 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const projects = [
   {
@@ -43,7 +49,7 @@ const projects = [
   },
 ];
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -62,10 +68,11 @@ const ProjectCard = ({ project, index }) => {
       initial="hidden"
       animate={controls}
       variants={{
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.2 } },
-        hidden: { opacity: 0, y: 50 }
+        visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+        hidden: { opacity: 0, x: 100 }
       }}
-      className="bg-white bg-opacity-80 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg flex flex-col h-full"
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      className="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex flex-col h-full border-2 border-red-800"
     >
       <img src={project.image} alt={project.name} className="w-full h-48 sm:h-56 md:h-64 object-cover" />
       <div className="p-4 flex-grow flex flex-col justify-between">
@@ -78,7 +85,7 @@ const ProjectCard = ({ project, index }) => {
           </ul>
         </div>
         <Link href={project.href} className="mt-auto">
-          <button className="w-full py-2 px-4 bg-gradient-to-r from-teal-400 to-blue-500 text-white rounded-md hover:from-teal-500 hover:to-blue-600 transition duration-300 text-sm sm:text-base">
+          <button className="w-full py-2 px-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-md hover:from-red-700 hover:to-red-900 transition duration-300 text-sm sm:text-base">
             Read More
           </button>
         </Link>
@@ -90,17 +97,36 @@ const ProjectCard = ({ project, index }) => {
 const OngoingProjects = () => {
   return (
     <div
-      className="bg-[url('/images/header/reviewsBackground.jpg')] bg-cover bg-center bg-fixed relative"
+      className="bg-gray-200 bg-center bg-fixed relative py-12 sm:py-16 md:py-20"
       alt='ongoingProjects'
     >
-      <div className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
+      <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2 text-black">Ongoing Projects</h2>
-        <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-teal-400 to-blue-500 mx-auto mb-6 sm:mb-8"></div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+        <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6 sm:mb-8"></div>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <ProjectCard project={project} />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </div>
   );
