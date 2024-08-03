@@ -57,7 +57,7 @@ const AboutComponent = () => {
         className="absolute inset-0 bg-contain bg-no-repeat bg-left-top opacity-10"
         style={{backgroundImage: "url('/images/header/logo.png')"}}
         animate={{ rotate: 360 }}
-        transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+        // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
       ></motion.div>
       
       <motion.div
