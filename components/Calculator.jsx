@@ -5,11 +5,25 @@ import { Slider } from "@/components/ui/slider";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { Input } from "@/components/ui/input";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const formatter = new Intl.NumberFormat("en-IN", {
   style: "currency",
   currency: "INR",
   maximumFractionDigits: 0,
+});
+
+const percentFormatter = new Intl.NumberFormat("en-IN", {
+  style: "percent",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
 });
 
 const Calculator = () => {
@@ -18,12 +32,13 @@ const Calculator = () => {
     setIsMounted(true);
   }, []);
 
-  const [loanAmount, setLoanAmount] = useState(10000000);
-  const [interestRate, setInterestRate] = useState(7);
-  const [tenure, setTenure] = useState(180);
+  const [loanAmount, setLoanAmount] = useState(5000000);
+  const [interestRate, setInterestRate] = useState(9);
+  const [tenure, setTenure] = useState(240);
   const [emi, setEmi] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
+  const [amortizationSchedule, setAmortizationSchedule] = useState([]);
 
   useEffect(() => {
     const r = interestRate / 12 / 100;
@@ -36,6 +51,50 @@ const Calculator = () => {
     setEmi(Math.round(emi));
     setTotalInterest(Math.round(totalInterestPayment));
     setTotalPayment(Math.round(totalAmount));
+
+    // Calculate amortization schedule
+    let balance = loanAmount;
+    let totalPrincipal = 0;
+    let schedule = [];
+    const paymentsPerYear = 12;
+    const yearsTotal = Math.ceil(tenure / paymentsPerYear);
+
+    for (let year = 1; year <= yearsTotal; year++) {
+      let yearlyPrincipal = 0;
+      let yearlyInterest = 0;
+
+      for (let month = 1; month <= paymentsPerYear; month++) {
+        if (balance <= 0) break;
+        
+        let interest = balance * r;
+        let principal = emi - interest;
+        
+        if (principal > balance) {
+          principal = balance;
+          interest = balance * r;
+        }
+        
+        balance -= principal;
+        yearlyPrincipal += principal;
+        yearlyInterest += interest;
+        totalPrincipal += principal;
+
+        if (balance < 0.01) balance = 0; // Adjust for floating point errors
+      }
+
+      schedule.push({
+        year: year + 2023,
+        principal: Math.round(yearlyPrincipal),
+        interest: Math.round(yearlyInterest),
+        totalPayment: Math.round(yearlyPrincipal + yearlyInterest),
+        balance: Math.round(balance),
+        loanPaidToDate: totalPrincipal / loanAmount,
+      });
+
+      if (balance <= 0) break;
+    }
+
+    setAmortizationSchedule(schedule);
   }, [loanAmount, interestRate, tenure]);
 
   const pieChartData = [
@@ -176,6 +235,40 @@ const Calculator = () => {
           </CardContent>
         </Card>
       </div>
+
+      <Card className="mt-8 bg-white shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-2xl font-semibold text-indigo-700">Amortization Schedule</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="bg-indigo-100">Year</TableHead>
+                  <TableHead className="bg-green-100">Principal (A)</TableHead>
+                  <TableHead className="bg-orange-100">Interest (B)</TableHead>
+                  <TableHead className="bg-yellow-100">Total Payment (A + B)</TableHead>
+                  <TableHead className="bg-red-100">Balance</TableHead>
+                  <TableHead className="bg-purple-100">Loan Paid To Date</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {amortizationSchedule.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{row.year}</TableCell>
+                    <TableCell>{formatter.format(row.principal)}</TableCell>
+                    <TableCell>{formatter.format(row.interest)}</TableCell>
+                    <TableCell>{formatter.format(row.totalPayment)}</TableCell>
+                    <TableCell>{formatter.format(row.balance)}</TableCell>
+                    <TableCell>{percentFormatter.format(row.loanPaidToDate)}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </CardContent>
+      </Card>
     </motion.div>
   );
 };
