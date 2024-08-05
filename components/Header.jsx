@@ -60,11 +60,11 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Logo */}
-      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10">
+      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-2 z-10">
         <Link href="/">
           <Image
             src="/images/header/logoPng.png"
-            width={150}
+            width={140}
             height={60}
             alt="Royal Crown Realty"
             className="h-16 w-auto sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
@@ -116,7 +116,7 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden sm:flex items-center space-x-6 lg:space-x-16">
+            <div className="hidden sm:flex items-center space-x-6 lg:gap-8">
               {links.map((item, index) => (
                 <div key={item.path} className="relative group">
                   <Link
