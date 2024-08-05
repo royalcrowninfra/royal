@@ -63,7 +63,7 @@ const Navbar = () => {
       <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-2 z-10">
         <Link href="/">
           <Image
-            src="/images/header/logoPng.png"
+            src="/images/header/logoPngwhite.png"
             width={140}
             height={60}
             alt="Royal Crown Realty"
