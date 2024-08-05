@@ -60,10 +60,10 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Logo */}
-      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10 bg-white">
+      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10">
         <Link href="/">
           <Image
-            src="/images/header/logo.png"
+            src="/images/header/logoPng.png"
             width={150}
             height={60}
             alt="Royal Crown Realty"
