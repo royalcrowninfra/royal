@@ -41,13 +41,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-navy-900 text-white">
+    <div className="min-h-screen bg-navy-900 text-white ">
       {/* Header Section with Background Image */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center" 
+        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]" 
         style={{ backgroundImage: "url('/images/header/aboutgroup.jpg')" }}
       >
         <div className="container mx-auto py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64">
