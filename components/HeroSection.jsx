@@ -72,7 +72,7 @@ const HeroSection = () => {
 
   return (
     <div className="relative">
-      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px] overflow-hidden">
         <AnimatePresence initial={false}>
           <motion.div
             key={currentIndex}
@@ -126,7 +126,7 @@ const HeroSection = () => {
           </>
         )}
       </div>
-      <div className="relative bottom-10 left-1/2 transform -translate-x-1/2 w-10/12 bg-gradient-to-r from-blue-300 via-blue-500 to-purple-500 py-4 sm:py-6 md:py-10">
+      <div className="relative bottom-10 left-1/2 transform -translate-x-1/2 w-8/12 bg-gradient-to-r from-blue-300 via-blue-500 to-purple-500 py-4 sm:py-6 md:py-6">
         <div className="container mx-auto flex flex-wrap justify-between items-center text-white">
           {statistics.map((item, index) => (
             <div
