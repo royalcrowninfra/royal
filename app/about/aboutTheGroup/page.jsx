@@ -82,7 +82,7 @@ export default function Home() {
         className="flex flex-col md:flex-row bg-white text-black"
       >
         <div className="md:w-1/2 relative">
-          <Image src="/images/aboutCompany.jpg" alt="Modern House" width={600} height={400} layout="responsive" objectFit="cover" />
+          <Image src="/images/header/aboutCompany.jpg" alt="Modern House" width={600} height={400} layout="responsive" objectFit="cover" />
           <div className="absolute top-0 bottom-0 -left-4 w-4 bg-purple-600"></div>
         </div>
         <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
