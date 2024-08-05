@@ -44,7 +44,12 @@ const PanvelDevelopment = () => {
         'The smart city spread across 600 square kilometres planned around the International Airport will be a residential, commercial, retail, entertainment and financial hub of the future. It will offer residents, a lifestyle rivalling that of Mumbai with a clear advantage of Space, Nature, Aesthetics and speed of Accessibility currently absent in the maximum city. It goes without saying that for these reasons alone, Qualcon Dreams properties will command the high appreciation levels guaranteeing the best value on their investment.',
       imagePath: '/images/buyersGuide/panveldevelopment/naina.jpg',
     },
-    // ... other content blocks
+    {
+      title: 'ATAL SETU',
+      description:
+        'The smart city spread across 600 square kilometres planned around the International Airport will be a residential, commercial, retail, entertainment and financial hub of the future. It will offer residents, a lifestyle rivalling that of Mumbai with a clear advantage of Space, Nature, Aesthetics and speed of Accessibility currently absent in the maximum city. It goes without saying that for these reasons alone, Qualcon Dreams properties will command the high appreciation levels guaranteeing the best value on their investment.',
+      imagePath: '/images/buyersGuide/panveldevelopment/atalsetu.jpg',
+    },
   ];
 
   return (
@@ -73,35 +78,33 @@ const PanvelDevelopment = () => {
         whileInView={"onscreen"}
         variants={titleVariants}
         className="space-y-8 py-8">
-        {contentBlocks.map((block, index) => (
-          <div key={index} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="flex flex-col lg:flex-row">
-                <div className={`lg:w-1/2 flex flex-col items-center justify-center text-center p-6 sm:p-8 ${index % 2 === 0 ? 'lg:order-first' : 'lg:order-last'}`}>
-                  <motion.h2
-                    initial="offscreen"
-                    whileInView={"onscreen"}
-                    variants={tagVariants}
-                    className="text-xl sm:text-2xl font-bold text-red-600 mb-4">{block.title}</motion.h2>
-                  <motion.p
-                    initial="offscreen"
-                    whileInView={"onscreen"}
-                    variants={tagVariants}
-                    className="text-sm sm:text-base text-gray-700 mb-6">{block.description}</motion.p>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8">
+            {contentBlocks.map((block, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                initial="offscreen"
+                whileInView={"onscreen"}
+                variants={desVariants}
+              >
+                <div className="bg-blue-600 p-4">
+                  <h2 className="text-xl font-semibold text-white">{block.title}</h2>
                 </div>
-                <div className="lg:w-1/2">
+                <div className="p-6">
                   <Image
                     src={block.imagePath}
                     alt={block.title}
                     width={600}
                     height={400}
-                    className="w-full h-48 sm:h-64 md:h-80 lg:h-full object-cover"
+                    className="w-full h-48 object-cover mb-4 rounded"
                   />
+                  <p className="text-sm text-gray-700">{block.description}</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            ))}
           </div>
-        ))}
+        </div>
       </motion.div>
     </div>
   );
