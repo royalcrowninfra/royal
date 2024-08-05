@@ -1,5 +1,8 @@
+'use client'
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
 const GSTRealEstate = () => {
   const sections = [
@@ -48,11 +51,19 @@ const GSTRealEstate = () => {
 
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold text-center text-blue-800 mb-12">
+          <motion.h1
+           initial="offscreen"
+           whileInView={"onscreen"}
+           variants={tagVariants} 
+          className="text-4xl font-bold text-center text-blue-800 mb-12">
             GST and Real Estate in India
-          </h1>
+          </motion.h1>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <motion.div
+            initial="offscreen"
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className="grid md:grid-cols-2 gap-8">
             {sections.map((section, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="bg-blue-600 p-4">
@@ -77,14 +88,18 @@ const GSTRealEstate = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="mt-12 bg-white rounded-lg shadow-lg p-6">
+          <motion.div
+           initial="offscreen"
+           whileInView={"onscreen"}
+           variants={desVariants}
+           className="mt-12 bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-semibold text-blue-800 mb-4">Implications of GST on Real Estate</h2>
             <p className="text-gray-700">
               GST has simplified the taxation process for real estate transactions. It reduces ambiguity and replaces multiple taxes with a single tax. The impact varies depending on the property type and stage of construction. Buyers and developers should be aware of the new tax structure to make informed decisions.
             </p>
-          </div>
+          </motion.div>
 
           <div className="mt-8 text-center">
             <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
