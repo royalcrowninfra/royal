@@ -31,7 +31,7 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center"
+        className="bg-cover bg-center rounded-lg h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/contact/contactBackground.jpg')" }}
       >
         <motion.div
@@ -39,8 +39,8 @@ export default function Contact() {
           whileInView={"onscreen"}
           variants={titleVariants}
           className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
-            Future Panvel Development
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-blue-400 tracking-wider sm:tracking-widest text-center">
+            Contact Us
           </h1>
         </motion.div>
       </motion.div>
