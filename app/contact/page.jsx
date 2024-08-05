@@ -1,125 +1,143 @@
 'use client'
+import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@headlessui/react";
 import { Button } from "@/components/ui/button";
-import { TbArrowUpRight } from "react-icons/tb";
-import { useState } from "react";
+import { FaFacebookF, FaTwitter } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Contact() {
-  const [agreed, setAgreed] = useState(false)
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    contactNumber: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    // Handle form submission here
+  };
 
   return (
-    <div className="min-h-screen bg-fixed bg-cover bg-center bg-no-repeat text-white"
-      style={{ backgroundImage: "url('/images/header/reviewsBackground.jpg')" }}>
-      <div className="min-h-screen bg-black bg-opacity-50 backdrop-blur-sm">
-        <div className="min-h-screen bg-navy-900 text-white">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/contact//contactBackground.jpg')" }}
-          >
-            <motion.div
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={titleVariants}
-              className="container mx-auto w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px] px-4">
-              {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
+    <div className="min-h-screen bg-white text-gray-800">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/contact/contactBackground.jpg')" }}
+      >
+        <motion.div
+          initial="offscreen"
+          whileInView={"onscreen"}
+          variants={titleVariants}
+          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
             Future Panvel Development
-          </h1> */}
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-12 px-4">
-            <motion.div
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={titleVariants}
-              className="text-center">
-              {/* You can uncomment this if you want to add a title */}
-              {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest">
-              Future Panvel Development
-            </h1> */}
-            </motion.div>
-          </motion.div>
+          </h1>
+        </motion.div>
+      </motion.div>
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          {/* Contact Form Section */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Contact Address:</h2>
+            <p className="mb-2">Villa No. 5, Mayuresh Chambers, Plot No. 60, Sector 11, CBD Belapur,</p>
+            <p className="mb-4">Navi Mumbai 400614</p>
+            <p className="mb-2">+91 98198 00022 / +91 98198 00044</p>
+            <p className="mb-4">info@royalcrown.com</p>
 
-          <div className="px-6 py-24 sm:py-20 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Contact Sales</h2>
-              <p className="mt-2 text-white text-lg leading-8 text-muted-foreground">Please feel free to ask anything</p>
+            <div className="flex space-x-2 mb-6">
+              <a href="#" className="bg-blue-600 text-white p-2 rounded-full">
+                <FaFacebookF />
+              </a>
+              <a href="#" className="bg-blue-400 text-white p-2 rounded-full">
+                <FaTwitter />
+              </a>
             </div>
 
-            <form className="mx-auto mt-16 max-w-xl sm:mt-20">
-              <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div className="mt-2.5">
-                  <Input type='name' id='firstname' placeholder='First Name' className="bg-white bg-opacity-20 text-white placeholder-gray-300" />
-                </div>
-
-                <div className="mt-2.5">
-                  <Input type='name' id='lastname' placeholder='Last Name' className="bg-white bg-opacity-20 text-white placeholder-gray-300" />
-                </div>
-
-                <div className="sm:col-span-2">
-                  <div className="mt-2.5">
-                    <Input type='phone' id='Phone' placeholder='Contact-number' className="bg-white bg-opacity-20 text-white placeholder-gray-300" />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2">
-                  <div className="mt-2.5">
-                    <Input type='email' id='Company' placeholder='Email Address' className="bg-white bg-opacity-20 text-white placeholder-gray-300" />
-                  </div>
-                </div>
-
-                <div className="sm:col-span-2">
-                  <div className="mt-2.5">
-                    <Textarea placeholder='Type Your Message Here..' className="bg-white bg-opacity-20 text-white placeholder-gray-300" />
-                  </div>
-                </div>
-
-                <Switch.Group as="div" className="flex items-center justify-between">
-                  <Switch.Label className="text-sm leading-6 text-gray-300">
-                    Agree to privacy policy
-                  </Switch.Label>
-                  <Switch
-                    checked={agreed}
-                    onChange={setAgreed}
-                    className={classNames(
-                      agreed ? 'bg-primary' : 'bg-gray-200',
-                      'relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
-                    )}
-                  >
-                    <span
-                      aria-hidden="true"
-                      className={classNames(
-                        agreed ? 'translate-x-5' : 'translate-x-0',
-                        'pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out'
-                      )}
-                    />
-                  </Switch>
-                </Switch.Group>
-
-                <div className="sm:col-span-2 mt-10">
-                  <Button type='submit' className='flex w-full items-center justify-center px-8 py-3 text-white bg-primary bg-opacity-80 rounded-full shadow-lg hover:bg-opacity-100 transition-all duration-300'>
-                    Let's Talk <TbArrowUpRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </div>
+            <form onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <Input 
+                  type="text"
+                  name="fullName"
+                  placeholder="Full Name *"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
               </div>
+              <div className="mb-4">
+                <Input 
+                  type="email"
+                  name="email"
+                  placeholder="Email *"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div className="mb-4">
+                <Input 
+                  type="tel"
+                  name="contactNumber"
+                  placeholder="Contact Number *"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-2 border border-gray-300 rounded"
+                />
+              </div>
+              <div className="mb-4">
+                <Textarea 
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full p-2 border border-gray-300 rounded"
+                  rows={4}
+                />
+              </div>
+              <Button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
+                Submit
+              </Button>
             </form>
           </div>
+
+          {/* Preview Map Section */}
+          <div className="w-full h-[300px] md:h-full">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d984.0436367577286!2d73.10175123873755!3d19.008817314587663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1722842804286!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+          </div>
         </div>
+
+        {/* Full Width Google Map Section */}
+        {/* <div className="w-full h-[400px] bg-gray-200">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d984.0436367577286!2d73.10175123873755!3d19.008817314587663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1722842804286!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+          ></iframe>
+        </div> */}
       </div>
     </div>
-  )
+  );
 }
