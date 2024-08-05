@@ -36,7 +36,7 @@ const GSTRealEstate = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center"
+        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/buyersGuide/gst.jpg')" }}
       >
         <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">

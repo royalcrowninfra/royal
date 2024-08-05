@@ -38,7 +38,7 @@ const HomeLoans = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-no-repeat bg-center"
+        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/buyersGuide/homeLoans.jpg')" }}
       >
         <motion.div
