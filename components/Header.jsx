@@ -72,7 +72,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Top bar */}
-      <div className="bg-gradient-to-r from-orange-300 via-teal-500 to-purple-500 py-2">
+      <div className="bg-gradient-to-r from-orange-500 via-cyan-500 to-purple-500 py-2">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-end items-center gap-2 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
