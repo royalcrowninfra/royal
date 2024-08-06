@@ -30,8 +30,10 @@ const EnquiryButton = () => {
     <>
       {/* Animated Enquiry Button */}
       <motion.button
-        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50"
+        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-4 rotate-90 origin-right z-50 rounded-lg shadow-lg"
         onClick={togglePopup}
+        // whileHover={{ scale: 1.05 }}
+        // whileTap={{ scale: 0.95 }}
       >
         ENQUIRY
       </motion.button>
@@ -46,18 +48,32 @@ const EnquiryButton = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative"
+              className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative overflow-hidden"
               initial={{ y: "-100vh" }}
               animate={{ y: 0 }}
               exit={{ y: "-100vh" }}
               transition={{ type: "spring", damping: 25, stiffness: 500 }}
             >
+              {/* Animated background */}
+              <motion.div
+                className="absolute inset-0 z-0"
+                animate={{
+                  background: [
+                    "linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
+                    "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)",
+                    "linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%)",
+                  ],
+                }}
+                transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+              />
+
               <motion.form
                 variants={formAnimation}
                 initial="hidden"
                 animate="visible"
+                className="relative z-10"
               >
-                <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4 text-center">Contact Us</motion.h2>
+                <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4 text-center text-gray-800">Contact Us</motion.h2>
 
                 <motion.div variants={itemAnimation} className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
@@ -66,7 +82,7 @@ const EnquiryButton = () => {
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-3 py-2 border rounded-lg"
+                    className="w-full px-3 py-2 border rounded-lg bg-white bg-opacity-80 focus:bg-opacity-100 transition-all duration-300"
                     placeholder="Your name"
                   />
                 </motion.div>
@@ -78,7 +94,7 @@ const EnquiryButton = () => {
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-3 py-2 border rounded-lg"
+                    className="w-full px-3 py-2 border rounded-lg bg-white bg-opacity-80 focus:bg-opacity-100 transition-all duration-300"
                     placeholder="Your email"
                   />
                 </motion.div>
@@ -90,7 +106,7 @@ const EnquiryButton = () => {
                   <textarea
                     id="message"
                     rows="4"
-                    className="w-full px-3 py-2 border rounded-lg"
+                    className="w-full px-3 py-2 border rounded-lg bg-white bg-opacity-80 focus:bg-opacity-100 transition-all duration-300"
                     placeholder="Your message"
                   ></textarea>
                 </motion.div>
@@ -98,7 +114,7 @@ const EnquiryButton = () => {
                 <motion.button
                   variants={itemAnimation}
                   type="submit"
-                  className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-2 px-4 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -108,7 +124,7 @@ const EnquiryButton = () => {
 
               <motion.button
                 onClick={togglePopup}
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+                className="absolute top-2 right-2 text-gray-600 hover:text-gray-800 bg-white bg-opacity-50 rounded-full p-1"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
