@@ -51,14 +51,14 @@ export default function ProjectPage({ params }) {
               </svg>
             </button>
           </Link>
-          <Link href="/Calculator">
+          {/* <Link href="/Calculator">
             <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
               EMI Calculator
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </button>
-          </Link>
+          </Link> */}
 
         </div>
       </section>
@@ -97,27 +97,29 @@ export default function ProjectPage({ params }) {
           <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
 
           <div className="overflow-x-auto mb-12">
-            <table className="w-full">
+            <table className="w-full border-collapse bg-white shadow-md rounded-lg border border-gray-300">
               <thead>
-                <tr className="bg-navy-700 text-white">
-                  <th className="py-3 px-4 text-left">Configuration</th>
-                  <th className="py-3 px-4 text-left">SBA / Carpet (sq.ft.)</th>
+                <tr className="bg-navy-700 text-white border-b border-gray-300 transition duration-300 ease-in-out hover:bg-navy-800">
+                  <th className="py-3 px-4 text-left border-r border-gray-300">Configuration</th>
+                  <th className="py-3 px-4 text-left border-r border-gray-300">SBA / Carpet (sq.ft.)</th>
                   <th className="py-3 px-4 text-left">Price</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="py-3 px-4 border-b">1 BHK</td>
-                  <td className="py-3 px-4 border-b">396-425 sq.ft</td>
-                  <td className="py-3 px-4 border-b">
-                    <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded">
+                <tr className="transition duration-300 ease-in-out hover:bg-gray-100 border-b border-gray-300">
+                  <td className="py-3 px-4 border-r border-gray-300">1 BHK</td>
+                  <td className="py-3 px-4 border-r border-gray-300">396-425 sq.ft</td>
+                  <td className="py-3 px-4">
+                    <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded transition duration-300 ease-in-out">
                       Get Quote
                     </button>
                   </td>
                 </tr>
+                {/* Add more rows here as needed */}
               </tbody>
             </table>
           </div>
+
 
           <h2 className="text-3xl font-bold text-center mb-8">Floor Plans</h2>
 
