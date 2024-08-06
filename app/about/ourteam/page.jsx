@@ -53,7 +53,7 @@ const page = () => {
             style={{ scale }}
             ref={ref}
             className='w-full'>
-            <Image src='/images/header/logo.png' width={700} height={700} />
+            <Image src='/images/header/logoPng.png' width={700} height={700} />
           </motion.div>
 
           {/* Right Content Section */}
