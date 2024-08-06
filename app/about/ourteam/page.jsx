@@ -1,132 +1,93 @@
 'use client'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import React, { useRef } from 'react'
-import { TbArrowUpRight } from 'react-icons/tb'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React from 'react'
+import { motion } from 'framer-motion'
 import { desVariants, tagVariants, titleVariants } from '@/utils/animation'
+import { TbDeviceMobile, TbSettings, TbHeadphones } from 'react-icons/tb'
 
-const page = () => {
-  const ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end end']
-  })
-
-
-  const scale = useTransform(scrollYProgress, [0, 1], [.6, 1])
+const Page = () => {
   return (
-    <div>
-      <div className="bg-[url('/images/header/about-us2.jpg')] bg-center bg-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
-        <motion.h1
-          initial="offscreen"
-          whileInView={"onscreen"}
-          variants={titleVariants}
-          className='container py-32 text-6xl font-extrabold text-red-500 reacking-widest text-center lg:py-64'>
-          Who are we?
-        </motion.h1>
-      </div>
-
-      <div className='container'>
-        <div className='pt-4'>
-          <motion.h2
+    <div className="bg-gray-100 min-h-screen">
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 mb-8 md:mb-0">
+          <motion.h1
             initial="offscreen"
-            whileInView={"onscreen"}
-            variants={desVariants}
-            className='text-3xl font-semibold text-center lg:p-10 lg:text-5xl'>
-            We have the best Flats
-          </motion.h2>
+            whileInView="onscreen"
+            variants={titleVariants}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Turn your ideas to live web experiences
+          </motion.h1>
           <motion.p
             initial="offscreen"
-            whileInView={"onscreen"}
-            variants={tagVariants}
-            className='text-2xl text-center font-medium pb-10 mt-5'>Our Royal Crown Infra Company is a Company that provides best services,
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis veritatis quidem vero consequuntur, eos non ex facilis quia esse provident, aut minima accusantium enim soluta ipsum architecto fuga maxime nihil?
-            Temporibus, ipsum omnis rerum cumque aperiam sint, quaerat fugit officia dolor pariatur harum assumenda voluptates ullam. Sunt est deleniti tempora libero velit rem, quis corporis ducimus aliquid aspernatur unde quam.
+            whileInView="onscreen"
+            variants={desVariants}
+            className="text-gray-600 mb-6"
+          >
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
           </motion.p>
+          <p className="text-sm text-gray-500 mb-4">Images from Freepik</p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300"
+          >
+            learn more
+          </motion.button>
         </div>
-
-        <div className='items-center lg:flex gap-x-8'>
-          {/* Left Image Section  */}
-          <motion.div
-            style={{ scale }}
-            ref={ref}
-            className='w-full'>
-            <Image src='/images/header/logoPng.png' width={700} height={700} />
-          </motion.div>
-
-          {/* Right Content Section */}
-          <motion.div
-            initial="offscreen"
-            whileInView={"onscreen"}
-            variants={tagVariants}
-            className='pb-8 tracking-wide mt-6'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, quibusdam itaque! Ad aut maiores unde commodi voluptatum itaque totam, assumenda explicabo quo. Nihil tenetur sit iure saepe quaerat rerum similique.
-              Fuga rerum perferendis ipsa a nesciunt unde iure iusto magni assumenda, quod dolor ullam ad iste, quas explicabo? Iure error harum quae sapiente molestiae sint recusandae velit! Dicta, nemo totam.
-              Rem inventore fugiat architecto dicta reprehenderit aliquam vel non eaque velit unde perspiciatis nobis natus, atque tempore sed magni voluptatem maiores? Inventore nisi nam ipsam debitis fugit atque sint sequi.
-            </p>
-            <span className='text-xl font-extrabold tracking-tight'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad labore, saepe in voluptate nostrum aperiam. Consectetur delectus nemo voluptates! Aliquam ullam ducimus quia minima in iste et nobis itaque quod?
-            </span>
-            {/* <Button className='inline-flex items-center px-8 py-3 shadow-lg hover:bg-gray-800 hover:ring-gray-950 rinf-pffset-2'>Read More <TbArrowUpRight className='w-5 h-5 ml-2' /></Button> */}
-          </motion.div>
-        </div>
-        {/* Team Section */}
-        <div className='lg:py-20'>
-          <div className='pt-8 pb-4'>
-            <motion.h1
-              initial="offscreen"
-              whileInView={"onscreen"}
-              variants={titleVariants}
-              className='text-4xl font-bold tracking-wider text-center uppercase'>
-              Team
-            </motion.h1>
+        <div className="md:w-1/2">
+          <div className="bg-gray-300 rounded-full overflow-hidden">
+            <Image src="/images/header/women.png" width={500} height={500} alt="Woman in yellow shirt" className="w-full h-full object-cover" />
           </div>
+        </div>
+      </div>
 
-
-          <div className='grid py-8 gap-20 lg:grid-cols-3'>
-            <motion.div
+      {/* About Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <motion.h2
               initial="offscreen"
-              whileInView={"onscreen"}
+              whileInView="onscreen"
               variants={titleVariants}
-              className='border-2 border-primary'>
-              <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/header/men.png" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
-                <p className='text-sm'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
+              className="text-3xl font-bold mb-4"
+            >
+              About
+            </motion.h2>
+            <motion.p
               initial="offscreen"
-              whileInView={"onscreen"}
-              variants={titleVariants}
-              className='border-2 border-primary'>
-              <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/header/women.png" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
-                <p className='text-sm'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial="offscreen"
-              whileInView={"onscreen"}
+              whileInView="onscreen"
               variants={desVariants}
-              className='border-2 border-primary'>
-              <div className='p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3 '>
-                <Image src="/images/header/men.png" width={200} height={200} className='mx-auto rounded-full' />
-                <h2 className='py-4 text-2xl font-semibold uppercase'>Name</h2>
-                <p className='text-sm'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iusto esse nemo ipsa distinctio tenetur quod aperiam quia natus saepe cupiditate non assumenda incidunt maxime veritatis earum dignissimos, temporibus a?
-                </p>
-              </div>
-            </motion.div>
+              className="text-gray-600 mb-4"
+            >
+              Oh feel if up to till like. He an thing rapid these after going drawn or. Timed she his law the spoil round defer. In surprise concerns informed betrayed he learning is ye. Ignorant formerly so ye blessing.
+            </motion.p>
+            <motion.p
+              initial="offscreen"
+              whileInView="onscreen"
+              variants={desVariants}
+              className="text-gray-600"
+            >
+              He as spoke avoid given downs money on we. Of properly carriage shutters ye as wandered up repeated moreover.
+            </motion.p>
+          </div>
+          <div className="md:w-1/2 space-y-8">
+            <Feature 
+              icon={<TbDeviceMobile className="w-8 h-8" />}
+              title="RESEARCH"
+              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <Feature 
+              icon={<TbSettings className="w-8 h-8" />}
+              title="STRATEGY"
+              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
+            <Feature 
+              icon={<TbHeadphones className="w-8 h-8" />}
+              title="DESIGN"
+              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            />
           </div>
         </div>
       </div>
@@ -134,4 +95,21 @@ const page = () => {
   )
 }
 
-export default page
+const Feature = ({ icon, title, description }) => (
+  <motion.div 
+    initial="offscreen"
+    whileInView="onscreen"
+    variants={tagVariants}
+    className="flex items-start"
+  >
+    <div className="bg-green-500 p-3 rounded-lg mr-4">
+      {icon}
+    </div>
+    <div>
+      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
+    </div>
+  </motion.div>
+)
+
+export default Page
