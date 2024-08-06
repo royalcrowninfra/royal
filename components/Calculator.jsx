@@ -236,6 +236,7 @@ const Calculator = () => {
         </Card>
       </div>
 
+
       <Card className="mt-8 bg-white shadow-lg">
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-indigo-700">Amortization Schedule</CardTitle>
@@ -269,6 +270,7 @@ const Calculator = () => {
           </div>
         </CardContent>
       </Card>
+
     </motion.div>
   );
 };
