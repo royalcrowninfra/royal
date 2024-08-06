@@ -1,17 +1,8 @@
-'use client'
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import IFrameComponent from "@/components/IFrameComponent";
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import Calculator from "@/components/Calculator";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -25,7 +16,6 @@ export default function ProjectPage({ params }) {
   if (!project) {
     return <div>Project not found</div>;
   }
-  
 
   return (
     <div className="min-h-screen">
@@ -52,7 +42,7 @@ export default function ProjectPage({ params }) {
             />
           </div>
         </div>
-        <div className="px-4 mt-4">
+        <div className="px-8 mt-4 flex gap-2">
           <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
             <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
               Download Brochure
@@ -61,6 +51,15 @@ export default function ProjectPage({ params }) {
               </svg>
             </button>
           </Link>
+          <Link href="/Calculator">
+            <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center w-full sm:w-auto">
+              EMI Calculator
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </button>
+          </Link>
+
         </div>
       </section>
 
@@ -68,7 +67,7 @@ export default function ProjectPage({ params }) {
         <section className='bg-gray-100 py-8'>
           <div className='px-4'>
             <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Amenities</h2>
-            <p className='mb-4 text-sm md:text-base text-black'>
+            <p className='mb-4 text-sm md:text-base text-black text-center'>
               {project.amenitiesDescription}
             </p>
             <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4'>
@@ -79,7 +78,7 @@ export default function ProjectPage({ params }) {
                     alt={amenity.name}
                     width={200}
                     height={200}
-                    className='rounded-lg w-full h-auto'
+                    className='rounded-lg w-full h-64'
                   />
                   <div className='absolute bottom-0 left-0 right-0 bg-blue-500 bg-opacity-75 text-white p-2 rounded-b-lg'>
                     <p className='text-center text-xs sm:text-sm'>
