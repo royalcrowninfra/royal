@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Slider } from "@/components/ui/slider";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { Input } from "@/components/ui/input";
@@ -113,26 +113,30 @@ const Calculator = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="max-w-6xl mx-auto p-6 space-y-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="max-w-6xl mx-auto p-6 space-y-8 bg-gradient-to-br from-indigo-100 to-purple-200 min-h-screen"
     >
       <motion.h1
-        initial={{ scale: 0.9 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.3 }}
-        className="text-4xl font-bold text-center text-indigo-600 mb-8"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100 }}
+        className="text-5xl font-bold text-center text-indigo-800 mb-12"
       >
         EMI Calculator
       </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-indigo-700">Input Details</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="bg-white rounded-xl shadow-2xl overflow-hidden"
+        >
+          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+            <h2 className="text-2xl font-semibold text-white text-center">Input Details</h2>
+          </div>
+          <div className="p-6 space-y-6">
             {[
               { label: "Loan Amount", value: loanAmount, setValue: setLoanAmount, max: 20000000, step: 100000, format: formatter.format },
               { label: "Interest Rate %", value: interestRate, setValue: setInterestRate, max: 30, step: 0.1, format: (v) => v.toFixed(1) + '%' },
@@ -148,7 +152,7 @@ const Calculator = () => {
                   {item.label}
                 </label>
                 <div className="flex items-center space-x-4">
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="flex-grow">
+                  <motion.div whileHover={{ scale: 1.05 }} className="flex-grow">
                     <Slider
                       value={[item.value]}
                       onValueChange={(value) => item.setValue(value[0])}
@@ -174,19 +178,23 @@ const Calculator = () => {
                 </div>
               </motion.div>
             ))}
-          </CardContent>
-        </Card>
+          </div>
+        </motion.div>
 
-        <Card className="bg-gradient-to-br from-purple-50 to-pink-100 shadow-lg">
-          <CardHeader>
-            <CardTitle className="text-2xl font-semibold text-purple-700">Results</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
+        <motion.div
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="bg-white rounded-xl shadow-2xl overflow-hidden"
+        >
+          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+            <h2 className="text-2xl font-semibold text-white text-center">Results</h2>
+          </div>
+          <div className="p-6 space-y-6">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-4"
             >
               {[
                 { label: "EMI (Monthly)", value: formatter.format(emi) },
@@ -199,10 +207,11 @@ const Calculator = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 + index * 0.1 }}
-                  className="bg-white p-4 rounded-lg shadow"
+                  whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.1)" }}
+                  className="bg-gradient-to-br from-indigo-50 to-purple-100 p-4 rounded-lg"
                 >
                   <p className="text-sm text-gray-600">{item.label}</p>
-                  <p className="text-lg font-semibold text-indigo-600">{item.value}</p>
+                  <p className="text-lg font-semibold text-indigo-700">{item.value}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -232,45 +241,55 @@ const Calculator = () => {
                 </PieChart>
               </ResponsiveContainer>
             </motion.div>
-          </CardContent>
-        </Card>
+          </div>
+        </motion.div>
       </div>
 
-
-      <Card className="mt-8 bg-white shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl font-semibold text-indigo-700">Amortization Schedule</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead className="bg-indigo-100">Year</TableHead>
-                  <TableHead className="bg-green-100">Principal (A)</TableHead>
-                  <TableHead className="bg-orange-100">Interest (B)</TableHead>
-                  <TableHead className="bg-yellow-100">Total Payment (A + B)</TableHead>
-                  <TableHead className="bg-red-100">Balance</TableHead>
-                  <TableHead className="bg-purple-100">Loan Paid To Date</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="mt-12 bg-white rounded-xl shadow-2xl overflow-hidden"
+      >
+        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6">
+          <h2 className="text-2xl font-semibold text-white text-center">Amortization Schedule</h2>
+        </div>
+        <div className="p-6 overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead className="bg-indigo-100">Year</TableHead>
+                <TableHead className="bg-green-100">Principal (A)</TableHead>
+                <TableHead className="bg-orange-100">Interest (B)</TableHead>
+                <TableHead className="bg-yellow-100">Total Payment (A + B)</TableHead>
+                <TableHead className="bg-red-100">Balance</TableHead>
+                <TableHead className="bg-purple-100">Loan Paid To Date</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <AnimatePresence>
                 {amortizationSchedule.map((row, index) => (
-                  <TableRow key={index}>
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ delay: index * 0.05 }}
+                    whileHover={{ scale: 1.02, backgroundColor: "#F3F4F6" }}
+                  >
                     <TableCell>{row.year}</TableCell>
                     <TableCell>{formatter.format(row.principal)}</TableCell>
                     <TableCell>{formatter.format(row.interest)}</TableCell>
                     <TableCell>{formatter.format(row.totalPayment)}</TableCell>
                     <TableCell>{formatter.format(row.balance)}</TableCell>
                     <TableCell>{percentFormatter.format(row.loanPaidToDate)}</TableCell>
-                  </TableRow>
+                  </motion.tr>
                 ))}
-              </TableBody>
-            </Table>
-          </div>
-        </CardContent>
-      </Card>
-
+              </AnimatePresence>
+            </TableBody>
+          </Table>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
