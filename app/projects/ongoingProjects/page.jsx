@@ -9,7 +9,7 @@ import Image from "next/image";
 const OngoingProjects = () => {
   return (
     <div>
-      <div className="bg-[url('/images/projects/projectBackground.jpeg')] bg-center bg-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+      <div className="bg-[url('/images/projectBackground.jpg')] bg-center bg-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
         <motion.h1
           initial='offscreen'
           whileInView={"onscreen"}
