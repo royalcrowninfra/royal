@@ -65,15 +65,15 @@ const Calculator = () => {
 
       for (let month = 1; month <= paymentsPerYear; month++) {
         if (balance <= 0) break;
-        
+
         let interest = balance * r;
         let principal = emi - interest;
-        
+
         if (principal > balance) {
           principal = balance;
           interest = balance * r;
         }
-        
+
         balance -= principal;
         yearlyPrincipal += principal;
         yearlyInterest += interest;
