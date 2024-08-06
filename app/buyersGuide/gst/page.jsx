@@ -67,7 +67,7 @@ const GSTRealEstate = () => {
             {sections.map((section, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="bg-blue-600 p-4">
-                  <h2 className="text-xl font-semibold text-white">{section.title}</h2>
+                  <h2 className="text-xl font-semibold text-white text-center">{section.title}</h2>
                 </div>
                 <div className="p-6">
                   {section.content && (

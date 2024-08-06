@@ -78,9 +78,9 @@ const PanvelPropertyRegistration = () => {
           className="grid md:grid-cols-2 gap-8">
           {sections.map((section, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-blue-600 p-4 flex items-center">
+              <div className="bg-blue-600 p-4 flex items-center text-center">
                 {section.icon}
-                <h2 className="text-xl font-semibold text-white ml-2">{section.title}</h2>
+                <h2 className="text-xl font-semibold text-white ml-2 text-center">{section.title}</h2>
               </div>
               <ul className="p-6 space-y-4">
                 {section.items.map((item, itemIndex) => (

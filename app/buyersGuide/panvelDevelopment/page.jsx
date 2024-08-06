@@ -89,7 +89,7 @@ const PanvelDevelopment = () => {
                 variants={desVariants}
               >
                 <div className="bg-blue-600 p-4">
-                  <h2 className="text-xl font-semibold text-white">{block.title}</h2>
+                  <h2 className="text-xl font-semibold text-white text-center">{block.title}</h2>
                 </div>
                 <div className="p-6">
                   <Image
