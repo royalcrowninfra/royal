@@ -13,10 +13,10 @@ const EnquiryButton = () => {
     <>
       {/* Animated Enquiry Button */}
       <motion.button
-        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rotate-90 origin-right z-50"
+        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50"
         onClick={togglePopup}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        // whileHover={{ scale: 1.1 }}
+        // whileTap={{ scale: 0.9 }}
       >
         ENQUIRY
       </motion.button>
@@ -37,7 +37,7 @@ const EnquiryButton = () => {
               exit={{ y: "-100vh" }}
               transition={{ type: "spring", damping: 25, stiffness: 500 }}
             >
-              <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
+              <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
               <form>
                 <div className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
