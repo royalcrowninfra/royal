@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
           </motion.div>
         </div>
-        <motion.div
+        {/* <motion.div
           initial="offscreen"
           whileInView={"onscreen"}
           variants={titleVariants}
@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
           <p className="pt-4 text-greay-500">by subscribing to our newsletter , you agree to receive emails from us .Your personal data will be stored
             and processed according to our privacy policy .</p>
-        </motion.div>
+        </motion.div> */}
       </div>
       {/* Copyright */}
       <motion.div
