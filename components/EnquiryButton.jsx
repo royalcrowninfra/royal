@@ -9,14 +9,29 @@ const EnquiryButton = () => {
     setIsOpen(!isOpen);
   };
 
+  const formAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemAnimation = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
+  };
+
   return (
     <>
       {/* Animated Enquiry Button */}
       <motion.button
         className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50"
         onClick={togglePopup}
-        // whileHover={{ scale: 1.1 }}
-        // whileTap={{ scale: 0.9 }}
       >
         ENQUIRY
       </motion.button>
@@ -37,9 +52,14 @@ const EnquiryButton = () => {
               exit={{ y: "-100vh" }}
               transition={{ type: "spring", damping: 25, stiffness: 500 }}
             >
-              <h2 className="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-              <form>
-                <div className="mb-4">
+              <motion.form
+                variants={formAnimation}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.h2 variants={itemAnimation} className="text-2xl font-bold mb-4 text-center">Contact Us</motion.h2>
+
+                <motion.div variants={itemAnimation} className="mb-4">
                   <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
                     Name
                   </label>
@@ -49,8 +69,9 @@ const EnquiryButton = () => {
                     className="w-full px-3 py-2 border rounded-lg"
                     placeholder="Your name"
                   />
-                </div>
-                <div className="mb-4">
+                </motion.div>
+
+                <motion.div variants={itemAnimation} className="mb-4">
                   <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
                     Email
                   </label>
@@ -60,8 +81,9 @@ const EnquiryButton = () => {
                     className="w-full px-3 py-2 border rounded-lg"
                     placeholder="Your email"
                   />
-                </div>
-                <div className="mb-4">
+                </motion.div>
+
+                <motion.div variants={itemAnimation} className="mb-4">
                   <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
                     Message
                   </label>
@@ -71,14 +93,19 @@ const EnquiryButton = () => {
                     className="w-full px-3 py-2 border rounded-lg"
                     placeholder="Your message"
                   ></textarea>
-                </div>
-                <button
+                </motion.div>
+
+                <motion.button
+                  variants={itemAnimation}
                   type="submit"
                   className="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Send
-                </button>
-              </form>
+                </motion.button>
+              </motion.form>
+
               <motion.button
                 onClick={togglePopup}
                 className="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
