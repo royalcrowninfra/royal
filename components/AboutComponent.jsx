@@ -7,7 +7,7 @@ const ServiceCard = ({ icon: Icon, title }) => (
   <motion.div
     whileHover={{ scale: 1.05, rotate: 2, backgroundColor: "#4299e1" }}
     whileTap={{ scale: 0.95 }}
-    className="bg-blue-600 p-6 rounded-lg text-white text-center cursor-pointer"
+    className="bg-teal-500 p-6 rounded-lg text-white text-center cursor-pointer"
     transition={{ type: "spring", stiffness: 300 }}
   >
     <motion.div 
@@ -91,7 +91,7 @@ const AboutComponent = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(59,130,246)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 text-white py-2 px-6 rounded-full font-semibold"
+              className="bg-teal-500 text-white py-2 px-6 rounded-full font-semibold"
             >
               Read More
             </motion.button>
