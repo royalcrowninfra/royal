@@ -26,14 +26,46 @@ const EnquiryButton = () => {
     visible: { y: 0, opacity: 1 }
   };
 
+  const waveAnimation = {
+    scale: [1, 2, 3],
+    opacity: [0.6, 0.3, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeOut"
+    }
+  };
+
   return (
     <>
-      <motion.button
-        className="fixed right-6 bottom-1/4 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50 rounded-lg shadow-lg"
-        onClick={togglePopup}
+      <motion.div
+        className="fixed right-6 bottom-1/4 transform -translate-y-1/2 z-50"
+        initial={{ rotate: 90 }}
+        animate={{ rotate: 90 }}
       >
-        ENQUIRY
-      </motion.button>
+        <motion.div
+          className="relative"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          {[...Array(3)].map((_, index) => (
+            <motion.div
+              key={index}
+              className="absolute inset-0 rounded-full bg-blue-300"
+              animate={waveAnimation}
+              style={{
+                animationDelay: `${index * 0.5}s`,
+              }}
+            />
+          ))}
+          <motion.button
+            className="relative bg-blue-500 text-white px-6 py-4 rounded-full shadow-lg"
+            onClick={togglePopup}
+          >
+            ENQUIRY
+          </motion.button>
+        </motion.div>
+      </motion.div>
 
       <AnimatePresence>
         {isOpen && (
