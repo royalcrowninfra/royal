@@ -29,7 +29,7 @@ const EnquiryButton = () => {
   return (
     <>
       <motion.button
-        className="fixed right-6 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50 rounded-lg shadow-lg"
+        className="fixed right-6 bottom-1/4 transform -translate-y-1/2 bg-blue-500 text-white px-6 py-4 rotate-90 origin-right z-50 rounded-lg shadow-lg"
         onClick={togglePopup}
       >
         ENQUIRY
