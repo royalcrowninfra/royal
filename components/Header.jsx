@@ -113,7 +113,7 @@ const Navbar = () => {
 
       {/* Main navigation */}
 
-      <div className="flex items-start justify-center ml-96 py-4 sm:ml-64 sm:py-8">
+      <div className="flex items-start justify-center ml-96 py-4 sm:ml-96 sm:py-8">
         {/* Desktop Navigation Links */}
         <div className="hidden sm:flex items-center  space-x-6 lg:gap-8">
           {links.map((item, index) => (
