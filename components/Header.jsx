@@ -79,7 +79,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Top bar */}
-      <div className="bg-gradient-to-r from-orange-200 via-cyan-500 to-purple-300 py-2">
+      <div className="bg-gradient-to-r from-orange-200 via-teal-400 to-purple-300 py-2">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-end items-center gap-2 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
@@ -112,88 +112,83 @@ const Navbar = () => {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white shadow-md p-0">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-end py-4 sm:py-8">
-            {/* Mobile menu button */}
-            <div className="sm:hidden">
-              <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-600">
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
 
-            {/* Desktop Navigation Links */}
-            <div className="hidden sm:flex items-center space-x-6 lg:gap-8">
-              {links.map((item, index) => (
-                <div key={item.path} className="relative group">
-                  <Link
-                    href={item.path}
-                    className="text-gray-700 hover:text-teal-500 text-xs lg:text-sm xl:text-base font-black flex items-center"
-                    onMouseEnter={() => item.dropdown && toggleDropdown(index)}
-                  >
-                    {item.name}
-                    {item.dropdown && <ChevronDown size={16} className="ml-1" />}
-                  </Link>
-                  {item.dropdown && (
-                    <div
-                      className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg ${openDropdown === index ? 'block' : 'hidden'
-                        } transition-all duration-300 z-50`}
-                      onMouseLeave={() => toggleDropdown(null)}
+      <div className="flex items-start justify-center ml-96 py-4 sm:ml-64 sm:py-8">
+        {/* Desktop Navigation Links */}
+        <div className="hidden sm:flex items-center  space-x-6 lg:gap-8">
+          {links.map((item, index) => (
+            <div key={item.path} className="relative group">
+              <Link
+                href={item.path}
+                className="text-gray-700 hover:text-teal-500 text-xs lg:text-sm xl:text-base font-black flex items-center"
+                onMouseEnter={() => item.dropdown && toggleDropdown(index)}
+              >
+                {item.name}
+                {item.dropdown && <ChevronDown size={16} className="ml-1" />}
+              </Link>
+              {item.dropdown && (
+                <div
+                  className={`absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg ${openDropdown === index ? 'block' : 'hidden'
+                    } transition-all duration-300 z-50`}
+                  onMouseLeave={() => toggleDropdown(null)}
+                >
+                  {item.dropdown.map((subItem) => (
+                    <Link
+                      key={subItem.path}
+                      href={subItem.path}
+                      className="block px-4 py-2 text-xs lg:text-sm text-gray-700 hover:bg-gray-100"
                     >
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.path}
-                          href={subItem.path}
-                          className="block px-4 py-2 text-xs lg:text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                      {subItem.name}
+                    </Link>
+                  ))}
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-
-          {/* Mobile Navigation Links */}
-          <div
-            className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-              } sm:hidden`}
-          >
-            <div className="p-4">
-              <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-600 mb-4">
-                <X size={24} />
-              </button>
-              {links.map((item, index) => (
-                <div key={item.path} className="py-2">
-                  <Link
-                    href={item.path}
-                    className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
-                    onClick={() => item.dropdown && toggleDropdown(index)}
-                  >
-                    {item.name}
-                    {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
-                  </Link>
-                  {item.dropdown && openDropdown === index && (
-                    <div className="ml-4 mt-2 space-y-2">
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.path}
-                          href={subItem.path}
-                          className="block text-gray-600 hover:text-teal-500 text-sm"
-                        >
-                          {subItem.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
-      </nav>
+      </div>
+
+      {/* Mobile menu button */}
+      <div className="sm:hidden fixed top-4 right-4 z-50">
+        <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-600">
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile Navigation Links */}
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+          } sm:hidden`}
+      >
+        <div className="p-4 pt-12">
+          {links.map((item, index) => (
+            <div key={item.path} className="py-2">
+              <Link
+                href={item.path}
+                className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
+                onClick={() => item.dropdown && toggleDropdown(index)}
+              >
+                {item.name}
+                {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
+              </Link>
+              {item.dropdown && openDropdown === index && (
+                <div className="ml-4 mt-2 space-y-2">
+                  {item.dropdown.map((subItem) => (
+                    <Link
+                      key={subItem.path}
+                      href={subItem.path}
+                      className="block text-gray-600 hover:text-teal-500 text-sm"
+                    >
+                      {subItem.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
     </header>
   );
 };
