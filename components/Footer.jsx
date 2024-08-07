@@ -3,87 +3,106 @@ import Link from "next/link";
 import { Input } from "./ui/input";
 import { motion } from "framer-motion";
 import { desVariants, tagVariants, titleVariants } from "../utils/animation";
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <div className="bg-gray-500">
-      <div className="container lg:grid lg:grid-cols-2 py-14">
-        <div className="grid gap-4 pb-4 text-left lg:pb-0 lg:grid-cols-3">
+    <div className="bg-gray-700 text-white">
+      <div className="container mx-auto px-4 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <motion.div
             initial="offscreen"
             whileInView={"onscreen"}
             variants={titleVariants}
+            className="space-y-4"
           >
-            <h2 className="pb-4 text-xl font-semibold uppercase">Company</h2>
-            <div className="flex flex-col">
-              <Link href='/about' className="py-1 hover:underline">About Us</Link>
-              <Link href='/' className="py-1 hover:underline">Press</Link>
-              <Link href='/' className="py-1 hover:underline">Careers</Link>
-              <Link href='/contact' className="py-1 hover:underline">Contact</Link>
+            <h2 className="text-xl font-semibold uppercase">Corporate Office</h2>
+            <div className="flex items-start space-x-2">
+              <MapPin className="mt-1 flex-shrink-0" />
+              <p>ROAYL CROWN<br />Shop No 1 Sector 25 Plot No 19,<br />
+                Ravi Rachna, near Khandesh Station,<br />
+                Sector-25, Khandeshhwar,<br />
+                Navi Mumbai, Maharashtra 410209</p>
             </div>
           </motion.div>
+
           <motion.div
             initial="offscreen"
             whileInView={"onscreen"}
             variants={desVariants}
+            className="space-y-4"
           >
-            <h2 className="pb-4 text-xl font-semibold uppercase">Development</h2>
-            <div className="flex flex-col">
-              <Link href='/gallery' className="py-1 hover:underline">Documentation</Link>
-              <Link href='/about' className="py-1 hover:underline">Reference</Link>
-              <Link href='/' className="py-1 hover:underline">Changelog</Link>
-              <Link href='/projects' className="py-1 hover:underline">Status</Link>
+            <h2 className="text-xl font-semibold uppercase">Contact Us</h2>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-2">
+                <Phone size={18} />
+                <p>CALL US : +91 - 9322277888</p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Phone size={18} />
+                <p>WHATSAPP : +91 - 86570 04324</p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail size={18} />
+                <p>EMAIL : info@royalcrown.com</p>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe size={18} />
+                <p>WEBSITE : www.royalcrown.in</p>
+              </div>
             </div>
           </motion.div>
+
           <motion.div
             initial="offscreen"
             whileInView={"onscreen"}
             variants={tagVariants}
+            className="space-y-4"
           >
-            <h2 className="pb-4 text-xl font-semibold uppercase">Connect</h2>
-            <div className="flex flex-col">
-              <Link href='/' className="py-1 hover:underline">Instagram</Link>
-              <Link href='/' className="py-1 hover:underline">Twitter</Link>
-              <Link href='/' className="py-1 hover:underline">Linkdin</Link>
-              <Link href='/' className="py-1 hover:underline">Facebook</Link>
+            <h2 className="text-xl font-semibold uppercase">Quick Links</h2>
+            <div className="flex flex-col space-y-2">
+              <Link href='/about' className="hover:underline">About Us</Link>
+              <Link href='/projects' className="hover:underline">Projects</Link>
+              <Link href='/gallery' className="hover:underline">Gallery</Link>
+              <Link href='/contact' className="hover:underline">Contact</Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial="offscreen"
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className="space-y-4"
+          >
+            <h2 className="text-xl font-semibold uppercase">Connect With Us</h2>
+            <div className="flex flex-col space-y-2">
+              <Link href='/' className="hover:underline">Instagram</Link>
+              <Link href='/' className="hover:underline">Twitter</Link>
+              <Link href='/' className="hover:underline">LinkedIn</Link>
+              <Link href='/' className="hover:underline">Facebook</Link>
             </div>
           </motion.div>
         </div>
-        {/* <motion.div
-          initial="offscreen"
-          whileInView={"onscreen"}
-          variants={titleVariants}
-        >
-          <p className="pb-4 text-xl font-semibold">Stay Updated</p>
-          <div className="relative lg:max-w-sm">
-            <Input type='name' id='first name' placeholder='Email Address' />
-            <button className="absolute bg-black text-white rounded-full h-10 px-3 text-sm top-2 right-2
-             hover:border-2 hover:border-black hover:bg-white hover:text-black dark:bg-primary">
-              Subscribe
-            </button>
-          </div>
-          <p className="pt-4 text-greay-500">by subscribing to our newsletter , you agree to receive emails from us .Your personal data will be stored
-            and processed according to our privacy policy .</p>
-        </motion.div> */}
       </div>
+
       {/* Copyright */}
       <motion.div
         initial="offscreen"
         whileInView={"onscreen"}
         variants={desVariants}
-        className="py-10 bg-black dark:bg-primary">
-        <div className="container text-white text-center lg:justify-between lg:flex">
-          <div className="pb-4 lg:pb-0">
-            <p>&copy;2024 Royal Crown Infra .All Rights Reserved <br /> <span className="text-muted-foreground">Designed By Akshay Kalamkar</span></p>
+        className="py-6 bg-gray-800"
+      >
+        <div className="container mx-auto px-4 text-center md:flex md:justify-between md:items-center">
+          <div className="mb-4 md:mb-0">
+            <p>&copy; 2024 Royal Crown Infra. All Rights Reserved</p>
+            <p className="text-sm text-gray-400">Designed By Akshay Kalamkar</p>
           </div>
-          <div>
-            <Link className="p-4 hover:underline" href='/'>Privacy</Link>
-            <Link className="p-4 hover:underline" href='/'>Terms</Link>
+          <div className="space-x-4">
+            <Link className="hover:underline" href='/'>Privacy Policy</Link>
+            <Link className="hover:underline" href='/'>Terms of Service</Link>
           </div>
         </div>
       </motion.div>
     </div>
-
   )
-
 }

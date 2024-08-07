@@ -65,16 +65,16 @@ export default function Contact() {
             <p className="mb-4">info@royalcrown.com</p>
 
             <div className="flex space-x-2 mb-6">
-              <motion.a 
-                href="#" 
+              <motion.a
+                href="#"
                 className="bg-blue-600 text-white p-2 rounded-full"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <FaFacebookF />
               </motion.a>
-              <motion.a 
-                href="#" 
+              <motion.a
+                href="#"
                 className="bg-blue-400 text-white p-2 rounded-full"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -86,7 +86,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <motion.div variants={inputVariants} whileFocus="focus" whileBlur="blur">
-                  <Input 
+                  <Input
                     type="text"
                     name="fullName"
                     placeholder="Full Name *"
@@ -99,7 +99,7 @@ export default function Contact() {
               </div>
               <div className="mb-4">
                 <motion.div variants={inputVariants} whileFocus="focus" whileBlur="blur">
-                  <Input 
+                  <Input
                     type="email"
                     name="email"
                     placeholder="Email *"
@@ -112,7 +112,7 @@ export default function Contact() {
               </div>
               <div className="mb-4">
                 <motion.div variants={inputVariants} whileFocus="focus" whileBlur="blur">
-                  <Input 
+                  <Input
                     type="tel"
                     name="contactNumber"
                     placeholder="Contact Number *"
@@ -125,7 +125,7 @@ export default function Contact() {
               </div>
               <div className="mb-4">
                 <motion.div variants={inputVariants} whileFocus="focus" whileBlur="blur">
-                  <Textarea 
+                  <Textarea
                     name="message"
                     placeholder="Your Message"
                     value={formData.message}
@@ -147,7 +147,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Preview Map Section */}
-          <motion.div 
+          <motion.div
             className="w-full h-[300px] md:h-full rounded-lg overflow-hidden shadow-lg"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
