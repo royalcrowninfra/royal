@@ -61,7 +61,7 @@ export default function Footer() {
           >
             <h2 className="text-xl font-semibold uppercase">Quick Links</h2>
             <div className="flex flex-col space-y-2">
-              <Link href='/about' className="hover:underline">About Us</Link>
+              <Link href='/about/ourteam' className="hover:underline">About Us</Link>
               <Link href='/projects' className="hover:underline">Projects</Link>
               <Link href='/gallery' className="hover:underline">Gallery</Link>
               <Link href='/contact' className="hover:underline">Contact</Link>
