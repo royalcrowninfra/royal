@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const formatter = new Intl.NumberFormat("en-IN", {
   style: "currency",
@@ -32,13 +33,14 @@ const Calculator = () => {
     setIsMounted(true);
   }, []);
 
-  const [loanAmount, setLoanAmount] = useState(5000000);
+  const [loanAmount, setLoanAmount] = useState(2000000);
   const [interestRate, setInterestRate] = useState(9);
   const [tenure, setTenure] = useState(240);
   const [emi, setEmi] = useState(0);
   const [totalInterest, setTotalInterest] = useState(0);
   const [totalPayment, setTotalPayment] = useState(0);
   const [amortizationSchedule, setAmortizationSchedule] = useState([]);
+  const [expandedYears, setExpandedYears] = useState({});
 
   useEffect(() => {
     const r = interestRate / 12 / 100;
@@ -62,6 +64,7 @@ const Calculator = () => {
     for (let year = 1; year <= yearsTotal; year++) {
       let yearlyPrincipal = 0;
       let yearlyInterest = 0;
+      let monthlyData = [];
 
       for (let month = 1; month <= paymentsPerYear; month++) {
         if (balance <= 0) break;
@@ -80,6 +83,15 @@ const Calculator = () => {
         totalPrincipal += principal;
 
         if (balance < 0.01) balance = 0; // Adjust for floating point errors
+
+        monthlyData.push({
+          month: month,
+          principal: Math.round(principal),
+          interest: Math.round(interest),
+          totalPayment: Math.round(principal + interest),
+          balance: Math.round(balance),
+          loanPaidToDate: totalPrincipal / loanAmount,
+        });
       }
 
       schedule.push({
@@ -89,6 +101,7 @@ const Calculator = () => {
         totalPayment: Math.round(yearlyPrincipal + yearlyInterest),
         balance: Math.round(balance),
         loanPaidToDate: totalPrincipal / loanAmount,
+        monthlyData: monthlyData,
       });
 
       if (balance <= 0) break;
@@ -107,6 +120,10 @@ const Calculator = () => {
     if (!isNaN(value) && value >= 0 && value <= max) {
       setValue(value);
     }
+  };
+
+  const toggleYearExpansion = (year) => {
+    setExpandedYears(prev => ({ ...prev, [year]: !prev[year] }));
   };
 
   if (!isMounted) return null;
@@ -133,7 +150,7 @@ const Calculator = () => {
           whileTap={{ scale: 0.98 }}
           className="bg-white rounded-xl shadow-2xl overflow-hidden"
         >
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+          <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-6">
             <h2 className="text-2xl font-semibold text-white text-center">Input Details</h2>
           </div>
           <div className="p-6 space-y-6">
@@ -186,7 +203,7 @@ const Calculator = () => {
           whileTap={{ scale: 0.98 }}
           className="bg-white rounded-xl shadow-2xl overflow-hidden"
         >
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+          <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-6">
             <h2 className="text-2xl font-semibold text-white text-center">Results</h2>
           </div>
           <div className="p-6 space-y-6">
@@ -251,7 +268,7 @@ const Calculator = () => {
         transition={{ delay: 0.8 }}
         className="mt-12 bg-white rounded-xl shadow-2xl overflow-hidden"
       >
-        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 p-6">
+        <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-6">
           <h2 className="text-2xl font-semibold text-white text-center">Amortization Schedule</h2>
         </div>
         <div className="p-6 overflow-x-auto">
@@ -264,26 +281,70 @@ const Calculator = () => {
                 <TableHead className="bg-yellow-100">Total Payment (A + B)</TableHead>
                 <TableHead className="bg-red-100">Balance</TableHead>
                 <TableHead className="bg-purple-100">Loan Paid To Date</TableHead>
+                <TableHead className="bg-blue-100">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               <AnimatePresence>
                 {amortizationSchedule.map((row, index) => (
-                  <motion.tr
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ delay: index * 0.05 }}
-                    whileHover={{ scale: 1.02, backgroundColor: "#F3F4F6" }}
-                  >
-                    <TableCell>{row.year}</TableCell>
-                    <TableCell>{formatter.format(row.principal)}</TableCell>
-                    <TableCell>{formatter.format(row.interest)}</TableCell>
-                    <TableCell>{formatter.format(row.totalPayment)}</TableCell>
-                    <TableCell>{formatter.format(row.balance)}</TableCell>
-                    <TableCell>{percentFormatter.format(row.loanPaidToDate)}</TableCell>
-                  </motion.tr>
+                  <React.Fragment key={index}>
+                    <motion.tr
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ delay: index * 0.05 }}
+                      whileHover={{ scale: 1.02, backgroundColor: "#F3F4F6" }}
+                    >
+                      <TableCell>{row.year}</TableCell>
+                      <TableCell>{formatter.format(row.principal)}</TableCell>
+                      <TableCell>{formatter.format(row.interest)}</TableCell>
+                      <TableCell>{formatter.format(row.totalPayment)}</TableCell>
+                      <TableCell>{formatter.format(row.balance)}</TableCell>
+                      <TableCell>{percentFormatter.format(row.loanPaidToDate)}</TableCell>
+                      <TableCell>
+                        <button
+                          onClick={() => toggleYearExpansion(row.year)}
+                          className="flex items-center justify-center p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                        >
+                          {expandedYears[row.year] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                        </button>
+                      </TableCell>
+                    </motion.tr>
+                    {expandedYears[row.year] && (
+                      <motion.tr
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                      >
+                        <TableCell colSpan={7}>
+                          <Table>
+                            <TableHeader>
+                              <TableRow>
+                                <TableHead>Month</TableHead>
+                                <TableHead>Principal</TableHead>
+                                <TableHead>Interest</TableHead>
+                                <TableHead>Total Payment</TableHead>
+                                <TableHead>Balance</TableHead>
+                                <TableHead>Loan Paid To Date</TableHead>
+                              </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                              {row.monthlyData.map((month, monthIndex) => (
+                                <TableRow key={monthIndex}>
+                                  <TableCell>{month.month}</TableCell>
+                                  <TableCell>{formatter.format(month.principal)}</TableCell>
+                                  <TableCell>{formatter.format(month.interest)}</TableCell>
+                                  <TableCell>{formatter.format(month.totalPayment)}</TableCell>
+                                  <TableCell>{formatter.format(month.balance)}</TableCell>
+                                  <TableCell>{percentFormatter.format(month.loanPaidToDate)}</TableCell>
+                                </TableRow>
+                              ))}
+                            </TableBody>
+                          </Table>
+                        </TableCell>
+                      </motion.tr>
+                    )}
+                  </React.Fragment>
                 ))}
               </AnimatePresence>
             </TableBody>
