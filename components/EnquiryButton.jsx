@@ -39,7 +39,7 @@ const EnquiryButton = () => {
   return (
     <>
       <motion.div
-        className="fixed right-6 bottom-1/4 transform -translate-y-1/2 z-50"
+        className="fixed right-0 bottom-1/4 transform -translate-y-1/2 z-50"
         initial={{ rotate: 90 }}
         animate={{ rotate: 90 }}
       >
