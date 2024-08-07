@@ -26,15 +26,17 @@ const EnquiryButton = () => {
     visible: { y: 0, opacity: 1 }
   };
 
-  const waveAnimation = {
-    scale: [1, 2, 3],
-    opacity: [0.6, 0.3, 0],
+  const waveAnimation = (index) => ({
+    scale: [1, 1.2, 1.4, 1.6, 1.8, 2],
+    opacity: [0.1, 0.2, 0.4, 0.3, 0.2, 0],
     transition: {
       duration: 2,
       repeat: Infinity,
-      ease: "easeOut"
+      repeatDelay: 1,
+      ease: "easeInOut",
+      delay: index * 0.2
     }
-  };
+  });
 
   return (
     <>
@@ -48,14 +50,11 @@ const EnquiryButton = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          {[...Array(3)].map((_, index) => (
+          {[...Array(5)].map((_, index) => (
             <motion.div
               key={index}
               className="absolute inset-0 rounded-full bg-blue-300"
-              animate={waveAnimation}
-              style={{
-                animationDelay: `${index * 0.5}s`,
-              }}
+              animate={waveAnimation(index)}
             />
           ))}
           <motion.button
