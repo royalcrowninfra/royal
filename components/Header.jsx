@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDown, Phone, Mail, Twitter, Facebook, Instagram, Youtube, Menu, X } from "lucide-react";
@@ -12,12 +12,8 @@ const links = [
     dropdown: [
       { path: "/about/ourteam", name: "Our Team" },
       { path: "/about/aboutTheGroup", name: "About The Group" },
-      // { path: "/about/visionAndMission", name: "Vision And Mission" },
-      // { path: "/about/philosophy", name: "Philosophy" },
-      // { path: "/about/values", name: "Values" },
     ],
   },
-  // { path: "/our-team", name: "Our Team" },
   {
     path: "/",
     name: "Projects",
@@ -57,6 +53,17 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 640) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <header className="w-full relative">
       {/* Logo */}
@@ -85,7 +92,7 @@ const Navbar = () => {
             </span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-            <span className="bg-orange-500 text-white text-xs sm:text-sm  rounded-full">RERA ID: A52000011720</span>
+            <span className="bg-orange-500 text-white text-xs sm:text-sm rounded-full px-2 py-1">RERA ID: A52000011720</span>
             <div className="flex items-center space-x-3">
               <Link href="#" aria-label="Twitter">
                 <Twitter size={18} className="text-white" />
@@ -150,32 +157,40 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Navigation Links */}
-          <div className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-            {links.map((item, index) => (
-              <div key={item.path} className="py-2">
-                <Link
-                  href={item.path}
-                  className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
-                  onClick={() => item.dropdown && toggleDropdown(index)}
-                >
-                  {item.name}
-                  {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
-                </Link>
-                {item.dropdown && openDropdown === index && (
-                  <div className="ml-4 mt-2 space-y-2">
-                    {item.dropdown.map((subItem) => (
-                      <Link
-                        key={subItem.path}
-                        href={subItem.path}
-                        className="block text-gray-600 hover:text-teal-500 text-sm"
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+          <div
+            className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              } sm:hidden`}
+          >
+            <div className="p-4">
+              <button onClick={toggleMobileMenu} className="text-gray-500 hover:text-gray-600 mb-4">
+                <X size={24} />
+              </button>
+              {links.map((item, index) => (
+                <div key={item.path} className="py-2">
+                  <Link
+                    href={item.path}
+                    className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
+                    onClick={() => item.dropdown && toggleDropdown(index)}
+                  >
+                    {item.name}
+                    {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
+                  </Link>
+                  {item.dropdown && openDropdown === index && (
+                    <div className="ml-4 mt-2 space-y-2">
+                      {item.dropdown.map((subItem) => (
+                        <Link
+                          key={subItem.path}
+                          href={subItem.path}
+                          className="block text-gray-600 hover:text-teal-500 text-sm"
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </nav>
