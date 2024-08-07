@@ -60,7 +60,7 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Logo */}
-      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-2 z-10">
+      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-1/2 top-0 z-10">
         <Link href="/">
           <Image
             src="/images/header/my-image.png"
@@ -72,7 +72,7 @@ const Navbar = () => {
         </Link>
       </div>
       {/* Top bar */}
-      <div className="bg-gradient-to-r from-orange-400 via-cyan-500 to-purple-500 py-2">
+      <div className="bg-gradient-to-r from-orange-200 via-cyan-500 to-purple-200 py-2">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-end items-center gap-2 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
@@ -85,7 +85,7 @@ const Navbar = () => {
             </span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-            <span className="bg-orange-500 text-white text-xs sm:text-sm px-3 py-1 rounded-full">RERA ID: A52000011720</span>
+            <span className="bg-orange-500 text-white text-xs sm:text-sm  rounded-full">RERA ID: A52000011720</span>
             <div className="flex items-center space-x-3">
               <Link href="#" aria-label="Twitter">
                 <Twitter size={18} className="text-white" />
@@ -105,7 +105,7 @@ const Navbar = () => {
       </div>
 
       {/* Main navigation */}
-      <nav className="bg-white shadow-md p-2">
+      <nav className="bg-white shadow-md p-0">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-end py-4 sm:py-8">
             {/* Mobile menu button */}

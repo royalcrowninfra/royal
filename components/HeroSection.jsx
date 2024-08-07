@@ -126,7 +126,7 @@ const HeroSection = () => {
           </>
         )}
       </div>
-      <div className="relative bottom-10 left-1/2 transform -translate-x-1/2 w-8/12 bg-gradient-to-r from-orange-400 via-cyan-500 to-purple-500 py-4 sm:py-6 md:py-6">
+      <div className="relative bottom-10 left-1/2 transform -translate-x-1/2 w-8/12 bg-gradient-to-r from-orange-200 via-cyan-500 to-purple-200 py-4 sm:py-6 md:py-6">
         <div className="container mx-auto flex flex-wrap justify-between items-center text-white">
           {statistics.map((item, index) => (
             <div
