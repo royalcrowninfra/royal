@@ -9,8 +9,8 @@ import Enquiry from "../components/EnquiryButton"
 // theme provider
 import { ThemeProvider } from "../components/ThemeProvider";
 
-const kanit = Kanit({ weight:'400', subsets: ["latin-ext"],
-  weight:['400'], 
+const kanit = Kanit({ weight:'500', subsets: ["latin-ext"],
+  weight:['500'], 
   display:"swap"
 });
 
