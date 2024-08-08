@@ -133,7 +133,7 @@ const Calculator = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="max-w-6xl mx-auto p-6 space-y-8 bg-gradient-to-br from-indigo-100 to-purple-200 min-h-screen"
+      className="max-w-6xl mx-auto p-6 space-y-8 bg-gradient-to-br from-gray-100 to-gray-100 min-h-screen"
     >
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
