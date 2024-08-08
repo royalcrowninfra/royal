@@ -9,7 +9,7 @@ const posts = [
   {
     id: 1,
     dateTime: '2024-08-08T12:00:00Z',
-    category: { href: '/reviews', title: 'Positive' },
+    // category: { href: '/reviews', title: 'Positive' },
     href: '/review/1',
     title: 'Amazing Service!',
     description: 'I had a great experience with this company. The service was top-notch, and I would highly recommend them to others.',
@@ -23,7 +23,7 @@ const posts = [
   {
     id: 2,
     dateTime: '2024-08-08T12:00:00Z',
-    category: { href: '/reviews', title: 'Positive' },
+    // category: { href: '/reviews', title: 'Positive' },
     href: '/review/2',
     title: 'Excellent Support!',
     description: 'The support team was very helpful and resolved my issue promptly. Highly satisfied with the service.',
@@ -37,7 +37,7 @@ const posts = [
   {
     id: 3,
     dateTime: '2024-08-08T12:00:00Z',
-    category: { href: '/reviews', title: 'Positive' },
+    // category: { href: '/reviews', title: 'Positive' },
     href: '/review/3',
     title: 'Great Experience!',
     description: 'Overall, a fantastic experience. The team was professional and delivered exactly what was promised.',
@@ -89,12 +89,12 @@ export default function ContactSection() {
                 <time dateTime={post.dateTime}>
                   <Image src='/images/header/stars.jpg' width={80} height={5} alt="Stars" />
                 </time>
-                <Link
+                {/* <Link
                   href={post.category.href}
                   className="relative z-10 bg-primary rounded-full text-white px-3 py-1.5 font-medium hover:bg-gray-100 hover:text-black transition-all"
                 >
                   {post.category.title}
-                </Link>
+                </Link> */}
               </div>
               <div className="group relative mt-4">
                 <h3 className="text-lg font-semibold leading-6 group-hover:text-gray-600">
