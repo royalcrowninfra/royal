@@ -67,7 +67,7 @@ const Navbar = () => {
   return (
     <header className="w-full relative">
       {/* Logo */}
-      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-3/4 top-0 z-10">
+      <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-40 md:-translate-x-3/4 top-0 z-10">
         <Link href="/">
           <Image
             src="/images/header/my-image.png"

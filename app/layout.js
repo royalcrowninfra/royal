@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 
 // components
@@ -9,8 +9,8 @@ import Enquiry from "../components/EnquiryButton"
 // theme provider
 import { ThemeProvider } from "../components/ThemeProvider";
 
-const Josef = Roboto({ weight:'400', subsets: ["latin"],
-  weight:["400","500","700","900"], 
+const kanit = Kanit({ weight:'400', subsets: ["latin-ext"],
+  weight:['400'], 
   display:"swap"
 });
 
@@ -22,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={Josef.className}>
+      <body className={kanit.className}>
         <ThemeProvider attribute='class' defaultTheme='light'>
           <Header />
           {children}
