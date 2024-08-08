@@ -95,7 +95,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 text-center md:flex md:justify-between md:items-center">
           <div className="mb-4 md:mb-0">
             <p>&copy; 2024 Royal Crown Infra. All Rights Reserved</p>
-            <p className="text-sm text-gray-400">Designed By Akshay Kalamkar</p>
+            {/* <p className="text-sm text-gray-400">Designed By Akshay Kalamkar</p> */}
           </div>
           <div className="space-x-4">
             <Link className="hover:underline" href='/'>Privacy Policy</Link>
