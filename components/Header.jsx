@@ -74,13 +74,13 @@ const Navbar = () => {
             width={140}
             height={60}
             alt="Royal Crown Realty"
-            className="h-16 w-auto sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
+            className="h-20 w-auto sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
           />
         </Link>
       </div>
       {/* Top bar */}
       <div className="bg-gradient-to-r from-orange-200 via-teal-400 to-purple-300 py-2">
-        <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-end items-center gap-2 sm:gap-12">
+        <div className="container mx-auto px-8 flex flex-col sm:flex-row justify-end items-center gap-2 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Phone size={16} className="mr-2" />
