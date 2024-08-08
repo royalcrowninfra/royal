@@ -265,23 +265,30 @@ const Calculator = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-        className="mt-12 bg-white rounded-xl shadow-2xl overflow-hidden"
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="mt-12 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-2xl overflow-hidden"
       >
-        <div className="bg-gradient-to-r from-teal-400 to-teal-600 p-6">
-          <h2 className="text-2xl font-semibold text-white text-center">Amortization Schedule</h2>
-        </div>
+        <motion.div
+          className="bg-gradient-to-r from-teal-400 to-teal-600 p-8"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-white text-center tracking-wide">
+            Amortization Schedule
+          </h2>
+        </motion.div>
         <div className="p-6 overflow-x-auto">
-          <Table>
+          <Table className="w-full">
             <TableHeader>
               <TableRow>
-                <TableHead className="bg-indigo-100">Year</TableHead>
-                <TableHead className="bg-green-100">Principal (A)</TableHead>
-                <TableHead className="bg-orange-100">Interest (B)</TableHead>
-                <TableHead className="bg-yellow-100">Total Payment (A + B)</TableHead>
-                <TableHead className="bg-red-100">Balance</TableHead>
-                <TableHead className="bg-purple-100">Loan Paid To Date</TableHead>
-                <TableHead className="bg-blue-100">Actions</TableHead>
+                <TableHead className="bg-indigo-100 font-semibold text-indigo-800">Year</TableHead>
+                <TableHead className="bg-green-100 font-semibold text-green-800">Principal (A)</TableHead>
+                <TableHead className="bg-orange-100 font-semibold text-orange-800">Interest (B)</TableHead>
+                <TableHead className="bg-yellow-100 font-semibold text-yellow-800">Total Payment (A + B)</TableHead>
+                <TableHead className="bg-red-100 font-semibold text-red-800">Balance</TableHead>
+                <TableHead className="bg-purple-100 font-semibold text-purple-800">Loan Paid To Date</TableHead>
+                <TableHead className="bg-blue-100 font-semibold text-blue-800">Actions</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -292,22 +299,25 @@ const Calculator = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
-                      transition={{ delay: index * 0.05 }}
+                      transition={{ delay: index * 0.05, duration: 0.3 }}
                       whileHover={{ scale: 1.02, backgroundColor: "#F3F4F6" }}
+                      className="hover:shadow-md transition-all duration-300 ease-in-out"
                     >
-                      <TableCell>{row.year}</TableCell>
+                      <TableCell className="font-medium">{row.year}</TableCell>
                       <TableCell>{formatter.format(row.principal)}</TableCell>
                       <TableCell>{formatter.format(row.interest)}</TableCell>
                       <TableCell>{formatter.format(row.totalPayment)}</TableCell>
                       <TableCell>{formatter.format(row.balance)}</TableCell>
                       <TableCell>{percentFormatter.format(row.loanPaidToDate)}</TableCell>
                       <TableCell>
-                        <button
+                        <motion.button
                           onClick={() => toggleYearExpansion(row.year)}
                           className="flex items-center justify-center p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
                         >
                           {expandedYears[row.year] ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                        </button>
+                        </motion.button>
                       </TableCell>
                     </motion.tr>
                     {expandedYears[row.year] && (
@@ -315,32 +325,46 @@ const Calculator = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
                       >
-                        <TableCell colSpan={7}>
-                          <Table>
-                            <TableHeader>
-                              <TableRow>
-                                <TableHead>Month</TableHead>
-                                <TableHead>Principal</TableHead>
-                                <TableHead>Interest</TableHead>
-                                <TableHead>Total Payment</TableHead>
-                                <TableHead>Balance</TableHead>
-                                <TableHead>Loan Paid To Date</TableHead>
-                              </TableRow>
-                            </TableHeader>
-                            <TableBody>
-                              {row.monthlyData.map((month, monthIndex) => (
-                                <TableRow key={monthIndex}>
-                                  <TableCell>{month.month}</TableCell>
-                                  <TableCell>{formatter.format(month.principal)}</TableCell>
-                                  <TableCell>{formatter.format(month.interest)}</TableCell>
-                                  <TableCell>{formatter.format(month.totalPayment)}</TableCell>
-                                  <TableCell>{formatter.format(month.balance)}</TableCell>
-                                  <TableCell>{percentFormatter.format(month.loanPaidToDate)}</TableCell>
+                        <TableCell colSpan={7} className="p-0">
+                          <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1, duration: 0.3 }}
+                            className="bg-gray-50 p-4 rounded-lg shadow-inner"
+                          >
+                            <Table>
+                              <TableHeader>
+                                <TableRow>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Month</TableHead>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Principal</TableHead>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Interest</TableHead>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Total Payment</TableHead>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Balance</TableHead>
+                                  <TableHead className="text-sm font-semibold text-gray-700">Loan Paid To Date</TableHead>
                                 </TableRow>
-                              ))}
-                            </TableBody>
-                          </Table>
+                              </TableHeader>
+                              <TableBody>
+                                {row.monthlyData.map((month, monthIndex) => (
+                                  <motion.tr
+                                    key={monthIndex}
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: monthIndex * 0.03, duration: 0.2 }}
+                                    className="text-sm hover:bg-gray-100 transition-colors"
+                                  >
+                                    <TableCell>{month.month}</TableCell>
+                                    <TableCell>{formatter.format(month.principal)}</TableCell>
+                                    <TableCell>{formatter.format(month.interest)}</TableCell>
+                                    <TableCell>{formatter.format(month.totalPayment)}</TableCell>
+                                    <TableCell>{formatter.format(month.balance)}</TableCell>
+                                    <TableCell>{percentFormatter.format(month.loanPaidToDate)}</TableCell>
+                                  </motion.tr>
+                                ))}
+                              </TableBody>
+                            </Table>
+                          </motion.div>
                         </TableCell>
                       </motion.tr>
                     )}
