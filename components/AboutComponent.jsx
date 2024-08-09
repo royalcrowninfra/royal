@@ -7,7 +7,7 @@ const ServiceCard = ({ icon: Icon, title }) => (
   <motion.div
     whileHover={{ scale: 1.05, rotate: 2, backgroundColor: "#4299e1" }}
     whileTap={{ scale: 0.95 }}
-    className="bg-teal-500 p-6 rounded-lg text-white text-center cursor-pointer"
+    className="bg-cyan-500 p-6 rounded-lg text-white text-center cursor-pointer"
     transition={{ type: "spring", stiffness: 300 }}
   >
     <motion.div 
@@ -53,22 +53,27 @@ const AboutComponent = () => {
 
   return (
     <div className="container mx-auto py-2 px-4 relative overflow-hidden">
-      <motion.div 
-        className="absolute inset-0 bg-fill bg-no-repeat bg-left-top opacity-10"
-        style={{backgroundImage: "url('/images/header/logoPng.png')"}}
+       {/* <motion.div 
+        className="absolute inset-0 bg-contain bg-no-repeat bg-left-top opacity-10"
+        style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
         animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-      ></motion.div>
-      
+      ></motion.div> */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
+        <motion.div 
+        className="absolute inset-0 bg-[length:900px_700px] bg-no-repeat left-0 mr-8 opacity-10"
+        style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
+        animate={{ rotate: 360 }}
+        // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
+      ></motion.div>
         <motion.div className="z-10" variants={itemVariants}>
           <motion.h2 
-            className="text-5xl font-extrabold mb-6"
+            className="text-5xl font-extrabold mb-6 text-center"
             animate={{ scale: [1, 1.03, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
@@ -76,13 +81,13 @@ const AboutComponent = () => {
             Royal Crown Realty
           </motion.h2>
           <motion.p 
-            className="text-gray-600 mb-4"
+            className="text-gray-600 mb-4 text-center"
             variants={itemVariants}
           >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.lroem*1
           </motion.p>
           <motion.p 
-            className="text-gray-600 mb-6"
+            className="text-gray-600 mb-6 text-center"
             variants={itemVariants}
           >
             Incidunt, soluta, exercitationem recusandae reprehenderit cum totam consequatur quae dignissimos eos laboriosam illum tenetur voluptate veritatis excepturi enim iure distinctio.
@@ -91,7 +96,7 @@ const AboutComponent = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(59,130,246)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-teal-500 text-white py-2 px-6 rounded-full font-semibold"
+              className="bg-teal-500 text-white py-2 px-6 rounded-full font-semibold sm:ml-64"
             >
               Read More
             </motion.button>
@@ -106,8 +111,8 @@ const AboutComponent = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div 
-        className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12"
+       <motion.div 
+        className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 justify-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

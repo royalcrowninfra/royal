@@ -63,10 +63,10 @@ export default function ContactSection() {
         alt='contactSection'
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center text-black">
           Customer Reviews
         </h2>
-        <p className="mt-2 text-lg leading-8 text-muted-foreground">
+        <p className="mt-2 text-lg leading-8 text-muted-foreground text-center">
           Learn how to grow your business with our expert advice
         </p>
 

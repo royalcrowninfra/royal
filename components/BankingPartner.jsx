@@ -21,7 +21,7 @@ const ReviewCard = ({ img }) => {
     <figure
       className={cn(
         "relative w-48 h-24 sm:w-56 sm:h-28 cursor-pointer overflow-hidden rounded-xl m-4",
-        "border border-gray-200 bg-white hover:bg-gray-50",
+        "border-4 border-gray-200 bg-white hover:bg-gray-50",
         "dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       )}
     >
