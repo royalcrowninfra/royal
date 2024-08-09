@@ -79,31 +79,52 @@ const PanvelDevelopment = () => {
         variants={titleVariants}
         className="space-y-8 py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
-            {contentBlocks.map((block, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
-                initial="offscreen"
-                whileInView={"onscreen"}
-                variants={desVariants}
-              >
-                <div className="bg-blue-600 p-4">
-                  <h2 className="text-xl font-semibold text-white text-center">{block.title}</h2>
-                </div>
-                <div className="p-6">
-                  <Image
-                    src={block.imagePath}
-                    alt={block.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-48 object-cover mb-4 rounded"
-                  />
-                  <p className="text-sm text-gray-700">{block.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {contentBlocks.map((block, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-lg shadow-lg overflow-hidden mb-8"
+              initial="offscreen"
+              whileInView={"onscreen"}
+              variants={desVariants}
+            >
+              <div className="bg-blue-600 p-4">
+                <h2 className="text-xl font-semibold text-white text-center">{block.title}</h2>
+              </div>
+              <div className="flex flex-col md:flex-row">
+                {index % 2 === 0 ? (
+                  <>
+                    <div className="md:w-1/2 p-6">
+                      <p className="text-sm text-gray-700">{block.description}</p>
+                    </div>
+                    <div className="md:w-1/2">
+                      <Image
+                        src={block.imagePath}
+                        alt={block.title}
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="md:w-1/2">
+                      <Image
+                        src={block.imagePath}
+                        alt={block.title}
+                        width={600}
+                        height={400}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="md:w-1/2 p-6">
+                      <p className="text-sm text-gray-700">{block.description}</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </div>

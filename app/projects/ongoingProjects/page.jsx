@@ -6,6 +6,10 @@ import { projects } from '../../../data/ongoingProjects';
 import Link from 'next/link';
 import Image from 'next/image';
 
+{/* <div className="bg-blue-600 p-4">
+<h2 className="text-xl font-semibold text-white text-center">{block.title}</h2>
+</div> */}
+
 const ProjectCard = ({ project }) => (
   <motion.div
     initial="hidden"
