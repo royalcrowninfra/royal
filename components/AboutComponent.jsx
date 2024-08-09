@@ -66,7 +66,7 @@ const AboutComponent = () => {
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
         <motion.div 
-        className="absolute inset-0 bg-[length:900px_700px] bg-no-repeat left-0 mr-8 opacity-10"
+        className="absolute inset-0 bg-[length:700px_700px] bg-no-repeat left-0 mr-8 opacity-10"
         style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
         animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}

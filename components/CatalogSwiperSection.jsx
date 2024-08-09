@@ -1,10 +1,10 @@
 'use client'
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -46,6 +46,42 @@ const projects = [
       'Lorem ipsum dolor sit amet',
     ],
     href: '/projects/ongoingProjects/project-3'
+  },
+  {
+    id: 4,
+    name: 'Project Three, Kalyan',
+    image: '/images/projects/featuredProject3.jpg',
+    details: [
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+    ],
+    href: '/projects/ongoingProjects/project-4'
+  },
+  {
+    id: 5,
+    name: 'Project Five, Kalyan',
+    image: '/images/projects/featuredProject3.jpg',
+    details: [
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+    ],
+    href: '/projects/ongoingProjects/project-5'
+  },
+  {
+    id: 6,
+    name: 'Project Six, Kalyan',
+    image: '/images/projects/featuredProject3.jpg',
+    details: [
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+      'Lorem ipsum dolor sit amet',
+    ],
+    href: '/projects/ongoingProjects/project-6'
   },
 ];
 
@@ -95,6 +131,26 @@ const ProjectCard = ({ project }) => {
 };
 
 const OngoingProjects = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0 && !hasScrolled) {
+        setHasScrolled(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasScrolled]);
+
+  useEffect(() => {
+    if (hasScrolled && swiperInstance) {
+      swiperInstance.autoplay.start();
+    }
+  }, [hasScrolled, swiperInstance]);
+
   return (
     <div
       className="bg-gray-100 bg-center bg-fixed relative py-12 sm:py-16 md:py-20"
@@ -102,14 +158,20 @@ const OngoingProjects = () => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-2 text-black">Ongoing Projects</h2>
-        <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6 sm:mb-8"></div>
+        <div className="w-16 mt-10 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6 sm:mb-8"></div>
         <Swiper
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
+          autoplay={{
+            delay: 1000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          onSwiper={(swiper) => setSwiperInstance(swiper)}
           breakpoints={{
             640: {
               slidesPerView: 2,
