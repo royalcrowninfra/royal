@@ -59,7 +59,7 @@ const ContactButton = () => {
   return (
     <>
       <motion.div
-        className="fixed left-48 bottom-4 z-50"
+        className="fixed left-8 md:left-48 bottom-4 z-50"
         initial="initial"
         animate="moveLeftRight"
         whileHover="hover"
