@@ -7,12 +7,12 @@ import { titleVariants } from "../../../utils/animation";
 const CompletedProjects = () => {
   return (
     <div className="bg-gray-100 min-h-screen">
-       <div className="bg-[url('/images/projects/projectBackground.jpeg')] bg-center bg-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
+      <div className="bg-[url('/images/completed.jpg')] bg-center bg-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]">
         <motion.h1
           initial='offscreen'
           whileInView={"onscreen"}
           variants={titleVariants}
-          className='container py-32 text-6xl font-semibold text-white tracking-widest text-center lg:py-32'
+          className='container py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-32'
         >
           Completed Projects
         </motion.h1>
@@ -21,7 +21,11 @@ const CompletedProjects = () => {
       <div className="container mx-auto py-12">
         <div className="space-y-12">
           {/* Project 1 */}
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <motion.div
+            initial='offscreen'
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/2">
                 <Image
@@ -44,10 +48,14 @@ const CompletedProjects = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 2 */}
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <motion.div
+            initial='offscreen'
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className="bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/2">
                 <Image
@@ -70,7 +78,7 @@ const CompletedProjects = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Add more projects as needed */}
         </div>

@@ -82,6 +82,25 @@ export default function ProjectPage({ params }) {
           </section>
         )}
 
+        {project.galleryImages && (
+          <section className='bg-gray-200 py-8 mt-8'>
+            <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Gallery</h2>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
+              {project.galleryImages.map((galleryImages, index) => (
+                <div key={index} className='relative'>
+                  <Image
+                    src={galleryImages.image}
+                    alt={galleryImages.name}
+                    width={200}
+                    height={200}
+                    className='rounded-lg w-full h-48 object-cover'
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         <section className='bg-white py-8'>
           <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
 
@@ -158,4 +177,3 @@ export default function ProjectPage({ params }) {
     </div>
   );
 }
-
