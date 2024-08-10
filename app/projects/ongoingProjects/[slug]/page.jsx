@@ -83,7 +83,7 @@ export default function ProjectPage({ params }) {
         )}
 
         {project.galleryImages && (
-          <section className='bg-gray-200 py-8 mt-8'>
+          <section className='bg-white-200 py-8 mt-8'>
             <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Gallery</h2>
             <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
               {project.galleryImages.map((galleryImages, index) => (
@@ -101,7 +101,7 @@ export default function ProjectPage({ params }) {
           </section>
         )}
 
-        <section className='bg-white py-8'>
+        <section className='bg-gray-200 py-8'>
           <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
 
           <div className="overflow-x-auto mb-12">
@@ -151,7 +151,7 @@ export default function ProjectPage({ params }) {
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
           {project.connectivity && (
-            <section className='bg-gray-100 py-8 rounded-lg'>
+            <section className='bg-white-100 py-8 rounded-lg'>
               <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>
                 Connected To Everything
               </h2>
@@ -165,7 +165,7 @@ export default function ProjectPage({ params }) {
             </section>
           )}
           {project.map && (
-            <section className='bg-gray-100 py-8 rounded-lg'>
+            <section className='bg-white-100 py-8 rounded-lg'>
               <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Project Location</h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
                 <IFrameComponent iframeSrc={project.map.iframeSrc} />
