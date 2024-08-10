@@ -133,7 +133,7 @@ const Calculator = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="max-w-6xl mx-auto p-6 space-y-8 bg-gradient-to-br from-gray-100 to-gray-100 min-h-screen"
+      className="max-w-6xl mx-auto p-6 space-y-8 bg-gradient-to-br from-white-100 to-gray-100 min-h-screen"
     >
       <motion.h1
         initial={{ y: -50, opacity: 0 }}
@@ -266,7 +266,7 @@ const Calculator = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="mt-12 bg-gradient-to-br from-white to-gray-100 rounded-xl shadow-2xl overflow-hidden"
+        className="mt-12 bg-gradient-to-br from-white to-gray-200 rounded-xl shadow-2xl overflow-hidden"
       >
         <motion.div
           className="bg-gradient-to-r from-teal-400 to-teal-600 p-8"
