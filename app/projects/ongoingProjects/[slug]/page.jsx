@@ -43,7 +43,7 @@ export default function ProjectPage({ params }) {
               />
             </div>
           </div>
-          <div className="mt-4 flex justify-center lg:justify-start">
+          <div className="mt-4 flex justify-center lg:justify-start md:px-44">
             <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
               <button className="bg-red-600 hover:bg-red-700 text-white  font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center">
                 Download Brochure
@@ -56,25 +56,33 @@ export default function ProjectPage({ params }) {
         </section>
 
         {project.amenities && (
-          <section className='bg-gray-200 py-8'>
-            <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Amenities</h2>
-            <p className='mb-4 text-sm md:text-base text-black text-center'>
+          <section className='bg-gray-100 py-12'>
+            <h2 className='text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center'>Amenities</h2>
+            <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
               {project.amenitiesDescription}
             </p>
-            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4'>
+            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6'>
               {project.amenities.map((amenity, index) => (
-                <div key={index} className='relative'>
+                <div
+                  key={index}
+                  className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl'
+                  style={{ backgroundColor: '#f0f4f8' }}
+                >
                   <Image
                     src={amenity.image}
                     alt={amenity.name}
                     width={200}
                     height={200}
-                    className='rounded-lg w-full h-48 object-cover'
+                    className='rounded-lg w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110'
                   />
-                  <div className='absolute bottom-0 left-0 right-0 bg-blue-500 bg-opacity-75 text-white p-2 rounded-b-lg'>
-                    <p className='text-center text-xs sm:text-sm'>
-                      {amenity.name}
-                    </p>
+                  <div className='absolute bottom-0 left-0 right-0 p-1'>
+                    <div className='bg-gradient-to-r bg-cyan-700 p-1 rounded-lg'>
+                      <div className='bg-gray-800 p-2 rounded-b-lg'>
+                        <p className='text-center text-sm sm:text-base font-semibold text-white'>
+                          {amenity.name}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -82,25 +90,28 @@ export default function ProjectPage({ params }) {
           </section>
         )}
 
+
         {project.galleryImages && (
           <section className='bg-white-200 py-8 mt-8'>
-            <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Gallery</h2>
+            <h2 className='text-3xl font-bold text-center mb-8'>Gallery</h2>
             <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
-              {project.galleryImages.map((galleryImages, index) => (
-                <div key={index} className='relative'>
+              {project.galleryImages.map((galleryImage, index) => (
+                <div
+                  key={index}
+                  className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105'
+                >
                   <Image
-                    src={galleryImages.image}
-                    alt={galleryImages.name}
+                    src={galleryImage.image}
+                    alt={galleryImage.name}
                     width={200}
                     height={200}
-                    className='rounded-lg w-full h-48 object-cover'
+                    className='rounded-lg w-full h-68 object-fill transition duration-500 ease-in-out transform hover:scale-110'
                   />
                 </div>
               ))}
             </div>
           </section>
         )}
-
         <section className='bg-gray-200 py-8'>
           <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
 
