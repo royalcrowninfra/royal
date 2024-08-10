@@ -122,13 +122,13 @@ const Page = () => {
             <TeamMember
               name="Jane Doe"
               role="Lead Designer"
-              image="/images/team/jane-doe.jpg"
+              image="/images/header/men.png"
               description="Jane brings over a decade of experience in UI/UX design, crafting intuitive and beautiful interfaces that users love."
             />
             <TeamMember
               name="John Smith"
               role="Senior Developer"
-              image="/images/team/john-smith.jpg"
+              image="/images/header/women.png"
               description="With expertise in multiple programming languages, John leads our development team in creating robust and scalable web applications."
             />
           </div>
