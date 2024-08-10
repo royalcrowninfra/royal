@@ -66,7 +66,7 @@ const AboutComponent = () => {
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
         <motion.div 
-        className="absolute inset-0 bg-[length:700px_700px] bg-no-repeat left-0 mr-8 opacity-10"
+        className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_700px] bg-no-repeat left-0 mr-0 opacity-20"
         style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
         animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
@@ -96,7 +96,7 @@ const AboutComponent = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(59,130,246)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-cyan-600 text-white py-2 px-6 rounded-full font-semibold sm:ml-64"
+              className="bg-cyan-600 text-white py-2 px-12 rounded-full font-semibold sm:ml-64"
             >
               Read More
             </motion.button>
