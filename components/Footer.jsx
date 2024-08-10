@@ -33,7 +33,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h2 className="text-xl font-semibold uppercase">Contact Us</h2>
-            <div className="space-y-2">
+            <div className="space-y-2 ml-2">
               <div className="flex items-center space-x-2">
                 <Phone size={18} />
                 <p>CALL US : (+1) 212-946-2707</p>
@@ -60,7 +60,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h2 className="text-xl font-semibold uppercase">Quick Links</h2>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 ml-2">
               <Link href='/about/ourteam' className="hover:underline">About Us</Link>
               <Link href='/projects' className="hover:underline">Projects</Link>
               <Link href='/gallery' className="hover:underline">Gallery</Link>
@@ -75,7 +75,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h2 className="text-xl font-semibold uppercase">Connect With Us</h2>
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-2 ml-2">
               <Link href='/' className="hover:underline">Instagram</Link>
               <Link href='/' className="hover:underline">Twitter</Link>
               <Link href='/' className="hover:underline">LinkedIn</Link>
