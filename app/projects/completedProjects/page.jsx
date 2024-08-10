@@ -35,7 +35,7 @@ const CompletedProjects = () => {
           initial='offscreen'
           whileInView={"onscreen"}
           variants={titleVariants}
-          className='text-5xl sm:text-6xl font-semibold text-white tracking-widest text-center drop-shadow-lg'
+          className='text-5xl sm:text-6xl font-semibold text-black tracking-widest text-center drop-shadow-lg'
         >
           Completed Projects
         </motion.h1>
