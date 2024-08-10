@@ -88,13 +88,13 @@ const ContactButton = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative"
+              className="bg-white w-full max-w-md p-10 rounded-lg shadow-lg relative"
               initial={{ y: "100vh" }}
               animate={{ y: 0 }}
               exit={{ y: "100vh" }}
