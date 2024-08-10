@@ -7,7 +7,7 @@ import { ChevronDown, Phone, Mail, Twitter, Facebook, Instagram, Youtube, Menu, 
 const links = [
   { path: "/", name: "Home" },
   {
-    path: "/",
+    path: "#",
     name: "About",
     dropdown: [
       { path: "/about/ourteam", name: "Our Team" },
@@ -15,7 +15,7 @@ const links = [
     ],
   },
   {
-    path: "/",
+    path: "#",
     name: "Projects",
     dropdown: [
       { path: "/projects/ongoingProjects", name: "Ongoing Projects" },
@@ -25,7 +25,7 @@ const links = [
   { path: "/gallery", name: "Gallery" },
   // { path: "/book-site-visit", name: "Book a Site Visit" },
   {
-    path: "/",
+    path: "#",
     name: "Buyers Guide",
     dropdown: [
       { path: "/buyersGuide/panvelDevelopment", name: "Panvel Development" },
