@@ -1,15 +1,15 @@
 import React from 'react';
 
 const photos = [
-  { src: '/images/womens-day.jpg', title: "International Women's Day celebration" },
-  { src: '/images/holi.jpg', title: 'Holi Celebration' },
-  { src: '/images/football.jpg', title: "Team Raigad Won State Football match it’s SPONSORED by QUALCON" },
-  { src: '/images/cricket.jpg', title: 'Builders Cricket Championship (BCC-2020)' },
-  { src: '/images/top-performing.jpg', title: 'Top Performing Channel Partner 2020' },
-  { src: '/images/tree-plantation.jpg', title: '#TreePlantation_The Positive Initiative' },
-  { src: '/images/womens-day-2022.jpg', title: "International Women's Day Celebration 2022" },
-  { src: '/images/diwali.jpg', title: 'Diwali Celebration 2021' },
-  { src: '/images/holi-2022.jpg', title: 'Holi Celebration 2022' },
+  { src: '/images/gallery/womenDay.jpg', title: "International Women's Day celebration" },
+  { src: '/images/gallery/holi.jpg', title: 'Holi Celebration' },
+  { src: '/images/gallery/championship.jpg', title: "Team Raigad Won State Football match it’s SPONSORED by QUALCON" },
+  { src: '/images/gallery/championship.jpg', title: 'Builders Cricket Championship (BCC-2020)' },
+  { src: '/images/gallery/topPerforming.jpg', title: 'Top Performing Channel Partner 2020' },
+  { src: '/images/gallery/treePlantetion.jpg', title: '#TreePlantation_The Positive Initiative' },
+  { src: '/images/gallery/womenDay.jpg', title: "International Women's Day Celebration 2022" },
+  { src: '/images/gallery/holi.jpg', title: 'Diwali Celebration 2021' },
+  { src: '/images/gallery/holi.jpg', title: 'Holi Celebration 2022' },
 ];
 
 const PhotoGallery = () => {
