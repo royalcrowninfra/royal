@@ -66,12 +66,12 @@ const AboutComponent = () => {
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
         <motion.div 
-        className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_700px] bg-no-repeat left-0 mr-0 opacity-20"
-        style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
+        className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_550px] bg-no-repeat left-0 mr-0 opacity-20"
+        style={{backgroundImage: "url('/images/header/bg-logo.jpg')"}}
         animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
       ></motion.div>
-        <motion.div className="z-10" variants={itemVariants}>
+        <motion.div className="z-10 justify-center" variants={itemVariants}>
           <motion.h2 
             className="text-5xl font-extrabold mb-6 text-center"
             animate={{ scale: [1, 1.03, 1] }}

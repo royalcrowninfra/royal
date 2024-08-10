@@ -85,12 +85,11 @@ const HeroSection = () => {
             <Image
               src={images[currentIndex].src}
               alt={`Slide ${currentIndex + 1}`}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center"
+              fill
               quality={100}
               priority
-              onLoadingComplete={() => setIsLoading(false)}
+              onLoad={() => setIsLoading(false)}
+              className="object-cover object-center"
             />
             {!isLoading && (
               <motion.div
