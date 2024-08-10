@@ -53,7 +53,7 @@ const posts = [
 
 export default function ContactSection() {
   return (
-    <div className="relative py-16">
+    <div className="relative py-6">
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20"
         style={{
