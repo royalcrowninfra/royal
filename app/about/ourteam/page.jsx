@@ -28,7 +28,6 @@ const Page = () => {
             >
               We bring your visions to life with cutting-edge web development and design solutions.
             </motion.p>
-            <p className="text-sm text-gray-500 mb-6">Images from Freepik</p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
