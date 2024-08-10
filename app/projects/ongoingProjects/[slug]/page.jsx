@@ -76,7 +76,7 @@ export default function ProjectPage({ params }) {
                     className='rounded-lg w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110'
                   />
                   <div className='absolute bottom-0 left-0 right-0 p-1'>
-                    <div className='bg-gradient-to-r bg-cyan-700 p-1 rounded-lg'>
+                    <div className='bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 rounded-lg'>
                       <div className='bg-gray-800 p-2 rounded-b-lg'>
                         <p className='text-center text-sm sm:text-base font-semibold text-white'>
                           {amenity.name}
@@ -89,6 +89,7 @@ export default function ProjectPage({ params }) {
             </div>
           </section>
         )}
+
 
 
         {project.galleryImages && (
