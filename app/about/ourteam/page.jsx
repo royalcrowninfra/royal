@@ -7,90 +7,133 @@ import { TbDeviceMobile, TbSettings, TbHeadphones } from 'react-icons/tb'
 
 const Page = () => {
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gradient-to-b from-gray-100 to-white min-h-screen">
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2 mb-8 md:mb-0">
-          <motion.h1
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={titleVariants}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            Turn your ideas to live web experiences
-          </motion.h1>
-          <motion.p
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={desVariants}
-            className="text-gray-600 mb-6"
-          >
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-          </motion.p>
-          <p className="text-sm text-gray-500 mb-4">Images from Freepik</p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition duration-300"
-          >
-            learn more
-          </motion.button>
-        </div>
-        <div className="md:w-1/2">
-          <div className="bg-gray-300 rounded-full overflow-hidden">
-            <Image src="/images/header/women.png" width={500} height={500} alt="Woman in yellow shirt" className="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-
-      {/* About Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <motion.h2
+      <section className="container mx-auto px-4 py-20 md:py-32">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 mb-12 md:mb-0">
+            <motion.h1
               initial="offscreen"
               whileInView="onscreen"
               variants={titleVariants}
-              className="text-3xl font-bold mb-4"
+              className="text-5xl md:text-6xl font-bold mb-6 text-gray-800"
             >
-              About
-            </motion.h2>
+              Turn Your Ideas Into Live Web Experiences
+            </motion.h1>
             <motion.p
               initial="offscreen"
               whileInView="onscreen"
               variants={desVariants}
-              className="text-gray-600 mb-4"
+              className="text-xl text-gray-600 mb-8"
             >
-              Oh feel if up to till like. He an thing rapid these after going drawn or. Timed she his law the spoil round defer. In surprise concerns informed betrayed he learning is ye. Ignorant formerly so ye blessing.
+              We bring your visions to life with cutting-edge web development and design solutions.
             </motion.p>
-            <motion.p
-              initial="offscreen"
-              whileInView="onscreen"
-              variants={desVariants}
-              className="text-gray-600"
+            <p className="text-sm text-gray-500 mb-6">Images from Freepik</p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300 shadow-lg"
             >
-              He as spoke avoid given downs money on we. Of properly carriage shutters ye as wandered up repeated moreover.
-            </motion.p>
+              Learn More
+            </motion.button>
           </div>
-          <div className="md:w-1/2 space-y-8">
-            <Feature 
-              icon={<TbDeviceMobile className="w-8 h-8" />}
-              title="RESEARCH"
-              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          <div className="md:w-1/2">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative w-full h-[400px] md:h-[500px]"
+            >
+              <Image 
+                src="/images/header/women.png" 
+                layout="fill" 
+                objectFit="cover" 
+                alt="Woman in yellow shirt" 
+                className="rounded-3xl shadow-2xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="bg-white py-20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12">
+              <motion.h2
+                initial="offscreen"
+                whileInView="onscreen"
+                variants={titleVariants}
+                className="text-4xl font-bold mb-6 text-gray-800"
+              >
+                About Our Approach
+              </motion.h2>
+              <motion.p
+                initial="offscreen"
+                whileInView="onscreen"
+                variants={desVariants}
+                className="text-xl text-gray-600 mb-6"
+              >
+                We believe in the power of innovative design and cutting-edge technology to transform ideas into impactful digital experiences.
+              </motion.p>
+              <motion.p
+                initial="offscreen"
+                whileInView="onscreen"
+                variants={desVariants}
+                className="text-xl text-gray-600"
+              >
+                Our team of experts is dedicated to crafting bespoke solutions that not only meet but exceed your expectations, ensuring your digital presence stands out in today's competitive landscape.
+              </motion.p>
+            </div>
+            <div className="md:w-1/2 space-y-10">
+              <Feature 
+                icon={<TbDeviceMobile className="w-10 h-10 text-white" />}
+                title="RESEARCH"
+                description="We delve deep into your industry and target audience to create data-driven strategies that resonate with your users and drive results."
+              />
+              <Feature 
+                icon={<TbSettings className="w-10 h-10 text-white" />}
+                title="STRATEGY"
+                description="Our comprehensive approach ensures that every aspect of your project is carefully planned and executed for maximum impact and efficiency."
+              />
+              <Feature 
+                icon={<TbHeadphones className="w-10 h-10 text-white" />}
+                title="DESIGN"
+                description="We create visually stunning and user-friendly designs that captivate your audience and enhance their digital experience."
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="bg-gray-100 py-20">
+        <div className="container mx-auto px-4">
+          <motion.h2
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={titleVariants}
+            className="text-4xl font-bold mb-12 text-center text-gray-800"
+          >
+            Meet Our Team
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <TeamMember
+              name="Jane Doe"
+              role="Lead Designer"
+              image="/images/team/jane-doe.jpg"
+              description="Jane brings over a decade of experience in UI/UX design, crafting intuitive and beautiful interfaces that users love."
             />
-            <Feature 
-              icon={<TbSettings className="w-8 h-8" />}
-              title="STRATEGY"
-              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            />
-            <Feature 
-              icon={<TbHeadphones className="w-8 h-8" />}
-              title="DESIGN"
-              description="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            <TeamMember
+              name="John Smith"
+              role="Senior Developer"
+              image="/images/team/john-smith.jpg"
+              description="With expertise in multiple programming languages, John leads our development team in creating robust and scalable web applications."
             />
           </div>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
@@ -102,11 +145,34 @@ const Feature = ({ icon, title, description }) => (
     variants={tagVariants}
     className="flex items-start"
   >
-    <div className="bg-green-500 p-3 rounded-lg mr-4">
+    <div className="bg-green-500 p-4 rounded-lg mr-6 shadow-lg">
       {icon}
     </div>
     <div>
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
+      <h3 className="text-2xl font-semibold mb-3 text-gray-800">{title}</h3>
+      <p className="text-lg text-gray-600">{description}</p>
+    </div>
+  </motion.div>
+)
+
+const TeamMember = ({ name, role, image, description }) => (
+  <motion.div 
+    initial="offscreen"
+    whileInView="onscreen"
+    variants={tagVariants}
+    className="bg-white rounded-xl shadow-xl overflow-hidden"
+  >
+    <div className="relative h-80 w-full">
+      <Image
+        src={image}
+        layout="fill"
+        objectFit="cover"
+        alt={name}
+      />
+    </div>
+    <div className="p-6">
+      <h3 className="text-2xl font-semibold mb-2 text-gray-800">{name}</h3>
+      <p className="text-lg font-medium text-purple-600 mb-4">{role}</p>
       <p className="text-gray-600">{description}</p>
     </div>
   </motion.div>
