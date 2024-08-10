@@ -80,7 +80,7 @@ const Navbar = () => {
       </div>
       {/* Top bar */}
       <div className="bg-gradient-to-r bg-cyan-700 py-2">
-        <div className="container mx-auto px-12 flex flex-col sm:flex-row justify-end items-end  gap-0 sm:gap-12">
+        <div className="container mx-auto px-14 flex flex-col sm:flex-row justify-center items-end  gap-0 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Phone size={16} className="mr-2" />
@@ -109,9 +109,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="sm:hidden absolute top-4 right-4 z-50">
+        <div className="sm:hidden absolute top-3 right-4 z-50">
           <button onClick={toggleMobileMenu} className="text-black-500 hover:text-gray-600">
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={34} /> : <Menu size={30} />}
           </button>
         </div>
 
@@ -163,27 +163,41 @@ const Navbar = () => {
 
       {/* Mobile Navigation Links */}
       <div
-        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-          } sm:hidden`}
+        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} sm:hidden`}
+        style={{ transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out' }}
       >
-        <div className="p-4 pt-12">
+        {/* Logo */}
+        <div className="absolute left-4 top-4 z-10">
+          <Link href="/">
+            <Image
+              src="/images/header/logoPngwhite.png"
+              width={140}
+              height={60}
+              alt="Royal Crown Realty"
+              className="h-30 w-30 sm:h-20 md:h-24 lg:h-32 transition-all duration-300 hover:scale-105"
+            />
+          </Link>
+        </div>
+
+        {/* Menu Links */}
+        <div className="p-4 pt-36">
           {links.map((item, index) => (
-            <div key={item.path} className="py-2">
+            <div key={item.path} className="py-2 group">
               <Link
                 href={item.path}
-                className="text-gray-700 hover:text-teal-500 text-sm font-medium block"
+                className="text-gray-700 hover:text-teal-500 text-sm font-medium block transition-colors duration-200 ease-in-out"
                 onClick={() => item.dropdown && toggleDropdown(index)}
               >
                 {item.name}
                 {item.dropdown && <ChevronDown size={16} className="ml-1 inline-block" />}
               </Link>
               {item.dropdown && openDropdown === index && (
-                <div className="ml-4 mt-2 space-y-2">
+                <div className="ml-4 mt-2 space-y-2 transition-opacity duration-300 ease-in-out">
                   {item.dropdown.map((subItem) => (
                     <Link
                       key={subItem.path}
                       href={subItem.path}
-                      className="block text-gray-600 hover:text-teal-500 text-sm"
+                      className="block text-gray-600 hover:text-teal-500 text-sm transition-colors duration-200 ease-in-out"
                     >
                       {subItem.name}
                     </Link>
@@ -194,6 +208,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+
 
     </header>
   );
