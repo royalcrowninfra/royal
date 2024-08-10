@@ -96,7 +96,7 @@ const AboutComponent = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0px 0px 8px rgb(59,130,246)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-cyan-600 text-white py-2 px-12 rounded-full font-semibold sm:ml-64"
+              className="bg-cyan-600 text-white ml-20 py-2 px-12 rounded-full font-semibold sm:ml-64"
             >
               Read More
             </motion.button>
