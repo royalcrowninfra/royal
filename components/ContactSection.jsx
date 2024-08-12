@@ -17,7 +17,7 @@ const posts = [
       name: 'John Doe',
       role: 'Customer',
       href: '/profile/johndoe',
-      imageUrl: '/images/authors/johndoe.jpg'
+      imageUrl: '/images/header/emilydavis.jpg'
     }
   },
   {
@@ -31,7 +31,7 @@ const posts = [
       name: 'Jane Smith',
       role: 'Customer',
       href: '/profile/janesmith',
-      imageUrl: '/images/authors/janesmith.jpg'
+      imageUrl: '/images/header/janesmith.jpg'
     }
   },
   {
