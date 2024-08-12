@@ -34,7 +34,7 @@ export default function BankingPartner() {
   return (
     <div className="w-full bg-gray-200">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-4 text-blue-300">Banking Partner</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-4 text-black-800">Banking Partner</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-8"></div>
 
         <div className="relative border-4 border-red-600 rounded-lg overflow-hidden">
