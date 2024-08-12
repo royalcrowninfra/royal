@@ -71,7 +71,7 @@ const Navbar = () => {
         <Link href="/">
           <Image
             src="/images/header/logoPngwhite.png"
-            width={140}
+            width={170}
             height={60}
             alt="Royal Crown Realty"
             className="h-30 w-30 sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
