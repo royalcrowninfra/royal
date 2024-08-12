@@ -87,7 +87,13 @@ export default function ContactSection() {
             >
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={post.dateTime}>
-                  <Image src='/images/header/stars.jpg' width={80} height={5} alt="Stars" />
+                  <Image
+                    src='/images/header/stars.jpg'
+                    width={80}
+                    height={16}
+                    alt="Stars"
+                    style={{ width: 'auto', height: 'auto' }}
+                  />
                 </time>
                 {/* <Link
                   href={post.category.href}

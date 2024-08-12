@@ -74,9 +74,8 @@ const Navbar = () => {
             width={140}
             height={60}
             alt="Royal Crown Realty"
-            className="w-auto h-[30px] sm:h-[20px] md:h-[24px] lg:h-[32px] transition-all duration-300"
-            style={{ height: 'auto' }}
-            priority
+            className="h-30 w-30 sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
+            priority // This line is added
           />
         </Link>
       </div>
