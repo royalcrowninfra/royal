@@ -120,7 +120,7 @@ const Navbar = () => {
 
       {/* Main navigation */}
 
-      <div className="flex items-start justify-center ml-96 py-0 sm:ml-0 sm:py-8 bg-gray-100 border-b-1 border-black">
+      <div className="flex items-start justify-center ml-96 py-0 sm:ml-0 sm:py-8 bg-white-100 border-b-1 border-black">
         {/* Desktop Navigation Links */}
         <div className="hidden sm:flex items-center  space-x-6 sm:ml-64 lg:gap-8">
           {links.map((item, index) => (

@@ -2,32 +2,39 @@
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
-import { desVariants, tagVariants, titleVariants } from '@/utils/animation'
 import { TbDeviceMobile, TbSettings, TbHeadphones } from 'react-icons/tb'
+
+const fadeInUp = {
+  offscreen: { opacity: 0, y: 20 },
+  onscreen: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  offscreen: {},
+  onscreen: { transition: { staggerChildren: 0.2 } }
+};
 
 const Page = () => {
   return (
     <div className="bg-gradient-to-b from-gray-100 to-white min-h-screen">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 md:py-32">
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-12 md:mb-0">
-            <motion.h1
-              initial="offscreen"
-              whileInView="onscreen"
-              variants={titleVariants}
-              className="text-5xl md:text-6xl font-bold mb-6 text-gray-800"
-            >
+        <motion.div
+          className="flex flex-col md:flex-row items-center"
+          initial="offscreen"
+          animate="onscreen"
+          variants={staggerContainer}
+        >
+          <motion.div
+            className="md:w-1/2 mb-12 md:mb-0"
+            variants={fadeInUp}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
               Turn Your Ideas Into Live Web Experiences
-            </motion.h1>
-            <motion.p
-              initial="offscreen"
-              whileInView="onscreen"
-              variants={desVariants}
-              className="text-xl text-gray-600 mb-8"
-            >
+            </h1>
+            <p className="text-xl text-gray-600 mb-8">
               We bring your visions to life with cutting-edge web development and design solutions.
-            </motion.p>
+            </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -35,8 +42,11 @@ const Page = () => {
             >
               Learn More
             </motion.button>
-          </div>
-          <div className="md:w-1/2">
+          </motion.div>
+          <motion.div
+            className="md:w-1/2"
+            variants={fadeInUp}
+          >
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -51,40 +61,33 @@ const Page = () => {
                 className="rounded-3xl shadow-2xl"
               />
             </motion.div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* About Section */}
       <section className="bg-white py-20">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row">
-            <div className="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12">
-              <motion.h2
-                initial="offscreen"
-                whileInView="onscreen"
-                variants={titleVariants}
-                className="text-4xl font-bold mb-6 text-gray-800"
-              >
+          <motion.div
+            initial="offscreen"
+            animate="onscreen"
+            variants={staggerContainer}
+            className="flex flex-col md:flex-row"
+          >
+            <motion.div
+              className="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12"
+              variants={fadeInUp}
+            >
+              <h2 className="text-4xl font-bold mb-6 text-gray-800">
                 About Our Approach
-              </motion.h2>
-              <motion.p
-                initial="offscreen"
-                whileInView="onscreen"
-                variants={desVariants}
-                className="text-xl text-gray-600 mb-6"
-              >
+              </h2>
+              <p className="text-xl text-gray-600 mb-6">
                 We believe in the power of innovative design and cutting-edge technology to transform ideas into impactful digital experiences.
-              </motion.p>
-              <motion.p
-                initial="offscreen"
-                whileInView="onscreen"
-                variants={desVariants}
-                className="text-xl text-gray-600"
-              >
+              </p>
+              <p className="text-xl text-gray-600">
                 Our team of experts is dedicated to crafting bespoke solutions that not only meet but exceed your expectations, ensuring your digital presence stands out in today's competitive landscape.
-              </motion.p>
-            </div>
+              </p>
+            </motion.div>
             <div className="md:w-1/2 space-y-10">
               <Feature 
                 icon={<TbDeviceMobile className="w-10 h-10 text-white" />}
@@ -102,7 +105,7 @@ const Page = () => {
                 description="We create visually stunning and user-friendly designs that captivate your audience and enhance their digital experience."
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -110,14 +113,19 @@ const Page = () => {
       <section className="bg-gray-100 py-20">
         <div className="container mx-auto px-4">
           <motion.h2
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={titleVariants}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-4xl font-bold mb-12 text-center text-gray-800"
           >
             Meet Our Team
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-12"
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={staggerContainer}
+          >
             <TeamMember
               name="Jane Doe"
               role="Lead Designer"
@@ -130,7 +138,7 @@ const Page = () => {
               image="/images/header/women.png"
               description="With expertise in multiple programming languages, John leads our development team in creating robust and scalable web applications."
             />
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>
@@ -139,12 +147,12 @@ const Page = () => {
 
 const Feature = ({ icon, title, description }) => (
   <motion.div 
-    initial="offscreen"
-    whileInView="onscreen"
-    variants={tagVariants}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
     className="flex items-start"
   >
-    <div className="bg-green-500 p-4 rounded-lg mr-6 shadow-lg">
+    <div className="bg-purple-600 p-4 rounded-lg mr-6 shadow-lg">
       {icon}
     </div>
     <div>
@@ -156,9 +164,9 @@ const Feature = ({ icon, title, description }) => (
 
 const TeamMember = ({ name, role, image, description }) => (
   <motion.div 
-    initial="offscreen"
-    whileInView="onscreen"
-    variants={tagVariants}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
     className="bg-white rounded-xl shadow-xl overflow-hidden"
   >
     <div className="relative h-80 w-full">
