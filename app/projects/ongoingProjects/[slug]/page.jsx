@@ -18,9 +18,9 @@ export default function ProjectPage({ params }) {
   }
 
   return (
-    <div className="min-h-screen flex justify-center">
+    <div className="bg-gradient-to-b from-white-100 to-white min-h-screen flex justify-center">
       <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <section className='bg-white py-8'>
+        <section className=' py-8'>
           <div className='flex flex-col lg:flex-row items-start'>
             <div className='lg:w-1/2 lg:pr-6 text-center'>
               <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center lg:text-center'>
@@ -56,38 +56,40 @@ export default function ProjectPage({ params }) {
         </section>
 
         {project.amenities && (
-          <section className='bg-gray-100 py-12'>
-            <h2 className='text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center'>Amenities</h2>
-            <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
-              {project.amenitiesDescription}
-            </p>
-            <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6'>
-              {project.amenities.map((amenity, index) => (
-                <div
-                  key={index}
-                  className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl'
-                  style={{ backgroundColor: '#f0f4f8' }}
-                >
-                  <Image
-                    src={amenity.image}
-                    alt={amenity.name}
-                    width={200}
-                    height={200}
-                    className='rounded-lg w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110'
-                  />
-                  <div className='absolute bottom-0 left-0 right-0 p-1'>
-                    <div className='bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 rounded-lg'>
-                      <div className='bg-gray-800 p-2 rounded-b-lg'>
-                        <p className='text-center text-sm sm:text-base font-semibold text-white'>
-                          {amenity.name}
-                        </p>
+          <div className="w-full bg-gray-200">
+            <section className='bg-white-100 py-12'>
+              <h2 className='text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center'>Amenities</h2>
+              <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
+                {project.amenitiesDescription}
+              </p>
+              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6'>
+                {project.amenities.map((amenity, index) => (
+                  <div
+                    key={index}
+                    className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl'
+                    style={{ backgroundColor: '#f0f4f8' }}
+                  >
+                    <Image
+                      src={amenity.image}
+                      alt={amenity.name}
+                      width={200}
+                      height={200}
+                      className='rounded-lg w-full h-48 object-cover transition-transform duration-500 ease-in-out hover:scale-110'
+                    />
+                    <div className='absolute bottom-0 left-0 right-0 p-1'>
+                      <div className='bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-1 rounded-lg'>
+                        <div className='bg-gray-800 p-2 rounded-b-lg'>
+                          <p className='text-center text-sm sm:text-base font-semibold text-white'>
+                            {amenity.name}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
+          </div>
         )}
 
 
