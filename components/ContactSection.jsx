@@ -10,7 +10,7 @@ const posts = [
     id: 1,
     dateTime: '2024-08-08T12:00:00Z',
     // category: { href: '/reviews', title: 'Positive' },
-    href: '/review/1',
+    href: '#',
     title: 'Amazing Service!',
     description: 'I had a great experience with this company. The service was top-notch, and I would highly recommend them to others.',
     author: {
@@ -24,7 +24,7 @@ const posts = [
     id: 2,
     dateTime: '2024-08-08T12:00:00Z',
     // category: { href: '/reviews', title: 'Positive' },
-    href: '/review/2',
+    href: '#',
     title: 'Excellent Support!',
     description: 'The support team was very helpful and resolved my issue promptly. Highly satisfied with the service.',
     author: {
@@ -38,14 +38,14 @@ const posts = [
     id: 3,
     dateTime: '2024-08-08T12:00:00Z',
     // category: { href: '/reviews', title: 'Positive' },
-    href: '/review/3',
+    href: '#',
     title: 'Great Experience!',
     description: 'Overall, a fantastic experience. The team was professional and delivered exactly what was promised.',
     author: {
       name: 'Emily Davis',
       role: 'Customer',
       href: '/profile/emilydavis',
-      imageUrl: '/images/authors/emilydavis.jpg'
+      imageUrl: '/images/header/emilydavis.jpg'
     }
   },
   // Add more posts as needed
@@ -95,18 +95,12 @@ export default function ContactSection() {
                     style={{ width: 'auto', height: 'auto' }}
                   />
                 </time>
-                {/* <Link
-                  href={post.category.href}
-                  className="relative z-10 bg-primary rounded-full text-white px-3 py-1.5 font-medium hover:bg-gray-100 hover:text-black transition-all"
-                >
-                  {post.category.title}
-                </Link> */}
               </div>
               <div className="group relative mt-4">
                 <h3 className="text-lg font-semibold leading-6 group-hover:text-gray-600">
-                  <Link href={post.href}>
+                  <div href={post.href}>
                     <span>{post.title}</span>
-                  </Link>
+                  </div>
                 </h3>
                 <p className="mt-3 line-clamp-3 text-sm leading-6 text-muted-foreground">
                   {post.description}
@@ -115,11 +109,11 @@ export default function ContactSection() {
               <div className="relative mt-6 flex items-center gap-x-4">
                 <img src={post.author.imageUrl} className="h-10 w-10 rounded-full bg-gray-500" alt={post.author.name} />
                 <div className="text-sm leading-6">
-                  <p className="font-semibold">
-                    <a href={post.author.href}>
+                  <div className="font-semibold">
+                    <div href={post.author.href}>
                       {post.author.name}
-                    </a>
-                  </p>
+                    </div>
+                  </div>
                   <p className="text-muted-foreground">{post.author.role}</p>
                 </div>
               </div>
