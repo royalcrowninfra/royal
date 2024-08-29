@@ -16,7 +16,7 @@ export default function Footer() {
             variants={titleVariants}
             className="space-y-4"
           >
-            <h2 className="text-xl font-semibold uppercase">Corporate Office</h2>
+            <h2 className="text-xl font-semibold uppercase md:mx-6">Corporate Office</h2>
             <div className="flex items-start space-x-2">
               <MapPin className="mt-1 flex-shrink-0" />
               <p>ROYAL CROWN INFRA<br />Shop No 1 Sector 25 Plot No 19,<br />
@@ -32,7 +32,7 @@ export default function Footer() {
             variants={desVariants}
             className="space-y-4"
           >
-            <h2 className="text-xl font-semibold uppercase">Contact Us</h2>
+            <h2 className="text-xl font-semibold uppercase md:mx-16">Contact Us</h2>
             <div className="space-y-2 ml-2">
               <div className="flex items-center space-x-2">
                 <Phone size={18} />
@@ -60,7 +60,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h2 className="text-xl font-semibold uppercase">Quick Links</h2>
-            <div className="flex flex-col space-y-2 ml-2">
+            <div className="flex flex-col space-y-2 ml-2 md:mx-6">
               <Link href='/about/ourteam' className="hover:underline">About Us</Link>
               <Link href='/projects' className="hover:underline">Projects</Link>
               <Link href='/gallery' className="hover:underline">Gallery</Link>
@@ -75,7 +75,7 @@ export default function Footer() {
             className="space-y-4"
           >
             <h2 className="text-xl font-semibold uppercase">Connect With Us</h2>
-            <div className="flex flex-col space-y-2 ml-2">
+            <div className="flex flex-col space-y-2 ml-2 md:mx-12">
               <Link href=' https://www.instagram.com/royalcrown.19/' className="hover:underline">Instagram</Link>
               <Link href='/' className="hover:underline">Twitter</Link>
               <Link href='/' className="hover:underline">LinkedIn</Link>
