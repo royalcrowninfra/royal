@@ -1,7 +1,7 @@
 export const projects = [
   {
     slug: "project-1",
-    title: "SAI PRASAD GARDEN,Nevali,Panvel",
+    title: "SAI PRASAD GARDEN, Nevali, Panvel",
     image: "/images/projects/featuredProject1.jpg",
     description: "Short description of Project 1",
     fullDescription:
@@ -51,7 +51,7 @@ export const projects = [
   },
   {
     slug: "project-2",
-    title: "JAYRAM RESIDENCY,Shedung,Panvel",
+    title: "JAYRAM RESIDENCY, Shedung, Panvel",
     image: "/images/projects/featuredProject2.jpg",
     description: "Short description of Project 2",
     fullDescription:
@@ -101,7 +101,7 @@ export const projects = [
   },
   {
     slug: "project-3",
-    title: "NEW CITY PALACE,Pushapak Nagar, Panvel",
+    title: "NEW CITY PALACE, Pushapak Nagar, Panvel",
     image: "/images/projects/featuredProject3.jpg",
     description: "Short description of Project 3",
     fullDescription:
