@@ -38,7 +38,7 @@ const projects = [
   {
     id: 3,
     name: 'NEW CITY PALACE, Pushpak Nagar, Panvel',
-    image: '/images/projects/newCity.jpeg',
+    image: '/images/projects/newCity-1.jpeg',
     details: [
       '1RK, 1BHK Apartments',
       'G+7 Storey',
@@ -50,7 +50,7 @@ const projects = [
   {
     id: 4,
     name: 'OM SAI SIDDHIVINAYAK',
-    image: '/images/projects/saiPrasad.jpeg',
+    image: '/images/projects/omsaiSiddhivinayak.jpeg',
     details: [
       '1RK, 1BHK, 2BHK Apartments',
       'G+4 Storey',
@@ -86,7 +86,7 @@ const ProjectCard = ({ project }) => {
       whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
       className="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex flex-col h-full border-2 border-red-800"
     >
-      <img src={project.image} alt={project.name} className="w-full h-48 sm:h-56 md:h-64 object-fill" />
+      <img src={project.image} alt={project.name} className="w-full h-48 sm:h-56 md:h-64 object-cover" />
       <div className="p-4 flex-grow flex flex-col justify-between">
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.name}</h3>
