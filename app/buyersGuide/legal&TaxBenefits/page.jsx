@@ -7,7 +7,7 @@ const LegalTaxInfo = () => {
     {
       title: "Legal Advice",
       content: [
-        "At Qualcom Dreams, our seasoned tax experts will help you save your income tax while investing in under construction flats and properties at Panvel, Navi Mumbai. Signing a title report (received from the solicitor of the property) with any fine print and specific government reservations is unadvisable. Accept clearance reports that are lucid and specific.",
+        "At Royal Crown Infra, our seasoned tax experts will help you save your income tax while investing in under construction flats and properties at Panvel, Navi Mumbai. Signing a title report (received from the solicitor of the property) with any fine print and specific government reservations is unadvisable. Accept clearance reports that are lucid and specific.",
         "Precautionary measures will prevent you from getting embroiled in any future disputes. They will also help ensure that your home loans aren't scrutinized."
       ],
       image: "/images/legal.jpg"
