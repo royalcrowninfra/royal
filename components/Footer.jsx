@@ -76,10 +76,10 @@ export default function Footer() {
           >
             <h2 className="text-xl font-semibold uppercase">Connect With Us</h2>
             <div className="flex flex-col space-y-2 ml-2">
-              <Link href='/' className="hover:underline">Instagram</Link>
+              <Link href=' https://www.instagram.com/royalcrown.19/' className="hover:underline">Instagram</Link>
               <Link href='/' className="hover:underline">Twitter</Link>
               <Link href='/' className="hover:underline">LinkedIn</Link>
-              <Link href='/' className="hover:underline">Facebook</Link>
+              <Link href='https://www.facebook.com/royalcrowninfra/' className="hover:underline">Facebook</Link>
             </div>
           </motion.div>
         </div>
