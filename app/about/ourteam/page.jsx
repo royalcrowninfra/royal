@@ -58,7 +58,7 @@ const Page = () => {
                 layout="fill" 
                 objectFit="cover" 
                 alt="Woman in yellow shirt" 
-                className="rounded-3xl shadow-2xl"
+                className="rounded-3xl"
               />
             </motion.div>
           </motion.div>
