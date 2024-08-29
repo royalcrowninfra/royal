@@ -49,39 +49,15 @@ const projects = [
   },
   {
     id: 4,
-    name: 'Project Three, Kalyan',
+    name: 'OM SAI SIDDHIVINAYAK',
     image: '/images/projects/featuredProject3.jpg',
     details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
+      '1RK, 1BHK, 2BHK Apartments',
+      'G+4 Storey',
+      'Possession : March 2025',
+      '7 Mins from Panvel Rly Stn',
     ],
     href: '/projects/ongoingProjects/project-4'
-  },
-  {
-    id: 5,
-    name: 'Project Five, Kalyan',
-    image: '/images/projects/featuredProject3.jpg',
-    details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-    ],
-    href: '/projects/ongoingProjects/project-5'
-  },
-  {
-    id: 6,
-    name: 'Project Six, Kalyan',
-    image: '/images/projects/featuredProject3.jpg',
-    details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-    ],
-    href: '/projects/ongoingProjects/project-6'
   },
 ];
 
