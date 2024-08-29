@@ -6,7 +6,7 @@ const ContactButton = () => {
   const [isCallInitiated, setIsCallInitiated] = useState(false);
 
   const initiateCall = () => {
-    window.location.href = 'tel:+1234567890'; // Replace with your actual phone number
+    window.location.href = 'tel:8689992777'; // Replace with your actual phone number
     setIsCallInitiated(true);
     setTimeout(() => setIsCallInitiated(false), 3000); // Reset after 3 seconds
   };
