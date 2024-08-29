@@ -26,9 +26,9 @@ const posts = [
     // category: { href: '/reviews', title: 'Positive' },
     href: '#',
     title: 'Excellent Support!',
-    description: 'The support team was very helpful and resolved my issue promptly. Highly satisfied with the service.',
+    description: 'Royal Crown Property Developers exceeded my expectations with their exceptional service and attention to detail. From the moment I expressed interest in their properties, their team guided me through the entire process seamlessly. The quality of their construction and the luxurious amenities provided truly make them stand out in the real estate market. Highly recommended!',
     author: {
-      name: 'Jane Smith',
+      name: 'Sudhir Patil',
       role: 'Customer',
       href: '/profile/janesmith',
       imageUrl: '/images/header/janesmith.jpg'
