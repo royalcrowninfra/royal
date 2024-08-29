@@ -38,7 +38,7 @@ export default function BankingPartner() {
         <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-8"></div>
 
         <div className="relative border-4 border-red-600 rounded-lg overflow-hidden">
-          <div className="bg-white dark:bg-gray-900 py-8">
+          <div className="bg-white py-8">
             <Marquee pauseOnHover className="[--duration:30s]">
               {reviews.map((review) => (
                 <ReviewCard key={review.img} {...review} />
