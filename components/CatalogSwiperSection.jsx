@@ -37,13 +37,13 @@ const projects = [
   },
   {
     id: 3,
-    name: 'Project Two, Kalyan',
+    name: 'NEW CITY PALACE, Pushpak Nagar, Panvel',
     image: '/images/projects/featuredProject3.jpg',
     details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
+      '1RK, 1BHK Apartments',
+      'G+7 Storey',
+      'Possession : Dec 2025',
+      'Rooftop Amenities',
     ],
     href: '/projects/ongoingProjects/project-3'
   },
