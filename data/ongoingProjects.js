@@ -2,7 +2,7 @@ export const projects = [
   {
     slug: "project-1",
     title: "SAI PRASAD GARDEN, Nevali, Panvel",
-    image: "/images/projects/featuredProject1.jpg",
+    image: "/images/projects/saiPrasad.jpeg",
     description: "Short description of Project 1",
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
@@ -52,7 +52,7 @@ export const projects = [
   {
     slug: "project-2",
     title: "JAYRAM RESIDENCY, Shedung, Panvel",
-    image: "/images/projects/featuredProject2.jpg",
+    image: "/images/projects/jayramResidency.jpg",
     description: "Short description of Project 2",
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
@@ -102,7 +102,7 @@ export const projects = [
   {
     slug: "project-3",
     title: "NEW CITY PALACE, Pushapak Nagar, Panvel",
-    image: "/images/projects/featuredProject3.jpg",
+    image: "/images/projects/newCity.jpeg",
     description: "Short description of Project 3",
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
@@ -150,9 +150,9 @@ export const projects = [
     ],
   },
   {
-    slug: "project-3",
+    slug: "project-4",
     title: "OM SAI SIDDHIVINAYAK",
-    image: "/images/projects/featuredProject3.jpg",
+    image: "/images/projects/omsaiSiddhivinayak.jpeg",
     description: "Short description of Project 3",
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
