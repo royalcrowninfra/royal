@@ -14,10 +14,10 @@ const HeroSection = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const statistics = [
-    { startValue: 0, endValue: 72, label: "Successful Projects" },
-    { startValue: 0, endValue: 36, label: "Years Of Expertise" },
-    { startValue: 0, endValue: 1800, label: "Happy Families" },
-    { startValue: 0, endValue: 18, label: "Million Sq.ft. Developed" }
+    { startValue: 0, endValue: 5, label: "Under Construction Projects" },
+    { startValue: 0, endValue: 15, label: "Years Of Expertise" },
+    { startValue: 0, endValue: 605, label: "Happy Families" },
+    { startValue: 0, endValue: 504, label: "Available Units" }
   ];
 
   const [counts, setCounts] = useState(statistics.map(stat => stat.startValue));
