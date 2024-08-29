@@ -78,7 +78,7 @@ const AboutComponent = () => {
             transition={{ duration: 3, repeat: Infinity }}
           >
             Welcome To <br />
-           <span className='text-6xl'> Royal Crown</span></motion.h2>
+            <span className='text-6xl'> Royal Crown</span></motion.h2>
           <motion.p
             className="text-gray-600 mb-4 text-center"
             variants={itemVariants}
