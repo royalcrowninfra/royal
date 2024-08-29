@@ -66,7 +66,7 @@ const AboutComponent = () => {
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
         <motion.div
-          className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_550px] bg-no-repeat left-0 mr-0 opacity-20"
+          className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_450px] bg-no-repeat left-0 mr-0 opacity-20"
           style={{ backgroundImage: "url('/images/header/bg-logo.jpg')" }}
           animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
@@ -106,7 +106,7 @@ const AboutComponent = () => {
           whileHover={{ scale: 1.05, rotate: 2 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <img src="/images/header/about-us.png" alt="About Us" className="rounded-lg shadow-lg" />
+          <img src="/images/header/about-us3.jpg" alt="About Us" className="rounded-lg shadow-lg" />
         </motion.div>
       </motion.div>
 
