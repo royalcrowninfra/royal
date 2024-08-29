@@ -17,7 +17,7 @@ const posts = [
       name: 'Ajinkya Salavkar',
       role: 'Customer',
       href: '/profile/johndoe',
-      imageUrl: '/images/header/emilydavis.jpg'
+      imageUrl: '/images/header/reviews.jpg'
     }
   },
   {
@@ -31,7 +31,7 @@ const posts = [
       name: 'Sudhir Patil',
       role: 'Customer',
       href: '/profile/janesmith',
-      imageUrl: '/images/header/janesmith.jpg'
+      imageUrl: '/images/header/reviews.jpg'
     }
   },
   {
@@ -45,7 +45,7 @@ const posts = [
       name: 'Emily Davis',
       role: 'Customer',
       href: '/profile/emilydavis',
-      imageUrl: '/images/header/emilydavis.jpg'
+      imageUrl: '/images/header/reviews.jpg'
     }
   },
   // Add more posts as needed
