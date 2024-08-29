@@ -38,7 +38,7 @@ const projects = [
   {
     id: 3,
     name: 'NEW CITY PALACE, Pushpak Nagar, Panvel',
-    image: '/images/projects/newCity-1.jpeg',
+    image: '/images/projects/newCity.jpeg',
     details: [
       '1RK, 1BHK Apartments',
       'G+7 Storey',
