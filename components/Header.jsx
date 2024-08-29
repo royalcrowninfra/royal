@@ -154,15 +154,6 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-
-      {/* Mobile menu button */}
-      {/* <div className="sm:hidden fixed top-4 right-4 z-50">
-        <button onClick={toggleMobileMenu} className="text-black-500 hover:text-gray-600">
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div> */}
-
-      {/* Mobile Navigation Links */}
       <div
         className={`fixed top-0 pl-4 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} sm:hidden`}
         style={{ transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out' }}
