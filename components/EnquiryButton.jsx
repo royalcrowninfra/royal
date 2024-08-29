@@ -97,7 +97,10 @@ const EnquiryButton = () => {
                     id="enquiryFor"
                     className="w-full px-3 py-2 border rounded-lg bg-white"
                   >
-                    <option value="Space World">Space World</option>
+                    <option value="Sai Prasad Garden">Sai Prasad Garden</option>
+                    <option value="Jayram Residency">Jayram Residency</option>
+                    <option value="New City Palace">New City Palace</option>
+                    <option value="Om Sai Sidhhivinayak">Om Sai Sidhhivinayak</option>
                     {/* Add more options as needed */}
                   </select>
                 </motion.div>
