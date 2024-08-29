@@ -10,7 +10,7 @@ const ServiceCard = ({ icon: Icon, title }) => (
     className="bg-cyan-500 p-6 rounded-lg text-white text-center cursor-pointer"
     transition={{ type: "spring", stiffness: 300 }}
   >
-    <motion.div 
+    <motion.div
       whileHover={{ y: -5 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
@@ -53,7 +53,7 @@ const AboutComponent = () => {
 
   return (
     <div className="container mx-auto py-2 px-4 relative overflow-hidden">
-       {/* <motion.div 
+      {/* <motion.div 
         className="absolute inset-0 bg-contain bg-no-repeat bg-left-top opacity-10"
         style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
         animate={{ rotate: 360 }}
@@ -65,32 +65,32 @@ const AboutComponent = () => {
         animate="visible"
         className="mt-16 grid md:grid-cols-2 gap-12 items-center relative"
       >
-        <motion.div 
-        className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_550px] bg-no-repeat left-0 mr-0 opacity-20"
-        style={{backgroundImage: "url('/images/header/bg-logo.jpg')"}}
-        animate={{ rotate: 360 }}
+        <motion.div
+          className="absolute inset-0 bg-[length:350px_400px] md:bg-[length:700px_550px] bg-no-repeat left-0 mr-0 opacity-20"
+          style={{ backgroundImage: "url('/images/header/bg-logo.jpg')" }}
+          animate={{ rotate: 360 }}
         // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-      ></motion.div>
+        ></motion.div>
         <motion.div className="z-10 justify-center" variants={itemVariants}>
-          <motion.h2 
+          <motion.h2
             className="text-5xl font-extrabold mb-6 text-center"
             animate={{ scale: [1, 1.03, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
-            Welcome To <br/>
+            Welcome To <br />
             Royal Crown Realty
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-gray-600 mb-4 text-center"
             variants={itemVariants}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.lroem*1
+            Royal Crown is Navi Mumbai's topmost Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.
           </motion.p>
-          <motion.p 
+          <motion.p
             className="text-gray-600 mb-6 text-center"
             variants={itemVariants}
           >
-            Incidunt, soluta, exercitationem recusandae reprehenderit cum totam consequatur quae dignissimos eos laboriosam illum tenetur voluptate veritatis excepturi enim iure distinctio.
+            With Royal Crown explore new residential projects in Panvel, Navi Mumbai, offering modern amenities and convenient locations, Ideal for urban living with contemporary designs and comfortable living space. Find your perfect home in Panvel today!
           </motion.p>
           <Link href='/contact'>
             <motion.button
@@ -111,7 +111,7 @@ const AboutComponent = () => {
         </motion.div>
       </motion.div>
 
-       <motion.div 
+      <motion.div
         className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 justify-center"
         variants={containerVariants}
         initial="hidden"
