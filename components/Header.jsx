@@ -89,7 +89,7 @@ const Navbar = () => {
             </span>
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Mail size={16} className="mr-2" />
-              info@royalcrownreality.com
+              info@royalcrowninfra.com
             </span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
