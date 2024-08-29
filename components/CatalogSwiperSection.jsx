@@ -26,7 +26,7 @@ const projects = [
   {
     id: 2,
     name: 'JAYRAM RESIDENCY, Shedung, Panvel',
-    image: '/images/projects/featuredProject2.jpg',
+    image: '/images/projects/jayramResidency.jpg',
     details: [
       '1 & 2 BHK Apartments',
       '4 Buildings, 10 Wings, G+7 Storey',
@@ -38,7 +38,7 @@ const projects = [
   {
     id: 3,
     name: 'NEW CITY PALACE, Pushpak Nagar, Panvel',
-    image: '/images/projects/featuredProject3.jpg',
+    image: '/images/projects/newCity.jpeg',
     details: [
       '1RK, 1BHK Apartments',
       'G+7 Storey',
@@ -50,7 +50,7 @@ const projects = [
   {
     id: 4,
     name: 'OM SAI SIDDHIVINAYAK',
-    image: '/images/projects/featuredProject3.jpg',
+    image: '/images/projects/saiPrasad.jpeg',
     details: [
       '1RK, 1BHK, 2BHK Apartments',
       'G+4 Storey',
