@@ -59,8 +59,8 @@ export default function Footer() {
             variants={tagVariants}
             className="space-y-4"
           >
-            <h2 className="text-xl font-semibold uppercase">Quick Links</h2>
-            <div className="flex flex-col space-y-2 ml-2 md:mx-6">
+            <h2 className="text-xl font-semibold uppercase md:mx-16">Quick Links</h2>
+            <div className="flex flex-col space-y-2 ml-2 md:mx-20">
               <Link href='/about/ourteam' className="hover:underline">About Us</Link>
               <Link href='/projects' className="hover:underline">Projects</Link>
               <Link href='/gallery' className="hover:underline">Gallery</Link>
