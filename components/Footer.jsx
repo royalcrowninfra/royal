@@ -20,8 +20,8 @@ export default function Footer() {
             <div className="flex items-start space-x-2">
               <MapPin className="mt-1 flex-shrink-0" />
               <p>ROAYL CROWN<br />Shop No 1 Sector 25 Plot No 19,<br />
-                Ravi Rachna, near Khandesh Station,<br />
-                Sector-25, Khandeshhwar,<br />
+                Ravi Rachna, near Khandeshwar Station,<br />
+                Sector-25, Khandeshwar,<br />
                 Navi Mumbai, Maharashtra 410209</p>
             </div>
           </motion.div>
