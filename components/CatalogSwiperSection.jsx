@@ -13,13 +13,13 @@ import 'swiper/css/scrollbar';
 const projects = [
   {
     id: 1,
-    name: 'Project Four, Panvel',
+    name: 'SAI PRASAD GARDEN, Nevali, Panvel',
     image: '/images/projects/featuredProject1.jpg',
     details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
+      '1 & 2 BHK Apartments',
+      '13 Buildings, G+4 Storey',
+      'Ready to Move In',
+      'Luxurious Amenities',
     ],
     href: '/projects/ongoingProjects/project-1'
   },
