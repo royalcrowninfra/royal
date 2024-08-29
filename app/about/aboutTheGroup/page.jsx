@@ -6,7 +6,7 @@ import { FaClipboardList, FaCity, FaProjectDiagram, FaUsers, FaTrophy } from 're
 import Link from 'next/link';
 
 const SectionCard = ({ icon: Icon, title, content }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
@@ -87,20 +87,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-black">
       {/* Header Section with Background Image */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]" 
+        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/header/aboutgroup.jpg')" }}
       >
         <div className="container mx-auto py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64">
           {/* Who are we? */}
         </div>
       </motion.div>
-      
+
       {/* Title */}
-      <motion.h1 
+      <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -108,22 +108,22 @@ export default function Home() {
       >
         About Us
       </motion.h1>
-      
+
       {/* About Us Section */}
       <div className="container mx-auto px-4 my-16">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <h2 className="text-3xl font-bold mb-4">About Us</h2>
-            <p className="mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
-            <p className="mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <p className="mb-4">Royal Crown is Navi Mumbai's topmost Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.</p>
+            <p className="mb-6">With Royal Crown explore new residential projects in Panvel, Navi Mumbai, offering modern amenities and convenient locations, Ideal for urban living with contemporary designs and comfortable living space. Find your perfect home in Panvel today!</p>
             <Link href="/contact">
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-orange-500 border-2 border-orange-500 py-2 px-4 rounded-md inline-block transition duration-300 hover:bg-orange-500 hover:text-white"
-            >
-              Book a Call
-            </motion.button></Link>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-white text-orange-500 border-2 border-orange-500 py-2 px-4 rounded-md inline-block transition duration-300 hover:bg-orange-500 hover:text-white"
+              >
+                Book a Call
+              </motion.button></Link>
           </div>
           <div className="md:w-1/2">
             <Image src="/images/header/about-us2.jpg" alt="Construction Worker" width={600} height={800} layout="responsive" objectFit="cover" className="rounded-lg" />
@@ -148,7 +148,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      
+
     </div>
   );
 }
