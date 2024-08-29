@@ -25,13 +25,13 @@ const projects = [
   },
   {
     id: 2,
-    name: 'Project One, Thane',
+    name: 'JAYRAM RESIDENCY, Shedung, Panvel',
     image: '/images/projects/featuredProject2.jpg',
     details: [
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
-      'Lorem ipsum dolor sit amet',
+      '1 & 2 BHK Apartments',
+      '4 Buildings, 10 Wings, G+7 Storey',
+      'Possession : March 2026',
+      'Luxurious Amenities',
     ],
     href: '/projects/ongoingProjects/project-2'
   },
