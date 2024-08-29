@@ -60,10 +60,10 @@ export default function Home() {
   ];
 
   const stats = [
-    { icon: FaProjectDiagram, title: "PROJECTS", value: 100 },
-    { icon: FaUsers, title: "CLIENTS", value: 40 },
-    { icon: FaUsers, title: "OUR TEAM", value: 20 },
-    { icon: FaTrophy, title: "AWARDS", value: 76 },
+    { icon: FaProjectDiagram, title: "Under Construction Projects", value: 5 },
+    { icon: FaUsers, title: "Years Of Expertise", value: 15 },
+    { icon: FaUsers, title: "Happy Families", value: 600 },
+    { icon: FaTrophy, title: "Available Units", value: 500 },
   ];
 
   const numberedSections = [
