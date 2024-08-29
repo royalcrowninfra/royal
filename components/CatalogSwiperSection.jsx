@@ -14,7 +14,7 @@ const projects = [
   {
     id: 1,
     name: 'SAI PRASAD GARDEN, Nevali, Panvel',
-    image: '/images/projects/featuredProject1.jpg',
+    image: '/images/projects/saiPrasad.jpeg',
     details: [
       '1 & 2 BHK Apartments',
       '13 Buildings, G+4 Storey',
