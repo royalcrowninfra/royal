@@ -86,7 +86,7 @@ const ProjectCard = ({ project }) => {
       whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
       className="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex flex-col h-full border-2 border-red-800"
     >
-      <img src={project.image} alt={project.name} className="w-full h-48 sm:h-56 md:h-64 object-cover" />
+      <img src={project.image} alt={project.name} className="w-full h-48 sm:h-56 md:h-64 object-fill" />
       <div className="p-4 flex-grow flex flex-col justify-between">
         <div>
           <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.name}</h3>
