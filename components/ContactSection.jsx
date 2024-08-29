@@ -11,10 +11,10 @@ const posts = [
     dateTime: '2024-08-08T12:00:00Z',
     // category: { href: '/reviews', title: 'Positive' },
     href: '#',
-    title: 'Amazing Service!',
-    description: 'I had a great experience with this company. The service was top-notch, and I would highly recommend them to others.',
+    title: 'Royal Crown Team - A Seamless Real Estate Experience',
+    description: 'They worked diligently to offer us the best possible deal and explained every detail with politeness and thoroughness. Their dedication to ensuring we had a comprehensive understanding of the process was commendable. Furthermore, they extended warm hospitality during our time at the sales office, making us feel comfortable and valued as customers',
     author: {
-      name: 'John Doe',
+      name: 'Ajinkya Salavkar',
       role: 'Customer',
       href: '/profile/johndoe',
       imageUrl: '/images/header/emilydavis.jpg'
