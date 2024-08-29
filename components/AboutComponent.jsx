@@ -106,7 +106,7 @@ const AboutComponent = () => {
           whileHover={{ scale: 1.05, rotate: 2 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <img src="/images/header/about-us.png" alt="About Us" className="rounded-lg shadow-lg" />
+          <img src="/images/header/about-us3.jpg" alt="About Us" className="rounded-lg shadow-lg" />
         </motion.div>
       </motion.div>
 
