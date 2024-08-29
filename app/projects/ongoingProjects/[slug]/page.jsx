@@ -2,9 +2,7 @@ import IFrameComponent from "@/components/IFrameComponent";
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
 import Link from "next/link";
-import Calculator from "@/components/Calculator";
-import { motion } from 'framer-motion';
-import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
+
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
