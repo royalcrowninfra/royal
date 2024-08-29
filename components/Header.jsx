@@ -85,11 +85,11 @@ const Navbar = () => {
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Phone size={16} className="mr-2" />
-              (+1) 212-946-2707
+              (+91) 8689992777
             </span>
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Mail size={16} className="mr-2" />
-              info@royalcrown.com
+              info@royalcrownreality.com
             </span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
@@ -98,10 +98,10 @@ const Navbar = () => {
               <Link href="#" aria-label="Twitter">
                 <Twitter size={18} className="text-white" />
               </Link>
-              <Link href="#" aria-label="Facebook">
+              <Link href="https://www.facebook.com/royalcrowninfra/" aria-label="Facebook">
                 <Facebook size={18} className="text-white" />
               </Link>
-              <Link href="#" aria-label="Instagram">
+              <Link href=" https://www.instagram.com/royalcrown.19/" aria-label="Instagram">
                 <Instagram size={18} className="text-white" />
               </Link>
               <Link href="#" aria-label="YouTube">
