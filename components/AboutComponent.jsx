@@ -73,13 +73,12 @@ const AboutComponent = () => {
         ></motion.div>
         <motion.div className="z-10 justify-center" variants={itemVariants}>
           <motion.h2
-            className="text-5xl font-extrabold mb-6 text-center"
+            className="text-5xl font-extrabold mb-8 text-center"
             animate={{ scale: [1, 1.03, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
           >
             Welcome To <br />
-            Royal Crown Realty
-          </motion.h2>
+           <span className='text-6xl'> Royal Crown</span>          </motion.h2>
           <motion.p
             className="text-gray-600 mb-4 text-center"
             variants={itemVariants}
