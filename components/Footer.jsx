@@ -19,7 +19,7 @@ export default function Footer() {
             <h2 className="text-xl font-semibold uppercase">Corporate Office</h2>
             <div className="flex items-start space-x-2">
               <MapPin className="mt-1 flex-shrink-0" />
-              <p>ROYAL CROWN<br />Shop No 1 Sector 25 Plot No 19,<br />
+              <p>ROYAL CROWN INFRA<br />Shop No 1 Sector 25 Plot No 19,<br />
                 Ravi Rachna, near Khandeshwar Station,<br />
                 Sector-25, Khandeshwar,<br />
                 Navi Mumbai, Maharashtra 410209</p>
