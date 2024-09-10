@@ -114,7 +114,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
             <h2 className="text-3xl font-bold mb-4">About Us</h2>
-            <p className="mb-4">Royal Crown is Navi Mumbai's tompest  Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.</p>
+            <p className="mb-4">Royal Crown is Navi Mumbai's top most  Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.</p>
             <p className="mb-6">With Royal Crown explore new residential projects in Panvel, Navi Mumbai, offering modern amenities and convenient locations, Ideal for urban living with contemporary designs and comfortable living space. Find your perfect home in Panvel today!</p>
             <Link href="/contact">
               <motion.button
