@@ -47,17 +47,17 @@ const Page = () => {
             className="md:w-1/2"
             variants={fadeInUp}
           >
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="relative w-full h-[400px] md:h-[500px]"
             >
-              <Image 
-                src="/images/header/women.png" 
-                layout="fill" 
-                objectFit="cover" 
-                alt="Woman in yellow shirt" 
+              <Image
+                src="/images/header/women.png"
+                layout="fill"
+                objectFit="cover"
+                alt="Woman in yellow shirt"
                 className="rounded-3xl"
               />
             </motion.div>
@@ -89,17 +89,17 @@ const Page = () => {
               </p>
             </motion.div>
             <div className="md:w-1/2 space-y-10">
-              <Feature 
+              <Feature
                 icon={<TbDeviceMobile className="w-10 h-10 text-white" />}
                 title="RESEARCH"
                 description="We delve deep into your industry and target audience to create data-driven strategies that resonate with your users and drive results."
               />
-              <Feature 
+              <Feature
                 icon={<TbSettings className="w-10 h-10 text-white" />}
                 title="STRATEGY"
                 description="Our comprehensive approach ensures that every aspect of your project is carefully planned and executed for maximum impact and efficiency."
               />
-              <Feature 
+              <Feature
                 icon={<TbHeadphones className="w-10 h-10 text-white" />}
                 title="DESIGN"
                 description="We create visually stunning and user-friendly designs that captivate your audience and enhance their digital experience."
@@ -120,23 +120,26 @@ const Page = () => {
           >
             Meet Our Team
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-12"
             initial="offscreen"
             whileInView="onscreen"
             variants={staggerContainer}
           >
             <TeamMember
-              name="Jane Doe"
-              role="Lead Designer"
+              name="Rajesh Chavan"
+              // role="Lead Designer"
               image="/images/header/men.png"
-              description="Jane brings over a decade of experience in UI/UX design, crafting intuitive and beautiful interfaces that users love."
+              description="He has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor degree in commerce from University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft spoken and polite in his demeanour. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues and his team. His focus on developing a long term relationship with clients is our biggest asset."
             />
             <TeamMember
-              name="John Smith"
-              role="Senior Developer"
-              image="/images/header/women.png"
-              description="With expertise in multiple programming languages, John leads our development team in creating robust and scalable web applications."
+              name="Roshan Jadhav"
+              // role="Senior Developer"
+              image="/images/header/men.png"
+              description="Roshan Jadhav is a multi-talented person and looks after all the functional areas like Marketing and Administration. He holds a Masters degree in Computers Applications from Mumbai University. He is a social man and believes in living life to the fullest. He is a man filled with positive energy and has a winning attitude that doesn’t let him give up until a task is completed well. He is a result oriented person and believes in working hard to accomplish the given tasks.
+Under the rousing leadership of  Mr. Roshan Jadhav we feel inspired to keep experimenting with unconventional and creative ideas in Marketing. Currently, it is a small team but we are ambitious about expanding it shortly.
+
+"
             />
           </motion.div>
         </div>
@@ -146,7 +149,7 @@ const Page = () => {
 }
 
 const Feature = ({ icon, title, description }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -163,7 +166,7 @@ const Feature = ({ icon, title, description }) => (
 )
 
 const TeamMember = ({ name, role, image, description }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, ease: "easeOut" }}
