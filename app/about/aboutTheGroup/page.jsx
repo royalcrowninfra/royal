@@ -69,8 +69,8 @@ export default function Home() {
   const numberedSections = [
     {
       number: "01",
-      title: "Development",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit"
+      title: "Our Philosophy ",
+      content: "Our work philosophy that gives priority to everlasting emotional bonds over material gains,translates into ever smiling faces! We constantly strive to satisfy ever changing needs of our customers which are at par with the latest market trends of Real Estate. The result of which we see in our more than 1000 satisfied customers! This is our investment for the future!"
     },
     {
       number: "02",
