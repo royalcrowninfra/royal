@@ -5,7 +5,7 @@ export const projects = [
     image: "/images/projects/saiPrasad.jpeg",
     description: "Short description of Project 1",
     fullDescription:
-      "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
+      "Everything in your live is a reflection of the choices you have made. This is a chance to live your dreams. The glorifying gateways of Sai Prasad Garden is a beautiful combination of shapes and spaces It is intricately designed to ease the entry and exit with a 24 hours hi-tech security system to make sure you feel safe and secured Invite yourself into exclusive life that reflects your impeccable taste for elegance and luxury.BIG DREAMS HAVE SMALL BEGINNINGS INVEST SMALL. INVEST SMART",
     reraNumber: "P52000011751",
     amenitiesDescription: "Description of amenities for Project 1",
     pdfLink: "/pdf/ongoing/ongoingProject-1.pdf",
