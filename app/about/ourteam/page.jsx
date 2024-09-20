@@ -130,7 +130,7 @@ const Page = () => {
               name="Rajesh Chavan"
               // role="Lead Designer"
               image="/images/header/men.png"
-              description="He has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor degree in commerce from University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft spoken and polite in his demeanour. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues and his team. His focus on developing a long term relationship with clients is our biggest asset."
+              description="Rajesh Chavan He has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor degree in commerce from University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft spoken and polite in his demeanour. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues and his team. His focus on developing a long term relationship with clients is our biggest asset."
             />
             <TeamMember
               name="Roshan Jadhav"
