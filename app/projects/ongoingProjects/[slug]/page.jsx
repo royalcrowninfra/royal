@@ -130,7 +130,16 @@ export default function ProjectPage({ params }) {
               <tbody>
                 <tr className="transition duration-300 ease-in-out hover:bg-gray-100 border-b border-gray-300">
                   <td className="py-3 px-4 border-r border-gray-300">1 BHK</td>
-                  <td className="py-3 px-4 border-r border-gray-300">396-425 sq.ft</td>
+                  <td className="py-3 px-4 border-r border-gray-300">421 SQ FT</td>
+                  <td className="py-3 px-4">
+                    <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded transition duration-300 ease-in-out">
+                      Get Quote
+                    </button>
+                  </td>
+                </tr>
+                <tr className="transition duration-300 ease-in-out hover:bg-gray-100 border-b border-gray-300">
+                  <td className="py-3 px-4 border-r border-gray-300">2 BHK</td>
+                  <td className="py-3 px-4 border-r border-gray-300">535 SQ FT</td>
                   <td className="py-3 px-4">
                     <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded transition duration-300 ease-in-out">
                       Get Quote
