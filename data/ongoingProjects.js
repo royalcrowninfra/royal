@@ -25,7 +25,11 @@ export const projects = [
     connectivity: [
       "PANVEL RAILWAY STATION : 3.5 KMS",
       "KHANDESHWAR RAILWAY STATION : 3.5 KMS",
-      "Panvel's strategic location places it near Mumbai's Chhatrapati Shivaji Maharaj International Airport and the upcoming Navi Mumbai International Airport, enhancing air connectivity for residents and businesses.",
+      "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS",
+      "RELIANCE SEZ AND IT PARK : 0.5 KMS",
+      "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS",
+      "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS",
+      "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS",
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
