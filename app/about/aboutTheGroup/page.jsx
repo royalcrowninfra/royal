@@ -79,8 +79,8 @@ export default function Home() {
     },
     {
       number: "03",
-      title: "New materials",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit"
+      title: "MISSION",
+      content: "By Gaining the trust of our stakeholders by being transparent in all our actions and deeds. We strive to be amongst the top listed real estate solutions providers in the city."
     }
   ];
 
