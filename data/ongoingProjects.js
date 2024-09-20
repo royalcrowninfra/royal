@@ -41,7 +41,7 @@ export const projects = [
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d695.8197463799711!2d73.10259316005418!3d19.009816908187975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1721728374695!5m2!1sen!2sin",
     },
     galleryImages: [
-      { image: "/images/projects/img-1.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/saiprasad/img-1.jpeg", alt: "Exterior View" },
       { image: "/images/projects/img-2.jpg", alt: "Living Room" },
       { image: "/images/projects/img-3.jpg", alt: "Kitchen" },
       { image: "/images/projects/img-4.jpg", alt: "Bedroom" },
