@@ -74,8 +74,8 @@ export default function Home() {
     },
     {
       number: "02",
-      title: "Design projects",
-      content: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit"
+      title: "VISION",
+      content: "To be the most trusted and dependable provider of real estate solutions. To set new standards of excellence in the service of providing top quality living, working and business spaces."
     },
     {
       number: "03",
