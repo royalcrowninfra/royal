@@ -83,7 +83,7 @@ const AboutComponent = () => {
             className="text-gray-600 mb-4 text-center"
             variants={itemVariants}
           >
-            Royal Crown is Navi Mumbai's topmost Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.
+            Royal Crown is Navi Mumbai's top most Real Estate Development Brand. The undisputed leaders that have not only set new benchmarks in business numbers but with stellar delivery line-up to the Real Estate Brands.
           </motion.p>
           <motion.p
             className="text-gray-600 mb-6 text-center"
