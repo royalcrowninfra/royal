@@ -42,11 +42,11 @@ export const projects = [
     },
     galleryImages: [
       { image: "/images/projects/ongoing/saiprasad/img-1.jpeg", alt: "Exterior View" },
-      { image: "/images/projects/img-2.jpg", alt: "Living Room" },
-      { image: "/images/projects/img-3.jpg", alt: "Kitchen" },
-      { image: "/images/projects/img-4.jpg", alt: "Bedroom" },
-      { image: "/images/projects/img-1.jpg", alt: "Bathroom" },
-      { image: "/images/projects/img-2.jpg", alt: "Balcony View" },
+      { image: "/images/projects/ongoing/saiprasad/img-2.jpeg", alt: "Living Room" },
+      { image: "/images/projects/ongoing/saiprasad/img-3.jpeg", alt: "Kitchen" },
+      { image: "/images/projects/ongoing/saiprasad/img-4.jpeg", alt: "Bedroom" },
+      { image: "/images/projects/ongoing/saiprasad/img-5.jpeg", alt: "Bathroom" },
+      { image: "/images/projects/ongoing/saiprasad/img-6.jpeg", alt: "Balcony View" },
     ],
   },
   {
