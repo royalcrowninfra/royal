@@ -23,7 +23,6 @@ const links = [
     ],
   },
   { path: "/gallery", name: "Gallery" },
-  // { path: "/book-site-visit", name: "Book a Site Visit" },
   {
     path: "#",
     name: "Buyers Guide",
@@ -75,13 +74,13 @@ const Navbar = () => {
             height={60}
             alt="Royal Crown Realty"
             className="h-28 w-29 sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
-            priority // This line is added
+            priority
           />
         </Link>
       </div>
       {/* Top bar */}
       <div className="bg-gradient-to-r bg-cyan-700 py-2">
-        <div className="container mx-auto px-14 flex flex-col sm:flex-row justify-end items-end  gap-0 sm:gap-12">
+        <div className="container mx-auto px-4 sm:px-14 flex flex-col sm:flex-row justify-end items-end gap-2 sm:gap-12">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Phone size={16} className="mr-2" />
@@ -110,19 +109,19 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="sm:hidden absolute top-3 right-4 z-50">
-          <button onClick={toggleMobileMenu} className="text-black-500 hover:text-gray-600">
-            {isMobileMenuOpen ? <X size={34} /> : <Menu size={30} />}
-          </button>
-        </div>
+      </div>
 
+      {/* Mobile menu button */}
+      <div className="sm:hidden absolute top-3 right-4 z-50">
+        <button onClick={toggleMobileMenu} className="text-black-500 hover:text-gray-600">
+          {isMobileMenuOpen ? <X size={34} /> : <Menu size={30} />}
+        </button>
       </div>
 
       {/* Main navigation */}
-
-      <div className="flex items-start justify-center ml-96 py-0 sm:ml-0 sm:py-8 bg-white-100 border-b-1 border-black">
+      <div className="flex items-start justify-center ml-96 py-0 sm:ml-0 sm:py-8 bg-white-100 border-b border-black">
         {/* Desktop Navigation Links */}
-        <div className="hidden sm:flex items-center  space-x-6 sm:ml-64 lg:gap-8">
+        <div className="hidden sm:flex items-center space-x-6 sm:ml-64 lg:gap-8">
           {links.map((item, index) => (
             <div key={item.path} className="relative group">
               <Link
@@ -154,6 +153,8 @@ const Navbar = () => {
           ))}
         </div>
       </div>
+
+      {/* Mobile menu */}
       <div
         className={`fixed top-0 pl-4 left-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'} sm:hidden`}
         style={{ transition: 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out' }}
@@ -200,8 +201,6 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-
-
     </header>
   );
 };
