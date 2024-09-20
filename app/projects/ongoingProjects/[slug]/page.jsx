@@ -178,7 +178,7 @@ export default function ProjectPage({ params }) {
               <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>
                 Connected To Everything
               </h2>
-              <ul className='list-disc pl-8 mb-4 text-sm md:text-base text-black'>
+              <ul className='list-disc pl-8 mb-4 text-sm md:text-base text-black md:text-start'>
                 {project.connectivity.map((item, index) => (
                   <li key={index} className='mb-2'>
                     {item}
