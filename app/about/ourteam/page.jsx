@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { TbDeviceMobile, TbSettings, TbHeadphones } from 'react-icons/tb'
+import Link from 'next/link'
 
 const fadeInUp = {
   offscreen: { opacity: 0, y: 20 },
@@ -35,13 +36,13 @@ const Page = () => {
             <p className="text-xl text-gray-600 mb-8">
               We bring your visions to life with cutting-edge web development and design solutions.
             </p>
-            <motion.button
+            <Link href='/contact'><motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-purple-700 transition duration-300 shadow-lg"
             >
               Learn More
-            </motion.button>
+            </motion.button></Link>
           </motion.div>
           <motion.div
             className="md:w-1/2"
