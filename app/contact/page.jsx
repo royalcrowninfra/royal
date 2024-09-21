@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,6 +14,8 @@ export default function Contact() {
     message: ''
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -21,6 +23,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    setIsSubmitted(true);
     // Handle form submission here
   };
 
@@ -78,92 +81,133 @@ export default function Contact() {
           {/* Contact Form Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-white shadow-2xl rounded-2xl p-8"
+            className="bg-white shadow-2xl rounded-2xl p-8 transform hover:scale-105 transition duration-300"
           >
             <h2 className="text-3xl font-bold mb-6 text-blue-700 md:text-center">Contact Us</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <motion.div variants={itemVariants}>
-                <Input
-                  type="text"
-                  name="fullName"
-                  placeholder="Full Name *"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Input
-                  type="email"
-                  name="email"
-                  placeholder="Email *"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Input
-                  type="tel"
-                  name="contactNumber"
-                  placeholder="Contact Number *"
-                  value={formData.contactNumber}
-                  onChange={handleChange}
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
-                  rows={4}
-                />
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-lg transition duration-300 text-lg font-semibold">
-                  Send Message
-                </Button>
-              </motion.div>
-            </form>
+            <AnimatePresence>
+              {!isSubmitted ? (
+                <motion.form
+                  onSubmit={handleSubmit}
+                  className="space-y-6"
+                  initial={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                    <Input
+                      type="text"
+                      name="fullName"
+                      placeholder="Full Name *"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                    <Input
+                      type="email"
+                      name="email"
+                      placeholder="Email *"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                    <Input
+                      type="tel"
+                      name="contactNumber"
+                      placeholder="Contact Number *"
+                      value={formData.contactNumber}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                    <Textarea
+                      name="message"
+                      placeholder="Your Message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                      rows={4}
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                    <Button
+                      type="submit"
+                      className="w-full bg-blue-600 text-white py-3 rounded-lg transition duration-300 text-lg font-semibold hover:bg-blue-700"
+                    >
+                      Send Message
+                    </Button>
+                  </motion.div>
+                </motion.form>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="text-center py-10"
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                    className="text-green-500 text-6xl mb-4"
+                  >
+                    ✓
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+                  <p>Your message has been sent successfully. We'll get back to you soon.</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
 
           {/* Contact Info and Map Section */}
           <motion.div
             variants={itemVariants}
-            className="bg-white shadow-2xl rounded-2xl p-8"
+            className="bg-white shadow-2xl rounded-2xl p-8 transform hover:scale-105 transition duration-300"
           >
             <h2 className="text-3xl font-bold mb-6 text-blue-700 md:text-center">Our Location</h2>
-            <motion.div variants={itemVariants} className="mb-8">
-              <p className="text-lg mb-2 md:text-center"><strong>Address:</strong></p>
-              <p className="mb-1 md:text-center">Villa No. 5, Mayuresh Chambers,</p>
-              <p className="mb-1 md:text-center">Plot No. 60, Sector 11, CBD Belapur,</p>
-              <p className="mb-4 md:text-center">Navi Mumbai 400614</p>
-              <p className="mb-2 md:text-center"><strong>Phone:</strong> +91 98198 00022 / +91 98198 00044</p>
-              <p className="mb-4 md:text-center"><strong>Email:</strong> info@royalcrown.com</p>
+            <motion.div variants={itemVariants} className="mb-8 space-y-4">
+              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
+                <FaMapMarkerAlt className="text-blue-600" />
+                <p className="text-lg">
+                  Villa No. 5, Mayuresh Chambers,<br />
+                  Plot No. 60, Sector 11, CBD Belapur,<br />
+                  Navi Mumbai 400614
+                </p>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
+                <FaPhone className="text-blue-600" />
+                <p className="text-lg">+91 98198 00022 / +91 98198 00044</p>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
+                <FaEnvelope className="text-blue-600" />
+                <p className="text-lg">info@royalcrown.com</p>
+              </motion.div>
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 md:text-center">Follow Us</h3>
-              <div className="flex space-x-4 ">
-                {['facebook', 'twitter', 'instagram', 'linkedin'].map((social, index) => (
+              <h3 className="text-xl font-semibold mb-4 text-center">Follow Us</h3>
+              <div className="flex justify-center space-x-4">
+                {[
+                  { icon: <FaFacebookF size={20} />, color: 'bg-blue-600' },
+                  { icon: <FaTwitter size={20} />, color: 'bg-blue-400' },
+                  { icon: <FaInstagram size={20} />, color: 'bg-pink-500' },
+                  { icon: <FaLinkedinIn size={20} />, color: 'bg-blue-700' }
+                ].map((social, index) => (
                   <motion.a
-                    key={social}
+                    key={index}
                     href="#"
-                    className={`bg-${social === 'facebook' ? 'blue-600' : social === 'twitter' ? 'blue-400' : social === 'instagram' ? 'pink-500' : 'blue-700'} text-white p-3 rounded-full md:text-center`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    className={`${social.color} text-white p-3 rounded-full`}
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    {social === 'facebook' && <FaFacebookF size={20} />}
-                    {social === 'twitter' && <FaTwitter size={20} />}
-                    {social === 'instagram' && <FaInstagram size={20} />}
-                    {social === 'linkedin' && <FaLinkedinIn size={20} />}
+                    {social.icon}
                   </motion.a>
                 ))}
               </div>
@@ -172,6 +216,7 @@ export default function Contact() {
             <motion.div
               variants={itemVariants}
               className="w-full h-[300px] rounded-lg overflow-hidden shadow-lg"
+              whileHover={{ scale: 1.05 }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d984.0436367577286!2d73.10175123873755!3d19.008817314587663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1722842804286!5m2!1sen!2sin"
