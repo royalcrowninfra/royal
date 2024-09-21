@@ -44,8 +44,9 @@ const LegalTaxInfo = () => {
         style={{ backgroundImage: "url('/images/buyersGuide/tax.jpg')" }}
       >
         <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-wider sm:tracking-widest text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white  tracking-wider sm:tracking-widest text-center">
             {/* Future Panvel Development */}
+            Legal & Tax Benefits
           </h1>
         </div>
       </div>
