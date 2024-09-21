@@ -179,10 +179,11 @@ export default function Contact() {
             <motion.div variants={itemVariants} className="mb-8 space-y-4">
               <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
                 <FaMapMarkerAlt className="text-blue-600" />
-                <p className="text-lg">
-                  Villa No. 5, Mayuresh Chambers,<br />
-                  Plot No. 60, Sector 11, CBD Belapur,<br />
-                  Navi Mumbai 400614
+                <p className="text-lg md:text-center">
+                ROYAL CROWN INFRA Shop No 1 Sector 25 Plot No 19,
+                Ravi Rachna, near Khandeshwar Station,
+                Sector-25, Khandeshwar,
+                Navi Mumbai, Maharashtra 410209
                 </p>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
