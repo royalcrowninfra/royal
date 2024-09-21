@@ -78,12 +78,12 @@ export default function Contact() {
           animate="visible"
           className="grid grid-cols-1 lg:grid-cols-2 gap-12"
         >
-          {/* Contact Form Section */}
+          {/* Updated Contact Form Section */}
           <motion.div
             variants={itemVariants}
             className="bg-white shadow-2xl rounded-2xl p-8 transform hover:scale-105 transition duration-300"
           >
-            <h2 className="text-3xl font-bold mb-6 text-blue-700 md:text-center">Contact Us</h2>
+            <h2 className="text-3xl font-bold mb-6 text-blue-700 text-center">Contact Us</h2>
             <AnimatePresence>
               {!isSubmitted ? (
                 <motion.form
@@ -92,53 +92,57 @@ export default function Contact() {
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                  <motion.div variants={itemVariants} className="relative">
                     <Input
                       type="text"
                       name="fullName"
-                      placeholder="Full Name *"
+                      placeholder="Full Name"
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                      className="w-full p-4 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300 pl-12"
                     />
+                    <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-500" />
                   </motion.div>
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                  <motion.div variants={itemVariants} className="relative">
                     <Input
                       type="email"
                       name="email"
-                      placeholder="Email *"
+                      placeholder="Email"
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                      className="w-full p-4 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300 pl-12"
                     />
+                    <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-500" />
                   </motion.div>
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                  <motion.div variants={itemVariants} className="relative">
                     <Input
                       type="tel"
                       name="contactNumber"
-                      placeholder="Contact Number *"
+                      placeholder="Contact Number"
                       value={formData.contactNumber}
                       onChange={handleChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                      className="w-full p-4 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300 pl-12"
                     />
+                    <FaPhone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-blue-500" />
                   </motion.div>
-                  <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
+                  <motion.div variants={itemVariants} className="relative">
                     <Textarea
                       name="message"
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300"
+                      className="w-full p-4 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent transition duration-300 pl-12 min-h-[150px]"
                       rows={4}
                     />
+                    <FaEnvelope className="absolute left-4 top-6 text-blue-500" />
                   </motion.div>
                   <motion.div variants={itemVariants} whileHover={{ scale: 1.05 }}>
                     <Button
                       type="submit"
-                      className="w-full bg-blue-600 text-white py-3 rounded-lg transition duration-300 text-lg font-semibold hover:bg-blue-700"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 rounded-lg transition duration-300 text-lg font-semibold hover:from-blue-600 hover:to-purple-700 shadow-lg"
                     >
                       Send Message
                     </Button>
@@ -166,7 +170,7 @@ export default function Contact() {
             </AnimatePresence>
           </motion.div>
 
-          {/* Contact Info and Map Section */}
+          {/* Contact Info and Map Section (unchanged) */}
           <motion.div
             variants={itemVariants}
             className="bg-white shadow-2xl rounded-2xl p-8 transform hover:scale-105 transition duration-300"
