@@ -53,7 +53,6 @@ export const projects = [
       { image: "/images/projects/ongoing/saiprasad/img-6.jpeg", alt: "Balcony View" },
       { image: "/images/projects/ongoing/saiprasad/img-7.jpeg", alt: "Balcony View" },
       { image: "/images/projects/ongoing/saiprasad/img-8.jpeg", alt: "Balcony View" },
-      { image: "/images/projects/ongoing/saiprasad/img-9.jpeg", alt: "Balcony View" },
     ],
   },
   {
