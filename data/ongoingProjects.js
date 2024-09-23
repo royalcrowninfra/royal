@@ -18,9 +18,9 @@ export const projects = [
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
-      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
-      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
-      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
+      { title: '1 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-10.jpg' },
+      { title: '2 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-11.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/projects/ongoing/saiprasad/img-9.jpeg' },
     ],
     connectivity: [
       "PANVEL RAILWAY STATION : 3.5 KMS",
