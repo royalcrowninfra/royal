@@ -80,10 +80,10 @@ export default function ContactSection() {
             <motion.article
               key={post.id}
               className="flex max-w-cl flex-col items-start justify-between bg-gray-200 p-6 rounded-lg shadow-md"
-              // initial={{ opacity: 0, x: -100 }} // Initial position off-screen to the left
-              // whileInView={{ opacity: 1, x: 0 }} // Move to the center position when in view
-              // transition={{ duration: 0.5 }}
-              // viewport={{ once: true }} // Animation triggers only once when scrolled into view
+            // initial={{ opacity: 0, x: -100 }} // Initial position off-screen to the left
+            // whileInView={{ opacity: 1, x: 0 }} // Move to the center position when in view
+            // transition={{ duration: 0.5 }}
+            // viewport={{ once: true }} // Animation triggers only once when scrolled into view
             >
               <div className="flex items-center gap-x-4 text-xs">
                 <time dateTime={post.dateTime}>
