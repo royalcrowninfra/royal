@@ -42,7 +42,7 @@ export const projects = [
         },
       ],
       iframeSrc:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d695.8197463799711!2d73.10259316005418!3d19.009816908187975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1721728374695!5m2!1sen!2sin",
+        "https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4v1727071120881!5m2!1sen!2sin!6m8!1m7!1ss34U1nDhJxZ_rvu3BnxdGA!2m2!1d19.02170833307787!2d73.12766814482075!3f337.00801604384816!4f-3.4269586336525037!5f0.7820865974627469",
     },
     galleryImages: [
       { image: "/images/projects/ongoing/saiprasad/img-1.jpeg", alt: "Exterior View" },
