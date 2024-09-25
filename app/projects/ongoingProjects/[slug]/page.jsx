@@ -166,9 +166,9 @@ export default function ProjectPage({ params }) {
               </table>
             </div>
             <div className="bg-gray-200 md:text-center">
-            <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
-              <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Floor Plans</span>
-            </h2>
+              <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
+                <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Floor Plans</span>
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.floorplans.map((plan, index) => (
@@ -194,8 +194,8 @@ export default function ProjectPage({ params }) {
           {project.connectivity && (
             <section className='bg-white-100 py-8 rounded-lg'>
               <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
-              <span className=" px-2 text-cyan-700 md:text-center">Connected to Everything</span>
-            </h2>
+                <span className=" px-2 text-cyan-700 md:text-center">Connected to Everything</span>
+              </h2>
               <ul className='list-disc pl-8 mb-4 text-sm md:text-base text-black md:text-start'>
                 {project.connectivity.map((item, index) => (
                   <li key={index} className='mb-2'>
@@ -207,9 +207,9 @@ export default function ProjectPage({ params }) {
           )}
           {project.map && (
             <section className='bg-white-100 py-8 rounded-lg'>
-               <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
-              <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
-            </h2>
+              <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
+                <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
+              </h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
                 <IFrameComponent iframeSrc={project.map.iframeSrc} />
               </div>
