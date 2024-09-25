@@ -47,7 +47,7 @@ export default function ProjectPage({ params }) {
               />
             </div>
           </div>
-          <div className="mt-6 flex justify-center lg:justify-start lg:ml-72">
+          <div className="mt-6 flex justify-center lg:justify-start lg:ml-72 md:ml-36">
             <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
               <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center">
                 Download Brochure
