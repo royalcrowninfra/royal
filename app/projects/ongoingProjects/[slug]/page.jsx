@@ -16,7 +16,7 @@ export default function ProjectPage({ params }) {
     return <div>Project not found</div>;
   }
 
-  
+
 
   return (
     <div className="bg-gradient-to-b from-white-100 to-white min-h-screen">
@@ -31,7 +31,7 @@ export default function ProjectPage({ params }) {
                 {project.fullDescription}
               </p>
               <p className='mb-4 text-sm md:text-lg font-semibold text-cyan-700 text-center lg:text-left md:mt-8'>
-               {project.tagLine}
+                {project.tagLine}
               </p>
               <p className='mb-4 text-sm md:text-base font-semibold text-black text-center lg:text-left md:mt-8'>
                 Maha Rera Registration No : {project.reraNumber || "N/A"}
@@ -62,8 +62,11 @@ export default function ProjectPage({ params }) {
         {project.amenities && (
           <div className="w-full bg-gray-200">
             <section className='bg-white-100 py-12 px-4 sm:px-6 lg:px-8'>
-              <div className="max-w-7xl mx-auto">
-                <h2 className='text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center'>Amenities</h2>
+              <div className="max-w-7xl mx-auto md:text-center">
+                <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
+                  <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Amenities</span>
+                </h2>
+
                 <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
                   {project.amenitiesDescription}
                 </p>
@@ -100,8 +103,10 @@ export default function ProjectPage({ params }) {
 
         {project.galleryImages && (
           <section className='bg-white-200 py-8 mt-8 px-4 sm:px-6 lg:px-8'>
-            <div className="max-w-7xl mx-auto">
-              <h2 className='text-3xl font-bold text-center mb-8'>Gallery</h2>
+            <div className="max-w-7xl mx-auto md:text-center">
+              <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
+                <span className="px-2 text-cyan-700 md:text-center">Gallery</span>
+              </h2>
               <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
@@ -123,8 +128,10 @@ export default function ProjectPage({ params }) {
         )}
 
         <section className='bg-gray-200 py-8 px-4 sm:px-6 lg:px-8'>
-          <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
+          <div className="max-w-7xl mx-auto md:text-center">
+            <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
+              <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Configuration</span>
+            </h2>
 
             <div className="overflow-x-auto mb-12">
               <table className="w-full border-collapse bg-white shadow-md rounded-lg border border-gray-300">
@@ -158,8 +165,10 @@ export default function ProjectPage({ params }) {
                 </tbody>
               </table>
             </div>
-            <div className="bg-gray-200">
-              <h2 className="text-3xl font-bold text-center mb-8">Floor Plans</h2>
+            <div className="bg-gray-200 md:text-center">
+            <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
+              <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Floor Plans</span>
+            </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.floorplans.map((plan, index) => (
@@ -184,9 +193,9 @@ export default function ProjectPage({ params }) {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
           {project.connectivity && (
             <section className='bg-white-100 py-8 rounded-lg'>
-              <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>
-                Connected To Everything
-              </h2>
+              <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
+              <span className=" px-2 text-cyan-700 md:text-center">Connected to Everything</span>
+            </h2>
               <ul className='list-disc pl-8 mb-4 text-sm md:text-base text-black md:text-start'>
                 {project.connectivity.map((item, index) => (
                   <li key={index} className='mb-2'>
@@ -198,7 +207,9 @@ export default function ProjectPage({ params }) {
           )}
           {project.map && (
             <section className='bg-white-100 py-8 rounded-lg'>
-              <h2 className='text-xl md:text-2xl font-bold mb-4 text-black text-center'>Project Location</h2>
+               <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
+              <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
+            </h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
                 <IFrameComponent iframeSrc={project.map.iframeSrc} />
               </div>
