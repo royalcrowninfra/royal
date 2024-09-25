@@ -64,7 +64,10 @@ export default function ProjectPage({ params }) {
           <div className="w-full bg-gray-200">
             <section className='bg-white-100 py-12 px-4 sm:px-6 lg:px-8'>
               <div className="max-w-7xl mx-auto">
-                <h2 className='text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center'>Amenities</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
+                  <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Amenities</span>
+                </h2>
+
                 <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
                   {project.amenitiesDescription}
                 </p>
@@ -102,7 +105,9 @@ export default function ProjectPage({ params }) {
         {project.galleryImages && (
           <section className='bg-white-200 py-8 mt-8 px-4 sm:px-6 lg:px-8'>
             <div className="max-w-7xl mx-auto">
-              <h2 className='text-3xl font-bold text-center mb-8'>Gallery</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
+                <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Gallery</span>
+              </h2>
               <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
@@ -125,7 +130,9 @@ export default function ProjectPage({ params }) {
 
         <section className='bg-gray-200 py-8 px-4 sm:px-6 lg:px-8'>
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-3xl font-bold text-center mb-8">Configuration</h1>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
+              <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Configuration</span>
+            </h2>
 
             <div className="overflow-x-auto mb-12">
               <table className="w-full border-collapse bg-white shadow-md rounded-lg border border-gray-300">
@@ -160,7 +167,9 @@ export default function ProjectPage({ params }) {
               </table>
             </div>
             <div className="bg-gray-200">
-              <h2 className="text-3xl font-bold text-center mb-8">Floor Plans</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
+                <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Floor Plans</span>
+              </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {project.floorplans.map((plan, index) => (
