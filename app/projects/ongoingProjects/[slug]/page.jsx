@@ -74,7 +74,7 @@ export default function ProjectPage({ params }) {
                   {project.amenities.map((amenity, index) => (
                     <div
                       key={index}
-                      className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl'
+                      className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl md:mt-8'
                       style={{ backgroundColor: '#f0f4f8' }}
                     >
                       <Image
@@ -211,7 +211,7 @@ export default function ProjectPage({ params }) {
                 <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
               </h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
-                <IFrameComponent iframeSrc={project.map.iframeSrc} />
+                <IFrameComponent iframeSrc={project.map.iframeSrc} /    >
               </div>
             </section>
           )}
