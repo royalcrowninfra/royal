@@ -16,7 +16,7 @@ export default function ProjectPage({ params }) {
     return <div>Project not found</div>;
   }
 
-  
+
 
   return (
     <div className="bg-gradient-to-b from-white-100 to-white min-h-screen">
@@ -24,14 +24,15 @@ export default function ProjectPage({ params }) {
         <section className='py-8 px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col lg:flex-row items-start max-w-7xl mx-auto'>
             <div className='lg:w-1/2 lg:pr-6 text-center'>
-              <h1 className='text-2xl md:text-3xl font-bold mb-4 text-black text-center lg:text-left'>
+              <h1 className="text-3xl sm:text-3xl md:text-3xl lg:text-3xl font-bold mb-6 text-center lg:text-left text-black leading-tight font-poppins">
                 {project.title}
               </h1>
+
               <p className='mb-4 text-sm md:text-base text-black lg:text-left'>
                 {project.fullDescription}
               </p>
               <p className='mb-4 text-sm md:text-lg font-semibold text-cyan-700 text-center lg:text-left md:mt-8'>
-               {project.tagLine}
+                {project.tagLine}
               </p>
               <p className='mb-4 text-sm md:text-base font-semibold text-black text-center lg:text-left md:mt-8'>
                 Maha Rera Registration No : {project.reraNumber || "N/A"}
