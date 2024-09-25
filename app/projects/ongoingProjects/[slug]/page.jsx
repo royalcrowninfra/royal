@@ -30,10 +30,10 @@ export default function ProjectPage({ params }) {
               <p className='mb-4 text-sm md:text-base text-black lg:text-left'>
                 {project.fullDescription}
               </p>
-              <p className='mb-4 text-sm md:text-base font-semibold text-black text-center lg:text-left'>
+              <p className='mb-4 text-sm md:text-lg font-semibold text-cyan-700 text-center lg:text-left md:mt-8'>
                {project.tagLine}
               </p>
-              <p className='mb-4 text-sm md:text-base font-semibold text-black text-center lg:text-left'>
+              <p className='mb-4 text-sm md:text-base font-semibold text-black text-center lg:text-left md:mt-8'>
                 Maha Rera Registration No : {project.reraNumber || "N/A"}
               </p>
             </div>
@@ -47,7 +47,7 @@ export default function ProjectPage({ params }) {
               />
             </div>
           </div>
-          <div className="mt-6 flex justify-center lg:justify-start lg:ml-20">
+          <div className="mt-6 flex justify-center lg:justify-start lg:ml-20 2xl:ml-72">
             <Link href={project.pdfLink} target="_blank" rel="noopener noreferrer">
               <button className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm sm:text-base py-2 px-3 sm:px-4 rounded transition duration-300 ease-in-out flex items-center justify-center">
                 Download Brochure
