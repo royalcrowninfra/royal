@@ -106,9 +106,9 @@ export default function ProjectPage({ params }) {
           <section className='bg-white-200 py-8 mt-8 px-4 sm:px-6 lg:px-8'>
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
-                <span className="px-2 text-cyan-800 md:text-cente">Gallery</span>
+                <span className="px-2 text-cyan-800 md:text-center">Gallery</span>
               </h2>
-              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
+              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:my-20'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
                     key={index}
