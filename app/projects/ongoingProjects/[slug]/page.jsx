@@ -65,17 +65,17 @@ export default function ProjectPage({ params }) {
             <section className='bg-white-100 py-12 px-4 sm:px-6 lg:px-8'>
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
-                  <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Amenities</span>
+                  <span className="bg-gray-200 px-2 text-cyan-800 md:text-center">Amenities</span>
                 </h2>
 
-                <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
+                <p className='mb-8 text-base md:text-xl text-gray-600 text-center max-w-2xl mx-auto '>
                   {project.amenitiesDescription}
                 </p>
                 <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6'>
                   {project.amenities.map((amenity, index) => (
                     <div
                       key={index}
-                      className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl'
+                      className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105 hover:shadow-2xl md:my-8'
                       style={{ backgroundColor: '#f0f4f8' }}
                     >
                       <Image
@@ -167,7 +167,7 @@ export default function ProjectPage({ params }) {
               </table>
             </div>
             <div className="bg-gray-200">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center relative inline-blockr">
                 <span className="bg-gray-200 px-2 text-cyan-800 md:text-cente">Floor Plans</span>
               </h2>
 

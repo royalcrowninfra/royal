@@ -8,7 +8,7 @@ export const projects = [
       "Everything in your live is a reflection of the choices you have made. This is a chance to live your dreams. The glorifying gateways of Sai Prasad Garden is a beautiful combination of shapes and spaces It is intricately designed to ease the entry and exit with a 24 hours hi-tech security system to make sure you feel safe and secured Invite yourself into exclusive life that reflects your impeccable taste for elegance and luxury.",
     tagLine: "BIG DREAMS HAVE SMALL BEGINNINGS INVEST SMALL. INVEST SMART",
     reraNumber: "P52000011751",
-    amenitiesDescription: "Description of amenities for Project 1",
+    amenitiesDescription: "Experience unmatched comfort and convenience with our premium amenities designed for your lifestyle.",
     pdfLink: "/pdf/ongoing/ongoingProject-1.pdf",
     amenities: [
       { name: "Swimming Pool", image: "/images/amenities/pool.jpg" },
