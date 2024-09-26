@@ -197,7 +197,7 @@ export default function ProjectPage({ params }) {
         <div className="bg-grey-200 text-black py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Left Column */}
-            <div className="space-y-8">
+            <div className="space-y-16 md:mt-12">
               <div className="flex items-start space-x-4">
                 <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
@@ -227,7 +227,7 @@ export default function ProjectPage({ params }) {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-8">
+            <div className="space-y-16 md:mt-12">
               <div className="flex items-start space-x-4">
                 <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
