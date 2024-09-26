@@ -166,30 +166,30 @@ export default function ProjectPage({ params }) {
               </table>
             </div>
             <div className="bg-gray-200 py-12">
-  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
-    Floor Plans
-  </h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+                Floor Plans
+              </h2>
 
-  <div className="container mx-auto px-4">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {project.floorplans.map((plan, index) => (
-        <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative w-full h-64">
-            <Image
-              src={plan.src}
-              alt={plan.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              style={{ objectFit: 'cover' }}
-              className="rounded-t-lg"
-            />
-          </div>
-          <p className="text-center font-semibold py-4">{plan.title}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
+              <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {project.floorplans.map((plan, index) => (
+                    <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+                      <div className="relative w-full h-64">
+                        <Image
+                          src={plan.src}
+                          alt={plan.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          style={{ objectFit: 'cover' }}
+                          className="rounded-t-lg"
+                        />
+                      </div>
+                      <p className="text-center font-semibold py-4">{plan.title}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -214,7 +214,7 @@ export default function ProjectPage({ params }) {
                 <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
               </h2>
               <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
-                <IFrameComponent iframeSrc={project.map.iframeSrc} /    >
+                <IFrameComponent iframeSrc={project.map.iframeSrc} />
               </div>
             </section>
           )}

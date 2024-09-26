@@ -19,9 +19,9 @@ export const projects = [
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
-      { title: '1 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-1.jpeg' },
-      { title: '2 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-2.jpeg' },
-      { title: 'Ground Floor Plan', src: '/images/projects/ongoing/saiprasad/img-3.jpeg' },
+      { title: '1 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-10.jpg' },
+      { title: '2 BHK Floor Plan', src: '/images/projects/ongoing/saiprasad/img-11.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/projects/ongoing/saiprasad/img-9.jpeg' },
     ],
     connectivity: [
       "PANVEL RAILWAY STATION : 3.5 KMS",
@@ -75,9 +75,9 @@ export const projects = [
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
-      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
-      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
-      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
+      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-10.jpg' },
+      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-11.jpg' },
+      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-9.jpeg' },
     ],
     connectivity: [
       "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
