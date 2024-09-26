@@ -2,6 +2,7 @@ import IFrameComponent from "@/components/IFrameComponent";
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
 import Link from "next/link";
+import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon } from 'lucide-react';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -193,31 +194,63 @@ export default function ProjectPage({ params }) {
           </div>
         </section>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto'>
-          {project.connectivity && (
-            <section className='bg-white-100 py-8 rounded-lg'>
-              <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
-                <span className=" px-2 text-cyan-700 md:text-center">Connected to Everything</span>
-              </h2>
-              <ul className='list-disc pl-8 mb-4 text-sm md:text-base text-black md:text-start'>
-                {project.connectivity.map((item, index) => (
-                  <li key={index} className='mb-2'>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </section>
-          )}
-          {project.map && (
-            <section className='bg-white-100 py-8 rounded-lg'>
-              <h2 className="text-3xl font-bold mb-6 text-center relative inline-block md:text-center">
-                <span className=" px-2 text-cyan-700 md:text-center">Project Location</span>
-              </h2>
-              <div className='w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden'>
-                <IFrameComponent iframeSrc={project.map.iframeSrc} />
+        <div className="bg-grey-200 text-black py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Left Column */}
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <TramFront className="w-8 h-8 text-lime-400  flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">Railway Station</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
               </div>
-            </section>
-          )}
+              <div className="flex items-start space-x-4">
+                <PlaneIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">Navi Mumbai International Airport</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <ComputerIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">IT Park</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle Column (Google Map) */}
+            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden">
+              <IFrameComponent iframeSrc={project.map.iframeSrc} />
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-8">
+              <div className="flex items-start space-x-4">
+                <TramFront className="w-8 h-8 text-lime-400  flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">Metro Station</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <Building2Icon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">Malls</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <SchoolIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <div>
+                  <h4 className="font-bold mb-2">Schools and Colleges</h4>
+                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
