@@ -226,7 +226,7 @@ export default function ProjectPage({ params }) {
             </div>
 
             {/* Middle Column (Google Map) */}
-            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden md:mt-12">
+            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden md:mt-10">
               <IFrameComponent iframeSrc={project.map.iframeSrc} />
             </div>
 
