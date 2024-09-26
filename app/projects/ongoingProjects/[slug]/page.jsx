@@ -195,7 +195,11 @@ export default function ProjectPage({ params }) {
         </section>
 
         <div className="bg-grey-200 text-black py-12 px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+            Location and Connectivity
+          </h2>
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
             {/* Left Column */}
             <div className="space-y-16 md:mt-12">
               <div className="flex items-start space-x-4">
