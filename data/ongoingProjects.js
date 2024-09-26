@@ -16,7 +16,7 @@ export const projects = [
       { name: "KIDS PLAY AREA", image: "/images/amenities/kidsPlayArea.jpg" },
       { name: "GYM", image: "/images/amenities/gym.jpg" },
       { name: "AMPLE CAR PARKING", image: "/images/amenities/carParking.jpg" },
-      { name: "LIFT", image: "/images/amenities/lift.jpg" },
+      { name: "SENIOR CITIZEN SEATING", image: "/images/amenities/seniorCitizensSeating.jpg" },
     ],
     floorplans: [
       { title: '1 BHK Floor Plan', src: '/images/floorplans/ongoing/saiprasad/img-10.jpeg' },
