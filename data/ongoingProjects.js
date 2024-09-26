@@ -1,3 +1,4 @@
+import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, Icon } from 'lucide-react';
 export const projects = [
   {
     slug: "project-1",
@@ -24,13 +25,12 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/saiprasad/img-9.jpeg' },
     ],
     connectivity: [
-      "PANVEL RAILWAY STATION : 3.5 KMS",
-      "KHANDESHWAR RAILWAY STATION : 3.5 KMS",
-      "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS",
-      "RELIANCE SEZ AND IT PARK : 0.5 KMS",
-      "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS",
-      "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS",
-      "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS",
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
+      { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
+      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
+      { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
@@ -53,7 +53,6 @@ export const projects = [
       { image: "/images/projects/ongoing/saiprasad/img-5.jpeg", alt: "Bathroom" },
       { image: "/images/projects/ongoing/saiprasad/img-6.jpeg", alt: "Balcony View" },
       { image: "/images/projects/ongoing/saiprasad/img-7.jpeg", alt: "Balcony View" },
-      // { image: "/images/projects/ongoing/saiprasad/img-8.jpeg", alt: "Balcony View" },
     ],
   },
   {
@@ -80,9 +79,12 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-9.jpeg' },
     ],
     connectivity: [
-      "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
-      "It is well-connected by major highways like the Mumbai-Pune Expressway (NH 48) and Sion-Panvel Expressway (NH 4B), facilitating smooth road transport to Mumbai, Pune, and other cities in Maharashtra.",
-      "Panvel's strategic location places it near Mumbai's Chhatrapati Shivaji Maharaj International Airport and the upcoming Navi Mumbai International Airport, enhancing air connectivity for residents and businesses.",
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
+      { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
+      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
+      { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
@@ -130,9 +132,12 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
-      "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
-      "It is well-connected by major highways like the Mumbai-Pune Expressway (NH 48) and Sion-Panvel Expressway (NH 4B), facilitating smooth road transport to Mumbai, Pune, and other cities in Maharashtra.",
-      "Panvel's strategic location places it near Mumbai's Chhatrapati Shivaji Maharaj International Airport and the upcoming Navi Mumbai International Airport, enhancing air connectivity for residents and businesses.",
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
+      { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
+      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
+      { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
@@ -180,9 +185,12 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
-      "Panvel is a major transportation hub in Maharashtra, India, connecting various modes of transport such as railways, highways, and air travel. It serves as a junction for both local and long-distance travel",
-      "It is well-connected by major highways like the Mumbai-Pune Expressway (NH 48) and Sion-Panvel Expressway (NH 4B), facilitating smooth road transport to Mumbai, Pune, and other cities in Maharashtra.",
-      "Panvel's strategic location places it near Mumbai's Chhatrapati Shivaji Maharaj International Airport and the upcoming Navi Mumbai International Airport, enhancing air connectivity for residents and businesses.",
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
+      { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
+      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
+      { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },

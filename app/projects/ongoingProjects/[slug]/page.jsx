@@ -17,6 +17,15 @@ export default function ProjectPage({ params }) {
     return <div>Project not found</div>;
   }
 
+  const IconMap = {
+    TramFront: TramFront,
+    PlaneIcon: PlaneIcon,
+    ComputerIcon: ComputerIcon,
+    Building2Icon: Building2Icon,
+    SchoolIcon: SchoolIcon,
+  };
+
+
 
 
   return (
@@ -187,69 +196,59 @@ export default function ProjectPage({ params }) {
           </div>
         </section>
 
-        <div className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
-            Location and Connectivity
-          </h2>
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        {project.connectivity && (
+          <section className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+              Location and Connectivity
+            </h2>
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Left Column */}
+              <div className="space-y-16 md:mt-20">
+                {project.connectivity.slice(0, Math.ceil(project.connectivity.length / 2)).map((item, index) => {
+                  const Icon = IconMap[item.icon] || TramFront;
+                  return (
+                    <div key={index} className="flex items-start space-x-4">
+                      <Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold mb-2">{item.title}</h4>
+                        <p className="text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
 
-            {/* Left Column */}
-            <div className="space-y-16 md:mt-20">
-              <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">Railway Station</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
+              {/* Middle Column (Google Map) */}
+              <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden md:mt-10">
+                <iframe
+                  src={project.map.iframeSrc}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
-              <div className="flex items-start space-x-4">
-                <PlaneIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">Navi Mumbai International Airport</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <ComputerIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">IT Park</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
+
+              {/* Right Column */}
+              <div className="space-y-16 md:mt-20">
+                {project.connectivity.slice(Math.ceil(project.connectivity.length / 2)).map((item, index) => {
+                  const Icon = IconMap[item.icon] || TramFront;
+                  return (
+                    <div key={index} className="flex items-start space-x-4">
+                      <Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                      <div>
+                        <h4 className="font-bold mb-2">{item.title}</h4>
+                        <p className="text-sm">{item.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-
-            {/* Middle Column (Google Map) */}
-            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden md:mt-10">
-              <IFrameComponent iframeSrc={project.map.iframeSrc} />
-            </div>
-
-            {/* Right Column */}
-            <div className="space-y-16 md:mt-20">
-              <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">Metro Station</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <Building2Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">Malls</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <SchoolIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                <div>
-                  <h4 className="font-bold mb-2">Schools and Colleges</h4>
-                  <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+          </section>
+        )}
       </div>
     </div>
   );
