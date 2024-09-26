@@ -201,7 +201,7 @@ export default function ProjectPage({ params }) {
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
             {/* Left Column */}
-            <div className="space-y-16 md:mt-12">
+            <div className="space-y-16 md:mt-20">
               <div className="flex items-start space-x-4">
                 <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
@@ -226,12 +226,12 @@ export default function ProjectPage({ params }) {
             </div>
 
             {/* Middle Column (Google Map) */}
-            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden">
+            <div className="w-full h-[300px] md:h-[450px] rounded-lg overflow-hidden md:mt-12">
               <IFrameComponent iframeSrc={project.map.iframeSrc} />
             </div>
 
             {/* Right Column */}
-            <div className="space-y-16 md:mt-12">
+            <div className="space-y-16 md:mt-20">
               <div className="flex items-start space-x-4">
                 <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
