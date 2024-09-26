@@ -12,15 +12,12 @@ export const projects = [
     amenitiesDescription: "Experience unmatched comfort and convenience with our premium amenities designed for your lifestyle.",
     pdfLink: "/pdf/ongoing/ongoingProject-1.pdf",
     amenities: [
-      { name: "Swimming Pool", image: "/images/amenities/swimmingPool.jpg" },
-      { name: "Indoor Games", image: "/images/amenities/game.jpg" },
-    
-      
-      
-      { name: "Garden", image: "/images/amenities/garden.jpg" },
-      { name: "Gym", image: "/images/amenities/gym.jpg" },
-      { name: "Car Parking", image: "/images/amenities/carParking.jpg" },
-      { name: "Lift", image: "/images/amenities/lift.jpg" },
+      { name: "SWIMMING POOL", image: "/images/amenities/swimmingPool.jpg" },
+      { name: "INDOOR GAMES", image: "/images/amenities/game.jpg" },
+      { name: "Kids Play Area", image: "/images/amenities/kidsPlayArea.jpg" },
+      { name: "GYM", image: "/images/amenities/gym.jpg" },
+      { name: "AMPLE CAR PARKING", image: "/images/amenities/carParking.jpg" },
+      { name: "LIFT", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
       { title: '1 BHK Floor Plan', src: '/images/floorplans/ongoing/saiprasad/img-10.jpeg' },
