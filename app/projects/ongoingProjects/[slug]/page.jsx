@@ -107,7 +107,7 @@ export default function ProjectPage({ params }) {
               <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
                 <span className="px-2 text-cyan-700 md:text-center">Gallery</span>
               </h2>
-              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4'>
+              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:my-12'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
                     key={index}
