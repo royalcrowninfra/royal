@@ -1,4 +1,3 @@
-import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, Icon } from 'lucide-react';
 export const projects = [
   {
     slug: "project-1",
@@ -28,7 +27,7 @@ export const projects = [
       { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
       { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
       { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
-      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "TrainFrontIcon", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
       { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],

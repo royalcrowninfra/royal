@@ -1,8 +1,7 @@
-import IFrameComponent from "@/components/IFrameComponent";
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
 import Link from "next/link";
-import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, BusIcon, TruckIcon, ShipIcon } from 'lucide-react';
+import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, TrainIcon, TrainFrontIcon } from 'lucide-react';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -19,13 +18,11 @@ export default function ProjectPage({ params }) {
 
   const IconMap = {
     TramFront: TramFront,
+    TrainFrontIcon:TrainFrontIcon,
     PlaneIcon: PlaneIcon,
     ComputerIcon: ComputerIcon,
     Building2Icon: Building2Icon,
     SchoolIcon: SchoolIcon,
-    ShipIcon: ShipIcon,
-    BusIcon: BusIcon,
-    TruckIcon: TruckIcon
   };
 
 
