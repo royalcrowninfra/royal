@@ -102,23 +102,23 @@ export default function ProjectPage({ params }) {
         )}
 
         {project.galleryImages && (
-          <section className='bg-white-200 py-8 mt-8 px-4 sm:px-6 lg:px-8'>
-            <div className="max-w-7xl mx-auto md:text-center">
-              <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
-                <span className="px-2 text-cyan-700 md:text-center">Gallery</span>
+          <section className='bg-gray-100 py-12 px-4 sm:px-6 lg:px-8'>
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+                Gallery
               </h2>
-              <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:my-12'>
+              <div className='grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 md:my-16'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
                     key={index}
-                    className='relative overflow-hidden rounded-lg transform transition duration-500 hover:scale-105'
+                    className='relative overflow-hidden aspect-square'
                   >
                     <Image
                       src={galleryImage.image}
                       alt={galleryImage.name}
-                      width={200}
-                      height={200}
-                      className='rounded-lg w-full h-68 object-fill transition duration-500 ease-in-out transform hover:scale-110'
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      className='object-cover transition duration-300 ease-in-out hover:scale-105'
                     />
                   </div>
                 ))}
