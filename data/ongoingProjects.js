@@ -12,11 +12,14 @@ export const projects = [
     amenitiesDescription: "Experience unmatched comfort and convenience with our premium amenities designed for your lifestyle.",
     pdfLink: "/pdf/ongoing/ongoingProject-1.pdf",
     amenities: [
-      { name: "Swimming Pool", image: "/images/amenities/pool.jpg" },
-      { name: "Car Parking", image: "/images/amenities/carParking.jpg" },
+      { name: "Swimming Pool", image: "/images/amenities/swimmingPool.jpg" },
       { name: "Indoor Games", image: "/images/amenities/game.jpg" },
+    
+      
+      
       { name: "Garden", image: "/images/amenities/garden.jpg" },
       { name: "Gym", image: "/images/amenities/gym.jpg" },
+      { name: "Car Parking", image: "/images/amenities/carParking.jpg" },
       { name: "Lift", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
@@ -66,7 +69,7 @@ export const projects = [
     amenitiesDescription: "Description of amenities for Project 2",
     pdfLink: "/pdf/ongoing/ongoingProject-2.pdf",
     amenities: [
-      { name: "Swimming Pool", image: "/images/amenities/pool.jpg" },
+      { name: "Swimming Pool", image: "/images/amenities/swimmingPool.jpg" },
       { name: "Car Parking", image: "/images/amenities/carParking.jpg" },
       { name: "Indoor Games", image: "/images/amenities/game.jpg" },
       { name: "Garden", image: "/images/amenities/garden.jpg" },
