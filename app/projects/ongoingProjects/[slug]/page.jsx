@@ -199,21 +199,21 @@ export default function ProjectPage({ params }) {
             {/* Left Column */}
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-lime-400  flex-shrink-0" />
+                <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Railway Station</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <PlaneIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <PlaneIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Navi Mumbai International Airport</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <ComputerIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <ComputerIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">IT Park</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
@@ -229,21 +229,21 @@ export default function ProjectPage({ params }) {
             {/* Right Column */}
             <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-lime-400  flex-shrink-0" />
+                <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Metro Station</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <Building2Icon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <Building2Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Malls</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <SchoolIcon className="w-8 h-8 text-lime-400 flex-shrink-0" />
+                <SchoolIcon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Schools and Colleges</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
