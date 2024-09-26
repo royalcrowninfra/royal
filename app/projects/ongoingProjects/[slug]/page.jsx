@@ -128,36 +128,37 @@ export default function ProjectPage({ params }) {
           </section>
         )}
 
-        <section className='bg-gray-200 py-8 px-4 sm:px-6 lg:px-8'>
-          <div className="max-w-7xl mx-auto md:text-center">
-            <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
-              <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Configuration</span>
+        {/* Configuration Section */}
+        <section className='bg-gray-200 py-12 px-4 sm:px-6 lg:px-8'>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+              Configuration
             </h2>
 
             <div className="overflow-x-auto mb-12">
-              <table className="w-full border-collapse bg-white shadow-md rounded-lg border border-gray-300">
+              <table className="w-full border-collapse bg-white shadow-md rounded-lg">
                 <thead>
-                  <tr className="bg-navy-700 text-white border-b border-gray-300 transition duration-300 ease-in-out hover:bg-navy-800">
-                    <th className="py-3 px-4 text-left border-r border-gray-300">Configuration</th>
-                    <th className="py-3 px-4 text-left border-r border-gray-300">SBA / Carpet (sq.ft.)</th>
+                  <tr className="bg-navy-700 text-white">
+                    <th className="py-3 px-4 text-left">Configuration</th>
+                    <th className="py-3 px-4 text-left">SBA / Carpet (sq.ft.)</th>
                     <th className="py-3 px-4 text-left">Price</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="transition duration-300 ease-in-out hover:bg-gray-100 border-b border-gray-300">
-                    <td className="py-3 px-4 border-r border-gray-300">1 BHK</td>
-                    <td className="py-3 px-4 border-r border-gray-300">421 SQ FT</td>
+                  <tr className="border-b border-gray-200 hover:bg-gray-100">
+                    <td className="py-3 px-4">1 BHK</td>
+                    <td className="py-3 px-4">421 SQ FT</td>
                     <td className="py-3 px-4">
-                      <Link href="/contact" className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded transition duration-300 ease-in-out">
+                      <Link href="/contact" className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
                         Get Quote
                       </Link>
                     </td>
                   </tr>
-                  <tr className="transition duration-300 ease-in-out hover:bg-gray-100 border-b border-gray-300">
-                    <td className="py-3 px-4 border-r border-gray-300">2 BHK</td>
-                    <td className="py-3 px-4 border-r border-gray-300">535 SQ FT</td>
+                  <tr className="border-b border-gray-200 hover:bg-gray-100">
+                    <td className="py-3 px-4">2 BHK</td>
+                    <td className="py-3 px-4">535 SQ FT</td>
                     <td className="py-3 px-4">
-                      <Link href="/contact" className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded transition duration-300 ease-in-out">
+                      <Link href="/contact" className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
                         Get Quote
                       </Link>
                     </td>
@@ -166,35 +167,37 @@ export default function ProjectPage({ params }) {
                 </tbody>
               </table>
             </div>
-            <div className="bg-gray-200 py-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
-                Floor Plans
-              </h2>
+          </div>
+        </section>
 
-              <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {project.floorplans.map((plan, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-                      <div className="relative w-full h-64">
-                        <Image
-                          src={plan.src}
-                          alt={plan.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          style={{ objectFit: 'cover' }}
-                          className="rounded-t-lg"
-                        />
-                      </div>
-                      <p className="text-center font-semibold py-4">{plan.title}</p>
-                    </div>
-                  ))}
+        {/* Floor Plans Section */}
+        <section className='bg-white py-12 px-4 sm:px-6 lg:px-8'>
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
+              Floor Plans
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {project.floorplans.map((plan, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden md:mt-8">
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={plan.src}
+                      alt={plan.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-t-lg"
+                    />
+                  </div>
+                  <p className="text-center font-semibold py-4">{plan.title}</p>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <div className="bg-grey-200 text-black py-12 px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
             Location and Connectivity
           </h2>
@@ -203,7 +206,7 @@ export default function ProjectPage({ params }) {
             {/* Left Column */}
             <div className="space-y-16 md:mt-20">
               <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
+                <TramFront className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Railway Station</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
@@ -233,7 +236,7 @@ export default function ProjectPage({ params }) {
             {/* Right Column */}
             <div className="space-y-16 md:mt-20">
               <div className="flex items-start space-x-4">
-                <TramFront className="w-8 h-8 text-cyan-400  flex-shrink-0" />
+                <TramFront className="w-8 h-8 text-cyan-400 flex-shrink-0" />
                 <div>
                   <h4 className="font-bold mb-2">Metro Station</h4>
                   <p className="text-sm">Determine the home's value in the current market for a listing price.</p>
@@ -256,6 +259,7 @@ export default function ProjectPage({ params }) {
             </div>
           </div>
         </div>
+
       </div>
     </div>
   );
