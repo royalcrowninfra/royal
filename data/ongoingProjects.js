@@ -11,7 +11,7 @@ export const projects = [
     amenitiesDescription: "Experience unmatched comfort and convenience with our premium amenities designed for your lifestyle.",
     pdfLink: "/pdf/ongoing/ongoingProject-1.pdf",
     amenities: [
-      { name: "SWIMMING POOL", image: "/images/amenities/swimmingPool.jpg" },
+      { name: "SWIMMING POOL", image: "/images/amenities/pool.jpg" },
       { name: "INDOOR GAMES", image: "/images/amenities/game.jpg" },
       { name: "KIDS PLAY AREA", image: "/images/amenities/kidsPlayArea.jpg" },
       { name: "GYM", image: "/images/amenities/gym.jpg" },
