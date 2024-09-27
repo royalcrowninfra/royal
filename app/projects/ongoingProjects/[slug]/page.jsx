@@ -76,6 +76,7 @@ export default function ProjectPage({ params }) {
                 <h2 className="text-5xl font-bold mb-6 text-center relative inline-block md:text-center">
                   <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Amenities</span>
                 </h2>
+                <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
 
                 <p className='mb-8 text-base md:text-lg text-gray-600 text-center max-w-2xl mx-auto'>
                   {project.amenitiesDescription}
@@ -107,6 +108,7 @@ export default function ProjectPage({ params }) {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700 md:my-6">
                 Gallery
               </h2>
+              <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
               <div className='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 md:mt-16'>
                 {project.galleryImages.map((galleryImage, index) => (
                   <div
@@ -133,6 +135,7 @@ export default function ProjectPage({ params }) {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
               Configuration
             </h2>
+            <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
 
             <div className="overflow-x-auto mb-12">
               <table className="w-full border-collapse bg-white shadow-md rounded-lg">
@@ -175,6 +178,7 @@ export default function ProjectPage({ params }) {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
               Floor Plans
             </h2>
+            <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {project.floorplans.map((plan, index) => (
@@ -201,6 +205,7 @@ export default function ProjectPage({ params }) {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center text-cyan-700">
               Location and Connectivity
             </h2>
+            <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Left Column */}
               <div className="space-y-16 md:mt-20">
