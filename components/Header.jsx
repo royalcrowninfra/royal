@@ -72,6 +72,7 @@ const Navbar = () => {
             src="/images/header/logo.png"
             width={170}
             height={60}
+            style={{ objectFit: 'contain' }}
             alt="Royal Crown Realty"
             className="h-28 w-29 sm:h-20 md:h-24 lg:h-32 transition-all duration-300"
             priority
