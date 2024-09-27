@@ -8,7 +8,7 @@ const reviews = [
   { img: '/images/banks/bankOfIndia.jpg' },
   { img: '/images/banks/canaraBank.jpg' },
   { img: '/images/banks/Hdfc.jpg' },
-  { img: '/images/banks/icici.jpg' },
+  { img: '/images/banks/icici2.png' },
   { img: '/images/banks/idbi.jpg' },
   { img: '/images/banks/Kotak.jpg' },
   { img: '/images/banks/sbi.jpg' },
