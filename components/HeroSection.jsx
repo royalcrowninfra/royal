@@ -4,9 +4,9 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const images = [
-  { src: '/images/homepage/bann-one.png', text: 'Unlocking Doors, Finding Homes' },
+  { src: '/images/homepage/bann-one.png', text: 'Unlocking Doors,Finding Homes' },
   { src: '/images/homepage/bann-two.png', text: 'Your Dream Home Awaits' },
-  { src: '/images/homepage/bann-three.png', text: 'Building Futures, One Home at a Time' },
+  { src: '/images/homepage/bann-three.png', text: 'Building Futures,One Home at a Time' },
 ];
 
 const HeroSection = () => {
