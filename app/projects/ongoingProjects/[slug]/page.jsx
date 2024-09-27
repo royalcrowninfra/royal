@@ -208,7 +208,7 @@ export default function ProjectPage({ params }) {
             <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Left Column */}
-              <div className="space-y-16 md:mt-28">
+              <div className="space-y-20 md:mt-24">
                 {project.connectivity.slice(0, Math.ceil(project.connectivity.length / 2)).map((item, index) => {
                   const Icon = IconMap[item.icon] || TramFront;
                   return (
@@ -237,7 +237,7 @@ export default function ProjectPage({ params }) {
               </div>
 
               {/* Right Column */}
-              <div className="space-y-16 md:mt-28">
+              <div className="space-y-20 md:mt-24">
                 {project.connectivity.slice(Math.ceil(project.connectivity.length / 2)).map((item, index) => {
                   const Icon = IconMap[item.icon] || TramFront;
                   return (
