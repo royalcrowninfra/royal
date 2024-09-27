@@ -3,7 +3,7 @@ export const projects = [
     slug: "project-1",
     title: "SAI PRASAD GARDEN, Nevali, Panvel",
     image: "/images/projects/saiPrasad.jpeg",
-    description: "Short description of Project 1",
+    description: "Sai Prasad Garden offers a serene living environment in the heart of Nevali, Panvel. This modern residential complex features luxury apartments, lush landscaping, and top-notch amenities like a swimming pool and recreational spaces,designed for comfort and convenience. ",
     fullDescription:
       "Everything in your live is a reflection of the choices you have made. This is a chance to live your dreams. The glorifying gateways of Sai Prasad Garden is a beautiful combination of shapes and spaces It is intricately designed to ease the entry and exit with a 24 hours hi-tech security system to make sure you feel safe and secured Invite yourself into exclusive life that reflects your impeccable taste for elegance and luxury.",
     tagLine: "BIG DREAMS HAVE SMALL BEGINNINGS INVEST SMALL. INVEST SMART",
