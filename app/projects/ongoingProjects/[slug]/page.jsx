@@ -73,7 +73,7 @@ export default function ProjectPage({ params }) {
           <div className="w-full bg-gray-200">
             <section className='bg-white-100 py-12 px-4 sm:px-6 lg:px-8'>
               <div className="max-w-7xl mx-auto md:text-center">
-                <h2 className="text-5xl font-xl mb-6 text-center relative inline-block md:text-center">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
                   <span className="bg-gray-200 px-2 text-cyan-700 md:text-center">Amenities</span>
                 </h2>
                 <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
@@ -132,7 +132,7 @@ export default function ProjectPage({ params }) {
         {/* Configuration Section */}
         <section className='bg-gray-200 py-12 px-4 sm:px-6 lg:px-8'>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Configuration
             </h2>
             <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
@@ -175,7 +175,7 @@ export default function ProjectPage({ params }) {
         {/* Floor Plans Section */}
         <section className='bg-white py-12 px-4 sm:px-6 lg:px-8'>
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Floor Plans
             </h2>
             <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
@@ -202,7 +202,7 @@ export default function ProjectPage({ params }) {
 
         {project.connectivity && (
           <section className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Location and Connectivity
             </h2>
             <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
