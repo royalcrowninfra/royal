@@ -13,7 +13,7 @@ export const projects = [
     amenities: [
       { name: "SWIMMING POOL", image: "/images/amenities/pool.jpg" },
       { name: "INDOOR GAMES", image: "/images/amenities/game.jpg" },
-      { name: "KIDS PLAY AREA", image: "/images/amenities/kidsPlayArea.jpg" },
+      { name: "KIDS PLAY AREA", image: "/images/amenities/kidsplayarea2.jpg" },
       { name: "GYM", image: "/images/amenities/gym.jpg" },
       { name: "AMPLE CAR PARKING", image: "/images/amenities/parking.png" },
       { name: "SENIOR CITIZEN SEATING", image: "/images/amenities/seniorCitizensSeating.jpg" },
