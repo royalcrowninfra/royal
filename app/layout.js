@@ -9,6 +9,7 @@ import Enquiry from "../components/EnquiryButton"
 // theme provider
 import { ThemeProvider } from "../components/ThemeProvider";
 import ContactButton from "@/components/ContactButton";
+import ResponsiveBanner from "@/components/ResponsiveBanner";
 
 const kanit = Kanit({ weight:'500', subsets: ["thai"],
   weight:['500'], 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
           <ContactButton/>
           {children}
           <Enquiry />
+          <ResponsiveBanner/>
           <Footer />
         </ThemeProvider>
 
