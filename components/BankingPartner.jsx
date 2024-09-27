@@ -37,7 +37,7 @@ export default function BankingPartner() {
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-4 text-black-800">Banking Partner</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-8"></div>
 
-        <div className="relative border-4 border-red-600 rounded-lg overflow-hidden">
+        <div className="relative border-4 border-red-600 rounded-lg overflow-hidden  md:mt-16 md:mb-4">
           <div className="bg-white py-8">
             <Marquee pauseOnHover className="[--duration:30s]">
               {reviews.map((review) => (
