@@ -18,7 +18,7 @@ export default function ProjectPage({ params }) {
 
   const IconMap = {
     TramFront: TramFront,
-    TrainFrontIcon:TrainFrontIcon,
+    TrainFrontIcon: TrainFrontIcon,
     PlaneIcon: PlaneIcon,
     ComputerIcon: ComputerIcon,
     Building2Icon: Building2Icon,
