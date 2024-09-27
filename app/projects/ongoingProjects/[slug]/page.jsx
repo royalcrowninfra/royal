@@ -92,7 +92,7 @@ export default function ProjectPage({ params }) {
                         className="w-full h-48 sm:h-56 object-cover"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-2">
-                        <h3 className="text-lg font-bold">{amenity.name}</h3>
+                        <h3 className="text-lg font-xl">{amenity.name}</h3>
                       </div>
                     </div>
                   ))}

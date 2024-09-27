@@ -15,7 +15,7 @@ export const projects = [
       { name: "INDOOR GAMES", image: "/images/amenities/game.jpg" },
       { name: "KIDS PLAY AREA", image: "/images/amenities/kidsPlayArea.jpg" },
       { name: "GYM", image: "/images/amenities/gym.jpg" },
-      { name: "AMPLE CAR PARKING", image: "/images/amenities/carParking.jpg" },
+      { name: "AMPLE CAR PARKING", image: "/images/amenities/parking.png" },
       { name: "SENIOR CITIZEN SEATING", image: "/images/amenities/seniorCitizensSeating.jpg" },
     ],
     floorplans: [
