@@ -9,7 +9,7 @@ const ResponsiveBanner = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-cyan-800 animate-gradient-x"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between relative z-10">
         {/* Logo and Title */}
         <div className="flex items-center mb-4 sm:mb-0">
