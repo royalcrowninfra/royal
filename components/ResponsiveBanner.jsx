@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ResponsiveBanner = () => {
   return (
-    <div className="w-full bg-cyan-700 py-4 px-4 sm:px-6 lg:px-8">
+    <div className="w-full bg-cyan-700 py-0 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between">
         {/* Logo and Title */}
         <div className="flex items-center mb-4 sm:mb-0">
