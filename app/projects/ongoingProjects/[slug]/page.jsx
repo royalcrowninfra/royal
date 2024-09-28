@@ -27,14 +27,14 @@ export default function ProjectPage({ params }) {
     SchoolIcon: SchoolIcon,
   };
 
-  
-const highlightsIcon = {
-  Building2: Building2,
-  Home: Home,
-  Banknote: Banknote,
-  FileCheck: FileCheck,
-  CheckSquare: CheckSquare
-};
+
+  const highlightsIcon = {
+    Building2: Building2,
+    Home: Home,
+    Banknote: Banknote,
+    FileCheck: FileCheck,
+    CheckSquare: CheckSquare
+  };
 
 
 
@@ -139,44 +139,31 @@ const highlightsIcon = {
             </div>
           </section>
         )}
-        {/* <div className="space-y-20 md:mt-24">
-                {project.connectivity.slice(Math.ceil(project.connectivity.length / 2)).map((item, index) => {
-                  const Icon = IconMap[item.icon] || TramFront;
+
+        {project.highlights && (
+          <div className="bg-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
+                Project Highlights
+              </h2>
+              <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+                {project.highlights.map((item, index) => {
+                  const IconComponent = highlightsIcon[item.icon];
                   return (
-                    <div key={index} className="flex items-start space-x-4">
-                      <Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
-                      <div>
-                        <h4 className="font-bold mb-2">{item.title}</h4>
-                        <p className="text-sm">{item.description}</p>
-                      </div>
+                    <div key={index} className=" lg:my-8 flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                      {IconComponent && <IconComponent className="w-8 h-8 mb-4" />}
+                      <p className="text-sm font-medium text-gray-900">{item.description}</p>
                     </div>
                   );
                 })}
-              </div> */}
-
-        {project.highlights && (
-         <div className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-         <div className="max-w-7xl mx-auto">
-           <h2 className="text-3xl font-extrabold text-gray-900 text-center mb-8">
-             PROJECT HIGHLIGHTS
-           </h2>
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-             {project.highlights.map((item, index) => {
-               const IconComponent = highlightsIcon[item.icon];
-               return (
-                 <div key={index} className="flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                   {IconComponent && <IconComponent className="w-8 h-8 mb-2" />}
-                   <p className="text-sm font-medium text-gray-900">{item.description}</p>
-                 </div>
-               );
-             })}
-           </div>
-         </div>
-       </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* Configuration Section */}
-        <section className='bg-gray-200 py-12 px-4 sm:px-6 lg:px-8'>
+        <section className='bg-white py-12 px-4 sm:px-6 lg:px-8'>
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Configuration
@@ -219,7 +206,7 @@ const highlightsIcon = {
         </section>
 
         {/* Floor Plans Section */}
-        <section className='bg-white py-12 px-4 sm:px-6 lg:px-8'>
+        <section className='bg-gray-200 py-12 px-4 sm:px-6 lg:px-8'>
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Floor Plans
@@ -247,7 +234,7 @@ const highlightsIcon = {
         </section>
 
         {project.connectivity && (
-          <section className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
+          <section className="bg-white text-black py-12 px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
               Location & Connectivity
             </h2>
