@@ -17,7 +17,7 @@ const ResponsiveBanner = () => {
               style={{ objectFit: 'contain' }} // Tailored to the new Image API
             />
           </div>
-          <h1 className="text-white text-xl sm:text-2xl lg:text-3xl font-semibold">Royal Crown</h1>
+          {/* <h1 className="text-white text-xl sm:text-2xl lg:text-3xl font-semibold">Royal Crown</h1> */}
         </div>
 
         {/* Tagline */}
