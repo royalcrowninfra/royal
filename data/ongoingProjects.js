@@ -31,6 +31,13 @@ export const projects = [
       { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
     ],
+    highlights: [
+      { icon: "Building2", description: "TOWNSHIP IN 3 ACRES" },
+      { icon: "Home", description: "13 RESIDENTIAL BUILDINGS OF STILT + 4 STOREY WITH LIFT" },
+      { icon: "Banknote", description: "LUXURIOUS AND AFFORDABLE 1BHK AND 2BHK RESIDENCES" },
+      { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
+      { icon: "CheckSquare", description: "OC RECEIVED code" },
+    ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
       zoom: 14,
