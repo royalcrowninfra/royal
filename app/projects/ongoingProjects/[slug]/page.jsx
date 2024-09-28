@@ -174,31 +174,23 @@ export default function ProjectPage({ params }) {
               <table className="w-full border-collapse bg-white shadow-md rounded-lg">
                 <thead>
                   <tr className="bg-navy-700 text-black md:text-center">
-                    <th className="py-3 px-4 text-left  md:text-center">Configuration</th>
-                    <th className="py-3 px-4 text-left  md:text-center">SBA / Carpet (sq.ft.)</th>
-                    <th className="py-3 px-4 text-left  md:text-center">Price</th>
+                    <th className="py-3 px-4 text-left md:text-center">Configuration</th>
+                    <th className="py-3 px-4 text-left md:text-center">SBA / Carpet (sq.ft.)</th>
+                    <th className="py-3 px-4 text-left md:text-center">Price</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr className="border-b border-gray-200 hover:bg-gray-100">
-                    <td className="py-3 px-4  md:text-center">1 BHK</td>
-                    <td className="py-3 px-4  md:text-center">421 SQ FT</td>
-                    <td className="py-3 px-4  md:text-center">
-                      <Link href="/contact" className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-                        Get Quote
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr className="border-b border-gray-200 hover:bg-gray-100">
-                    <td className="py-3 px-4  md:text-center">2 BHK</td>
-                    <td className="py-3 px-4  md:text-center">535 SQ FT</td>
-                    <td className="py-3 px-4  md:text-center">
-                      <Link href="/contact" className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-                        Get Quote
-                      </Link>
-                    </td>
-                  </tr>
-                  {/* Add more rows here as needed */}
+                  {project.configuration.map((config, index) => (
+                    <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                      <td className="py-3 px-4 md:text-center">{config.flat}</td>
+                      <td className="py-3 px-4 md:text-center">{config.carpet}</td>
+                      <td className="py-3 px-4 md:text-center">
+                        <Link href="/contact" className="bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                          Get Quote
+                        </Link>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

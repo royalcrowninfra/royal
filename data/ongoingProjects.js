@@ -38,6 +38,10 @@ export const projects = [
       { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
       { icon: "CheckSquare", description: "OC RECEIVED code" },
     ],
+    configuration: [
+      { flat: "1 BHK", carpet: "421 SQ FT" },
+      { flat: "2 BHK", carpet: "535 SQ FT" }
+    ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
       zoom: 14,
