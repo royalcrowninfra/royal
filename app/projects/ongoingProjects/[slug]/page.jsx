@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, TrainIcon, TrainFrontIcon } from 'lucide-react';
 
+
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
@@ -203,9 +205,9 @@ export default function ProjectPage({ params }) {
         {project.connectivity && (
           <section className="bg-gray-200 text-black py-12 px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-xl mb-8 text-center text-cyan-700 md:my-6">
-              Location and Connectivity
+              Location & Connectivity
             </h2>
-            <div className="w-36 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
+            <div className="w-96 h-1 bg-gradient-to-r bg-orange-500 hover:bg-orange-600 mx-auto mb-8"></div>
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Left Column */}
               <div className="space-y-20 md:mt-24">
