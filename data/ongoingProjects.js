@@ -89,12 +89,23 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-9.jpeg' },
     ],
     connectivity: [
-      { icon: "ShipIcon", title: "Railway Station", description: "PANVEL & KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
-      { icon: "BusIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
-      { icon: "TruckIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
-      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL & KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
+      { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
+      { icon: "TrainFrontIcon", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
       { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
+    ],
+    highlights: [
+      { icon: "Building2", description: "TOWNSHIP IN 3 ACRES" },
+      { icon: "Home", description: "13 RESIDENTIAL BUILDINGS OF STILT + 4 STOREY WITH LIFT" },
+      { icon: "Banknote", description: "LUXURIOUS AND AFFORDABLE 1BHK AND 2BHK RESIDENCES" },
+      { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
+      { icon: "CheckSquare", description: "OC RECEIVED code" },
+    ],
+    configuration: [
+      { flat: "1 BHK", carpet: "421 SQ FT" },
+      { flat: "2 BHK", carpet: "535 SQ FT" }
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
@@ -142,12 +153,23 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
-      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL & KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
       { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
       { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
-      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "TrainFrontIcon", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
       { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
+    ],
+    highlights: [
+      { icon: "Building2", description: "TOWNSHIP IN 3 ACRES" },
+      { icon: "Home", description: "13 RESIDENTIAL BUILDINGS OF STILT + 4 STOREY WITH LIFT" },
+      { icon: "Banknote", description: "LUXURIOUS AND AFFORDABLE 1BHK AND 2BHK RESIDENCES" },
+      { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
+      { icon: "CheckSquare", description: "OC RECEIVED code" },
+    ],
+    configuration: [
+      { flat: "1 BHK", carpet: "421 SQ FT" },
+      { flat: "2 BHK", carpet: "535 SQ FT" }
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
@@ -195,12 +217,23 @@ export const projects = [
       { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
-      { icon: "TramFront", title: "Railway Station", description: "PANVEL and KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
+      { icon: "TramFront", title: "Railway Station", description: "PANVEL & KHANDESHWAR RAILWAY STATION : 3.5 KMS" },
       { icon: "PlaneIcon", title: "Navi Mumbai International Airport", description: "NAVI MUMBAI INTERNATIONAL AIRPORT : 4 KMS" },
       { icon: "ComputerIcon", title: "IT park", description: "RELIANCE SEZ AND IT PARK : 0.5 KMS" },
-      { icon: "TramFront", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
+      { icon: "TrainFrontIcon", title: "Metro Station", description: "UPCOMING KALAMBOLI METRO STATION : 1.5 KMS" },
       { icon: "Building2Icon", title: "Malls", description: "DRIVE TO DMART, MALLS AND THEATRES : 5 MINS" },
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "ALL REPUTED SCHOOLS AND COLLEGES – 1 KM RADIUS" },
+    ],
+    highlights: [
+      { icon: "Building2", description: "TOWNSHIP IN 3 ACRES" },
+      { icon: "Home", description: "13 RESIDENTIAL BUILDINGS OF STILT + 4 STOREY WITH LIFT" },
+      { icon: "Banknote", description: "LUXURIOUS AND AFFORDABLE 1BHK AND 2BHK RESIDENCES" },
+      { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
+      { icon: "CheckSquare", description: "OC RECEIVED code" },
+    ],
+    configuration: [
+      { flat: "1 BHK", carpet: "421 SQ FT" },
+      { flat: "2 BHK", carpet: "535 SQ FT" }
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
