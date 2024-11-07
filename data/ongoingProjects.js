@@ -68,7 +68,7 @@ export const projects = [
   {
     slug: "project-2",
     title: "JAYRAM RESIDENCY, Shedung, Panvel",
-    image: "/images/projects/jayramResidency.jpg",
+    image: "/images/projects/ongoing/jayram/img-1.jpg",
     description: "Sai Prasad Garden offers a serene living environment in the heart of Nevali, Panvel. This modern residential complex features luxury apartments, lush landscaping, and top-notch amenities like a swimming pool and recreational spaces,designed for comfort and convenience.",
     fullDescription:
       "Welcome to JAYRAM RESIDENCY which is situated strategically close to Shedung Toll Naka on the Old Pune Highway close to Panvel Railway Station. The 4 Buildings township surrounded by pristine landscaped greenery. Experience the perfect fusion of opulence and nature where every detail is designed to bring the beauty of the outdoors into your everyday life.",
