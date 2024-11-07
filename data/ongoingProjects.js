@@ -78,7 +78,7 @@ export const projects = [
     amenities: [
       { name: "Badminton Court", image: "/images/amenities/jayram/badmintonCourt.jpg" },
       { name: "Children’s Play Area", image: "/images/amenities/jayram/childrenPlayArea.jpg" },
-      { name: "Gazebo Sitting", image: "/images/amenities/jayram/game.jpg" },
+      { name: "Gazebo Sitting", image: "/images/amenities/jayram/gazeboSeating.jpg" },
       { name: "Landscaped Garden", image: "/images/amenities/jayram/garden.jpg" },
       { name: "Yoga Deck", image: "/images/amenities/jayram/gym.jpg" },
       { name: "Senior Citizen Sitout Area", image: "/images/amenities/jayram/seniorcitizenseating.jpg" },
