@@ -126,15 +126,16 @@ export const projects = [
         },
       ],
       iframeSrc:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d695.8197463799711!2d73.10259316005418!3d19.009816908187975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e911b8186ff7%3A0x8637ac85995699fd!2sCrown%20Housing!5e1!3m2!1sen!2sin!4v1721728374695!5m2!1sen!2sin",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2341.211382934285!2d73.1749952984918!3d18.95559225447668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7e75fb4759ba3%3A0x142f729e27b383f1!2sJAYRAM%20RESIDENCY!5e1!3m2!1sen!2sin!4v1730975881101!5m2!1sen!2sin",
     },
     galleryImages: [
-      { src: "/images/gallery/project-1/img-1.jpg", alt: "Exterior View" },
-      { src: "/images/gallery/project-1/img-2.jpg", alt: "Living Room" },
-      { src: "/images/gallery/project-1/img-3.jpg", alt: "Kitchen" },
-      { src: "/images/gallery/project-1/img-4.jpg", alt: "Bedroom" },
-      { src: "/images/gallery/project-1/img-5.jpg", alt: "Bathroom" },
-      { src: "/images/gallery/project-1/img-6.jpg", alt: "Balcony View" }
+      { image: "/images/projects/ongoing/jayram/img-1.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-2.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-6.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-7.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-8.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-9.jpg", alt: "Exterior View" },
+      { image: "/images/projects/ongoing/jayram/img-10.jpg", alt: "Exterior View" },
     ],
   },
   {
