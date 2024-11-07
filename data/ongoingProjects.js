@@ -76,7 +76,7 @@ export const projects = [
     amenitiesDescription: "Description of amenities for Project 2",
     pdfLink: "/pdf/ongoing/ongoingProject-2.pdf",
     amenities: [
-      { name: "Badminton Court", image: "/images/amenities/swimmingPool.jpg" },
+      { name: "Badminton Court", image: "/images/amenities/pool.jpg" },
       { name: "Children’s Play Areag", image: "/images/amenities/carParking.jpg" },
       { name: "Gazebo Sitting", image: "/images/amenities/game.jpg" },
       { name: "Landscaped Garden", image: "/images/amenities/garden.jpg" },
@@ -87,9 +87,9 @@ export const projects = [
       { name: "Power Backup for Common Area", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
-      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-10.jpg' },
-      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-11.jpg' },
-      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-9.jpeg' },
+      { title: 'BLDG-1 Furniture Layout', src: '/images/floorplans/ongoing/jayram/img-3.jpg' },
+      { title: 'BLDG-2 Furniture Layout', src: '/images/floorplans/ongoing/jayram/img-4.jpg' },
+      { title: 'BLDG-3 Furniture Layout', src: '/images/floorplans/ongoing/jayram/img-5.jpg' },
     ],
     connectivity: [
       { icon: "TramFront", title: "Railway Station", description: "Upcoming Bhingar Railway Station : 3 Mins Walkable Distance" },
