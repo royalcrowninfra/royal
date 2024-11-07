@@ -238,7 +238,7 @@ export default function ProjectPage({ params }) {
                   const Icon = IconMap[item.icon] || TramFront;
                   return (
                     <div key={index} className="flex items-start space-x-4">
-                      <Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                      <Icon className="w-8 h-8 text-cyan-700 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-2">{item.title}</h4>
                         <p className="text-sm">{item.description}</p>
@@ -267,7 +267,7 @@ export default function ProjectPage({ params }) {
                   const Icon = IconMap[item.icon] || TramFront;
                   return (
                     <div key={index} className="flex items-start space-x-4">
-                      <Icon className="w-8 h-8 text-cyan-400 flex-shrink-0" />
+                      <Icon className="w-8 h-8 text-cyan-700 flex-shrink-0" />
                       <div>
                         <h4 className="font-bold mb-2">{item.title}</h4>
                         <p className="text-sm">{item.description}</p>
