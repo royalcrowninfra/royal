@@ -77,7 +77,7 @@ export const projects = [
     pdfLink: "/pdf/ongoing/ongoingProject-2.pdf",
     amenities: [
       { name: "Badminton Court", image: "/images/amenities/pool.jpg" },
-      { name: "Children’s Play Areag", image: "/images/amenities/carParking.jpg" },
+      { name: "Children’s Play Area", image: "/images/amenities/carParking.jpg" },
       { name: "Gazebo Sitting", image: "/images/amenities/game.jpg" },
       { name: "Landscaped Garden", image: "/images/amenities/garden.jpg" },
       { name: "Yoga Deck", image: "/images/amenities/gym.jpg" },
