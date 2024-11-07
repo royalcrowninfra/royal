@@ -79,7 +79,7 @@ export const projects = [
       { name: "Badminton Court", image: "/images/amenities/jayram/badmintonCourt.jpg" },
       { name: "Children’s Play Area", image: "/images/amenities/jayram/childrenPlayArea.jpg" },
       { name: "Gazebo Sitting", image: "/images/amenities/jayram/gazeboSeating.jpg" },
-      { name: "Landscaped Garden", image: "/images/amenities/jayram/garden.jpg" },
+      { name: "Landscaped Garden", image: "/images/amenities/jayram/landscapeGarden.jpg" },
       { name: "Yoga Deck", image: "/images/amenities/jayram/gym.jpg" },
       { name: "Senior Citizen Sitout Area", image: "/images/amenities/jayram/seniorcitizenseating.jpg" },
       { name: "Jogging Track", image: "/images/amenities/jayram/joggingTrack.jpg" },
