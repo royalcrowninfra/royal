@@ -1,7 +1,7 @@
 import { projects, getProjectBySlug } from "../../../../data/ongoingProjects";
 import Image from "next/image";
 import Link from "next/link";
-import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, TrainIcon, TrainFrontIcon, Building2, Home, Banknote, FileCheck, CheckSquare } from 'lucide-react';
+import { TramFront, PlaneIcon, ComputerIcon, Building2Icon, SchoolIcon, TrainIcon, TrainFrontIcon, Building2, Home, Banknote, FileCheck, CheckSquare} from 'lucide-react';
 
 
 
