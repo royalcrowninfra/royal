@@ -3,7 +3,12 @@ export const projects = [
     slug: "project-1",
     title: "SAI PRASAD GARDEN, Nevali, Panvel",
     image: "/images/projects/saiPrasad.jpeg",
-    description: "Sai Prasad Garden offers a serene living environment in the heart of Nevali, Panvel. This modern residential complex features luxury apartments, lush landscaping, and top-notch amenities like a swimming pool and recreational spaces,designed for comfort and convenience.",
+    details: [
+      '1 & 2 BHK Apartments',
+      '13 Buildings, G+4 Storey',
+      'Ready to Move In',
+      'Luxurious Amenities',
+    ],
     fullDescription:
       "Everything in your live is a reflection of the choices you have made. This is a chance to live your dreams. The glorifying gateways of Sai Prasad Garden is a beautiful combination of shapes and spaces It is intricately designed to ease the entry and exit with a 24 hours hi-tech security system to make sure you feel safe and secured Invite yourself into exclusive life that reflects your impeccable taste for elegance and luxury.",
     tagLine: "BIG DREAMS HAVE SMALL BEGINNINGS INVEST SMALL. INVEST SMART",
@@ -69,7 +74,12 @@ export const projects = [
     slug: "project-2",
     title: "JAYRAM RESIDENCY, Shedung, Panvel",
     image: "/images/projects/ongoing/jayram/img-1.jpg",
-    description: "Sai Prasad Garden offers a serene living environment in the heart of Nevali, Panvel. This modern residential complex features luxury apartments, lush landscaping, and top-notch amenities like a swimming pool and recreational spaces,designed for comfort and convenience.",
+    details: [
+      '1 & 2 BHK Apartments',
+      '4 Buildings, 10 Wings, G+7 Storey',
+      'Possession : March 2026',
+      'Luxurious Amenities',
+    ],
     fullDescription:
       "Welcome to JAYRAM RESIDENCY which is situated strategically close to Shedung Toll Naka on the Old Pune Highway close to Panvel Railway Station. The 4 Buildings township surrounded by pristine landscaped greenery. Experience the perfect fusion of opulence and nature where every detail is designed to bring the beauty of the outdoors into your everyday life.",
     reraNumber: "P52000011751",
@@ -142,7 +152,12 @@ export const projects = [
     slug: "project-3",
     title: "NEW CITY PALACE, Pushapak Nagar, Panvel",
     image: "/images/projects/newCity.jpeg",
-    description: "Short description of Project 3",
+    details: [
+      '1RK, 1BHK Apartments',
+      'G+7 Storey',
+      'Possession : Dec 2025',
+      'Rooftop Amenities',
+    ],
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
     reraNumber: "P52000011751",
@@ -206,7 +221,12 @@ export const projects = [
     slug: "project-4",
     title: "OM SAI SIDDHIVINAYAK",
     image: "/images/projects/omsaiSiddhivinayak.jpeg",
-    description: "Short description of Project 3",
+    details: [
+      '1RK, 1BHK, 2BHK Apartments',
+      'G+4 Storey',
+      'Possession : March 2025',
+      '7 Mins from Panvel Rly Stn',
+    ],
     fullDescription:
       "Ensuring buildings are constructed with strong foundations and materials to withstand environmental stresses and provide long-term safety and stability. Designing buildings with efficient layouts and amenities that cater to the needs of occupants while maximizing space utilization and comfort. Incorporating architectural features and finishes that enhance the visual appeal and character of the building, contributing to its overall attractiveness and identity.",
     reraNumber: "P52000011751",

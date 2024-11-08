@@ -33,7 +33,17 @@ const ProjectCard = ({ project }) => (
     <div className="p-4 flex-grow flex flex-col justify-between">
       <div>
         <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-gray-600 text-xs sm:text-sm mb-4">{project.description}</p>
+        <ul className="space-y-2 mb-4">
+          {(project.details || []).map((detail, idx) => (
+            <li
+              key={idx}
+              className="flex items-center text-sm sm:text-base text-gray-600 before:content-['•'] before:mr-2 before:text-red-800"
+            >
+              {detail}
+            </li>
+          ))}
+        </ul>
+
       </div>
       <Link href={`/projects/ongoingProjects/${project.slug}`}>
         <span className="mt-auto w-full py-2 px-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-md hover:from-red-700 hover:to-red-900 transition duration-300 text-xs sm:text-sm md:text-base inline-block text-center">
