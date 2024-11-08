@@ -166,7 +166,7 @@ export const projects = [
     amenities: [
       { name: "Gymnasium", image: "/images/amenities/newcityPalace/gymnasium.jpg" },
       { name: "Indoor Games", image: "/images/amenities/newcityPalace/indoorGames.jpg" },
-      { name: "Society Office", image: "/images/amenities/newcityPalace/game.jpg" },
+      { name: "Society Office", image: "/images/amenities/newcityPalace/sosaetyOffice.jpg" },
       { name: "Rooftop Yoga Deck", image: "/images/amenities/newcityPalace/roofTopYogaDeck.jpg" },
       { name: "Rooftop Gazebo", image: "/images/amenities/newcityPalace/gazeboSeating.jpg" },
       { name: "Rooftop Garden", image: "/images/amenities/newcityPalace/gardenPlayArea.jpg" },
