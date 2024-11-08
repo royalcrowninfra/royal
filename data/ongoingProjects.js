@@ -174,9 +174,10 @@ export const projects = [
       { name: "Senior Citizen Seating Area", image: "/images/amenities/lift.jpg" },
     ],
     floorplans: [
-      { title: '1st & 3rd Floor Plan', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
-      { title: '2nd & 4th Floor Plan', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
-      { title: 'Ground Floor Plan', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
+      { title: 'GROUND FLOOR FURNITURE PLAN', src: '/images/floorplans/ongoing/project-1/img-1.jpg' },
+      { title: '1ST FLOOR FURNITURE PLAN', src: '/images/floorplans/ongoing/project-1/img-2.jpg' },
+      { title: '2ND FLOOR FURNITURE PLAN', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
+      { title: '3RD TO 7TH FLOOR FURNITURE PLAN', src: '/images/floorplans/ongoing/project-1/img-3.jpg' },
     ],
     connectivity: [
       { icon: "TramFront", title: "Railway Station", description: "Khandeshwar Railway Station : 5 Mins" },
