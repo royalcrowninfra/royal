@@ -152,7 +152,7 @@ export default function ProjectPage({ params }) {
                   const IconComponent = highlightsIcon[item.icon];
                   return (
                     <div key={index} className=" lg:my-8 flex flex-col items-center text-center bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                      {IconComponent && <IconComponent className="w-8 h-8 mb-4 text-cyan-400" />}
+                      {IconComponent && <IconComponent className="w-8 h-8 mb-4 text-cyan-700" />}
                       <p className="text-sm font-medium text-gray-900">{item.description}</p>
                     </div>
                   );
