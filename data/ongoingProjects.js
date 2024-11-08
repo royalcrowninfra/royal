@@ -185,15 +185,17 @@ export const projects = [
       { icon: "SchoolIcon", title: "Schools and Colleges", description: "All Reputed Schools and Colleges with 5-10 Mins" },
     ],
     highlights: [
-      { icon: "Building2", description: "TOWNSHIP IN 3 ACRES" },
-      { icon: "Home", description: "13 RESIDENTIAL BUILDINGS OF STILT + 4 STOREY WITH LIFT" },
-      { icon: "Banknote", description: "LUXURIOUS AND AFFORDABLE 1BHK AND 2BHK RESIDENCES" },
-      { icon: "FileCheck", description: "PROJECT APPROVED BY NAINA CIDCO" },
-      { icon: "CheckSquare", description: "OC RECEIVED code" },
+      { icon: "Building2", description: "CIDCO Clear Title Plot" },
+      { icon: "Home", description: "Ground + 7 Storey Luxurious Tower" },
+      { icon: "Banknote", description: "Shops, 1 RK & 1 BHK Apartments" },
+      { icon: "FileCheck", description: "CIDCO Approved" },
+      { icon: "CheckSquare", description: "Loan Available from Major Banks and Financial Institutions" },
     ],
     configuration: [
-      { flat: "1 BHK", carpet: "421 SQ FT" },
-      { flat: "2 BHK", carpet: "535 SQ FT" }
+      { flat: "1 RK", carpet: "296 SQ FT" },
+      { flat: "1 BHK", carpet: "354 SQ FT" },
+      { flat: "1 BHK", carpet: "385 SQ FT" },
+      { flat: "1 BHK", carpet: "426 SQ FT" }
     ],
     map: {
       center: { lat: 19.009816908187975, lng: 73.10259316005418 },
