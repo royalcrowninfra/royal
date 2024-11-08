@@ -84,7 +84,7 @@ export const projects = [
       "Welcome to JAYRAM RESIDENCY which is situated strategically close to Shedung Toll Naka on the Old Pune Highway close to Panvel Railway Station. The 4 Buildings township surrounded by pristine landscaped greenery. Experience the perfect fusion of opulence and nature where every detail is designed to bring the beauty of the outdoors into your everyday life.",
     reraNumber: "P52000011751",
     amenitiesDescription: "Description of amenities for Project 2",
-    pdfLink: "/pdf/ongoing/jayram/jayramresidence.pdf",
+    pdfLink: "/pdf/ongoing/jayram/jayramresidences.pdf",
     amenities: [
       { name: "Badminton Court", image: "/images/amenities/jayram/badmintonCourt.jpg" },
       { name: "Children’s Play Area", image: "/images/amenities/jayram/childrenPlayArea.jpg" },
