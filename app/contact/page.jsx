@@ -178,7 +178,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold mb-6 text-blue-700 md:text-center">Our Location</h2>
             <motion.div variants={itemVariants} className="mb-8 space-y-4">
               <motion.div whileHover={{ scale: 1.05 }} className="flex items-center justify-center space-x-2">
-                <FaMapMarkerAlt className="text-blue-600" />
+                {/* <FaMapMarkerAlt className="text-blue-600" /> */}
                 <p className="text-lg md:text-center">
                   ROYAL CROWN INFRA Shop No 1 Sector 25 Plot No 19,
                   Ravi Rachna, near Khandeshwar Station,
