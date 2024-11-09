@@ -164,7 +164,7 @@ const Navbar = () => {
         <div className="absolute left-4 top-4 z-10">
           <Link href="/">
             <Image
-              src="/images/header/logoPngwhite.png"
+              src="/images/header/logoPngwhite2.png"
               width={140}
               height={60}
               alt="Royal Crown Realty"
