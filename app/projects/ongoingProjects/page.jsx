@@ -6,10 +6,6 @@ import { projects } from '../../../data/ongoingProjects';
 import Link from 'next/link';
 import Image from 'next/image';
 
-{/* <div className="bg-blue-600 p-4">
-<h2 className="text-xl font-semibold text-white text-center">{block.title}</h2>
-</div> */}
-
 const ProjectCard = ({ project }) => (
   <motion.div
     initial="hidden"
@@ -23,11 +19,14 @@ const ProjectCard = ({ project }) => (
     className="bg-gray-100 rounded-lg overflow-hidden shadow-lg flex flex-col h-full border-2 border-red-800"
   >
     <div className="relative h-48 sm:h-56 md:h-64">
+      {/* Adding overlay to project card images */}
+      <div className="absolute inset-0 bg-black/30 z-10" />
       <Image
         src={project.image}
         layout="fill"
         objectFit="cover"
         alt={project.title}
+        className="z-0"
       />
     </div>
     <div className="p-4 flex-grow flex flex-col justify-between">
@@ -43,7 +42,6 @@ const ProjectCard = ({ project }) => (
             </li>
           ))}
         </ul>
-
       </div>
       <Link href={`/projects/ongoingProjects/${project.slug}`}>
         <span className="mt-auto w-full py-2 px-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-md hover:from-red-700 hover:to-red-900 transition duration-300 text-xs sm:text-sm md:text-base inline-block text-center">
@@ -57,15 +55,19 @@ const ProjectCard = ({ project }) => (
 const OngoingProjects = () => {
   return (
     <div>
-      <div className="bg-[url('/images/ongoing.jpg')] bg-center bg-cover h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center">
-        <motion.h1
-          initial='offscreen'
-          whileInView={"onscreen"}
-          variants={titleVariants}
-          className='container text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black-800 tracking-widest text-center'
-        >
-          Ongoing Projects
-        </motion.h1>
+      {/* Hero section with overlay */}
+      <div className="relative">
+        <div className="absolute inset-0 bg-black/50 z-10" /> {/* Black overlay with 50% opacity */}
+        <div className="bg-[url('/images/ongoing.jpg')] bg-center bg-cover h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center relative">
+          <motion.h1
+            initial='offscreen'
+            whileInView={"onscreen"}
+            variants={titleVariants}
+            className='container text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-100 tracking-widest text-center z-20' // Added z-20 to keep text above overlay
+          >
+            Ongoing Projects
+          </motion.h1>
+        </div>
       </div>
 
       <div className='container mx-auto px-4'>
