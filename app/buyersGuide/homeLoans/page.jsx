@@ -1,7 +1,5 @@
 'use client'
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import BankingPartner from '@/components/BankingPartner';
 import { motion } from 'framer-motion';
 import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
@@ -38,15 +36,19 @@ const HomeLoans = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
+        className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/buyersGuide/homeLoans.jpg')" }}
       >
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
         <motion.div
           initial="offscreen"
           whileInView={"onscreen"}
           variants={titleVariants}
-          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black tracking-wider sm:tracking-widest text-center">
+          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4 relative"
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
             Home Loans
           </h1>
         </motion.div>
@@ -55,10 +57,10 @@ const HomeLoans = () => {
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h1
-           initial="offscreen"
-           whileInView={"onscreen"}
-           variants={tagVariants}
-           className="text-3xl font-bold text-center text-gray-900 mb-12">
+            initial="offscreen"
+            whileInView={"onscreen"}
+            variants={tagVariants}
+            className="text-3xl font-bold text-center text-gray-900 mb-12">
             Loan Application Document Requirements
           </motion.h1>
 

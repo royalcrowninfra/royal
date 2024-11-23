@@ -35,28 +35,31 @@ const GSTRealEstate = () => {
   return (
     <div className="min-h-screen bg-navy-900 text-white">
       {/* Header Section with Background Image */}
-      <div
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
+        className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/buyersGuide/gst.jpg')" }}
       >
-        <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
+        <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4 relative">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
-            {/* Future Panvel Development */}
-            GST 
+            GST
           </h1>
         </div>
-      </div>
+      </motion.div>
+
 
       <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.h1
-           initial="offscreen"
-           whileInView={"onscreen"}
-           variants={tagVariants} 
-          className="text-4xl font-bold text-center text-blue-800 mb-12">
+            initial="offscreen"
+            whileInView={"onscreen"}
+            variants={tagVariants}
+            className="text-4xl font-bold text-center text-blue-800 mb-12">
             GST and Real Estate in India
           </motion.h1>
 
@@ -92,10 +95,10 @@ const GSTRealEstate = () => {
           </motion.div>
 
           <motion.div
-           initial="offscreen"
-           whileInView={"onscreen"}
-           variants={desVariants}
-           className="mt-12 bg-white rounded-lg shadow-lg p-6">
+            initial="offscreen"
+            whileInView={"onscreen"}
+            variants={desVariants}
+            className="mt-12 bg-white rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-semibold text-blue-800 mb-4">Implications of GST on Real Estate</h2>
             <p className="text-gray-700">
               GST has simplified the taxation process for real estate transactions. It reduces ambiguity and replaces multiple taxes with a single tax. The impact varies depending on the property type and stage of construction. Buyers and developers should be aware of the new tax structure to make informed decisions.

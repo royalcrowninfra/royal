@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import BankingPartner from '@/components/BankingPartner';
+import { motion } from 'framer-motion';
+import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
 const LegalTaxInfo = () => {
   const sections = [
@@ -37,19 +38,22 @@ const LegalTaxInfo = () => {
     <div className="min-h-screen bg-navy-900 text-white">
       {/* Header Section with Background Image */}
       <div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
-        style={{ backgroundImage: "url('/images/buyersGuide/tax.jpg')" }}
-      >
-        <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white  tracking-wider sm:tracking-widest text-center">
-            {/* Future Panvel Development */}
-            Legal & Tax Benefits
-          </h1>
-        </div>
-      </div>
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+  className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
+  style={{ backgroundImage: "url('/images/buyersGuide/tax.jpg')" }}
+>
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-50"></div>
+
+  <div className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4 relative">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
+      Legal & Tax Benefits
+    </h1>
+  </div>
+</div>
+
 
       <div className="bg-gray-100 min-h-screen">
         <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">

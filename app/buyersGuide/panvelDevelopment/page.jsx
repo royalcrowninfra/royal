@@ -59,19 +59,24 @@ const PanvelDevelopment = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
+        className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
         style={{ backgroundImage: "url('/images/buyersGuide/panveldevelopment/futureDevelopment.jpg')" }}
       >
+        {/* Black overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+
         <motion.div
           initial="offscreen"
           whileInView={"onscreen"}
           variants={titleVariants}
-          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4">
+          className="container mx-auto py-16 sm:py-24 md:py-32 lg:py-48 xl:py-64 px-4 relative"
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-wider sm:tracking-widest text-center">
             Future Panvel Development
           </h1>
         </motion.div>
       </motion.div>
+
 
       <motion.div
         initial="offscreen"
