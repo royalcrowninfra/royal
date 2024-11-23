@@ -17,37 +17,37 @@ const PanvelDevelopment = () => {
     {
       title: 'Upcoming Mumbai Trans Harbour Link (MTNL)',
       description:
-        'Asia longest the world second largest sea link allowing you convenient access Mumbai ',
+        'The Mumbai Trans Harbour Link (MTHL) is an ambitious infrastructure project designed to connect Mumbai with Navi Mumbai across the Arabian Sea. This 22 km-long bridge will significantly reduce travel time between the two cities, cutting it from about 90 minutes to just 30 minutes. The link will consist of a sea bridge, land viaducts, and tunnels, with a four-lane road for vehicles. It aims to ease traffic congestion, promote economic growth in Navi Mumbai, and provide better connectivity for both commercial and recreational purposes. The MTHL is expected to be completed in the near future, transforming Mumbai transport network.',
       imagePath: '/images/buyersGuide/panveldevelopment/local.jpg',
     },
     {
       title: 'Multimodal Corridor',
       description:
-        'The 126 km long Alibag–Virar corridor enables connectivity to the Airport and other nodes of MMR and Navi Mumbai.',
+        'The 126 km long Alibag-Virar corridor is a crucial infrastructure project aimed at enhancing connectivity within the Mumbai Metropolitan Region (MMR). This ambitious corridor will link key areas like Alibag and Virar, providing improved access to the upcoming Navi Mumbai International Airport, as well as other significant nodes in MMR. It will serve as an important transportation route for both commuters and goods, reducing travel time between suburban and peripheral areas. This corridor is expected to boost regional development, ease traffic congestion, and support economic growth by improving connectivity to Mumbai’s airport and other key locations in Navi Mumbai.',
       imagePath: '/images/buyersGuide/panveldevelopment/highway.jpg',
     },
     {
       title: 'Panvel–Karjat Railway Line',
       description:
-        'Allows connectivity to the central suburbs.',
+        'The Panvel–Karjat Railway Line is a vital railway project aimed at enhancing connectivity in the Mumbai Metropolitan Region. Spanning approximately 40 kilometers, this line connects Panvel in Navi Mumbai to Karjat in the Raigad district.The line is part of the broader efforts to improve suburban railway networks, reduce travel time, and decongest Mumbai main railway stations. It will provide better access to the rapidly developing areas of Navi Mumbai and its surroundings, improving transport for both commuters and freight.The Panvel-Karjat line will play a key role in promoting economic growth and easing congestion in the region.',
       imagePath: '/images/buyersGuide/panveldevelopment/karjatpanvel.jpg',
     },
     {
       title: 'CST–Panvel Fast Railway Corridor',
       description:
-        'Allows speedier access to Mumbai. ',
+        'The CST–Panvel Fast Railway Corridor is a major railway project designed to enhance connectivity between Mumbai’s Chhatrapati Shivaji Maharaj Terminus (CST) and Panvel in Navi Mumbai. This 48 km fast-track corridor will reduce travel time by offering dedicated high-speed tracks, enabling quicker transit for commuters traveling between the city and Navi Mumbai. With more frequent and efficient trains, it aims to alleviate congestion on the existing routes, boost passenger capacity, and improve overall rail services. The corridor is part of the broader plan to modernize Mumbai’s suburban railway network and support regional economic growth and development. ',
       imagePath: '/images/buyersGuide/panveldevelopment/panvelcst.jpg',
     },
     {
       title: 'NAINA (NAVI MUMBAI AIRPORT INFLUENCE NOTIFIED AREA)',
       description:
-        'The smart city spread across 600 square kilometres planned around the International Airport will be a residential, commercial, retail, entertainment and financial hub of the future. It will offer residents, a lifestyle rivalling that of Mumbai with a clear advantage of Space, Nature, Aesthetics and speed of Accessibility currently absent in the maximum city. It goes without saying that for these reasons alone, Qualcon Dreams properties will command the high appreciation levels guaranteeing the best value on their investment.',
+        'NAINA (Navi Mumbai Airport Influence Notified Area) is a designated region around the upcoming Navi Mumbai International Airport, intended to facilitate planned urban development. Spanning approximately 250 square kilometers, NAINA encompasses areas in Navi Mumbai, Panvel, and surrounding regions. The project aims to create a well-planned urban ecosystem with residential, commercial, and industrial zones, offering modern infrastructure and connectivity. NAINAs development will promote economic growth, attract investments, and create thousands of job opportunities. With strategic planning and sustainable development, NAINA is expected to become a key growth hub, complementing the operations of the Navi Mumbai International Airport.',
       imagePath: '/images/buyersGuide/panveldevelopment/naina.jpg',
     },
     {
       title: 'ATAL SETU',
       description:
-        'The smart city spread across 600 square kilometres planned around the International Airport will be a residential, commercial, retail, entertainment and financial hub of the future. It will offer residents, a lifestyle rivalling that of Mumbai with a clear advantage of Space, Nature, Aesthetics and speed of Accessibility currently absent in the maximum city. It goes without saying that for these reasons alone, Qualcon Dreams properties will command the high appreciation levels guaranteeing the best value on their investment.',
+        'Atal Setu, also known as the Atal Bridge, is a vital infrastructure project located in Goa, India, connecting the islands of Goa’s River Mandovi. The bridge, named in honor of former Prime Minister Atal Bihari Vajpayee, is a modern cable-stayed structure designed to improve road connectivity and ease traffic flow in the region. It spans approximately 5.1 kilometers and serves as a crucial link between Panaji, the state capital, and the northern regions of Goa. The Atal Setu is expected to boost tourism, enhance regional development, and reduce congestion, providing a smoother transportation route for commuters.',
       imagePath: '/images/buyersGuide/panveldevelopment/atalsetu.jpg',
     },
   ];
