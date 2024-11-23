@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Input } from "./ui/input";
 import { motion } from "framer-motion";
 import { desVariants, tagVariants, titleVariants } from "../utils/animation";
-import { MapPin, Phone, Mail, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe,MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -39,7 +39,7 @@ export default function Footer() {
                 <p className="text-sm sm:text-base">CALL US :  (+91) 8689992777</p>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone size={18} />
+                <MessageCircle size={18} />
                 <p className="text-sm sm:text-base">WHATSAPP :  (+91) 8689992777</p>
               </div>
               <div className="flex items-center space-x-2">
