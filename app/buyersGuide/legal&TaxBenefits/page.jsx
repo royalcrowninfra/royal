@@ -19,7 +19,7 @@ const LegalTaxInfo = () => {
         "IOD and CC of the project",
         "MCGM / KDMC approved plans"
       ],
-      image: "/images/buyersGuide/legal&taxBenefits/permissions-approvals.jpg"
+      image: "/images/buyersGuide/legal&taxBenefits/permissions-approvals.png"
     },
     {
       title: "Tax Benefits",
