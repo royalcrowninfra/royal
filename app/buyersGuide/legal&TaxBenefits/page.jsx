@@ -35,9 +35,9 @@ const LegalTaxInfo = () => {
   return (
     <div className="min-h-screen">
       {/* Header Section with Background Image */}
-      <div 
+      <div
         className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
-        style={{ 
+        style={{
           backgroundImage: `url('/images/buyersGuide/tax.jpg')`,
           backgroundColor: '#1a365d' // Fallback background color
         }}
