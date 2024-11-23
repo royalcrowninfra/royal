@@ -8,7 +8,7 @@ const NRIInfoComponent = () => {
         With property rates in Panvel, Navi Mumbai set to appreciate multifold, the focus of all NRI investment is right here, within NAINA’s smart zone. And so is the Qualcon Dreams team of seasoned professionals ready to assist and update NRIs on Loans, tax benefits, power of attorney and RBI regulations.
       </p>
       <p className="text-lg text-gray-800 mt-4">
-        Qualcon Dreams are one of Navi Mumbai’s foremost property consultants commanding a portfolio of <span className="font-bold text-red-600">___ residential projects</span> spanning over <span className="font-bold text-red-600">___ sq.ft</span> across the length and breadth of the Panvel-Taloja corridor. All our projects bear the Qualcon signature of affordable luxury delivered on time, everytime.
+        Royal Crown are one of Navi Mumbai’s foremost property consultants commanding a portfolio of <span className="font-bold text-red-600">___ residential projects</span> spanning over <span className="font-bold text-red-600">___ sq.ft</span> across the length and breadth of the Panvel-Taloja corridor. All our projects bear the Royal Crown of affordable luxury delivered on time, everytime.
       </p>
       <p className="text-lg text-gray-800 mt-4">
         All our projects are poised to appreciate multi-fold in value due to their strategic positioning in the NAINA smart city district and offer Non-resident Indians an excellent investment option.
