@@ -5,7 +5,7 @@ const NRIInfoComponent = () => {
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300">
       <h1 className="text-2xl font-bold text-center text-red-600 mb-6">Investment Opportunities for NRIs</h1>
       <p className="text-lg text-gray-800">
-        With property rates in Panvel, Navi Mumbai set to appreciate multifold, the focus of all NRI investment is right here, within NAINA’s smart zone. And so is the Qualcon Dreams team of seasoned professionals ready to assist and update NRIs on Loans, tax benefits, power of attorney and RBI regulations.
+        With property rates in Panvel, Navi Mumbai set to appreciate multifold, the focus of all NRI investment is right here, within NAINA’s smart zone. And so is the Royal Crown team of seasoned professionals ready to assist and update NRIs on Loans, tax benefits, power of attorney and RBI regulations.
       </p>
       <p className="text-lg text-gray-800 mt-4">
         Royal Crown are one of Navi Mumbai’s foremost property consultants commanding a portfolio of <span className="font-bold text-red-600">___ residential projects</span> spanning over <span className="font-bold text-red-600">___ sq.ft</span> across the length and breadth of the Panvel-Taloja corridor. All our projects bear the Royal Crown of affordable luxury delivered on time, everytime.
