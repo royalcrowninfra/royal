@@ -1,7 +1,5 @@
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { desVariants, tagVariants, titleVariants } from '@/utils/animation';
 
 const LegalTaxInfo = () => {
   const sections = [
@@ -11,7 +9,7 @@ const LegalTaxInfo = () => {
         "At Royal Crown Infra, our seasoned tax experts will help you save your income tax while investing in under construction flats and properties at Panvel, Navi Mumbai. Signing a title report (received from the solicitor of the property) with any fine print and specific government reservations is unadvisable. Accept clearance reports that are lucid and specific.",
         "Precautionary measures will prevent you from getting embroiled in any future disputes. They will also help ensure that your home loans aren't scrutinized."
       ],
-      image: "/images/legal.jpg"
+      image: "/images/buyersGuide/legal&taxBenefits/legal-advice.jpg"
     },
     {
       title: "Permissions & Approvals",
@@ -21,7 +19,7 @@ const LegalTaxInfo = () => {
         "IOD and CC of the project",
         "MCGM / KDMC approved plans"
       ],
-      image: "/images/approvals.jpg"
+      image: "/images/buyersGuide/legal&taxBenefits/permissions-approvals.jpg"
     },
     {
       title: "Tax Benefits",
@@ -30,19 +28,19 @@ const LegalTaxInfo = () => {
         "Section 24 of the Income Tax Act states that an investor is allowed to deduct an amount equivalent to the total interest payable on the housing loan from his/her taxable income within the same financial year.",
         "According to Section 80C of the Income Tax Act: A deduction u/s 80C (2) (xviii) is available on repayment of the principal during a financial year of up to Rs. 1,00,000/-"
       ],
-      image: "/images/tax.jpg"
+      image: "/images/buyersGuide/legal&taxBenefits/tax-Benefits.jpg"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-navy-900 text-white">
+    <div className="min-h-screen">
       {/* Header Section with Background Image */}
-      <div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+      <div 
         className="relative bg-cover bg-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[500px]"
-        style={{ backgroundImage: "url('/images/buyersGuide/tax.jpg')" }}
+        style={{ 
+          backgroundImage: `url('/images/buyersGuide/tax.jpg')`,
+          backgroundColor: '#1a365d' // Fallback background color
+        }}
       >
         {/* Black overlay */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -53,7 +51,6 @@ const LegalTaxInfo = () => {
           </h1>
         </div>
       </div>
-
 
       <div className="bg-gray-100 min-h-screen">
         <div className="max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -68,13 +65,11 @@ const LegalTaxInfo = () => {
                   ))}
                 </div>
                 {/* Right Side Image */}
-                <div className="md:w-1/2 relative h-72 md:h-auto mb-4 md:mb-0 order-1 md:order-2">
-                  <Image
+                <div className="md:w-1/2 relative h-72 md:h-96 mb-4 md:mb-0 order-1 md:order-2">
+                  <img
                     src={section.image}
-                    alt={`${section.title} Image`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    alt={`${section.title}`}
+                    className="rounded-lg w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -83,10 +78,8 @@ const LegalTaxInfo = () => {
 
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">For more information, please contact us:</p>
-            <Link href='/contact'>
-              <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
-                Contact Us
-              </button>
+            <Link href="/contact" className="inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+              Contact Us
             </Link>
           </div>
         </div>
