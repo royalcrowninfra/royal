@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Input } from "./ui/input";
 import { motion } from "framer-motion";
 import { desVariants, tagVariants, titleVariants } from "../utils/animation";
-import { MapPin, Phone, Mail, Globe,MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   return (
