@@ -179,7 +179,7 @@ const TeamMember = ({ name, role, image, description }) => (
       />
     </div>
     <div className="p-6">
-      <h3 className="text-2xl font-semibold mb-2 text-gray-800">{name}</h3>
+      <h3 className="text-2xl font-semibold mb-2 text-cyan-900">{name}</h3>
       <p className="text-lg font-medium text-purple-600 mb-4">{role}</p>
       <p className="text-gray-600">{description}</p>
     </div>
