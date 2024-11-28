@@ -93,7 +93,7 @@ const Navbar = () => {
             </span>
           </div>
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4">
-            <span className="bg-orange-500 text-white text-xs sm:text-sm rounded-full px-2 py-1">RERA ID: A52000011720</span>
+            <span className="bg-orange-500 text-white text-xs sm:text-sm rounded-full px-2 py-auto">RERA ID: A52000011720</span>
             <div className="flex items-center space-x-3">
               <Link href="#" aria-label="Twitter">
                 <Twitter size={18} className="text-white" />
