@@ -81,7 +81,7 @@ const Navbar = () => {
       </div>
       {/* Top bar */}
       <div className="bg-gradient-to-r bg-cyan-700 py-2">
-        <div className="container mx-auto px-14 sm:px-14 flex flex-col sm:flex-row justify-center items-end gap-2 sm:gap-12">
+        <div className="container mx-auto px-14 sm:px-14 flex flex-col sm:flex-row justify-center items-end gap-2 sm:gap-12 md:mx-96">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
             <span className="text-white text-xs sm:text-sm flex items-center">
               <Phone size={16} className="mr-2" />
