@@ -138,7 +138,7 @@ const Page = () => {
               // role="Senior Developer"
               image="/images/header/reviews.jpg"
               description="Roshan Jadhav is a multi-talented person and looks after all the functional areas like Marketing and Administration. He holds a Masters degree in Computers Applications from Mumbai University. He is a social man and believes in living life to the fullest. He is a man filled with positive energy and has a winning attitude that doesn’t let him give up until a task is completed well. He is a result oriented person and believes in working hard to accomplish the given tasks.
-Under the rousing leadership of  Mr. Roshan Jadhav we feel inspired to keep experimenting with unconventional and creative ideas in Marketing. Currently, it is a small team but we are ambitious about expanding it shortly."/>
+               Under the rousing leadership of  Mr. Roshan Jadhav we feel inspired to keep experimenting with unconventional and creative ideas in Marketing. Currently, it is a small team but we are ambitious about expanding it shortly."/>
           </motion.div>
         </div>
       </section>
