@@ -129,16 +129,15 @@ const Page = () => {
           >
             <TeamMember
               name="Rajesh Chavan"
-              // role="Lead Designer"
+              role="Managing Director"
               image="/images/header/reviews.jpg"
-              description="Rajesh Chavan He has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor degree in commerce from University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft spoken and polite in his demeanour. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues and his team. His focus on developing a long term relationship with clients is our biggest asset."
+              description="Rajesh Chavan has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor's degree in commerce from the University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft-spoken and polite in his demeanor. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues, and his team. His focus on developing long-term relationships with clients is our biggest asset."
             />
             <TeamMember
               name="Roshan Jadhav"
-              // role="Senior Developer"
+              role="Co-Founder"
               image="/images/header/reviews.jpg"
-              description="Roshan Jadhav is a multi-talented person and looks after all the functional areas like Marketing and Administration. He holds a Masters degree in Computers Applications from Mumbai University. He is a social man and believes in living life to the fullest. He is a man filled with positive energy and has a winning attitude that doesn’t let him give up until a task is completed well. He is a result oriented person and believes in working hard to accomplish the given tasks.
-               Under the rousing leadership of  Mr. Roshan Jadhav we feel inspired to keep experimenting with unconventional and creative ideas in Marketing. Currently, it is a small team but we are ambitious about expanding it shortly."/>
+              description="Roshan Jadhav is a multi-talented person who looks after all the functional areas like Marketing and Administration. He holds a Master's degree in Computer Applications from Mumbai University. He is a social person and believes in living life to the fullest. He is a person filled with positive energy and has a winning attitude that doesn't let him give up until a task is completed well. He is a result-oriented person and believes in working hard to accomplish the given tasks. Under the inspiring leadership of Mr. Roshan Jadhav, we feel motivated to keep experimenting with unconventional and creative ideas in Marketing. Currently, it is a small team, but we are ambitious about expanding it shortly."/>
           </motion.div>
         </div>
       </section>
@@ -174,7 +173,7 @@ const TeamMember = ({ name, role, image, description }) => (
       <Image
         src={image}
         layout="fill"
-        objectFit="cover"
+        objectFit="contain"
         alt={name}
       />
     </div>
