@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const ComingSoonGallery = () => {
   const containerVariants = {
@@ -14,12 +15,12 @@ const ComingSoonGallery = () => {
   };
 
   const textVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 50 
+    hidden: {
+      opacity: 0,
+      y: 50
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         type: "spring",
@@ -30,12 +31,12 @@ const ComingSoonGallery = () => {
   };
 
   const wordVariants = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.8 
+    hidden: {
+      opacity: 0,
+      scale: 0.8
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
       transition: {
         type: "spring",
@@ -47,7 +48,7 @@ const ComingSoonGallery = () => {
 
   const ComingSoonWord = ({ word }) => {
     return (
-      <motion.span 
+      <motion.span
         className='inline-block mx-2'
         variants={wordVariants}
       >
@@ -57,14 +58,14 @@ const ComingSoonGallery = () => {
   };
 
   return (
-    <div className='min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 p-4'>
+    <div className='min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-cyan-50 to-cyan-50 p-4'>
       <motion.div
         className='text-center'
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h1 
+        <motion.h1
           className='text-6xl md:text-8xl font-bold text-blue-800 mb-8'
           variants={textVariants}
         >
@@ -73,7 +74,7 @@ const ComingSoonGallery = () => {
           ))}
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           className='text-2xl md:text-3xl text-blue-600 mb-12'
           variants={textVariants}
         >
@@ -84,13 +85,14 @@ const ComingSoonGallery = () => {
           className='flex justify-center space-x-4'
           variants={textVariants}
         >
-          <motion.div 
-            className='bg-blue-500 text-white px-6 py-3 rounded-full text-lg font-semibold'
+          <Link
+            href='/'
+            className='bg-red-500 text-white px-6 py-3 rounded-full text-lg font-semibold'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Stay Tuned
-          </motion.div>
+          </Link>
         </motion.div>
       </motion.div>
     </div>
