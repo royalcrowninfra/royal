@@ -44,7 +44,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={18} />
-                <p className="text-sm sm:text-base">EMAIL :   info@royalcrowninfra.com</p>
+                <p className="text-sm sm:text-base">EMAIL :   info@royalcrowninfra</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Globe size={18} />
