@@ -44,11 +44,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail size={18} />
-                <p className="text-sm sm:text-base">EMAIL :   info@royalcrownreality.com</p>
+                <p className="text-sm sm:text-base">EMAIL :   info@royalcrowninfra.com</p>
               </div>
               <div className="flex items-center space-x-2">
                 <Globe size={18} />
-                <p className="text-sm sm:text-base">WEBSITE : www.royalcrown.in</p>
+                <p className="text-sm sm:text-base">WEBSITE : www.royalcrowninfra.com</p>
               </div>
             </div>
           </motion.div>
