@@ -129,7 +129,7 @@ const Page = () => {
           >
             <TeamMember
               name="Rajesh Chavan"
-              role="Managing Director"
+              role="Co-Founder and Managing Director"
               image="/images/header/reviews.jpg"
               description="Rajesh Chavan has an uncanny skill of convincing people and handles the corporate sales at Royal Crown Infra. He holds a bachelor's degree in commerce from the University of Mumbai. Backed with immense positivity and a go-getter attitude, Mr. Rajesh Chavan is soft-spoken and polite in his demeanor. He works with precision and is professional in his approach. Passionate about his role at Raviraj Realty, you will see him talking patiently and calmly with clients, colleagues, and his team. His focus on developing long-term relationships with clients is our biggest asset."
             />
