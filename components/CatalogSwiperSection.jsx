@@ -47,18 +47,6 @@ const projects = [
     ],
     href: '/projects/ongoingProjects/project-3'
   },
-  // {
-  //   id: 4,
-  //   name: 'OM SAI SIDDHIVINAYAK',
-  //   image: '/images/projects/omsaiSiddhivinayak.jpeg',
-  //   details: [
-  //     '1RK, 1BHK, 2BHK Apartments',
-  //     'G+4 Storey',
-  //     'Possession : March 2025',
-  //     '7 Mins from Panvel Rly Stn',
-  //   ],
-  //   href: '/projects/ongoingProjects/project-4'
-  // },
 ];
 
 const ProjectCard = ({ project }) => {
