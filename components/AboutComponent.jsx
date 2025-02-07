@@ -53,12 +53,6 @@ const AboutComponent = () => {
 
   return (
     <div className="container mx-auto py-2 px-4 relative overflow-hidden">
-      {/* <motion.div 
-        className="absolute inset-0 bg-contain bg-no-repeat bg-left-top opacity-10"
-        style={{backgroundImage: "url('/images/header/bg-logo.png')"}}
-        animate={{ rotate: 360 }}
-        // transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
-      ></motion.div> */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
