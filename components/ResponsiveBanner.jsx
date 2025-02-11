@@ -39,5 +39,4 @@ const ResponsiveBanner = () => {
     </div>
   );
 };
-
 export default ResponsiveBanner;
