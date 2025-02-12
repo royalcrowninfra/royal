@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="absolute left-4 sm:left-1/4 transform sm:-translate-x-40 md:-translate-x-3/4 top-0 z-10">
         <Link href="/">
           <Image
-            src="/images/header/logo.png"
+            src="/newLogo.png"
             width={170}
             height={60}
             style={{ objectFit: 'contain' }}
